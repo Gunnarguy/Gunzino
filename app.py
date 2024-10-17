@@ -44,9 +44,6 @@ def notify():
         print(f"An error occurred: {e}")
     return '', 200
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=443, ssl_context=('domain.cert.pem', 'private.key.pem'))
-
 def fetch_customer_info(access_token):
     headers = {
         'Authorization': f'Bearer {access_token}',
