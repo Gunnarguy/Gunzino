@@ -1,0 +1,428 @@
+Certainly! I’ll guide you through setting up your PG&E Share My Data integration step by step, providing scripts and snippets to help you along the way.
+
+Important: Keep all your credentials (Client ID, Client Secret, Access Tokens, etc.) secure and do not share them publicly. In the examples below, replace placeholders like your_client_id with your actual credentials.
+
+Overview
+
+We’ll follow these main steps:
+
+	1.	Set Up Your Environment
+	2.	Obtain an Access Token Using OAuth 2.0
+	3.	Authorize Your PG&E Account
+	4.	Set Up a Notification Endpoint
+	5.	Fetch Data from PG&E APIs
+	6.	Automate Data Retrieval Upon Notification
+
+Prerequisites
+
+	•	PG&E Credentials:
+	•	Client ID
+	•	Client Secret
+	•	Bulk ID (Third-Party ID)
+	•	SSL Certificate and Key Files:
+	•	Typically in .pem format
+	•	Python Environment:
+	•	Install Python 3.x
+	•	Install necessary Python packages: requests, flask, pyopenssl
+	•	Server Access:
+	•	Ability to run a web server accessible over the internet (for the notification endpoint)
+
+Step 1: Set Up Your Environment
+
+1.1 Install Python Packages
+
+Open your terminal or command prompt and run:
+
+pip install requests flask pyopenssl
+
+1.2 Organize Your Files
+
+Create a project directory and organize your files:
+
+your_project/
+├── app.py                 # Your main Python script
+├── domain.cert.pem        # Your SSL certificate file
+├── private.key.pem        # Your SSL private key file
+
+Step 2: Obtain an Access Token Using OAuth 2.0
+
+We’ll obtain an access token using the Client Credentials grant type.
+
+2.1 Prepare Your Credentials
+
+Replace placeholders with your actual credentials.
+
+# app.py
+
+import base64
+
+client_id = 'your_client_id'
+client_secret = 'your_client_secret'
+
+credentials = f"{client_id}:{client_secret}"
+encoded_credentials = base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
+
+2.2 Make the Token Request
+
+import requests
+
+token_url = 'https://api.pge.com/datacustodian/test/oauth/v2/token'
+
+headers = {
+    'Authorization': f'Basic {encoded_credentials}',
+    'Content-Type': 'application/x-www-form-urlencoded'
+}
+
+data = {
+    'grant_type': 'client_credentials'
+}
+
+response = requests.post(token_url, headers=headers, data=data)
+
+if response.status_code == 200:
+    print("Access token obtained successfully.")
+    print(response.text)
+else:
+    print(f"Failed to obtain access token. Status code: {response.status_code}")
+    print(response.text)
+
+2.3 Parse the Access Token
+
+The response will be in XML format. We’ll parse it to extract the access token.
+
+import xml.etree.ElementTree as ET
+
+def get_access_token():
+    response = requests.post(token_url, headers=headers, data=data)
+    if response.status_code == 200:
+        root = ET.fromstring(response.content)
+        namespace = {'ns': 'https://api.pge.com/datacustodian/oauth/v2/token'}
+        access_token = root.find('ns:client_access_token', namespace).text
+        return access_token
+    else:
+        raise Exception(f"Failed to obtain access token. Status code: {response.status_code}")
+
+Step 3: Authorize Your PG&E Account
+
+Since you’re a self-access user, you need to authorize your own account.
+
+3.1 Log In and Authorize
+
+	1.	Log into your PG&E account at www.pge.com.
+	2.	Navigate to the Share My Data section.
+	3.	Find your vendor name (which you registered) in the list.
+	4.	Select your vendor and follow the prompts to authorize data sharing.
+
+Step 4: Set Up a Notification Endpoint
+
+You’ll need a web server to receive notifications from PG&E.
+
+4.1 Create the Flask App
+
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/notify', methods=['POST'])
+def notify():
+    notification_content = request.data
+    print("Received Notification:")
+    print(notification_content)
+    # Process the notification or trigger data retrieval here
+    return '', 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=443, ssl_context=('domain.cert.pem', 'private.key.pem'))
+
+4.2 Run the Server
+
+In your terminal, navigate to your project directory and run:
+
+python app.py
+
+Ensure that your server is accessible over the internet at https://yourdomain.com/notify.
+
+Step 5: Fetch Data from PG&E APIs
+
+5.1 Set Common Parameters
+
+bulk_id = 'your_bulk_id'
+
+# This function should be added to your app.py
+def fetch_customer_info(access_token):
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'Accept': 'application/atom+xml'
+    }
+
+    customer_info_url = f'https://api.pge.com/datacustodian/test/espi/1_1/resource/Batch/BulkRetailCustomerInfo/{bulk_id}'
+
+    response = requests.get(
+        customer_info_url,
+        headers=headers,
+        cert=('domain.cert.pem', 'private.key.pem')
+    )
+
+    if response.status_code == 200:
+        print("Customer Information:")
+        print(response.text)
+        # Process the customer information here
+    else:
+        print(f"Failed to fetch customer info. Status code: {response.status_code}")
+        print(response.text)
+
+5.2 Fetch Usage Data
+
+def fetch_usage_data(access_token):
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'Accept': 'application/atom+xml'
+    }
+
+    usage_data_url = f'https://api.pge.com/datacustodian/test/espi/1_1/resource/Batch/Bulk/{bulk_id}'
+
+    response = requests.get(
+        usage_data_url,
+        headers=headers,
+        cert=('domain.cert.pem', 'private.key.pem')
+    )
+
+    if response.status_code == 200:
+        print("Usage Data:")
+        print(response.text)
+        # Process the usage data here
+    else:
+        print(f"Failed to fetch usage data. Status code: {response.status_code}")
+        print(response.text)
+
+Step 6: Automate Data Retrieval Upon Notification
+
+Modify your notification endpoint to trigger data retrieval when a notification is received.
+
+@app.route('/notify', methods=['POST'])
+def notify():
+    notification_content = request.data
+    print("Received Notification:")
+    print(notification_content)
+    try:
+        access_token = get_access_token()
+        fetch_customer_info(access_token)
+        fetch_usage_data(access_token)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    return '', 200
+
+Complete app.py Example
+
+Here’s how your app.py should look with everything put together:
+
+import base64
+import requests
+import xml.etree.ElementTree as ET
+from flask import Flask, request
+
+app = Flask(__name__)
+
+# Replace with your actual credentials
+client_id = 'your_client_id'
+client_secret = 'your_client_secret'
+bulk_id = 'your_bulk_id'
+
+credentials = f"{client_id}:{client_secret}"
+encoded_credentials = base64.b64encode(credentials.encode('utf-8')).decode('utf-8')
+
+token_url = 'https://api.pge.com/datacustodian/test/oauth/v2/token'
+
+def get_access_token():
+    headers = {
+        'Authorization': f'Basic {encoded_credentials}',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+
+    data = {
+        'grant_type': 'client_credentials'
+    }
+
+    response = requests.post(token_url, headers=headers, data=data)
+
+    if response.status_code == 200:
+        root = ET.fromstring(response.content)
+        namespace = {'ns': 'https://api.pge.com/datacustodian/oauth/v2/token'}
+        access_token = root.find('ns:client_access_token', namespace).text
+        return access_token
+    else:
+        raise Exception(f"Failed to obtain access token. Status code: {response.status_code}")
+
+def fetch_customer_info(access_token):
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'Accept': 'application/atom+xml'
+    }
+
+    customer_info_url = f'https://api.pge.com/datacustodian/test/espi/1_1/resource/Batch/BulkRetailCustomerInfo/{bulk_id}'
+
+    response = requests.get(
+        customer_info_url,
+        headers=headers,
+        cert=('domain.cert.pem', 'private.key.pem')
+    )
+
+    if response.status_code == 200:
+        print("Customer Information:")
+        print(response.text)
+        # TODO: Process the customer information here
+    else:
+        print(f"Failed to fetch customer info. Status code: {response.status_code}")
+        print(response.text)
+
+def fetch_usage_data(access_token):
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'Accept': 'application/atom+xml'
+    }
+
+    usage_data_url = f'https://api.pge.com/datacustodian/test/espi/1_1/resource/Batch/Bulk/{bulk_id}'
+
+    response = requests.get(
+        usage_data_url,
+        headers=headers,
+        cert=('domain.cert.pem', 'private.key.pem')
+    )
+
+    if response.status_code == 200:
+        print("Usage Data:")
+        print(response.text)
+        # TODO: Process the usage data here
+    else:
+        print(f"Failed to fetch usage data. Status code: {response.status_code}")
+        print(response.text)
+
+@app.route('/notify', methods=['POST'])
+def notify():
+    notification_content = request.data
+    print("Received Notification:")
+    print(notification_content)
+    try:
+        access_token = get_access_token()
+        fetch_customer_info(access_token)
+        fetch_usage_data(access_token)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    return '', 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=443, ssl_context=('domain.cert.pem', 'private.key.pem'))
+
+Additional Steps
+
+7.1 Test Your Access Token Retrieval
+
+Before proceeding, ensure that you can successfully obtain an access token by running:
+
+python app.py
+
+Then, in another terminal, send a test notification:
+
+curl -X POST https://yourdomain.com/notify --insecure
+
+Check the console output for any errors.
+
+7.2 Parse and Store the Data
+
+The data returned by PG&E is in XML format. You’ll need to parse it to extract meaningful information.
+
+Here’s an example of how to parse the XML response:
+
+def parse_usage_data(xml_data):
+    root = ET.fromstring(xml_data)
+    # Navigate through the XML tree and extract data as needed
+    for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
+        # Process each entry
+        print(entry.find('{http://www.w3.org/2005/Atom}title').text)
+
+Security Best Practices
+
+	•	Secure Your Credentials:
+	•	Do not hard-code sensitive information.
+	•	Use environment variables or a configuration file that’s not checked into version control.
+
+Example using environment variables:
+
+import os
+
+client_id = os.environ.get('PGE_CLIENT_ID')
+client_secret = os.environ.get('PGE_CLIENT_SECRET')
+bulk_id = os.environ.get('PGE_BULK_ID')
+
+Set environment variables in your terminal before running your script:
+
+export PGE_CLIENT_ID='your_client_id'
+export PGE_CLIENT_SECRET='your_client_secret'
+export PGE_BULK_ID='your_bulk_id'
+
+	•	Use HTTPS:
+	•	Ensure your notification endpoint is only accessible over HTTPS.
+	•	Do not disable SSL verification in your requests.
+	•	Handle Exceptions Gracefully:
+	•	Implement try-except blocks to catch and handle exceptions without crashing your application.
+
+Common Issues and Troubleshooting
+
+Issue: SSL Certificate Errors
+
+	•	Solution:
+	•	Ensure that your SSL certificate and key files are correctly specified.
+	•	Verify that your certificate is valid and not expired.
+	•	If using a self-signed certificate, PG&E may not accept it. Consider obtaining a certificate from a trusted Certificate Authority (CA).
+
+Issue: Unable to Obtain Access Token
+
+	•	Solution:
+	•	Double-check your Client ID and Client Secret.
+	•	Ensure they are correctly base64 encoded.
+	•	Verify that you’re sending the request to the correct URL.
+
+Issue: 401 Unauthorized When Fetching Data
+
+	•	Solution:
+	•	Confirm that your access token is valid and not expired.
+	•	Ensure that you’re including the access token in the Authorization header as Bearer {access_token}.
+
+Issue: Notifications Not Received
+
+	•	Solution:
+	•	Ensure that your notification endpoint is publicly accessible over the internet.
+	•	Check your server logs to see if any requests are hitting your endpoint.
+	•	Verify that your Notification URI is correctly registered with PG&E.
+
+Next Steps
+
+	•	Data Processing:
+	•	Implement functions to parse the XML data and extract the information you need.
+	•	Consider storing the data in a database for further analysis.
+	•	Scheduling Regular Data Fetches:
+	•	If you need data more frequently, consider setting up a scheduler (like cron jobs) to trigger data retrieval at specified intervals.
+	•	Enhanced Error Logging:
+	•	Integrate a logging framework to capture and store logs for debugging purposes.
+	•	User Interface:
+	•	If desired, build a web interface to display the retrieved data.
+
+Resources
+
+	•	PG&E Share My Data Documentation:
+	•	Refer to any official documentation or developer guides provided by PG&E.
+	•	Python Documentation:
+	•	requests library
+	•	Flask web framework
+	•	xml.etree.ElementTree
+
+Final Reminders
+
+	•	Keep Credentials Secure:
+	•	Never expose your Client ID, Client Secret, or Access Tokens in any public repositories or shared documents.
+	•	Test in a Safe Environment:
+	•	Use PG&E’s test environment until you’re confident everything works as expected.
+	•	Monitor Your Application:
+	•	Keep an eye on your application for any errors or exceptions that may occur over time.
+
+By following these steps and using the provided code snippets, you should be able to set up your PG&E Share My Data integration successfully. If you encounter any issues or have further questions, feel free to ask!
