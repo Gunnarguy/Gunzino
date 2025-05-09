@@ -1,0 +1,188 @@
+/* General body styling */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font stack */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Header and Navigation Styling */
+header {
+    background-color: #1f1f1f; /* Slightly lighter dark shade for header */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #333; /* Subtle border */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00aaff; /* Accent color for logo */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #00aaff; /* Accent color on hover/active */
+}
+
+/* Hero Section Styling */
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #b0b0b0; /* Lighter text for hero paragraph */
+}
+
+.cta-button {
+    background-color: #00aaff; /* Accent color for CTA */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0088cc; /* Darker shade on hover */
+}
+
+/* Main content styling */
+main {
+    padding: 2rem 1rem;
+    max-width: 1000px; /* Increased max-width */
+    margin: 40px auto;
+    background: #1f1f1f; /* Dark background for main content */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+section {
+    margin-bottom: 40px; /* Increased margin */
+}
+
+section h2 {
+    color: #00aaff; /* Accent color for headings */
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 0.5rem;
+    font-size: 2em; /* Larger heading */
+    text-align: center; /* Center align section titles */
+    margin-bottom: 1.5rem;
+}
+
+/* Features Grid Styling */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px;
+}
+
+.feature-item {
+    background: #2a2a2a; /* Darker item background */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    color: #00aaff; /* Accent color for icons */
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: #b0b0b0;
+}
+
+/* Styling for links */
+a {
+    color: #00aaff; /* Accent color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0088cc;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #1f1f1f; /* Consistent dark background */
+    color: #b0b0b0; /* Lighter text for footer */
+    border-top: 1px solid #333; /* Subtle border */
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Remove default list styling if not needed or style specifically */
+ul {
+    list-style-type: none; /* Removing default bullets for nav */
+    padding-left: 0;
+}
+
+/* If you need lists elsewhere, style them specifically or re-enable here */
+/* For example, if features were a list:
+.features-list li {
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+*/

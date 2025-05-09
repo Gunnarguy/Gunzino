@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCone - Your Project Title</title> <!-- Updated Title -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Added Font Awesome for icons -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">OpenCone</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="https://github.com/Gunnarguy/OpenCone" target="_blank">GitHub <i class="fab fa-github"></i></a></li> 
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>OpenCone: Native RAG for iOS</h1> <!-- Updated H1 -->
+            <p>Unlock the full potential of custom AI with OpenCone. Natively create, manage, and chat with assistants, utilizing powerful tools like Vector Stores for file search, Code Interpreter for complex tasks, and direct OpenAI API integration for peak performance.</p> <!-- Updated hero paragraph -->
+            <a href="https://github.com/Gunnarguy/OpenCone" class="cta-button" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About OpenCone</h2>
+            <p>
+                OpenCone is a native iOS application demonstrating a Retrieval Augmented Generation (RAG) system. 
+                It allows users to upload documents, process them by extracting text and generating vector embeddings using OpenAI, 
+                store these embeddings in a Pinecone vector database, and perform semantic searches across the documents 
+                to get AI-generated answers.
+            </p>
+            <p>
+                The app is built entirely with SwiftUI and leverages Combine for asynchronous operations. 
+                It features a custom design system and theme management.
+            </p>
+        </section>
+        <section id="features">
+            <h2>Leverage Advanced Capabilities</h2> <!-- Updated section title -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-file-alt feature-icon"></i> <!-- Added icon -->
+                    <h3>Document Processing</h3>
+                    <p>Supports PDF, DOCX, TXT formats for versatile data input.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-brain feature-icon"></i> <!-- Added icon -->
+                    <h3>Vector Embeddings with OpenAI</h3>
+                    <p>Utilizes OpenAI for generating precise vector embeddings.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-database feature-icon"></i> <!-- Added icon -->
+                    <h3>Pinecone Integration</h3>
+                    <p>Seamlessly integrates with Pinecone for efficient vector storage.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-search feature-icon"></i> <!-- Added icon -->
+                    <h3>Semantic Search</h3>
+                    <p>Enables powerful semantic search across your documents.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cogs feature-icon"></i> <!-- Added icon -->
+                    <h3>RAG Implementation</h3>
+                    <p>Implements RAG for generating context-aware AI answers.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-paint-brush feature-icon"></i> <!-- Added icon -->
+                    <h3>Custom Design & Theme</h3>
+                    <p>Features a custom design system and theme customization options.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 OpenCone Project. All rights reserved.</p> <!-- Updated footer text -->
+        <p><a href="mailto:your-email@example.com">Contact</a></p> <!-- Added contact link -->
+    </footer>
+</body>
+</html>
