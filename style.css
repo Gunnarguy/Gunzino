@@ -186,3 +186,70 @@ ul {
     color: #e0e0e0;
 }
 */
+
+/* Support Page Specific Styles */
+
+/* Contact Form Styling */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto; /* Center the form */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    color: #e0e0e0; /* Light text for labels */
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333; /* Subtle border */
+    background-color: #2a2a2a; /* Dark input background */
+    color: #e0e0e0; /* Light text in inputs */
+    font-size: 1em;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00aaff; /* Accent color on focus */
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
+#contact-form button[type="submit"] {
+    align-self: center; /* Center the button */
+}
+
+/* FAQ Styling */
+#faq .faq-item {
+    background: #2a2a2a; /* Darker item background */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #00aaff; /* Accent border */
+}
+
+#faq .faq-item h3 {
+    font-size: 1.3em;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#faq .faq-item p {
+    font-size: 0.95em;
+    color: #b0b0b0;
+    margin-bottom: 0;
+}
