@@ -80,7 +80,10 @@ nav ul li a:hover, nav ul li a.active {
     padding: 12px 25px;
     text-decoration: none;
     font-size: 1.1em;
+    font-weight: bold; /* Make button text stand out */
     border-radius: 5px;
+    border: none; /* Remove default browser border */
+    cursor: pointer; /* Indicate interactivity */
     transition: background-color 0.3s ease;
 }
 
@@ -218,6 +221,8 @@ ul {
     background-color: #2a2a2a; /* Dark input background */
     color: #e0e0e0; /* Light text in inputs */
     font-size: 1em;
+    width: 100%; /* Make inputs take full width of their container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .form-group input[type="text"]:focus,
@@ -230,6 +235,7 @@ ul {
 
 #contact-form button[type="submit"] {
     align-self: center; /* Center the button */
+    margin-top: 20px; /* Increased margin for better separation */
 }
 
 /* FAQ Styling */
