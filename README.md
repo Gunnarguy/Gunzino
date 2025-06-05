@@ -10,6 +10,11 @@ OpenCone is a native iOS application that demonstrates Retrieval Augmented Gener
 - **Semantic search** – ask questions and receive context-aware answers
 - **RAG-based responses** – combine search results for accurate answers
 - **Custom design and theme** – built entirely in SwiftUI
+<<<<<<< HEAD
+- **Code execution** – run tasks with a built-in interpreter
+- **Direct OpenAI API integration** – communicate directly with OpenAI for fast results
+=======
+>>>>>>> origin/main
 
 ## Repository Structure
 
@@ -18,9 +23,27 @@ OpenCone is a native iOS application that demonstrates Retrieval Augmented Gener
 - `style.css` – shared styling for both pages
 - `CNAME` – domain mapping for GitHub Pages
 
+<<<<<<< HEAD
+## How It Works
+
+1. Import documents in PDF, DOCX or TXT format.
+2. OpenCone extracts text and generates vector embeddings using OpenAI.
+3. Embeddings are stored in Pinecone for fast semantic search.
+4. Ask questions and get answers via Retrieval Augmented Generation.
+
+
+## Running Locally
+
+Simply open `index.html` in a browser. Because the site is purely static, you can host it with GitHub Pages or any other static hosting service. If using GitHub Pages, push the repository to your GitHub account and enable Pages in the repository settings. The CNAME file maps the site to `gunzino.me`.
+
+### Custom Domain
+
+If you are using a registrar such as Porkbun, keep the `CNAME` file containing your domain name at the repository root. After enabling GitHub Pages, configure your DNS records at the registrar to point to GitHub's servers.
+=======
 ## Running Locally
 
 Simply open `index.html` in a browser. If you wish to deploy via GitHub Pages, push the repository to a GitHub project and enable Pages in the repository settings. The CNAME file maps the site to `gunzino.me`.
+>>>>>>> origin/main
 
 ### Contact Form
 
