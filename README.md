@@ -32,6 +32,10 @@ OpenCone is a native iOS application that demonstrates Retrieval Augmented Gener
 
 Simply open `index.html` in a browser. Because the site is purely static, you can host it with GitHub Pages or any other static hosting service. If using GitHub Pages, push the repository to your GitHub account and enable Pages in the repository settings. The CNAME file maps the site to `gunzino.me`.
 
+### Custom Domain
+
+If you are using a registrar such as Porkbun, keep the `CNAME` file containing your domain name at the repository root. After enabling GitHub Pages, configure your DNS records at the registrar to point to GitHub's servers.
+
 ### Contact Form
 
 The form on `support.html` uses a placeholder action attribute. Replace `YOUR_FORMSPREE_ENDPOINT_OR_OTHER_SERVICE` with the endpoint of your preferred form service before deploying.
