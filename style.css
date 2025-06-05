@@ -127,6 +127,9 @@ section h2 {
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Added for vertical alignment */
+    flex-direction: column; /* Added for vertical alignment */
+    justify-content: flex-start; /* Align items to the start of the flex container */
 }
 
 .feature-item:hover {
@@ -144,11 +147,61 @@ section h2 {
     font-size: 1.4em;
     color: #fff;
     margin-bottom: 10px;
+    margin-top: 0; /* Ensure h3 is close to icon if text is short */
 }
 
 .feature-item p {
     font-size: 0.95em;
     color: #b0b0b0;
+    flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+/* Application Flow Section Styling */
+#appflow .flow-step {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid #00aaff;
+}
+
+#appflow .flow-step h4 {
+    color: #00aaff;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#appflow .flow-step p,
+#appflow .flow-step ul {
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+#appflow .flow-step ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+#appflow .flow-step ul li {
+    margin-bottom: 8px;
+}
+
+/* Tech Stack Section Styling */
+#techstack ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #e0e0e0;
+}
+
+#techstack ul li {
+    margin-bottom: 8px;
+}
+
+#techstack ul ul {
+    list-style-type: circle;
+    margin-top: 5px;
+    padding-left: 25px;
 }
 
 /* Styling for links */

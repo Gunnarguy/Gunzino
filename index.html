@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenCone - Native RAG for iOS</title>
-    <meta name="description" content="OpenCone lets you create, manage and chat with AI assistants using Retrieval Augmented Generation on iOS.">
+    <!-- Updated meta description for better SEO and clarity -->
+    <meta name="description" content="OpenCone is a sophisticated iOS app for on-device Retrieval Augmented Generation (RAG). Process documents, generate embeddings, and perform semantic search with AI.">
     <meta property="og:title" content="OpenCone - Native RAG for iOS">
-    <meta property="og:description" content="A native iOS application featuring vector search, code execution and direct OpenAI API integration.">
+    <!-- Updated Open Graph description -->
+    <meta property="og:description" content="Discover OpenCone: A native iOS app empowering you to process, embed, and search your documents using AI. Features OpenAI, Pinecone, and a SwiftUI interface.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gunzino.me">
-    <meta property="og:image" content="https://gunzino.me/images/opencone-preview.png">
+    <meta property="og:image" content="https://gunzino.me/images/opencone-preview.png"> <!-- Assuming this image is representative -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -19,65 +21,199 @@
             <div class="logo">OpenCone</div>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#features">Key Features</a></li>
+                <li><a href="#appflow">How It Works</a></li>
+                <li><a href="#techstack">Tech Stack</a></li>
                 <li><a href="https://github.com/Gunnarguy/OpenCone" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
         </nav>
         <div class="hero">
-            <h1>OpenCone: Native RAG for iOS</h1> <!-- Updated H1 -->
-            <p>Unlock the full potential of custom AI with OpenCone. Natively create, manage, and chat with assistants, utilizing powerful tools like Vector Stores for file search, Code Interpreter for complex tasks, and direct OpenAI API integration for peak performance.</p> <!-- Updated hero paragraph -->
+            <!-- Updated H1 to be more descriptive -->
+            <h1>OpenCone: Advanced iOS Retrieval Augmented Generation</h1>
+            <!-- Updated hero paragraph for a comprehensive overview -->
+            <p>Unlock the full potential of your documents with OpenCone. This native iOS app allows you to process files, create vector embeddings using OpenAI, store them in Pinecone, and perform intelligent semantic searches to get AI-powered answers, all on your iPhone or iPad.</p>
             <a href="https://github.com/Gunnarguy/OpenCone" class="cta-button" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
         </div>
     </header>
     <main>
+        <!-- About Section: Detailed Overview of OpenCone -->
         <section id="about">
             <h2>About OpenCone</h2>
             <p>
-                OpenCone is a native iOS application demonstrating a Retrieval Augmented Generation (RAG) system. 
-                It allows users to upload documents, process them by extracting text and generating vector embeddings using OpenAI, 
-                store these embeddings in a Pinecone vector database, and perform semantic searches across the documents 
-                to get AI-generated answers.
+                OpenCone is a sophisticated, native iOS application designed to empower users with an on-device Retrieval Augmented Generation (RAG) system. 
+                It allows for seamless uploading and processing of various document types (PDFs, text files, Word documents, and even images via OCR). 
+                Once processed, text is extracted, intelligently chunked, and converted into vector embeddings using OpenAI's state-of-the-art models. 
+                These embeddings are then stored and indexed within a Pinecone serverless vector database.
             </p>
             <p>
-                The app is built entirely with SwiftUI and leverages Combine for asynchronous operations. 
-                It features a custom design system and theme management.
+                The core utility of OpenCone lies in its ability to perform semantic searches across the user's entire document corpus. 
+                Users can ask natural language questions, and the system will retrieve the most relevant document segments. 
+                These segments are then used as context by OpenAI's completion models (like GPT-4o) to generate concise, accurate, and contextually relevant answers.
+            </p>
+            <p>
+                Built entirely with SwiftUI, OpenCone offers a modern, reactive user interface. 
+                It leverages Swift's async/await for concurrency and Combine for managing asynchronous events. 
+                The application features a custom, themable design system (OCDesignSystem) ensuring a polished and consistent user experience 
+                across its various features, including document management, search, detailed processing logs, and comprehensive settings.
             </p>
         </section>
+
+        <!-- Key Features Section: Expanded with details from iOS App README -->
         <section id="features">
-            <h2>Leverage Advanced Capabilities</h2> <!-- Updated section title -->
+            <h2>Key Features of OpenCone</h2>
             <div class="features-grid">
+                <!-- Feature: Document Management -->
                 <div class="feature-item">
-                    <i class="fas fa-file-alt feature-icon"></i> <!-- Added icon -->
-                    <h3>Document Processing</h3>
-                    <p>Supports PDF, DOCX, TXT formats for versatile data input.</p>
+                    <i class="fas fa-file-alt feature-icon"></i>
+                    <h3>Document Management</h3>
+                    <p>Upload, view, and manage various document types (PDF, DOCX, TXT, images with OCR). Securely handles file access using bookmarks.</p>
                 </div>
+                <!-- Feature: Advanced Processing Pipeline -->
                 <div class="feature-item">
-                    <i class="fas fa-brain feature-icon"></i> <!-- Added icon -->
-                    <h3>Vector Embeddings with OpenAI</h3>
-                    <p>Utilizes OpenAI for generating precise vector embeddings.</p>
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h3>Advanced Processing Pipeline</h3>
+                    <p>Automated text extraction, strategic chunking (MIME-type specific), and robust error handling during document ingestion.</p>
                 </div>
+                <!-- Feature: OpenAI Embeddings -->
                 <div class="feature-item">
-                    <i class="fas fa-database feature-icon"></i> <!-- Added icon -->
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h3>OpenAI Embeddings</h3>
+                    <p>Generates high-dimensional vector embeddings for text chunks using configurable OpenAI models (e.g., text-embedding-3-large).</p>
+                </div>
+                <!-- Feature: Pinecone Integration -->
+                <div class="feature-item">
+                    <i class="fas fa-database feature-icon"></i> <!-- Could also use fa-tree for Pinecone -->
                     <h3>Pinecone Integration</h3>
-                    <p>Seamlessly integrates with Pinecone for efficient vector storage.</p>
+                    <p>Full lifecycle management for Pinecone serverless indexes: create, list, select active index, and manage namespaces. Stores and indexes embeddings.</p>
                 </div>
+                <!-- Feature: Semantic Search & RAG -->
                 <div class="feature-item">
-                    <i class="fas fa-search feature-icon"></i> <!-- Added icon -->
-                    <h3>Semantic Search</h3>
-                    <p>Enables powerful semantic search across your documents.</p>
+                    <i class="fas fa-search feature-icon"></i>
+                    <h3>Semantic Search & RAG</h3>
+                    <p>Perform natural language queries. Retrieves semantically similar text chunks from Pinecone and uses them to generate AI answers via OpenAI.</p>
                 </div>
+                <!-- Feature: Detailed Statistics -->
                 <div class="feature-item">
-                    <i class="fas fa-cogs feature-icon"></i> <!-- Added icon -->
-                    <h3>RAG Implementation</h3>
-                    <p>Implements RAG for generating context-aware AI answers.</p>
+                    <i class="fas fa-chart-bar feature-icon"></i>
+                    <h3>Detailed Statistics</h3>
+                    <p>View comprehensive processing statistics per document, including phase timings, token counts, and chunk size distributions.</p>
                 </div>
+                <!-- Feature: Custom Design & Theming -->
                 <div class="feature-item">
-                    <i class="fas fa-paint-brush feature-icon"></i> <!-- Added icon -->
-                    <h3>Custom Design & Theme</h3>
-                    <p>Features a custom design system and theme customization options.</p>
+                    <i class="fas fa-paint-brush feature-icon"></i>
+                    <h3>Custom Design & Theming</h3>
+                    <p>Features a bespoke UI library (OCDesignSystem) with OCButton, OCCard, OCBadge. Multiple themes (Light, Dark, Midnight, Forest).</p>
+                </div>
+                <!-- Feature: Rich Settings -->
+                <div class="feature-item">
+                    <i class="fas fa-sliders-h feature-icon"></i>
+                    <h3>Rich Settings</h3>
+                    <p>Securely configure API keys (OpenAI, Pinecone + Project ID), processing parameters (chunk size, overlap), and AI model selection.</p>
+                </div>
+                <!-- Feature: Real-time Processing Logs -->
+                <div class="feature-item">
+                    <i class="fas fa-stream feature-icon"></i> <!-- or fa-list-alt -->
+                    <h3>Real-time Processing Logs</h3>
+                    <p>Detailed, filterable logs for all major operations (document processing, API calls, errors) with timestamps and context.</p>
+                </div>
+                <!-- Feature: Guided Setup -->
+                <div class="feature-item">
+                    <i class="fas fa-magic feature-icon"></i> <!-- or fa-key -->
+                    <h3>Guided Setup</h3>
+                    <p>User-friendly WelcomeView for initial API key configuration and app introduction.</p>
+                </div>
+                <!-- Feature: iOS Native Experience -->
+                <div class="feature-item">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>iOS Native Experience</h3>
+                    <p>Built with SwiftUI for a responsive and platform-optimized experience on iPhone and iPad.</p>
                 </div>
             </div>
+        </section>
+
+        <!-- Application Flow Section: How OpenCone Works -->
+        <section id="appflow">
+            <h2>How OpenCone Works: Step-by-Step</h2>
+            <p>OpenCone provides a seamless experience from setup to searching your documents. Here’s a typical user journey:</p>
+            
+            <!-- Step 1: Launch & Setup -->
+            <div class="flow-step">
+                <h4>1. Launch & Setup</h4>
+                <p>Upon first launch, or if API keys are not configured, the <strong>WelcomeView</strong> appears. Follow the prompts to enter your OpenAI API Key, Pinecone API Key, and Pinecone Project ID. These are essential for the app to function.</p>
+            </div>
+
+            <!-- Step 2: API Key Validation & Service Initialization -->
+            <div class="flow-step">
+                <h4>2. API Key Validation & Service Initialization</h4>
+                <p>Keys are validated, and core services (OpenAIService, PineconeService, EmbeddingService) and ViewModels are initialized. The app then attempts to load available Pinecone indexes.</p>
+            </div>
+
+            <!-- Step 3: Main Interface -->
+            <div class="flow-step">
+                <h4>3. Main Interface (MainView)</h4>
+                <p>After successful setup, the main tabbed interface is displayed, providing access to Documents, Search, Logs, and Settings.</p>
+            </div>
+
+            <!-- Step 4: Documents Tab -->
+            <div class="flow-step">
+                <h4>4. Documents Tab (DocumentsView)</h4>
+                <ul>
+                    <li><strong>Pinecone Configuration:</strong> Select an existing Pinecone index or create a new one. Optionally, manage namespaces within the index.</li>
+                    <li><strong>Add Documents:</strong> Tap "Add File" to select files (PDF, TXT, DOCX, images) using the system document picker.</li>
+                    <li><strong>Process Documents:</strong> Select documents and tap "Process." The app extracts text (using OCR for images), chunks it, generates vector embeddings via OpenAI, and uploads them to your Pinecone index.</li>
+                    <li><strong>View Details:</strong> Tap "Details" on a document to see processing statistics like timings and token counts.</li>
+                </ul>
+            </div>
+
+            <!-- Step 5: Search Tab -->
+            <div class="flow-step">
+                <h4>5. Search Tab (SearchView)</h4>
+                <ul>
+                    <li><strong>Pinecone Configuration:</strong> Select the Pinecone index and namespace to search within.</li>
+                    <li><strong>Enter Query:</strong> Type your natural language question.</li>
+                    <li><strong>Perform Search:</strong> The query is embedded, and Pinecone retrieves semantically similar text chunks. OpenAI then generates a consolidated answer based on these sources (RAG).</li>
+                    <li><strong>View Results:</strong> The AI-generated answer and the source document chunks are displayed.</li>
+                </ul>
+            </div>
+
+            <!-- Step 6: Logs Tab -->
+            <div class="flow-step">
+                <h4>6. Logs Tab (ProcessingView)</h4>
+                <p>View a real-time stream of detailed logs for all operations. Filter logs by level or search by text content. Logs can be exported.</p>
+            </div>
+
+            <!-- Step 7: Settings Tab -->
+            <div class="flow-step">
+                <h4>7. Settings Tab (SettingsView)</h4>
+                <p>View and update API keys, adjust processing parameters (chunk size, overlap), select OpenAI models for embedding and completions, and change the app's visual theme.</p>
+            </div>
+            <p style="text-align: center; margin-top: 20px;">
+                For developers looking to run the app from source or contribute, please see the <a href="https://github.com/Gunnarguy/OpenCone#getting-started" target="_blank">Getting Started guide</a> on GitHub.
+            </p>
+        </section>
+
+        <!-- Tech Stack Highlights Section -->
+        <section id="techstack">
+            <h2>Tech Stack & Architecture</h2>
+            <p>OpenCone is built with a modern and robust technology stack, ensuring a high-quality native iOS experience:</p>
+            <ul>
+                <li><strong>Architectural Pattern:</strong> MVVM (Model-View-ViewModel) augmented by a dedicated Service Layer for clean separation of concerns.</li>
+                <li><strong>UI Framework:</strong> SwiftUI for all UI elements and layout, providing a reactive and modern interface.</li>
+                <li><strong>Concurrency:</strong> Swift async/await for asynchronous operations and Combine for reactive programming patterns.</li>
+                <li><strong>Core Technologies:</strong>
+                    <ul>
+                        <li><strong>OpenAI API:</strong> For generating text embeddings and AI-powered answers.</li>
+                        <li><strong>Pinecone API:</strong> For serverless vector storage, indexing, and similarity search.</li>
+                        <li><strong>Local Processing:</strong> PDFKit, VisionKit (for OCR), and NaturalLanguage framework for on-device document handling.</li>
+                    </ul>
+                </li>
+                <li><strong>Design & Theming:</strong> A custom OCDesignSystem with themable components (OCButton, OCCard, OCBadge) and multiple themes.</li>
+                <li><strong>Logging:</strong> A custom, centralized Logger service for comprehensive application monitoring.</li>
+            </ul>
+            <p style="text-align: center; margin-top: 20px;">
+                Dive deeper into the architecture and project structure on the <a href="https://github.com/Gunnarguy/OpenCone" target="_blank">OpenCone GitHub repository</a>.
+            </p>
         </section>
     </main>
     <footer>
