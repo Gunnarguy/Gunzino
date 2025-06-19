@@ -1,35 +1,39 @@
 # OpenCone
 
-OpenCone is a native iOS application that demonstrates Retrieval Augmented Generation (RAG) with a clean SwiftUI interface. The accompanying site (this repository) provides a landing page and a support page for users.
+OpenCone is a native iOS application that showcases an end-to-end Retrieval Augmented Generation (RAG) pipeline. This repository hosts a simple landing page and support portal for the app.
 
-## Features
+## Key Features
 
-- **Document Processing** – upload PDF, DOCX or TXT files
-- **Vector embeddings via OpenAI** – generate embeddings from your documents
-- **Pinecone integration** – store and search across embeddings
-- **Semantic search** – ask questions and receive context-aware answers
-- **RAG-based responses** – combine search results for accurate answers
-- **Custom design and theme** – built entirely in SwiftUI
-<<<<<<< HEAD
-- **Code execution** – run tasks with a built-in interpreter
-- **Direct OpenAI API integration** – communicate directly with OpenAI for fast results
-=======
->>>>>>> origin/main
-
+- **Document & Image Processing** – import PDF, DOCX, TXT files or images via OCR
+- **Vector embeddings via OpenAI** – generate high‑quality embeddings for your documents
+- **Pinecone integration** – store and search vectors efficiently
+- **Semantic search & RAG answers** – ask questions and get context‑aware responses
+- **Code execution** – run advanced tasks through a built‑in interpreter
+- **Direct OpenAI API integration** – communicate with OpenAI for fast results
+- **Detailed logs & statistics** – track processing progress inside the app
+- **Custom themes** – personalize the UI with multiple built‑in themes
+- **Guided setup** – onboarding screens help configure required API keys
+1. Import documents or images.
+2. Text is extracted and chunked before generating vector embeddings with OpenAI.
+3. Embeddings are stored in Pinecone for semantic search.
+4. Query your data and receive answers via Retrieval Augmented Generation.
 ## Repository Structure
 
-- `index.html` – main landing page with project overview
-- `support.html` – contact form and FAQ section
-- `style.css` – shared styling for both pages
-- `CNAME` – domain mapping for GitHub Pages
+- `index.html` – landing page with feature overview
+- `support.html` – contact form and FAQ
+- `style.css` – shared styling for all pages
+- `CNAME` – custom domain mapping for GitHub Pages
+## Deploying
+Open `index.html` directly or deploy the site with GitHub Pages or any static host. Keep the `CNAME` file to use the domain `gunzino.me`.
+The form on `support.html` uses a placeholder `action`. Replace `YOUR_FORMSPREE_ENDPOINT_OR_OTHER_SERVICE` with your form service before going live.
 
-<<<<<<< HEAD
-## How It Works
+### Video Demo Checklist
 
-1. Import documents in PDF, DOCX or TXT format.
-2. OpenCone extracts text and generates vector embeddings using OpenAI.
-3. Embeddings are stored in Pinecone for fast semantic search.
-4. Ask questions and get answers via Retrieval Augmented Generation.
+When recording a walkthrough:
+1. Complete the API key setup screens.
+2. Upload a document and show processing details.
+3. Perform a search and display the generated answer with sources.
+4. Switch themes and glance at the logging tab.
 
 
 ## Running Locally
