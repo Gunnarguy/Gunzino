@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - OpenCone</title>
-    <meta name="description" content="Get help with the OpenCone iOS app or send us your feedback.">
-    <meta property="og:title" content="Support - OpenCone">
-    <meta property="og:description" content="Reach out for assistance with the OpenCone native RAG application.">
+    <title>Support - Gunzino</title>
+    <meta name="description" content="Get help with OpenCone and OpenResponses iOS applications or send us your feedback.">
+    <meta property="og:title" content="Support - Gunzino">
+    <meta property="og:description" content="Reach out for assistance with our native AI applications for iOS.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gunzino.me/support.html">
     <meta property="og:image" content="https://gunzino.me/images/support-preview.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">OpenCone</div>
+            <div class="logo">Gunzino</div>
             <ul>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="https://github.com/Gunnarguy/OpenCone" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
+                <li><a href="index.html#apps">Apps</a></li>
+                <li><a href="index.html#opencone">OpenCone</a></li>
+                <li><a href="index.html#openresponses">OpenResponses</a></li>
+                <li><a href="https://github.com/Gunnarguy" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
         </nav>
@@ -28,8 +29,18 @@
     <main>
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>If you have any questions, feedback, or need support, please fill out the form below. We'll get back to you as soon as possible.</p>
+            <p>If you have any questions, feedback, or need support for OpenCone or OpenResponses, please fill out the form below. We'll get back to you as soon as possible.</p>
             <form id="contact-form" action="YOUR_FORMSPREE_ENDPOINT_OR_OTHER_SERVICE" method="POST">
+                <div class="form-group">
+                    <label for="app-select">Which app do you need help with?</label>
+                    <select id="app-select" name="app" required>
+                        <option value="">Select an application...</option>
+                        <option value="opencone">OpenCone</option>
+                        <option value="openresponses">OpenResponses</option>
+                        <option value="both">Both</option>
+                        <option value="other">Other/General</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -51,24 +62,61 @@
         </section>
         <section id="faq">
             <h2>Frequently Asked Questions (FAQ)</h2>
+            
+            <h3 style="color: #00aaff; margin-top: 40px;">OpenCone</h3>
             <div class="faq-item">
-                <h3>How do I install OpenCone?</h3>
-                <p>OpenCone is available on the iOS App Store. Search for "OpenCone" and download it directly to your device.</p>
+                <h4>What is OpenCone?</h4>
+                <p>OpenCone is a native iOS application that provides on-device Retrieval Augmented Generation (RAG). It allows you to process documents (PDF, DOCX, TXT, images), generate vector embeddings using OpenAI, store them in Pinecone, and perform semantic searches with AI-powered answers.</p>
             </div>
             <div class="faq-item">
-                <h3>What file types does OpenCone support for document processing?</h3>
-                <p>OpenCone supports PDF, DOCX, and TXT file formats.</p>
+                <h4>What API keys do I need for OpenCone?</h4>
+                <p>You need an OpenAI API key (for embeddings and completions) and a Pinecone API key with Project ID (for vector storage and search).</p>
             </div>
             <div class="faq-item">
-                <h3>Is my data secure?</h3>
-                <p>Yes. OpenCone uses secure connections for API integrations and follows best practices for data handling.</p>
+                <h4>What file types does OpenCone support?</h4>
+                <p>OpenCone supports PDF, DOCX, TXT files, and images (with OCR capability using VisionKit).</p>
             </div>
-            <!-- Add more FAQs as needed -->
+            <div class="faq-item">
+                <h4>Is my data secure in OpenCone?</h4>
+                <p>Yes. OpenCone uses secure connections for API integrations, security-scoped bookmarks for file access, and follows best practices for data handling. Your documents and embeddings are stored in your own Pinecone account.</p>
+            </div>
+
+            <h3 style="color: #6b46c1; margin-top: 40px;">OpenResponses</h3>
+            <div class="faq-item">
+                <h4>What is OpenResponses?</h4>
+                <p>OpenResponses is an advanced native SwiftUI playground for iOS and macOS that explores the full range of OpenAI's API capabilities, including multi-model support, computer use, web search, code interpreter, image generation, and MCP integration.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What models does OpenResponses support?</h4>
+                <p>OpenResponses supports GPT-5, GPT-4.1, O-series reasoning models, GPT-4o, GPT-4, GPT-3.5-turbo, and specialized models like computer-use-preview. The app automatically fetches and displays the latest available models from OpenAI.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What is MCP integration?</h4>
+                <p>Model Context Protocol (MCP) allows OpenResponses to connect to external services like GitHub, Notion, Slack, Google Drive, and more. It features secure authentication, approval workflows, and a discovery service for popular platforms.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What is the computer use feature?</h4>
+                <p>Computer use is a production-ready browser automation tool that allows AI models to navigate websites, click buttons, type text, and interact with web content. It includes safety approval workflows to ensure user control.</p>
+            </div>
+
+            <h3 style="color: #00ff88; margin-top: 40px;">General</h3>
+            <div class="faq-item">
+                <h4>Are these apps available on the App Store?</h4>
+                <p>Both applications are currently available as open-source projects on GitHub. You can build and run them from source using Xcode. Check the respective GitHub repositories for detailed installation instructions.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How can I contribute to these projects?</h4>
+                <p>Contributions are welcome! Visit the GitHub repositories for OpenCone and OpenResponses, fork the projects, make your changes, and submit pull requests. See the README files for detailed contribution guidelines.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Where can I report bugs or request features?</h4>
+                <p>Please open an issue on the respective GitHub repository (OpenCone or OpenResponses). Provide as much detail as possible, including steps to reproduce bugs and clear descriptions for feature requests.</p>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 OpenCone Project. All rights reserved.</p>
-        <p><a href="mailto:gunnarguy@me.com">Contact Support</a></p>
+        <p>&copy; 2024 Gunzino - Advanced AI Applications. All rights reserved.</p>
+        <p><a href="mailto:gunnarguy@me.com">Contact</a> | <a href="index.html">Home</a></p>
     </footer>
 </body>
 </html>
