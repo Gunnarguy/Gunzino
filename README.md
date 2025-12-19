@@ -1,17 +1,15 @@
 # Gunzino - Advanced AI Applications
 
-This repository contains the landing page and support site for **Gunzino**, showcasing two sophisticated native iOS applications: **OpenCone** and **OpenResponses**. Both apps—and this site—are designed, built, and maintained by Gunnar Guy. Gunnarguy &ndash; Omnidev.
+This repository contains the landing page and support site for **Gunzino**, showcasing three native applications: **OpenCone**, **OpenResponses**, and **OpenIntelligence**.
 
 ## Featured Applications
 
 ### OpenCone
-
 **On-Device RAG for iOS** - [GitHub Repository](https://github.com/Gunnarguy/OpenCone)
 
 OpenCone is a sophisticated, native iOS application that demonstrates Retrieval Augmented Generation (RAG) with a clean SwiftUI interface.
 
 **Key Features:**
-
 - **Document Processing** – upload PDF, DOCX, TXT files, and images with OCR
 - **Vector embeddings via OpenAI** – generate embeddings from your documents
 - **Pinecone integration** – store and search across embeddings
@@ -22,13 +20,11 @@ OpenCone is a sophisticated, native iOS application that demonstrates Retrieval 
 - **Comprehensive statistics** – view processing metrics, timings, and token counts
 
 ### OpenResponses
-
 **Advanced OpenAI API Playground** - [GitHub Repository](https://github.com/Gunnarguy/OpenResponses)
 
 OpenResponses is a powerful native SwiftUI playground for iOS and macOS, designed to explore the full range of OpenAI's API capabilities.
 
 **Key Features:**
-
 - **Multi-Model Support** – GPT-5, GPT-4.1, O-series reasoning models, and specialized models
 - **Enhanced Streaming** – real-time responses with granular status updates
 - **Computer Use** – production-ready browser automation with safety approvals
@@ -42,17 +38,28 @@ OpenResponses is a powerful native SwiftUI playground for iOS and macOS, designe
 - **Prompt Library** – save and manage reusable prompt configurations
 - **Conversation Management** – local storage with export capabilities and multi-conversation support
 
+### OpenIntelligence
+**Privacy-First Document AI** - [GitHub Repository](https://github.com/Gunnarguy/OpenIntelligence)
+
+OpenIntelligence is a privacy-first iOS application for grounded document Q&A. It is local-first by default, with optional cloud pathways that require explicit user consent.
+
+**Key Capabilities:**
+- **Local-first retrieval** – ingestion, chunking, embeddings, and search run on-device by default
+- **Grounded answers** – responses include citations back to source content
+- **Hybrid retrieval** – blends semantic similarity with keyword relevance and reranking
+- **Transparent controls** – configurable retrieval depth and execution indicators
+
 ## Repository Structure
 
 - `index.html` – main landing page showcasing both OpenCone and OpenResponses
 - `support.html` – contact form and comprehensive FAQ section for both applications
 - `style.css` – modern, responsive styling with dark theme and gradient accents
+- `openintelligence/` – OpenIntelligence landing, support, and privacy policy pages
 - `CNAME` – domain mapping for GitHub Pages (gunzino.me)
 
 ## Technology Stack
 
 Both applications are built with:
-
 - **SwiftUI** – Native iOS/macOS UI framework
 - **MVVM Architecture** – Clean separation of concerns with dedicated service layers
 - **async/await & Combine** – Modern Swift concurrency and reactive programming
@@ -75,18 +82,14 @@ The form on `support.html` uses a placeholder action attribute. Replace `YOUR_FO
 
 ## Getting Started with the Applications
 
-### OpenCone Setup
-
+### OpenCone
 Visit the [OpenCone repository](https://github.com/Gunnarguy/OpenCone) for detailed installation and setup instructions. You'll need:
-
 - Xcode
 - OpenAI API Key
 - Pinecone API Key and Project ID
 
-### OpenResponses Setup
-
+### OpenResponses
 Visit the [OpenResponses repository](https://github.com/Gunnarguy/OpenResponses) for detailed installation and setup instructions. You'll need:
-
 - Xcode
 - OpenAI API Key
 - (Optional) Additional API keys for MCP integrations

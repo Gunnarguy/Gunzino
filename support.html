@@ -21,34 +21,13 @@
                 <li><a href="index.html#apps">Apps</a></li>
                 <li><a href="index.html#opencone">OpenCone</a></li>
                 <li><a href="index.html#openresponses">OpenResponses</a></li>
+                <li><a href="openintelligence">OpenIntelligence</a></li>
                 <li><a href="https://github.com/Gunnarguy" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="app-store-support" class="support-hero">
-            <h1>Support &amp; Compliance</h1>
-            <p>Official assistance for OpenCone and OpenResponses. Every ticket receives a human reply within 1 business day and is fully resolved within 3 business days. Emergency outages are triaged within 4 hours.</p>
-            <div class="support-highlights" role="list">
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-headset" aria-hidden="true"></i>
-                    <h3>Rapid Responses</h3>
-                    <p>Average reply time &lt; 8 hours, guaranteed follow-up within 24 hours.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-user-shield" aria-hidden="true"></i>
-                    <h3>Privacy First</h3>
-                    <p>Data minimisation, encrypted-at-rest credentials, and GDPR/CCPA-ready workflows.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-universal-access" aria-hidden="true"></i>
-                    <h3>Accessibility Help</h3>
-                    <p>Interfaces spot-checked with VoiceOver and Dynamic Type. Tell us what you need and we'll adapt quickly.</p>
-                </div>
-            </div>
-        </section>
-
         <section id="contact">
             <h2>Contact Us</h2>
             <p>If you have any questions, feedback, or need support for OpenCone or OpenResponses, please fill out the form below. We'll get back to you as soon as possible.</p>
@@ -66,76 +45,15 @@
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
-                    <div class="form-group">
-                        <label for="version">App version (optional):</label>
-                        <input type="text" id="version" name="version" placeholder="e.g. 1.4.2" aria-describedby="version-help">
-                        <small id="version-help" class="form-helper">Find this in the in-app settings &ndash; About screen.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="device">Device &amp; OS (optional):</label>
-                        <input type="text" id="device" name="device" placeholder="e.g. iPhone 16 Pro &ndash; iOS 18.1">
-                    </div>
-                    <div class="form-group">
-                        <label for="attachment">Attachment link (optional):</label>
-                        <input type="url" id="attachment" name="attachment" placeholder="Shared iCloud Drive, GitHub Gist, etc.">
-                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-                    <div class="form-group checkbox-group">
-                        <label>
-                            <input type="checkbox" name="consent" value="true" required>
-                            I consent to the processing of this information for support purposes and confirm it does not contain sensitive personal data.
-                        </label>
-                    </div>
                 </div>
                 <div class="form-group">
-                <p class="contact-direct">Prefer email? Reach us directly at <a href="mailto:gunnarguy@me.com?subject=Gunzino%20Support">gunnarguy@me.com</a>. Phone escalation available upon request for urgent regulatory or billing issues.</p>
                     <label for="subject">Subject:</label>
-            <section id="self-service" class="support-section">
-                <h2>Self-Service Guides</h2>
-                <div class="support-grid">
-                    <div class="support-card">
-                        <h3>OpenCone Quick Fixes</h3>
-                        <ul>
-                            <li>Verify network connectivity and Pinecone index availability.</li>
-                            <li>Confirm OpenAI keys by visiting Settings &ndash; API Credentials.</li>
-                            <li>For stuck uploads, tap <em>Retry Processing</em> or remove and re-import the document.</li>
-                            <li>Reinstalling? Use Settings &ndash; Export Logs first to retain diagnostics.</li>
-                        </ul>
-                    </div>
-                    <div class="support-card">
-                        <h3>OpenResponses Best Practices</h3>
-                        <ul>
-                            <li>Check the model selector banner if a capability is unavailable.</li>
-                            <li>Use Logs &ndash; Streaming Events to review tool usage in real time.</li>
-                            <li>When MCP connections fail, reset tokens via Settings &ndash; Integrations.</li>
-                            <li>Code Interpreter outputs can be exported as `.zip` artifacts from the session pane.</li>
-                        </ul>
-                    </div>
-                    <div class="support-card">
-                        <h3>Billing &amp; Refunds</h3>
-                        <ul>
-                            <li>App Store purchases follow Apple's refund policies &ndash; request via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</li>
-                            <li>Subscriptions renew automatically; cancel anytime in Settings &ndash; Apple ID &ndash; Subscriptions.</li>
-                            <li>For partial refunds or duplicate charges, contact us with your App Store receipt ID.</li>
-                        </ul>
-                    </div>
-                    <div class="support-card">
-                        <h3>Bug Reporting Checklist</h3>
-                        <ul>
-                            <li>Capture screen recording or screenshot of the issue.</li>
-                            <li>Note the steps to reproduce and whether the issue is consistent.</li>
-                            <li>Include device model, OS version, and app build number.</li>
-                            <li>Send diagnostics via Settings &ndash; Share Logs, then reference the upload ID in your ticket.</li>
-                        </ul>
-                    </div>
+                    <input type="text" id="subject" name="subject" required>
                 </div>
-            </section>
-
-            <section id="faq">
-                <h2>Frequently Asked Questions (FAQ)</h2>
                 <div class="form-group">
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="6" required></textarea>
@@ -145,6 +63,7 @@
         </section>
         <section id="faq">
             <h2>Frequently Asked Questions (FAQ)</h2>
+            
             <h3 style="color: #00aaff; margin-top: 40px;">OpenCone</h3>
             <div class="faq-item">
                 <h4>What is OpenCone?</h4>
@@ -194,63 +113,6 @@
                 <h4>Where can I report bugs or request features?</h4>
                 <p>Please open an issue on the respective GitHub repository (OpenCone or OpenResponses). Provide as much detail as possible, including steps to reproduce bugs and clear descriptions for feature requests.</p>
             </div>
-        </section>
-
-        <section id="data-privacy" class="support-section">
-            <h2>Data &amp; Privacy</h2>
-            <ul class="compliance-list">
-                <li><strong>Minimal data collection:</strong> We collect only the information submitted through this support form or via email. No analytics SDKs are embedded in the apps.</li>
-                <li><strong>User-managed keys:</strong> API credentials remain in your Apple Keychain and the external providers you choose. We never receive, store, or delete them.</li>
-                <li><strong>Storage:</strong> Support tickets are stored in encrypted cloud storage with access restricted to Gunnarguy. Diagnostics are purged after 90 days unless you request extended retention.</li>
-                <li><strong>Personal data requests:</strong> Email <a href="mailto:gunnarguy@me.com?subject=Data%20Request">gunnarguy@me.com</a> with the subject “Data Request” to receive, rectify, or erase your data. Responses are provided within 30 days.</li>
-                <li><strong>Privacy policy:</strong> View the full policy at <a href="https://gunzino.me/privacy" target="_blank" rel="noopener">gunzino.me/privacy</a>. A PDF version is available upon request.</li>
-            </ul>
-        </section>
-
-        <section id="account" class="support-section">
-            <h2>Accounts &amp; API Keys</h2>
-            <div class="support-grid">
-                <div class="support-card">
-                    <h3>Account Recovery</h3>
-                    <ul>
-                        <li>The apps do not provision server-side accounts. Access is tied to your Apple ID and the API keys you choose to store securely on-device.</li>
-                        <li>Keys are saved in your encrypted Apple Keychain. If one stops working, revoke it in the provider console (OpenAI, Pinecone, MCP services) and add the replacement in Settings &ndash; Integrations.</li>
-                        <li>Need a walkthrough or migration help? Email us and we will send step-by-step recovery guidance.</li>
-                    </ul>
-                </div>
-                <div class="support-card">
-                    <h3>Remove Stored Data</h3>
-                    <ol>
-                        <li>Clear local content via Settings &ndash; Reset or by uninstalling the app. Everything is stored on your device.</li>
-                        <li>Revoke API keys directly from your provider dashboards. We cannot see or delete those credentials.</li>
-                        <li>Email <a href="mailto:gunnarguy@me.com?subject=Deletion%20Request">gunnarguy@me.com</a> if you need us to erase prior support conversations or uploaded diagnostics.</li>
-                    </ol>
-                    <p class="card-note">There is no central account for us to delete, but we will promptly remove any support data we control.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="accessibility" class="support-section">
-            <h2>Accessibility &amp; Legal</h2>
-            <div class="support-grid">
-                <div class="support-card">
-                    <h3>Accessibility Commitments</h3>
-                    <ul>
-                        <li>Supports Dynamic Type, VoiceOver, and reduced motion preferences.</li>
-                        <li>All interactive elements have descriptive labels; tested with iOS accessibility inspector.</li>
-                        <li>Need an adjustment? Contact us with “Accessibility” in the subject line for prioritized assistance.</li>
-                    </ul>
-                </div>
-                <div class="support-card">
-                    <h3>Legal Notices</h3>
-                    <ul>
-                        <li>DMCA takedown requests: email <a href="mailto:dmca@gunzino.me">dmca@gunzino.me</a> with supporting documentation.</li>
-                        <li>Security disclosures: send reports to <a href="mailto:security@gunzino.me">security@gunzino.me</a>. PGP key available upon request.</li>
-                        <li>Business address and D-U-N-S number available for enterprise procurement.</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="support-commitment">Support is provided in English. Business hours: Monday &ndash; Friday, 9:00 &ndash; 18:00 PT. Critical incidents are monitored 24/7.</p>
         </section>
     </main>
     <footer>

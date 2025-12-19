@@ -28,15 +28,16 @@
         </nav>
         <div class="hero">
             <h1>Advanced AI Applications for iOS</h1>
-                <p>Explore cutting-edge native SwiftUI applications that bring the power of AI to your fingertips. Crafted end-to-end by Gunnarguy - solo iOS developer, these tools span document RAG workflows and advanced OpenAI API exploration.</p>
-                <p class="solo-note">Gunnarguy &ndash; Omnidev.</p>
+            <p>Explore cutting-edge native SwiftUI applications that bring the power of AI to your fingertips. From document processing with RAG to comprehensive OpenAI API integration, discover tools built for developers and power users.</p>
             <div class="hero-buttons">
                 <a href="#opencone" class="cta-button">Explore OpenCone <i class="fas fa-arrow-down"></i></a>
                 <a href="#openresponses" class="cta-button cta-button-secondary">Explore OpenResponses <i class="fas fa-arrow-down"></i></a>
             </div>
         </div>
     </header>
+
     <main>
+        <!-- Apps Overview Section -->
         <section id="apps" class="apps-overview">
             <h2>Our Applications</h2>
             <p class="section-intro">
@@ -73,6 +74,7 @@
             </div>
         </section>
 
+        <!-- OpenCone Detailed Section -->
         <section id="opencone" class="app-section">
             <div class="app-header">
                 <div class="app-title-group">
@@ -88,13 +90,15 @@
                     </a>
                 </div>
             </div>
+            
             <div class="app-description">
                 <p>
-                    OpenCone is a sophisticated, native iOS application that empowers users with an on-device Retrieval Augmented Generation (RAG) system.
-                    Process PDFs, DOCX, TXT files, and images (via OCR), convert them into vector embeddings using OpenAI, store them in Pinecone,
+                    OpenCone is a sophisticated, native iOS application that empowers users with an on-device Retrieval Augmented Generation (RAG) system. 
+                    Process PDFs, DOCX, TXT files, and images (via OCR), convert them into vector embeddings using OpenAI, store them in Pinecone, 
                     and perform intelligent semantic searches to get AI-powered answers.
                 </p>
             </div>
+
             <h3>Key Features of OpenCone</h3>
             <div class="features-grid">
                 <div class="feature-item">
@@ -105,12 +109,12 @@
                 <div class="feature-item">
                     <i class="fas fa-cogs feature-icon"></i>
                     <h4>Advanced Processing Pipeline</h4>
-                    <p>Automated text extraction, strategic chunking, and robust error handling during document ingestion.</p>
+                    <p>Automated text extraction, strategic chunking (MIME-type specific), and robust error handling during document ingestion.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-brain feature-icon"></i>
                     <h4>OpenAI Embeddings</h4>
-                    <p>Generates high-dimensional vector embeddings for text chunks using configurable OpenAI models.</p>
+                    <p>Generates high-dimensional vector embeddings for text chunks using configurable OpenAI models (e.g., text-embedding-3-large).</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-database feature-icon"></i>
@@ -119,8 +123,8 @@
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-search feature-icon"></i>
-                    <h4>Semantic Search &amp; RAG</h4>
-                    <p>Perform natural language queries, retrieve semantically similar text chunks, and generate AI answers via OpenAI.</p>
+                    <h4>Semantic Search & RAG</h4>
+                    <p>Perform natural language queries. Retrieves semantically similar text chunks and generates AI answers via OpenAI.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-chart-bar feature-icon"></i>
@@ -129,8 +133,8 @@
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-paint-brush feature-icon"></i>
-                    <h4>Custom Design &amp; Theming</h4>
-                    <p>Features a bespoke UI library (OCDesignSystem) with OCButton, OCCard, and OCBadge. Multiple themes available.</p>
+                    <h4>Custom Design & Theming</h4>
+                    <p>Features a bespoke UI library (OCDesignSystem) with OCButton, OCCard, OCBadge. Multiple themes available.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-stream feature-icon"></i>
@@ -143,52 +147,57 @@
                     <p>User-friendly WelcomeView for initial API key configuration and app introduction.</p>
                 </div>
             </div>
+
             <h3>How OpenCone Works</h3>
             <div class="flow-steps">
                 <div class="flow-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h4>Launch &amp; Setup</h4>
+                        <h4>Launch & Setup</h4>
                         <p>Enter your OpenAI API Key, Pinecone API Key, and Pinecone Project ID through the guided WelcomeView.</p>
                     </div>
                 </div>
+
                 <div class="flow-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h4>Add &amp; Process Documents</h4>
-                        <p>Upload files, create or select a Pinecone index, then extract text, generate embeddings, and upload to Pinecone.</p>
+                        <h4>Add & Process Documents</h4>
+                        <p>Upload files (PDF, TXT, DOCX, images), create or select a Pinecone index, then process documents to extract text, generate embeddings, and upload to Pinecone.</p>
                     </div>
                 </div>
+
                 <div class="flow-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h4>Semantic Search</h4>
-                        <p>Ask natural language questions. Retrieve semantically similar chunks and generate AI-powered answers using RAG.</p>
+                        <p>Ask natural language questions. The app retrieves semantically similar chunks and generates AI-powered answers using RAG.</p>
                     </div>
                 </div>
+
                 <div class="flow-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h4>Monitor &amp; Configure</h4>
+                        <h4>Monitor & Configure</h4>
                         <p>View real-time logs, check processing statistics, and adjust settings including models, chunk sizes, and themes.</p>
                     </div>
                 </div>
             </div>
-            <h3>Tech Stack &amp; Architecture</h3>
+
+            <h3>Tech Stack & Architecture</h3>
             <div class="tech-columns">
                 <div class="tech-column">
                     <h4><i class="fas fa-code"></i> Architecture</h4>
                     <ul>
                         <li><strong>Pattern:</strong> MVVM with Service Layer</li>
                         <li><strong>UI:</strong> SwiftUI</li>
-                        <li><strong>Concurrency:</strong> async/await &amp; Combine</li>
+                        <li><strong>Concurrency:</strong> async/await & Combine</li>
                         <li><strong>Design System:</strong> Custom OCDesignSystem</li>
                     </ul>
                 </div>
                 <div class="tech-column">
                     <h4><i class="fas fa-plug"></i> Integrations</h4>
                     <ul>
-                        <li><strong>OpenAI:</strong> Embeddings &amp; Completions</li>
+                        <li><strong>OpenAI:</strong> Embeddings & Completions</li>
                         <li><strong>Pinecone:</strong> Vector Database</li>
                         <li><strong>PDFKit:</strong> PDF Processing</li>
                         <li><strong>VisionKit:</strong> OCR for Images</li>
@@ -200,13 +209,14 @@
             </p>
         </section>
 
+        <!-- OpenResponses Detailed Section -->
         <section id="openresponses" class="app-section app-section-alt">
             <div class="app-header">
                 <div class="app-title-group">
                     <i class="fas fa-rocket app-header-icon"></i>
                     <div>
                         <h2>OpenResponses</h2>
-                        <p class="app-subtitle">Advanced OpenAI API Playground for iOS &amp; macOS</p>
+                        <p class="app-subtitle">Advanced OpenAI API Playground for iOS & macOS</p>
                     </div>
                 </div>
                 <div class="app-links">
@@ -215,13 +225,15 @@
                     </a>
                 </div>
             </div>
+            
             <div class="app-description">
                 <p>
-                    OpenResponses is a powerful native SwiftUI playground for exploring the full range of OpenAI's API capabilities.
-                    Features comprehensive tool integration including computer use, web search, code interpreter, image generation,
+                    OpenResponses is a powerful native SwiftUI playground for exploring the full range of OpenAI's API capabilities. 
+                    Features comprehensive tool integration including computer use, web search, code interpreter, image generation, 
                     file search, and extensive Model Context Protocol (MCP) support. Perfect for developers and power users.
                 </p>
             </div>
+
             <h3>Core Features</h3>
             <div class="features-grid">
                 <div class="feature-item">
@@ -247,7 +259,7 @@
                 <div class="feature-item">
                     <i class="fas fa-code feature-icon"></i>
                     <h4>Code Interpreter</h4>
-                    <p>Execute Python code in secure sandboxed environments with file preloading and rich artifact display.</p>
+                    <p>Execute Python code in secure sandboxed environments (auto, secure, gpu) with file preloading and rich artifact display.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-image feature-icon"></i>
@@ -285,6 +297,7 @@
                     <p>Local conversation storage with export capabilities, multi-conversation support, and comprehensive message management.</p>
                 </div>
             </div>
+
             <h3>Advanced Capabilities</h3>
             <div class="capabilities-grid">
                 <div class="capability-card">
@@ -292,7 +305,7 @@
                     <p>Track streaming events, tool executions, reasoning phases, and token usage with expandable activity feeds and detailed status indicators.</p>
                 </div>
                 <div class="capability-card">
-                    <h4><i class="fas fa-shield-alt"></i> Security &amp; Safety</h4>
+                    <h4><i class="fas fa-shield-alt"></i> Security & Safety</h4>
                     <p>User approval workflows for MCP tool calls and computer actions, secure keychain credential storage, and comprehensive safety checks.</p>
                 </div>
                 <div class="capability-card">
@@ -304,6 +317,7 @@
                     <p>Embedded web content, enhanced image display, Markdown rendering with syntax highlighting, and support for 43+ file types.</p>
                 </div>
             </div>
+
             <h3>Architecture Highlights</h3>
             <div class="architecture-highlights">
                 <div class="architecture-item">
@@ -322,11 +336,13 @@
                     <p>Local conversation persistence, secure keychain storage, vector store management, and comprehensive file handling.</p>
                 </div>
             </div>
+
             <p class="tech-footer">
                 <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank">Explore the full feature set on GitHub <i class="fas fa-external-link-alt"></i></a>
             </p>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Gunzino - Advanced AI Applications. All rights reserved.</p>
         <p><a href="mailto:gunnarguy@me.com">Contact</a> | <a href="support.html">Support</a></p>
