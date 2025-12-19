@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenIntelligence Privacy Policy</title>
+    <meta name="description" content="Privacy policy for OpenIntelligence. Local-first document AI; cloud processing is optional and requires explicit consent.">
+    <meta property="og:title" content="OpenIntelligence Privacy Policy">
+    <meta property="og:description" content="OpenIntelligence is local-first by default. This policy describes what data is processed, what may be transmitted, and your controls.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gunzino.me/openintelligence/privacy/">
+    <meta property="og:image" content="https://gunzino.me/images/gunzino-preview.png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="/index.html" style="color: inherit; text-decoration: none;">Gunzino</a></div>
+            <ul>
+                <li><a href="/openintelligence/">OpenIntelligence</a></li>
+                <li><a href="/openintelligence/support/">Support</a></li>
+                <li><a href="/openintelligence/privacy/">Privacy</a></li>
+                <li><a href="https://github.com/Gunnarguy/OpenIntelligence" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="support-hero">
+            <h1>Privacy Policy</h1>
+            <p>This policy describes how OpenIntelligence processes information. OpenIntelligence is designed to be local-first and privacy-preserving.</p>
+        </section>
+
+        <section class="support-section">
+            <h2>Last Updated</h2>
+            <p>November 2025</p>
+
+            <h2>1. Overview</h2>
+            <p>
+                OpenIntelligence processes documents and queries on-device by default. No document text or telemetry leaves the device unless the user explicitly
+                enables a cloud pathway and provides consent.
+            </p>
+
+            <h2>2. Data Processing</h2>
+            <ul>
+                <li><strong>Local-first default:</strong> Document ingestion, chunking, embedding generation, hybrid retrieval, and answer synthesis execute on-device by default.</li>
+                <li><strong>Cloud fallbacks (optional):</strong> If the user enables Apple Private Cloud Compute or configures a third-party API (such as OpenAI), only the active query, retrieval metadata, and selected context snippets may be transmitted for response generation.</li>
+                <li><strong>No third-party analytics:</strong> The app does not ship third-party analytics SDKs by default.</li>
+            </ul>
+
+            <h2>3. Model Pathways</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <h3>On-Device Analysis</h3>
+                    <p><strong>What leaves the device:</strong> Nothing.</p>
+                    <p><strong>User action required:</strong> None (default).</p>
+                </div>
+                <div class="support-card">
+                    <h3>Apple Foundation Models / Apple Intelligence</h3>
+                    <p><strong>What leaves the device:</strong> Nothing for on-device execution; for Private Cloud Compute, the query text and top-N context chunks may be transmitted.</p>
+                    <p><strong>User action required:</strong> Enable Private Cloud Compute and accept consent prompts.</p>
+                </div>
+                <div class="support-card">
+                    <h3>Third-party APIs (e.g., OpenAI)</h3>
+                    <p><strong>What leaves the device:</strong> The active query and selected context snippets needed to produce the response.</p>
+                    <p><strong>User action required:</strong> Provide API credentials and allow transmission via consent.</p>
+                </div>
+            </div>
+
+            <h2>4. Keys and Credentials</h2>
+            <ul>
+                <li>Third-party credentials (for example, API keys) are provided by the user.</li>
+                <li>Keys are stored locally in the system Keychain.</li>
+                <li>OpenIntelligence does not embed developer keys in release builds.</li>
+            </ul>
+
+            <h2>5. Storage and Retention</h2>
+            <ul>
+                <li><strong>Documents:</strong> Stored locally on the device. Users can delete individual documents and knowledge containers.</li>
+                <li><strong>Vectors and embeddings:</strong> Stored per knowledge container. Deleting a container removes its embeddings and index data.</li>
+                <li><strong>Cache:</strong> Hybrid retrieval caches are ephemeral and expire automatically.</li>
+            </ul>
+
+            <h2>6. User Controls</h2>
+            <ul>
+                <li><strong>Consent prompts:</strong> Before the first cloud-bound request, the app presents a disclosure describing the destination and payload contents.</li>
+                <li><strong>Revocation:</strong> Users can revoke permissions and remove credentials in Settings.</li>
+                <li><strong>Deletion:</strong> Users can delete local content from within the app and by uninstalling the app.</li>
+            </ul>
+
+            <h2>7. Export Compliance</h2>
+            <p>
+                OpenIntelligence uses standard encryption (HTTPS/TLS) provided by the operating system.
+            </p>
+
+            <h2>8. Contact</h2>
+            <p>
+                For privacy inquiries, contact: <a href="mailto:privacy@openintelligence.app">privacy@openintelligence.app</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gunzino. All rights reserved.</p>
+        <p><a href="/openintelligence/">OpenIntelligence</a> | <a href="/openintelligence/support/">Support</a></p>
+    </footer>
+</body>
+</html>
