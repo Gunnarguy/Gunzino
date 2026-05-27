@@ -154,6 +154,15 @@ nav ul li a:hover, nav ul li a.active {
     color: #0a0a0a;
 }
 
+.cta-button-assistant {
+    background: linear-gradient(135deg, #ff9900 0%, #ff5500 100%);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+}
+
+.cta-button-assistant:hover {
+    box-shadow: 0 6px 20px rgba(255, 153, 0, 0.5);
+}
+
 
 /* Main content styling */
 main {
