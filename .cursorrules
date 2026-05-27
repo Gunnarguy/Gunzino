@@ -1,0 +1,24 @@
+# Writing Style & Voice Guidelines
+
+Always write in a factual, direct, engineering-first tone. Match the voice of the repository's author (developer-centric, hype-free).
+
+## Core Principles
+
+1. **Eliminate All AI Marketing Hype & Buzzwords**
+   - **Do NOT use**: "revolutionary", "advanced AI", "seamlessly", "empower", "unlock", "bring to your fingertips", "groundbreaking", "cutting-edge", "sophisticated", "AI-powered".
+   - **Instead, use**: Direct description of the technical pipeline, platform APIs, models, or data flows.
+
+2. **Grounding in Technical Specifics**
+   - Focus on concrete implementation details, platforms, and standards:
+     - Mention specific framework components (e.g., SwiftUI, SwiftData, Core ML, Vision OCR, PDFKit, ASWebAuthenticationSession).
+     - Specify exact model backends, dimensions, or limits (e.g., 384-dim MiniLM embeddings, 4096-token FoundationModels session budgets, Pinecone vector search, SQLite FTS5).
+     - Clearly state network endpoints and authentication mechanisms (SMART on FHIR OAuth scopes, keychain storage).
+
+3. **Direct & Objective Structure**
+   - Use simple headers, structured bullet points, and tables.
+   - Explain both what an application does and what it **struggles with** or its **known limitations** (e.g., parsing legacy corrupted PDFs, poor handwriting in scans).
+   - Write short, punchy sentences. Avoid fluff and long-winded introductions.
+
+4. **Privacy & Architecture Clarity**
+   - Always clarify execution boundaries: distinguish between local-first on-device operations (default) and opt-in cloud endpoints.
+   - Detail where data resides, how it is encrypted (iOS Sandbox, secure Keychain, Secure Enclave), and how users control it.
