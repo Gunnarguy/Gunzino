@@ -28,11 +28,11 @@
             <div class="logo">Gunzino</div>
             <ul>
                 <li><a href="index.html#apps">Apps</a></li>
-                <li><a href="openassistant">OpenAssistant</a></li>
-                <li><a href="index.html#opencone">OpenCone</a></li>
-                <li><a href="index.html#openresponses">OpenResponses</a></li>
-                <li><a href="openintelligence">OpenIntelligence</a></li>
                 <li><a href="openclinic">OpenClinic</a></li>
+                <li><a href="openintelligence">OpenIntelligence</a></li>
+                <li><a href="openresponses">OpenResponses</a></li>
+                <li><a href="opencone">OpenCone</a></li>
+                <li><a href="openassistant">OpenAssistant</a></li>
                 <li><a href="https://github.com/Gunnarguy" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
@@ -47,11 +47,11 @@
                     <label for="app-select">Which app do you need help with?</label>
                     <select id="app-select" name="app" required>
                         <option value="">Select an application...</option>
-                        <option value="openassistant">OpenAssistant (Legacy)</option>
-                        <option value="opencone">OpenCone</option>
-                        <option value="openresponses">OpenResponses</option>
-                        <option value="openintelligence">OpenIntelligence</option>
                         <option value="openclinic">OpenClinic</option>
+                        <option value="openintelligence">OpenIntelligence</option>
+                        <option value="openresponses">OpenResponses</option>
+                        <option value="opencone">OpenCone</option>
+                        <option value="openassistant">OpenAssistant (Legacy)</option>
                         <option value="other">Other/General</option>
                     </select>
                 </div>
@@ -77,32 +77,24 @@
         <section id="faq">
             <h2>Frequently Asked Questions (FAQ)</h2>
             
-            <h3 style="color: #ff9900; margin-top: 40px;">OpenAssistant (Legacy)</h3>
+            <h3 style="color: #00ffaa; margin-top: 40px;">OpenClinic</h3>
             <div class="faq-item">
-                <h4>What is OpenAssistant?</h4>
-                <p>OpenAssistant was a native iOS dashboard for the OpenAI Assistants API, supporting tool integrations and message threads.</p>
+                <h4>What is OpenClinic?</h4>
+                <p>OpenClinic is a native iOS/macOS clinical workspace prototype built with SwiftData. It supports clinical charting, provider workflows, anatomical photo tracking, and verified on-device retrieval.</p>
             </div>
             <div class="faq-item">
-                <h4>Why is OpenAssistant no longer updated?</h4>
-                <p>OpenAssistant is a legacy project and is no longer receiving active updates because the completions API has been deprecated by OpenAI.</p>
+                <h4>Is OpenClinic certified for real-world medical diagnostics?</h4>
+                <p>No. OpenClinic is an open-source prototype and developer playground. It is not compliant with clinical certification requirements and should not be used as a substitute for professional clinician judgment.</p>
             </div>
 
-            <h3 style="color: #00aaff; margin-top: 40px;">OpenCone</h3>
+            <h3 style="color: #00ffff; margin-top: 40px;">OpenIntelligence</h3>
             <div class="faq-item">
-                <h4>What is OpenCone?</h4>
-                <p>OpenCone is a native iOS application that provides on-device Retrieval Augmented Generation (RAG). It allows you to process documents (PDF, DOCX, TXT, images), generate vector embeddings using OpenAI, store them in Pinecone, and perform semantic searches with AI-powered answers.</p>
+                <h4>What is OpenIntelligence?</h4>
+                <p>OpenIntelligence is a privacy-first iOS application for grounded document Q&A. Ingestion, chunking, vector embeddings, and semantic searches execute on-device by default.</p>
             </div>
             <div class="faq-item">
-                <h4>What API keys do I need for OpenCone?</h4>
-                <p>You need an OpenAI API key (for embeddings and completions) and a Pinecone API key with Project ID (for vector storage and search).</p>
-            </div>
-            <div class="faq-item">
-                <h4>What file types does OpenCone support?</h4>
-                <p>OpenCone supports PDF, DOCX, TXT files, and images (with OCR capability using VisionKit).</p>
-            </div>
-            <div class="faq-item">
-                <h4>Is my data secure in OpenCone?</h4>
-                <p>Yes. OpenCone uses secure connections for API integrations, security-scoped bookmarks for file access, and follows best practices for data handling. Your documents and embeddings are stored in your own Pinecone account.</p>
+                <h4>Does OpenIntelligence upload my documents to the cloud?</h4>
+                <p>No. Document retrieval runs locally. Cloud pathways (such as Apple Private Cloud Compute or OpenAI APIs) are strictly optional and require explicit user configuration and consent.</p>
             </div>
 
             <h3 style="color: #6b46c1; margin-top: 40px;">OpenResponses</h3>
@@ -123,24 +115,32 @@
                 <p>Computer use is a production-ready browser automation tool that allows AI models to navigate websites, click buttons, type text, and interact with web content. It includes safety approval workflows to ensure user control.</p>
             </div>
 
-            <h3 style="color: #00ffff; margin-top: 40px;">OpenIntelligence</h3>
+            <h3 style="color: #00aaff; margin-top: 40px;">OpenCone</h3>
             <div class="faq-item">
-                <h4>What is OpenIntelligence?</h4>
-                <p>OpenIntelligence is a privacy-first iOS application for grounded document Q&A. Ingestion, chunking, vector embeddings, and semantic searches execute on-device by default.</p>
+                <h4>What is OpenCone?</h4>
+                <p>OpenCone is a native iOS application that provides on-device Retrieval Augmented Generation (RAG). It allows you to process documents (PDF, DOCX, TXT, images), generate vector embeddings using OpenAI, store them in Pinecone, and perform semantic searches with AI-powered answers.</p>
             </div>
             <div class="faq-item">
-                <h4>Does OpenIntelligence upload my documents to the cloud?</h4>
-                <p>No. Document retrieval runs locally. Cloud pathways (such as Apple Private Cloud Compute or OpenAI APIs) are strictly optional and require explicit user configuration and consent.</p>
+                <h4>What API keys do I need for OpenCone?</h4>
+                <p>You need an OpenAI API key (for embeddings and completions) and a Pinecone API key with Project ID (for vector storage and search).</p>
+            </div>
+            <div class="faq-item">
+                <h4>What file types does OpenCone support?</h4>
+                <p>OpenCone supports PDF, DOCX, TXT files, and images (with OCR capability using VisionKit).</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is my data secure in OpenCone?</h4>
+                <p>Yes. OpenCone uses secure connections for API integrations, security-scoped bookmarks for file access, and follows best practices for data handling. Your documents and embeddings are stored in your own Pinecone account.</p>
             </div>
 
-            <h3 style="color: #00ffaa; margin-top: 40px;">OpenClinic</h3>
+            <h3 style="color: #ff9900; margin-top: 40px;">OpenAssistant (Legacy)</h3>
             <div class="faq-item">
-                <h4>What is OpenClinic?</h4>
-                <p>OpenClinic is a native iOS/macOS clinical workspace prototype built with SwiftData. It supports clinical charting, provider workflows, anatomical photo tracking, and verified on-device retrieval.</p>
+                <h4>What is OpenAssistant?</h4>
+                <p>OpenAssistant was a native iOS dashboard for the OpenAI Assistants API, supporting tool integrations and message threads.</p>
             </div>
             <div class="faq-item">
-                <h4>Is OpenClinic certified for real-world medical diagnostics?</h4>
-                <p>No. OpenClinic is an open-source prototype and developer playground. It is not compliant with clinical certification requirements and should not be used as a substitute for professional clinician judgment.</p>
+                <h4>Why is OpenAssistant no longer updated?</h4>
+                <p>OpenAssistant is a legacy project and is no longer receiving active updates because the completions API has been deprecated by OpenAI.</p>
             </div>
 
             <h3 style="color: #ffffff; margin-top: 40px;">General</h3>

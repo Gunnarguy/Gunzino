@@ -12,66 +12,187 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenResponses - Advanced OpenAI API Playground | Gunzino</title>
-    <meta name="description" content="OpenResponses is a native SwiftUI playground for exploring OpenAI's API. Features computer use, web search, code interpreter, image generation, MCP integration, and more.">
+    <title>OpenResponses — Advanced OpenAI API Playground</title>
+    <meta name="description" content="OpenResponses is a native SwiftUI playground for exploring OpenAI's API capabilities. Features computer use, web search, code interpreter, and MCP integration.">
     <meta property="og:title" content="OpenResponses - Advanced OpenAI API Playground">
-    <meta property="og:description" content="Explore the full range of OpenAI's API capabilities with comprehensive tool integration and MCP support on iOS and macOS.">
+    <meta property="og:description" content="Explore the full range of OpenAI's API capabilities with comprehensive tool integration, sandboxed code execution, and Model Context Protocol support.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gunzino.me/openresponses/">
+    <meta property="og:url" content="https://gunzino.me/openresponses">
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <header style="border-bottom: 2px solid #6b46c1;">
+        <nav style="border-bottom: 1px solid rgba(107, 70, 193, 0.25);">
             <div class="logo"><a href="/index.html" style="color: inherit; text-decoration: none;">Gunzino</a></div>
             <ul>
                 <li><a href="/index.html#apps">Apps</a></li>
-                <li><a href="/index.html#openresponses">OpenResponses</a></li>
+                <li><a href="/openresponses" class="active">OpenResponses</a></li>
+                <li><a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a></li>
                 <li><a href="/openresponses/support">Support</a></li>
                 <li><a href="/openresponses/privacy">Privacy</a></li>
-                <li><a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a></li>
             </ul>
         </nav>
-        <div class="hero">
-            <h1><i class="fas fa-rocket"></i> OpenResponses</h1>
-            <p>A powerful native SwiftUI playground for exploring the full range of OpenAI's API capabilities. Features comprehensive tool integration including computer use, web search, code interpreter, image generation, file search, and extensive Model Context Protocol (MCP) support.</p>
+        <div class="hero" style="background: linear-gradient(135deg, #1a0f30 0%, #2b1055 50%, #501b87 100%);">
+            <h1 style="text-shadow: 0 0 10px rgba(107, 70, 193, 0.3);"><i class="fas fa-rocket"></i> OpenResponses</h1>
+            <p>Advanced OpenAI API Playground for iOS & macOS. Explore the full range of OpenAI's API capabilities with comprehensive tool integration including computer use, web search, code interpreter, image generation, file search, and extensive Model Context Protocol (MCP) support.</p>
             <div class="hero-buttons">
-                <a href="/openresponses/support" class="cta-button">Support <i class="fas fa-life-ring"></i></a>
-                <a href="/openresponses/privacy" class="cta-button cta-button-secondary">Privacy Policy <i class="fas fa-user-shield"></i></a>
-                <a href="https://github.com/Gunnarguy/OpenResponses" class="cta-button cta-button-secondary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View on GitHub</a>
+                <a href="/openresponses/support" class="cta-button" style="background: linear-gradient(135deg, #6b46c1 0%, #553c9a 100%); color: #ffffff; box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);"><i class="fas fa-life-ring"></i> Get Support</a>
+                <a href="/openresponses/privacy" class="cta-button cta-button-secondary" style="background: linear-gradient(135deg, #2b1055 0%, #1a0f30 100%); box-shadow: 0 4px 15px rgba(43, 16, 85, 0.3);"><i class="fas fa-user-shield"></i> Privacy Policy</a>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="support-section">
-            <h2>Key Features</h2>
-            <ul>
-                <li><strong>Multi-Model Support:</strong> Access GPT-5, GPT-4.1, O-series reasoning models, and specialized computer-use models.</li>
-                <li><strong>Enhanced Streaming:</strong> Real-time responses with granular status updates for AI thinking, web searching, and tool execution.</li>
-                <li><strong>Computer Use:</strong> Production-ready browser automation with safety approval workflows.</li>
-                <li><strong>Web Search:</strong> Access up-to-date information with standard and preview search capabilities.</li>
-                <li><strong>Code Interpreter:</strong> Execute Python in secure sandboxed environments with file preloading and rich artifact display.</li>
-                <li><strong>Image Generation:</strong> Create images from text prompts with real-time streaming previews.</li>
-                <li><strong>File Search:</strong> Search across multiple vector stores with support for 43+ file types.</li>
-                <li><strong>MCP Integration:</strong> Connect to Model Context Protocol servers (GitHub, Notion, Slack, etc.).</li>
-                <li><strong>Advanced Controls:</strong> Fine-tune temperature, tokens, penalties, reasoning effort, and more.</li>
-                <li><strong>Developer Tools:</strong> API inspector, debug console, analytics dashboard, and comprehensive logging.</li>
-            </ul>
-
-            <h2>App Store Connect Links</h2>
-            <div style="margin: 20px 0;">
-                <p><strong>Support URL:</strong> <a href="/openresponses/support">https://gunzino.me/openresponses/support</a></p>
-                <p><strong>Privacy Policy URL:</strong> <a href="/openresponses/privacy">https://gunzino.me/openresponses/privacy</a></p>
+        <section class="app-section">
+            <div class="app-header" style="border-bottom: 2px solid #6b46c1;">
+                <div class="app-title-group">
+                    <i class="fas fa-rocket app-header-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <div>
+                        <h2>Advanced OpenAI API Playground</h2>
+                        <p class="app-subtitle">A native SwiftUI workspace featuring sandboxed execution environments, tool streaming, and MCP discovery.</p>
+                    </div>
+                </div>
+                <div class="app-links">
+                    <a href="https://github.com/Gunnarguy/OpenResponses" class="github-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
             </div>
+
+            <div class="app-description">
+                <p>
+                    OpenResponses is a powerful native SwiftUI playground for exploring the full range of OpenAI's API capabilities. 
+                    Features comprehensive tool integration including computer use, web search, code interpreter, image generation, 
+                    file search, and extensive Model Context Protocol (MCP) support. Perfect for developers and power users.
+                </p>
+            </div>
+
+            <h3>Core Features</h3>
+            <div class="features-grid">
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-robot feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Multi-Model Support</h4>
+                    <p>Access GPT-5, GPT-4.1, O-series reasoning models, and specialized computer-use models with dynamic selection and compatibility checking.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-stream feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Enhanced Streaming</h4>
+                    <p>Real-time responses with granular status updates showing AI thinking, web searching, code generation, and tool execution progress.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-desktop feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Computer Use</h4>
+                    <p>Production-ready browser automation allowing the AI to navigate, click, type, and interact with web content with safety approvals.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-search feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Web Search</h4>
+                    <p>Access up-to-date information from the internet with both standard and preview search capabilities integrated seamlessly.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-code feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Code Interpreter</h4>
+                    <p>Execute Python code in secure sandboxed environments (auto, secure, gpu) with file preloading and rich artifact display.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-image feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Image Generation</h4>
+                    <p>Create images from text prompts using gpt-image-1 with real-time streaming previews and configurable quality settings.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-folder-open feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>File Search</h4>
+                    <p>Search across multiple vector stores simultaneously with support for 43+ file types including documents, code, and archives.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-puzzle-piece feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>MCP Integration</h4>
+                    <p>Connect to Model Context Protocol servers (GitHub, Notion, Slack, etc.) with secure authentication and approval workflows.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-sliders-h feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Advanced Controls</h4>
+                    <p>Fine-tune temperature, tokens, penalties, reasoning effort, and other parameters with full API transparency.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-bug feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Developer Tools</h4>
+                    <p>API inspector, debug console, analytics dashboard, and comprehensive logging for troubleshooting and monitoring.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-bookmark feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Prompt Library</h4>
+                    <p>Save and manage reusable prompt configurations with all settings for quick switching between different tasks.</p>
+                </div>
+                <div class="feature-item" style="border-top: 3px solid #6b46c1;">
+                    <i class="fas fa-comments feature-icon" style="color: #6b46c1;" aria-hidden="true"></i>
+                    <h4>Conversation Management</h4>
+                    <p>Local conversation storage with export capabilities, multi-conversation support, and comprehensive message management.</p>
+                </div>
+            </div>
+
+            <h3>Advanced Capabilities</h3>
+            <div class="capabilities-grid">
+                <div class="capability-card" style="border-left: 4px solid #6b46c1;">
+                    <h4><i class="fas fa-chart-line"></i> Real-Time Monitoring</h4>
+                    <p>Track streaming events, tool executions, reasoning phases, and token usage with expandable activity feeds and detailed status indicators.</p>
+                </div>
+                <div class="capability-card" style="border-left: 4px solid #6b46c1;">
+                    <h4><i class="fas fa-shield-alt"></i> Security & Safety</h4>
+                    <p>User approval workflows for MCP tool calls and computer actions, secure keychain credential storage, and comprehensive safety checks.</p>
+                </div>
+                <div class="capability-card" style="border-left: 4px solid #6b46c1;">
+                    <h4><i class="fas fa-mobile-alt"></i> Native Experience</h4>
+                    <p>Built with SwiftUI for iOS, iPadOS, macOS, and visionOS with full accessibility support, dynamic type, and keyboard navigation.</p>
+                </div>
+                <div class="capability-card" style="border-left: 4px solid #6b46c1;">
+                    <h4><i class="fas fa-globe"></i> Rich Content</h4>
+                    <p>Embedded web content, enhanced image display, Markdown rendering with syntax highlighting, and support for 43+ file types.</p>
+                </div>
+            </div>
+
+            <h3>Architecture Highlights</h3>
+            <div class="architecture-highlights">
+                <div class="architecture-item">
+                    <i class="fas fa-layer-group" style="color: #6b46c1;"></i>
+                    <h4>MVVM Pattern</h4>
+                    <p>Feature-oriented structure with clear separation of concerns, comprehensive service layer, and dependency injection.</p>
+                </div>
+                <div class="architecture-item">
+                    <i class="fas fa-bolt" style="color: #6b46c1;"></i>
+                    <h4>Streaming Events</h4>
+                    <p>Handles 40+ streaming event types from OpenAI's Responses API with dedicated parsing and real-time UI updates.</p>
+                </div>
+                <div class="architecture-item">
+                    <i class="fas fa-database" style="color: #6b46c1;"></i>
+                    <h4>Data Management</h4>
+                    <p>Local conversation persistence, secure keychain storage, vector store management, and comprehensive file handling.</p>
+                </div>
+            </div>
+
+            <h3>App Store Connect Metadata</h3>
+            <div class="tech-columns">
+                <div class="tech-column" style="border: 2px solid #6b46c1;">
+                    <h4 style="color: #6b46c1;"><i class="fas fa-life-ring" aria-hidden="true"></i> Support URL</h4>
+                    <p><a href="/openresponses/support">https://gunzino.me/openresponses/support</a></p>
+                </div>
+                <div class="tech-column" style="border: 2px solid #6b46c1;">
+                    <h4 style="color: #6b46c1;"><i class="fas fa-user-shield" aria-hidden="true"></i> Privacy Policy URL</h4>
+                    <p><a href="/openresponses/privacy">https://gunzino.me/openresponses/privacy</a></p>
+                </div>
+            </div>
+
+            <p class="tech-footer">
+                <a href="/support.html">General Gunzino Support Center <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            </p>
         </section>
     </main>
 
-    <footer>
+    <footer style="background: #140b24; border-top: 1px solid #24133d;">
         <p>&copy; 2026 Gunzino. All rights reserved.</p>
-        <p><a href="/index.html">Home</a> | <a href="/openresponses/support">Support</a> | <a href="/openresponses/privacy">Privacy</a></p>
-        <p><a href="/support.html">General Gunzino Support <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+        <p><a href="/index.html">Home</a> | <a href="/openresponses/privacy">Privacy</a> | <a href="/openresponses/support">Support</a></p>
     </footer>
 </body>
 </html>
