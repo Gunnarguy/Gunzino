@@ -132,6 +132,29 @@ nav ul li a:hover, nav ul li a.active {
     box-shadow: 0 6px 20px rgba(107, 70, 193, 0.5);
 }
 
+.cta-button-tertiary {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+    border: 1px solid #444;
+}
+
+.cta-button-tertiary:hover {
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+    border-color: #888;
+}
+
+.cta-button-clinical {
+    background: linear-gradient(135deg, #00ffaa 0%, #00aa77 100%);
+    color: #0a0a0a;
+    box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
+}
+
+.cta-button-clinical:hover {
+    box-shadow: 0 6px 20px rgba(0, 255, 170, 0.5);
+    color: #0a0a0a;
+}
+
+
 /* Main content styling */
 main {
     padding: 0;

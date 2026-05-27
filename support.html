@@ -18,7 +18,7 @@
     <meta property="og:description" content="Reach out for assistance with our native AI applications for iOS.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gunzino.me/support.html">
-    <meta property="og:image" content="https://gunzino.me/images/support-preview.png">
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -31,6 +31,8 @@
                 <li><a href="index.html#opencone">OpenCone</a></li>
                 <li><a href="index.html#openresponses">OpenResponses</a></li>
                 <li><a href="openintelligence">OpenIntelligence</a></li>
+                <li><a href="openclinic">OpenClinic</a></li>
+                <li><a href="openassistant">OpenAssistant</a></li>
                 <li><a href="https://github.com/Gunnarguy" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
@@ -39,7 +41,7 @@
     <main>
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>If you have any questions, feedback, or need support for OpenCone or OpenResponses, please fill out the form below. We'll get back to you as soon as possible.</p>
+            <p>If you have any questions, feedback, or need support for our applications, please fill out the form below. We'll get back to you as soon as possible.</p>
             <form id="contact-form" action="YOUR_FORMSPREE_ENDPOINT_OR_OTHER_SERVICE" method="POST">
                 <div class="form-group">
                     <label for="app-select">Which app do you need help with?</label>
@@ -47,7 +49,9 @@
                         <option value="">Select an application...</option>
                         <option value="opencone">OpenCone</option>
                         <option value="openresponses">OpenResponses</option>
-                        <option value="both">Both</option>
+                        <option value="openintelligence">OpenIntelligence</option>
+                        <option value="openclinic">OpenClinic</option>
+                        <option value="openassistant">OpenAssistant (Legacy)</option>
                         <option value="other">Other/General</option>
                     </select>
                 </div>
@@ -109,23 +113,53 @@
                 <p>Computer use is a production-ready browser automation tool that allows AI models to navigate websites, click buttons, type text, and interact with web content. It includes safety approval workflows to ensure user control.</p>
             </div>
 
-            <h3 style="color: #00ff88; margin-top: 40px;">General</h3>
+            <h3 style="color: #00ffff; margin-top: 40px;">OpenIntelligence</h3>
+            <div class="faq-item">
+                <h4>What is OpenIntelligence?</h4>
+                <p>OpenIntelligence is a privacy-first iOS application for grounded document Q&A. Ingestion, chunking, vector embeddings, and semantic searches execute on-device by default.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Does OpenIntelligence upload my documents to the cloud?</h4>
+                <p>No. Document retrieval runs locally. Cloud pathways (such as Apple Private Cloud Compute or OpenAI APIs) are strictly optional and require explicit user configuration and consent.</p>
+            </div>
+
+            <h3 style="color: #00ffaa; margin-top: 40px;">OpenClinic</h3>
+            <div class="faq-item">
+                <h4>What is OpenClinic?</h4>
+                <p>OpenClinic is a native iOS/macOS clinical workspace prototype built with SwiftData. It supports clinical charting, provider workflows, anatomical photo tracking, and verified on-device retrieval.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is OpenClinic certified for real-world medical diagnostics?</h4>
+                <p>No. OpenClinic is an open-source prototype and developer playground. It is not compliant with clinical certification requirements and should not be used as a substitute for professional clinician judgment.</p>
+            </div>
+
+            <h3 style="color: #ff9900; margin-top: 40px;">OpenAssistant (Legacy)</h3>
+            <div class="faq-item">
+                <h4>What is OpenAssistant?</h4>
+                <p>OpenAssistant was a native iOS dashboard for the OpenAI Assistants API, supporting tool integrations and message threads.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Why is OpenAssistant no longer updated?</h4>
+                <p>OpenAssistant is a legacy project and is no longer receiving active updates because the completions API has been deprecated by OpenAI.</p>
+            </div>
+
+            <h3 style="color: #ffffff; margin-top: 40px;">General</h3>
             <div class="faq-item">
                 <h4>Are these apps available on the App Store?</h4>
-                <p>Both applications are currently available as open-source projects on GitHub. You can build and run them from source using Xcode. Check the respective GitHub repositories for detailed installation instructions.</p>
+                <p>The applications are available as open-source code repositories on GitHub. You can configure and run them on simulators or local devices using Xcode.</p>
             </div>
             <div class="faq-item">
                 <h4>How can I contribute to these projects?</h4>
-                <p>Contributions are welcome! Visit the GitHub repositories for OpenCone and OpenResponses, fork the projects, make your changes, and submit pull requests. See the README files for detailed contribution guidelines.</p>
+                <p>Contributions are welcome! Visit the GitHub organization repositories, fork the code, and submit pull requests. Check each project's README for contributing guidelines.</p>
             </div>
             <div class="faq-item">
                 <h4>Where can I report bugs or request features?</h4>
-                <p>Please open an issue on the respective GitHub repository (OpenCone or OpenResponses). Provide as much detail as possible, including steps to reproduce bugs and clear descriptions for feature requests.</p>
+                <p>Please open an issue on the respective application's GitHub repository. For general feedback, use the contact form above.</p>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Gunzino - Advanced AI Applications. All rights reserved.</p>
+        <p>&copy; 2026 Gunzino - Advanced AI Applications. All rights reserved.</p>
         <p><a href="mailto:gunnarguy@me.com">Contact</a> | <a href="index.html">Home</a></p>
     </footer>
 </body>
