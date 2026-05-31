@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-4Q160W3M61');
-    </script>
+    
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Component Interactions - OpenAssistant</title>
@@ -161,6 +153,47 @@
         font-weight: 500;
     }
   </style>
+    
+
+
+    <!-- ====================================================================== -->
+<!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
+<!-- ====================================================================== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Configured to ensure compatibility with Ads Account 450-937-9845
+  gtag('config', 'G-4Q160W3M61', {
+    'send_page_view': true,
+    'enhanced_measurement': true
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function(event) {
+      var interactiveTarget = event.target.closest('[data-track]');
+      if (interactiveTarget) {
+        var actionLabel = interactiveTarget.getAttribute('data-track');
+        var actionGroup = interactiveTarget.getAttribute('data-track-group') || 'general_interaction';
+        var actionValue = interactiveTarget.getAttribute('data-track-value') || '';
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'ui_interaction_event', {
+            'interaction_label': actionLabel,
+            'interaction_group': actionGroup,
+            'interaction_value': actionValue,
+            'page_location_path': window.location.pathname
+          });
+        }
+      }
+    }, true);
+  });
+</script>
+<!-- ====================================================================== -->
 </head>
 <body>
   <div class="header">
