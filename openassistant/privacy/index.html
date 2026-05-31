@@ -1,420 +1,479 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenAssistant Privacy Policy</title>
-    <meta name="description"
-        content="Learn how OpenAssistant for iOS handles your data, API keys, conversation history, and privacy rights." />
+    <meta
+      name="description"
+      content="Learn how OpenAssistant for iOS handles your data, API keys, conversation history, and privacy rights."
+    />
     <meta property="og:title" content="OpenAssistant Privacy Policy" />
-    <meta property="og:description"
-        content="Learn how OpenAssistant for iOS handles your data, API keys, conversation history, and privacy rights." />
+    <meta
+      property="og:description"
+      content="Learn how OpenAssistant for iOS handles your data, API keys, conversation history, and privacy rights."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
-        <link rel="stylesheet" href="../styles.css?v=20260531" />
+    <meta
+      property="og:image"
+      content="https://gunzino.me/openassistant/ios-app-screenshot.png"
+    />
+    <link rel="stylesheet" href="../styles.css?v=20260531" />
     <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
           {
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "WebPage",
-                "name": "OpenAssistant Privacy Policy",
-                "description": "Learn how OpenAssistant for iOS handles your data, API keys, conversation history, and privacy rights.",
-                "url": "https://gunzino.me/openassistant/privacy/"
-              },
-              {
-                "@type": "SoftwareApplication",
-                "name": "OpenAssistant",
-                "applicationCategory": "DeveloperApplication",
-                "operatingSystem": "iOS Application",
-                "description": "Legacy iOS client for the OpenAI Assistants API with assistant setup, vector stores, file tools, and real-time chat in SwiftUI.",
-                "url": "https://gunzino.me/openassistant/",
-                "downloadUrl": "https://apps.apple.com/us/app/openassistant/id6692613772"
-              }
-            ]
+            "@type": "WebPage",
+            "name": "OpenAssistant Privacy Policy",
+            "description": "Learn how OpenAssistant for iOS handles your data, API keys, conversation history, and privacy rights.",
+            "url": "https://gunzino.me/openassistant/privacy/"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "OpenAssistant",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "iOS Application",
+            "description": "Legacy iOS client for the OpenAI Assistants API with assistant setup, vector stores, file tools, and real-time chat in SwiftUI.",
+            "url": "https://gunzino.me/openassistant/",
+            "downloadUrl": "https://apps.apple.com/us/app/openassistant/id6692613772"
           }
-        </script>
+        ]
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
     <!-- ====================================================================== -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        // Configured to ensure compatibility with Ads Account 450-937-9845
-        gtag("config", "G-4Q160W3M61", {
-            send_page_view: true,
-            enhanced_measurement: true,
-        });
+      // Configured to ensure compatibility with Ads Account 450-937-9845
+      gtag("config", "G-4Q160W3M61", {
+        send_page_view: true,
+        enhanced_measurement: true,
+      });
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.body.addEventListener(
-                "click",
-                function (event) {
-                    var interactiveTarget = event.target.closest("[data-track]");
-                    if (interactiveTarget) {
-                var actionLabel = interactiveTarget.getAttribute("data-track");
-                var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
-                var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.addEventListener(
+          "click",
+          function (event) {
+            var interactiveTarget = event.target.closest("[data-track]");
+            if (interactiveTarget) {
+              var actionLabel = interactiveTarget.getAttribute("data-track");
+              var actionGroup =
+                interactiveTarget.getAttribute("data-track-group") ||
+                "general_interaction";
+              var actionValue =
+                interactiveTarget.getAttribute("data-track-value") || "";
 
-                if (typeof gtag === "function") {
-                    gtag("event", "ui_interaction_event", {
-                        interaction_label: actionLabel,
-                        interaction_group: actionGroup,
-                        interaction_value: actionValue,
-                        page_location_path: window.location.pathname,
-                    });
-                }
+              if (typeof gtag === "function") {
+                gtag("event", "ui_interaction_event", {
+                  interaction_label: actionLabel,
+                  interaction_group: actionGroup,
+                  interaction_value: actionValue,
+                  page_location_path: window.location.pathname,
+                });
+              }
             }
-            },
-            true,
+          },
+          true,
         );
       });
-        </script>
+    </script>
     <!-- ====================================================================== -->
-    </head>
+  </head>
 
-    <body>
+  <body>
     <!-- Legacy Banner -->
-    <div style="
-            background: linear-gradient(90deg, #ff9900, #ff5500);
-            color: #fff;
-            text-align: center;
-            padding: 12px;
-            font-weight: bold;
-            font-size: 1.1em;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 2000;
-            position: relative;
-          ">
-        ⚠️ Legacy Application: OpenAssistant is no longer actively updated because
-        the completions API has been deprecated by OpenAI. This page is maintained
-        for reference and support.
+    <div
+      style="
+        background: linear-gradient(90deg, #ff9900, #ff5500);
+        color: #fff;
+        text-align: center;
+        padding: 12px;
+        font-weight: bold;
+        font-size: 1.1em;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 2000;
+        position: relative;
+      "
+    >
+      ⚠️ Legacy Application: OpenAssistant is no longer actively updated because
+      the completions API has been deprecated by OpenAI. This page is maintained
+      for reference and support.
     </div>
 
     <nav class="navbar">
-    <div class="nav-container">
+      <div class="nav-container">
         <div class="nav-logo">
-            <span class="logo-icon">🤖</span>
-            <span>OpenAssistant</span>
+          <span class="logo-icon">🤖</span>
+          <span>OpenAssistant</span>
         </div>
         <ul class="nav-menu">
-            <li><a href="../">Home</a></li>
-            <li><a href="../#features">Features</a></li>
-            <li><a href="../architecture.html">Architecture</a></li>
-            <li><a href="../support/">Support</a></li>
-            <li><a href="./" class="active">Privacy</a></li>
-            <li><a href="../terms/">Terms</a></li>
-        <li>
-            <a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </li>
+          <li><a href="../">Home</a></li>
+          <li><a href="../#features">Features</a></li>
+          <li><a href="../architecture.html">Architecture</a></li>
+          <li><a href="../support/">Support</a></li>
+          <li><a href="./" class="active">Privacy</a></li>
+          <li><a href="../terms/">Terms</a></li>
+          <li>
+            <a
+              href="https://github.com/Gunnarguy/OpenAssistant"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
         </ul>
         <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        </div>
+      </div>
     </nav>
 
     <main>
-    <section class="hero legal-hero">
+      <section class="hero legal-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Privacy Policy</h1>
-                <p class="hero-description">Effective date: 9 November 2025</p>
+          <div class="hero-content">
+            <h1>Privacy Policy</h1>
+            <p class="hero-description">Effective date: 9 November 2025</p>
             <p class="hero-description">
-                I believe in transparent, privacy-first experiences. This policy
-                explains what information OpenAssistant collects, how it is used,
-                and the control you retain while using the app.
+              I believe in transparent, privacy-first experiences. This policy
+              explains what information OpenAssistant collects, how it is used,
+              and the control you retain while using the app.
             </p>
-            </div>
-            </div>
-            </section>
+          </div>
+        </div>
+      </section>
 
-    <section class="section">
+      <section class="section">
         <div class="container legal-container">
-            <h2>Key Principles</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <div class="card-icon">🔐</div>
-                    <h3>Local-First Storage</h3>
-            <p>
+          <h2>Key Principles</h2>
+          <div class="overview-grid">
+            <div class="overview-card">
+              <div class="card-icon">🔐</div>
+              <h3>Local-First Storage</h3>
+              <p>
                 All credentials, preferences, and conversation history are
                 stored locally on your device using Apple-provided secure
                 storage APIs. I never store or transmit your OpenAI API key to
                 my servers.
-            </p>
+              </p>
             </div>
             <div class="overview-card">
-                <div class="card-icon">🗑️</div>
-                <h3>User-Controlled Data</h3>
-            <p>
+              <div class="card-icon">🗑️</div>
+              <h3>User-Controlled Data</h3>
+              <p>
                 You can remove conversation data, vector store records, and
                 cached files at any time from within the app. Deleting the app
                 removes all locally stored data.
-            </p>
+              </p>
             </div>
             <div class="overview-card">
-                <div class="card-icon">📡</div>
-                <h3>Direct API Calls</h3>
-            <p>
+              <div class="card-icon">📡</div>
+              <h3>Direct API Calls</h3>
+              <p>
                 The app communicates directly with OpenAI's Assistants API over
                 TLS. No intermediary servers are involved, and I do not proxy or
                 log your requests.
-            </p>
+              </p>
             </div>
             <div class="overview-card">
-                <div class="card-icon">🕑</div>
-                <h3>Minimal Retention</h3>
-            <p>
+              <div class="card-icon">🕑</div>
+              <h3>Minimal Retention</h3>
+              <p>
                 I do not maintain persistent user accounts. Support
                 conversations are retained only as long as needed to resolve a
                 request, after which they are deleted within 30 days.
-            </p>
+              </p>
             </div>
-            </div>
-            </div>
-            </section>
+          </div>
+        </div>
+      </section>
 
-    <section class="section bg-light">
+      <section class="section bg-light">
         <div class="container legal-container">
-            <h2>Information We Collect</h2>
-            <div class="legal-section">
-                <h3>Information stored on your device</h3>
-                <ul>
-                    <li>OpenAI API key stored using <code>@AppStorage</code>.</li>
-            <li>
+          <h2>Information We Collect</h2>
+          <div class="legal-section">
+            <h3>Information stored on your device</h3>
+            <ul>
+              <li>OpenAI API key stored using <code>@AppStorage</code>.</li>
+              <li>
                 Assistant configurations, vector store metadata, and chat
                 history saved in local persistence.
-            </li>
-            <li>
+              </li>
+              <li>
                 App preferences such as appearance mode and onboarding state.
-            </li>
+              </li>
             </ul>
-            </div>
-            <div class="legal-section">
-                <h3>Information transmitted to OpenAI</h3>
+          </div>
+          <div class="legal-section">
+            <h3>Information transmitted to OpenAI</h3>
             <p>
-                When interacting with assistants you choose to send prompts,
-                files, and messages to OpenAI. These requests are processed under
-                OpenAI's terms. Review their policy at
-                <a href="https://openai.com/policies/privacy-policy" target="_blank"
-                    rel="noopener noreferrer">openai.com/policies/privacy-policy</a>.
+              When interacting with assistants you choose to send prompts,
+              files, and messages to OpenAI. These requests are processed under
+              OpenAI's terms. Review their policy at
+              <a
+                href="https://openai.com/policies/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                >openai.com/policies/privacy-policy</a
+              >.
             </p>
-            </div>
-            <div class="legal-section">
-                <h3>Support interactions</h3>
+          </div>
+          <div class="legal-section">
+            <h3>Support interactions</h3>
             <p>
-                When you contact me by email I receive any information you provide
-                voluntarily (for example device model, iOS version, logs). I use
-                this information solely to resolve the ticket.
+              When you contact me by email I receive any information you provide
+              voluntarily (for example device model, iOS version, logs). I use
+              this information solely to resolve the ticket.
             </p>
-            </div>
-            </div>
-            </section>
+          </div>
+        </div>
+      </section>
 
-    <section class="section">
+      <section class="section">
         <div class="container legal-container">
-            <h2>How We Use Information</h2>
-            <ul class="legal-list">
+          <h2>How We Use Information</h2>
+          <ul class="legal-list">
             <li>
-                Authenticate requests you make to OpenAI using your personal API
-                key.
+              Authenticate requests you make to OpenAI using your personal API
+              key.
             </li>
             <li>
-                Provide the features you initiate (assistant management, file
-                uploads, chat sessions).
+              Provide the features you initiate (assistant management, file
+              uploads, chat sessions).
             </li>
             <li>
-                Respond to support requests and troubleshoot reported issues.
+              Respond to support requests and troubleshoot reported issues.
             </li>
             <li>Comply with applicable legal obligations when necessary.</li>
-            </ul>
-        <p>
+          </ul>
+          <p>
             I do not sell, rent, or monetize personal data. I do not use
             analytics SDKs or advertising frameworks.
-        </p>
+          </p>
         </div>
-        </section>
+      </section>
 
-    <section class="section bg-light">
+      <section class="section bg-light">
         <div class="container legal-container">
-            <h2>Your Rights & Choices</h2>
-            <div class="legal-section">
-                <h3>Access, correction, and deletion</h3>
+          <h2>Your Rights & Choices</h2>
+          <div class="legal-section">
+            <h3>Access, correction, and deletion</h3>
             <p>
-                You can view and delete your data directly within the app. For
-                assistance, email
-                <a href="mailto:support@fascinaiting.me">support@fascinaiting.me</a>. I respond within two business days and resolve
-                validated
-                deletion requests within seven business days.
+              You can view and delete your data directly within the app. For
+              assistance, email
+              <a href="mailto:support@fascinaiting.me"
+                >support@fascinaiting.me</a
+              >. I respond within two business days and resolve validated
+              deletion requests within seven business days.
             </p>
-            </div>
-            <div class="legal-section">
-                <h3>EU/UK GDPR</h3>
+          </div>
+          <div class="legal-section">
+            <h3>EU/UK GDPR</h3>
             <p>
-                OpenAssistant operates as a data controller for the information
-                you share for support. My legal basis for processing is legitimate
-                interest in providing customer service. You have the right to
-                lodge a complaint with your local supervisory authority.
+              OpenAssistant operates as a data controller for the information
+              you share for support. My legal basis for processing is legitimate
+              interest in providing customer service. You have the right to
+              lodge a complaint with your local supervisory authority.
             </p>
-            </div>
-            <div class="legal-section">
-                <h3>California Consumer Privacy Act (CCPA)</h3>
+          </div>
+          <div class="legal-section">
+            <h3>California Consumer Privacy Act (CCPA)</h3>
             <p>
-                I do not sell personal information. California residents may
-                request disclosure or deletion of customer-support records by
-                emailing
-                <a href="mailto:privacy@fascinaiting.me">privacy@fascinaiting.me</a>.
+              I do not sell personal information. California residents may
+              request disclosure or deletion of customer-support records by
+              emailing
+              <a href="mailto:privacy@fascinaiting.me"
+                >privacy@fascinaiting.me</a
+              >.
             </p>
-            </div>
-            </div>
-            </section>
+          </div>
+        </div>
+      </section>
 
-    <section class="section">
+      <section class="section">
         <div class="container legal-container">
-            <h2>Data Security</h2>
-            <ul class="legal-list">
+          <h2>Data Security</h2>
+          <ul class="legal-list">
             <li>
-                All network traffic occurs over HTTPS with TLS 1.2 or later.
+              All network traffic occurs over HTTPS with TLS 1.2 or later.
             </li>
             <li>
-                Secure storage utilizes Apple's Keychain-backed
-                <code>@AppStorage</code> containers.
+              Secure storage utilizes Apple's Keychain-backed
+              <code>@AppStorage</code> containers.
             </li>
             <li>
-                Optional Face ID / Touch ID protection for the API key is on our
-                roadmap; follow changelog updates in
-                <a href="https://github.com/Gunnarguy/Fascinaiting" target="_blank" rel="noopener noreferrer">GitHub</a>.
+              Optional Face ID / Touch ID protection for the API key is on our
+              roadmap; follow changelog updates in
+              <a
+                href="https://github.com/Gunnarguy/Fascinaiting"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >.
             </li>
             <li>
-                Support email is hosted by a provider offering industry-standard
-                encryption at rest and in transit.
+              Support email is hosted by a provider offering industry-standard
+              encryption at rest and in transit.
             </li>
-            </ul>
-            </div>
-            </section>
+          </ul>
+        </div>
+      </section>
 
-    <section class="section bg-light">
+      <section class="section bg-light">
         <div class="container legal-container">
-            <h2>Children's Privacy</h2>
-        <p>
+          <h2>Children's Privacy</h2>
+          <p>
             OpenAssistant is intended for users 13 years of age and older. I do
             not knowingly collect information from children under 13. If you
             believe a child has provided information, contact
             <a href="mailto:privacy@fascinaiting.me">privacy@fascinaiting.me</a>
             and I will promptly remove it.
-        </p>
+          </p>
         </div>
-        </section>
+      </section>
 
-    <section class="section">
+      <section class="section">
         <div class="container legal-container">
-            <h2>Changes to This Policy</h2>
-        <p>
+          <h2>Changes to This Policy</h2>
+          <p>
             I will update this policy when I introduce new features or when
             regulations require clarification. The latest revision date will
             always appear at the top of the page. I recommend reviewing this
             page before major app updates.
-        </p>
+          </p>
         </div>
-        </section>
+      </section>
 
-    <section class="section bg-light">
+      <section class="section bg-light">
         <div class="container legal-container">
-            <h2>Contact</h2>
-        <p>
+          <h2>Contact</h2>
+          <p>
             Email privacy questions to
-            <a href="mailto:privacy@fascinaiting.me">privacy@fascinaiting.me</a>. For general support, visit our
+            <a href="mailto:privacy@fascinaiting.me">privacy@fascinaiting.me</a
+            >. For general support, visit our
             <a href="../support/">Support Center</a>. Postal correspondence can
             be directed to: <br />
             OpenAssistant Support, 548 Market St PMB 32110, San Francisco, CA
             94104, USA.
-        </p>
+          </p>
         </div>
-        </section>
+      </section>
     </main>
 
     <footer class="footer">
-    <div class="container">
+      <div class="container">
         <div class="footer-content">
-            <div class="footer-section">
+          <div class="footer-section">
             <h3>OpenAssistant</h3>
             <p>
-                A native iOS application for managing and interacting with OpenAI
-                Assistants. Built with SwiftUI for a truly native experience.
+              A native iOS application for managing and interacting with OpenAI
+              Assistants. Built with SwiftUI for a truly native experience.
             </p>
             <div class="social-links">
-            <a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              <a
+                href="https://github.com/Gunnarguy/OpenAssistant"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
                 </svg>
-            </a>
+              </a>
             </div>
-            </div>
-            <div class="footer-section">
+          </div>
+          <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
-                <li><a href="../#overview">Overview</a></li>
-                <li><a href="../#features">Features</a></li>
-                <li><a href="../architecture.html">Architecture</a></li>
-                <li><a href="../support/">Support & Help</a></li>
-                <li><a href="../privacy/">Privacy Policy</a></li>
-                <li><a href="../terms/">Terms of Use</a></li>
+              <li><a href="../#overview">Overview</a></li>
+              <li><a href="../#features">Features</a></li>
+              <li><a href="../architecture.html">Architecture</a></li>
+              <li><a href="../support/">Support & Help</a></li>
+              <li><a href="../privacy/">Privacy Policy</a></li>
+              <li><a href="../terms/">Terms of Use</a></li>
             </ul>
-            </div>
-            <div class="footer-section">
+          </div>
+          <div class="footer-section">
             <h3>Resources</h3>
             <ul>
-            <li>
-                <a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-            </li>
-            <li>
-                <a href="https://apps.apple.com/us/app/openassistant/id6692613772" target="_blank"
-                    rel="noopener noreferrer">Download on App Store</a>
-            </li>
-            <li>
-                <a href="https://platform.openai.com/docs/assistants" target="_blank" rel="noopener noreferrer">OpenAI Assistants
-                    API</a>
-            </li>
-            <li>
-                <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">Get API Key</a>
-            </li>
+              <li>
+                <a
+                  href="https://github.com/Gunnarguy/OpenAssistant"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub Repository</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://apps.apple.com/us/app/openassistant/id6692613772"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download on App Store</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://platform.openai.com/docs/assistants"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >OpenAI Assistants API</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://platform.openai.com/api-keys"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Get API Key</a
+                >
+              </li>
             </ul>
-            </div>
-            <div class="footer-section">
+          </div>
+          <div class="footer-section">
             <h3>Technology Stack</h3>
             <ul>
-                <li>Swift & SwiftUI</li>
-                <li>Combine Framework</li>
-                <li>OpenAI Assistants API</li>
-                <li>MVVM Architecture</li>
-                <li>iOS 15.0+</li>
+              <li>Swift & SwiftUI</li>
+              <li>Combine Framework</li>
+              <li>OpenAI Assistants API</li>
+              <li>MVVM Architecture</li>
+              <li>iOS 15.0+</li>
             </ul>
-            </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 OpenAssistant. Open source and available on GitHub.</p>
-        <p class="footer-note">
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 OpenAssistant. Open source and available on GitHub.</p>
+          <p class="footer-note">
             OpenAssistant is an independent project and is not affiliated with
             OpenAI.
-        </p>
+          </p>
         </div>
-        </div>
+      </div>
     </footer>
 
     <script src="../scripts.js?v=20260531"></script>
-</body>
+  </body>
 </html>
