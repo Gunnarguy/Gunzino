@@ -1,135 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenResponses Support & FAQ</title>
-    <meta name="description" content="Official support center and FAQs for the OpenResponses iOS & macOS app. Find setup instructions, troubleshooting, and contact links.">
-    <meta property="og:title" content="OpenResponses Support & FAQ">
-    <meta property="og:description" content="Need help with OpenResponses? Browse our guides, troubleshooting checklist, or contact the developer.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gunzino.me/openresponses/support">
-    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-
+    <meta name="description"
+        content="Official support center and FAQs for the OpenResponses iOS & macOS app. Find setup instructions, troubleshooting, and contact links." />
+    <meta property="og:title" content="OpenResponses Support & FAQ" />
+    <meta property="og:description"
+        content="Need help with OpenResponses? Browse our guides, troubleshooting checklist, or contact the developer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gunzino.me/openresponses/support" />
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "name": "OpenResponses Support Center",
+                "description": "Official support center and FAQs for the OpenResponses iOS and macOS app. Find setup instructions, troubleshooting, and contact links.",
+                "url": "https://gunzino.me/openresponses/support"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "OpenResponses",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "iOS Application",
+                "description": "SwiftUI playground for the OpenAI Responses API, MCP integrations, and developer tooling.",
+                "url": "https://gunzino.me/openresponses",
+                "downloadUrl": "https://apps.apple.com/us/app/openresponses/id6757338355"
+              }
+            ]
+          }
+        </script>
 
     <!-- ====================================================================== -->
-<!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
-<!-- ====================================================================== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configured to ensure compatibility with Ads Account 450-937-9845
-  gtag('config', 'G-4Q160W3M61', {
-    'send_page_view': true,
-    'enhanced_measurement': true
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function(event) {
-      var interactiveTarget = event.target.closest('[data-track]');
-      if (interactiveTarget) {
-        var actionLabel = interactiveTarget.getAttribute('data-track');
-        var actionGroup = interactiveTarget.getAttribute('data-track-group') || 'general_interaction';
-        var actionValue = interactiveTarget.getAttribute('data-track-value') || '';
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'ui_interaction_event', {
-            'interaction_label': actionLabel,
-            'interaction_group': actionGroup,
-            'interaction_value': actionValue,
-            'page_location_path': window.location.pathname
-          });
+    <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
+    <!-- ====================================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
-      }
-    }, true);
-  });
-</script>
-<!-- ====================================================================== -->
-</head>
-<body>
+        gtag("js", new Date());
+
+        // Configured to ensure compatibility with Ads Account 450-937-9845
+        gtag("config", "G-4Q160W3M61", {
+            send_page_view: true,
+            enhanced_measurement: true,
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.addEventListener(
+                "click",
+                function (event) {
+                    var interactiveTarget = event.target.closest("[data-track]");
+                    if (interactiveTarget) {
+                var actionLabel = interactiveTarget.getAttribute("data-track");
+                var actionGroup =
+                    interactiveTarget.getAttribute("data-track-group") ||
+                    "general_interaction";
+                var actionValue =
+                    interactiveTarget.getAttribute("data-track-value") || "";
+
+                if (typeof gtag === "function") {
+                    gtag("event", "ui_interaction_event", {
+                        interaction_label: actionLabel,
+                        interaction_group: actionGroup,
+                        interaction_value: actionValue,
+                        page_location_path: window.location.pathname,
+                    });
+                }
+            }
+            },
+            true,
+        );
+      });
+        </script>
+    <!-- ====================================================================== -->
+    </head>
+
+    <body>
     <header>
-        <nav>
-            <div class="logo"><a href="/index.html" style="color: inherit; text-decoration: none;">Gunzino</a></div>
-            <ul>
-                <li><a href="/index.html#apps">Apps</a></li>
-                <li><a href="/index.html#openresponses">OpenResponses</a></li>
-                <li><a href="/openresponses/support" class="active">Support</a></li>
-                <li><a href="/openresponses/privacy">Privacy</a></li>
-                <li><a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a></li>
-            </ul>
+    <nav>
+        <div class="logo">
+            <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+        </div>
+        <ul>
+            <li><a href="/index.html#apps">Apps</a></li>
+            <li><a href="/index.html#openresponses">OpenResponses</a></li>
+            <li><a href="/openresponses/support" class="active">Support</a></li>
+            <li><a href="/openresponses/privacy">Privacy</a></li>
+        <li>
+            <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i
+                    class="fab fa-github"></i></a>
+        </li>
+        </ul>
         </nav>
     </header>
 
     <main>
-        <section class="support-hero">
-            <h1>OpenResponses Support Center</h1>
-            <p>Welcome to OpenResponses support. Find answers regarding OpenAI model features, MCP integrations, and computer-use automation.</p>
-            <div class="support-highlights" role="list">
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-desktop" aria-hidden="true"></i>
-                    <h3>Computer Use Bridge</h3>
-                    <p>Setup instructions and safety prompts for browser automation.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
-                    <h3>MCP Server Integrations</h3>
-                    <p>Connecting assistants to Slack, Notion, GitHub, and custom servers.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-sliders-h" aria-hidden="true"></i>
-                    <h3>Developer Console</h3>
-                    <p>Inspecting API request payloads and streaming event response logs.</p>
-                </div>
+    <section class="support-hero">
+        <h1>OpenResponses Support Center</h1>
+        <p>
+            Welcome to OpenResponses support. Find answers regarding OpenAI model
+            features, MCP integrations, and computer-use automation.
+        </p>
+        <h2 style="
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                  ">
+            Support Highlights
+        </h2>
+        <div class="support-highlights" role="list">
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-desktop" aria-hidden="true"></i>
+                <h3>Computer Use Bridge</h3>
+                <p>Setup instructions and safety prompts for browser automation.</p>
             </div>
-        </section>
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+                <h3>MCP Server Integrations</h3>
+            <p>
+                Connecting assistants to Slack, Notion, GitHub, and custom
+                servers.
+            </p>
+            </div>
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                <h3>Developer Console</h3>
+            <p>
+                Inspecting API request payloads and streaming event response logs.
+            </p>
+            </div>
+            </div>
+            </section>
 
-        <section class="support-section">
-            <h2>Frequently Asked Questions</h2>
+    <section class="support-section">
+        <h2>Frequently Asked Questions</h2>
 
-            <h3>What is OpenResponses?</h3>
-            <p>OpenResponses is an advanced native SwiftUI playground for iOS and macOS designed to explore the full range of OpenAI's API capabilities. It features multi-model support, computer-use browser automation, web search, code interpreter execution, and Model Context Protocol (MCP) integrations.</p>
+        <h3>What is OpenResponses?</h3>
+        <p>
+            OpenResponses is an advanced native SwiftUI playground for iOS and
+            macOS designed to explore the full range of OpenAI's API capabilities.
+            It features multi-model support, computer-use browser automation, web
+            search, code interpreter execution, and Model Context Protocol (MCP)
+            integrations.
+        </p>
 
-            <h3>What models does OpenResponses support?</h3>
-            <p>OpenResponses supports GPT-5, GPT-4.1, O-series reasoning models, GPT-4o, GPT-4, GPT-3.5-turbo, and specialized models like computer-use-preview. The app automatically fetches the latest model list from your OpenAI account.</p>
+        <h3>What models does OpenResponses support?</h3>
+        <p>
+            OpenResponses supports GPT-5, GPT-4.1, O-series reasoning models,
+            GPT-4o, GPT-4, GPT-3.5-turbo, and specialized models like
+            computer-use-preview. The app automatically fetches the latest model
+            list from your OpenAI account.
+        </p>
 
-            <h3>What is MCP integration?</h3>
-            <p>Model Context Protocol (MCP) allows OpenResponses to connect to external services like GitHub, Notion, Slack, Google Drive, and more. It features secure OAuth authentication, approval workflows, and a discovery service for popular platforms.</p>
+        <h3>What is MCP integration?</h3>
+        <p>
+            Model Context Protocol (MCP) allows OpenResponses to connect to
+            external services like GitHub, Notion, Slack, Google Drive, and more.
+            It features secure OAuth authentication, approval workflows, and a
+            discovery service for popular platforms.
+        </p>
 
-            <h3>What is the computer use feature?</h3>
-            <p>Computer use is a production-ready browser automation tool that allows AI models to navigate websites, click buttons, type text, and interact with web content. It includes safety approval workflows to ensure user control.</p>
+        <h3>What is the computer use feature?</h3>
+        <p>
+            Computer use is a production-ready browser automation tool that allows
+            AI models to navigate websites, click buttons, type text, and interact
+            with web content. It includes safety approval workflows to ensure user
+            control.
+        </p>
 
-            <h2>Troubleshooting Checklist</h2>
-            
-            <h3>API Keys & Connectivity</h3>
-            <p>Ensure that your OpenAI API key is active, valid, and funded. If you get connection errors, confirm that <code>api.openai.com</code> is not blocked by your local network, firewall, or VPN configuration.</p>
+        <h2>Troubleshooting Checklist</h2>
 
-            <h3>Computer Use Setup</h3>
-            <p>To run browser automation, ensure your computer-use bridge server is running on the same local network. The app must be granted local network permissions in iOS Settings.</p>
+        <h3>API Keys & Connectivity</h3>
+        <p>
+            Ensure that your OpenAI API key is active, valid, and funded. If you
+            get connection errors, confirm that <code>api.openai.com</code> is not
+            blocked by your local network, firewall, or VPN configuration.
+        </p>
 
-            <h3>MCP Server Configuration</h3>
-            <p>Verify that your MCP configuration is correct. Use the developer debug logs inside the app to inspect payload request logs and error states.</p>
+        <h3>Computer Use Setup</h3>
+        <p>
+            To run browser automation, ensure your computer-use bridge server is
+            running on the same local network. The app must be granted local
+            network permissions in iOS Settings.
+        </p>
 
-            <h2>Contact Info</h2>
-            <ul>
-                <li><strong>Privacy Policy URL:</strong> <a href="/openresponses/privacy">https://gunzino.me/openresponses/privacy</a></li>
-                <li><strong>Direct Email Support:</strong> <a href="mailto:gunnarguy@me.com?subject=OpenResponses%20Support">gunnarguy@me.com</a></li>
-                <li><strong>GitHub Repository:</strong> <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">OpenResponses on GitHub</a></li>
-            </ul>
+        <h3>MCP Server Configuration</h3>
+        <p>
+            Verify that your MCP configuration is correct. Use the developer debug
+            logs inside the app to inspect payload request logs and error states.
+        </p>
+
+        <h2>Contact Info</h2>
+        <ul>
+        <li>
+            <strong>Privacy Policy URL:</strong>
+            <a href="/openresponses/privacy">https://gunzino.me/openresponses/privacy</a>
+        </li>
+        <li>
+            <strong>Direct Email Support:</strong>
+            <a href="mailto:gunnarguy@me.com?subject=OpenResponses%20Support">gunnarguy@me.com</a>
+        </li>
+        <li>
+            <strong>GitHub Repository:</strong>
+            <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">OpenResponses on GitHub</a>
+        </li>
+        </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Gunzino. All rights reserved.</p>
-        <p><a href="/index.html">Home</a> | <a href="/openresponses/privacy">Privacy Policy</a></p>
+    <p>&copy; 2025 Gunzino. All rights reserved.</p>
+    <p>
+        <a href="/index.html">Home</a> |
+        <a href="/openresponses/privacy">Privacy Policy</a>
+    </p>
     </footer>
 </body>
 </html>

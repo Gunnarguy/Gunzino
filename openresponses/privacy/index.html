@@ -1,138 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenResponses Privacy Policy</title>
-    <meta name="description" content="Privacy policy for OpenResponses. Learn how OpenAI API keys, conversation data, computer use bridge, and integrations are secured.">
-    <meta property="og:title" content="OpenResponses Privacy Policy">
-    <meta property="og:description" content="Read about our security guardrails, local storage policies, and user consent prompts in OpenResponses.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gunzino.me/openresponses/privacy">
-    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-
+    <meta name="description"
+        content="Privacy policy for OpenResponses. Learn how OpenAI API keys, conversation data, computer use bridge, and integrations are secured." />
+    <meta property="og:title" content="OpenResponses Privacy Policy" />
+    <meta property="og:description"
+        content="Read about our security guardrails, local storage policies, and user consent prompts in OpenResponses." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gunzino.me/openresponses/privacy" />
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "name": "OpenResponses Privacy Policy",
+                "description": "Privacy policy for OpenResponses. Learn how OpenAI API keys, conversation data, computer use bridge, and integrations are secured.",
+                "url": "https://gunzino.me/openresponses/privacy"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "OpenResponses",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "iOS Application",
+                "description": "SwiftUI playground for the OpenAI Responses API, MCP integrations, and developer tooling.",
+                "url": "https://gunzino.me/openresponses",
+                "downloadUrl": "https://apps.apple.com/us/app/openresponses/id6757338355"
+              }
+            ]
+          }
+        </script>
 
     <!-- ====================================================================== -->
-<!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
-<!-- ====================================================================== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configured to ensure compatibility with Ads Account 450-937-9845
-  gtag('config', 'G-4Q160W3M61', {
-    'send_page_view': true,
-    'enhanced_measurement': true
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function(event) {
-      var interactiveTarget = event.target.closest('[data-track]');
-      if (interactiveTarget) {
-        var actionLabel = interactiveTarget.getAttribute('data-track');
-        var actionGroup = interactiveTarget.getAttribute('data-track-group') || 'general_interaction';
-        var actionValue = interactiveTarget.getAttribute('data-track-value') || '';
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'ui_interaction_event', {
-            'interaction_label': actionLabel,
-            'interaction_group': actionGroup,
-            'interaction_value': actionValue,
-            'page_location_path': window.location.pathname
-          });
+    <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
+    <!-- ====================================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
-      }
-    }, true);
-  });
-</script>
-<!-- ====================================================================== -->
-</head>
-<body>
+        gtag("js", new Date());
+
+        // Configured to ensure compatibility with Ads Account 450-937-9845
+        gtag("config", "G-4Q160W3M61", {
+            send_page_view: true,
+            enhanced_measurement: true,
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.addEventListener(
+                "click",
+                function (event) {
+                    var interactiveTarget = event.target.closest("[data-track]");
+                    if (interactiveTarget) {
+                var actionLabel = interactiveTarget.getAttribute("data-track");
+                var actionGroup =
+                    interactiveTarget.getAttribute("data-track-group") ||
+                    "general_interaction";
+                var actionValue =
+                    interactiveTarget.getAttribute("data-track-value") || "";
+
+                if (typeof gtag === "function") {
+                    gtag("event", "ui_interaction_event", {
+                        interaction_label: actionLabel,
+                        interaction_group: actionGroup,
+                        interaction_value: actionValue,
+                        page_location_path: window.location.pathname,
+                    });
+                }
+            }
+            },
+            true,
+        );
+      });
+        </script>
+    <!-- ====================================================================== -->
+    </head>
+
+    <body>
     <header>
-        <nav>
-            <div class="logo"><a href="/index.html" style="color: inherit; text-decoration: none;">Gunzino</a></div>
-            <ul>
-                <li><a href="/index.html#apps">Apps</a></li>
-                <li><a href="/index.html#openresponses">OpenResponses</a></li>
-                <li><a href="/openresponses/support">Support</a></li>
-                <li><a href="/openresponses/privacy" class="active">Privacy</a></li>
-                <li><a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a></li>
-            </ul>
+    <nav>
+        <div class="logo">
+            <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+        </div>
+        <ul>
+            <li><a href="/index.html#apps">Apps</a></li>
+            <li><a href="/index.html#openresponses">OpenResponses</a></li>
+            <li><a href="/openresponses/support">Support</a></li>
+            <li><a href="/openresponses/privacy" class="active">Privacy</a></li>
+        <li>
+            <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i
+                    class="fab fa-github"></i></a>
+        </li>
+        </ul>
         </nav>
     </header>
 
     <main>
-        <section class="support-hero">
-            <h1>Privacy Policy</h1>
-            <p>Last updated: April 23, 2026</p>
-            <p>OpenResponses runs entirely on your device until you decide to contact an external service. The app's primary network traffic is directly to OpenAI when you send a live request, plus any optional service integrations (such as Notion) that you explicitly authorize.</p>
+    <section class="support-hero">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: April 23, 2026</p>
+        <p>
+            OpenResponses runs entirely on your device until you decide to contact
+            an external service. The app's primary network traffic is directly to
+            OpenAI when you send a live request, plus any optional service
+            integrations (such as Notion) that you explicitly authorize.
+        </p>
         </section>
 
-        <section class="support-section">
-            <h2>1. What Stays on Your Device</h2>
-            <ul>
-                <li><strong>API Credentials:</strong> Your OpenAI API key and any optional integration tokens are saved locally in the iOS Keychain. They never leave your device except to authenticate directly with the corresponding service you configured.</li>
-                <li><strong>Conversation Data:</strong> Chat message history, system prompts, and tool execution results are stored locally on your device. You can delete any individual conversation thread or uninstall the app to erase this data.</li>
-                <li><strong>File Processing:</strong> Attachments are processed in memory, optionally converted on-device, and sent directly to the selected service. The app does not persist extra file copies.</li>
-            </ul>
+    <section class="support-section">
+        <h2>1. What Stays on Your Device</h2>
+        <ul>
+        <li>
+            <strong>API Credentials:</strong> Your OpenAI API key and any
+            optional integration tokens are saved locally in the iOS Keychain.
+            They never leave your device except to authenticate directly with
+            the corresponding service you configured.
+        </li>
+        <li>
+            <strong>Conversation Data:</strong> Chat message history, system
+            prompts, and tool execution results are stored locally on your
+            device. You can delete any individual conversation thread or
+            uninstall the app to erase this data.
+        </li>
+        <li>
+            <strong>File Processing:</strong> Attachments are processed in
+            memory, optionally converted on-device, and sent directly to the
+            selected service. The app does not persist extra file copies.
+        </li>
+        </ul>
 
-            <h2>2. In-App Permission & Disclosures</h2>
-            <ul>
-                <li>Before making your first live AI request, OpenResponses shows an in-app disclosure detailing what data is sent to OpenAI and asks for your explicit permission.</li>
-                <li>No request data is transmitted to OpenAI until you tap **Allow & Send**.</li>
-                <li>The "Explore Demo" feature operates fully offline and makes no external API calls.</li>
-            </ul>
+        <h2>2. In-App Permission & Disclosures</h2>
+        <ul>
+        <li>
+            Before making your first live AI request, OpenResponses shows an
+            in-app disclosure detailing what data is sent to OpenAI and asks for
+            your explicit permission.
+        </li>
+        <li>
+            No request data is transmitted to OpenAI until you tap **Allow &
+            Send**.
+        </li>
+        <li>
+            The "Explore Demo" feature operates fully offline and makes no
+            external API calls.
+        </li>
+        </ul>
 
-            <h2>3. Data Transmitted on User Request</h2>
-            <ul>
-                <li><strong>OpenAI Responses API:</strong> User prompts, parameters, optional attachments, and request-related tool inputs/outputs are sent directly to OpenAI to generate a reply. This data is processed under OpenAI's terms.</li>
-                <li><strong>Computer Use Bridge (Optional):</strong> When you approve a browser automation step, the app streams the approved action, screen capture, and instructions to your trusted computer-use bridge server running on your local network.</li>
-                <li><strong>Connected Integrations:</strong> If you enable integrations like Notion, Slack, or GitHub, the assistant forwards only the prompts and parameters required for the specific action you initiated. Those services apply their own privacy policies.</li>
-            </ul>
+        <h2>3. Data Transmitted on User Request</h2>
+        <ul>
+        <li>
+            <strong>OpenAI Responses API:</strong> User prompts, parameters,
+            optional attachments, and request-related tool inputs/outputs are
+            sent directly to OpenAI to generate a reply. This data is processed
+            under OpenAI's terms.
+        </li>
+        <li>
+            <strong>Computer Use Bridge (Optional):</strong> When you approve a
+            browser automation step, the app streams the approved action, screen
+            capture, and instructions to your trusted computer-use bridge server
+            running on your local network.
+        </li>
+        <li>
+            <strong>Connected Integrations:</strong> If you enable integrations
+            like Notion, Slack, or GitHub, the assistant forwards only the
+            prompts and parameters required for the specific action you
+            initiated. Those services apply their own privacy policies.
+        </li>
+        </ul>
 
-            <h2>4. Requested Device Permissions</h2>
-            <ul>
-                <li><strong>Photo Library & Files:</strong> Allows you to attach screenshots, PDFs, documents, and other files to chat sessions.</li>
-                <li><strong>Calendars, Reminders, & Contacts:</strong> Enables the assistant to create or modify items, only when you explicitly authorize the action.</li>
-                <li><strong>Local Network:</strong> Required to connect to the computer-use automation bridge running on your network. No other scanning occurs.</li>
-                <li><strong>Microphone & Location:</strong> The app does **not** request microphone, speech recognition, or location access in the current release.</li>
-            </ul>
+        <h2>4. Requested Device Permissions</h2>
+        <ul>
+        <li>
+            <strong>Photo Library & Files:</strong> Allows you to attach
+            screenshots, PDFs, documents, and other files to chat sessions.
+        </li>
+        <li>
+            <strong>Calendars, Reminders, & Contacts:</strong> Enables the
+            assistant to create or modify items, only when you explicitly
+            authorize the action.
+        </li>
+        <li>
+            <strong>Local Network:</strong> Required to connect to the
+            computer-use automation bridge running on your network. No other
+            scanning occurs.
+        </li>
+        <li>
+            <strong>Microphone & Location:</strong> The app does **not** request
+            microphone, speech recognition, or location access in the current
+            release.
+        </li>
+        </ul>
 
-            <h2>5. Computer Use Safety Guardrails</h2>
-            <ul>
-                <li>Every automation step (navigation, clicks, keystrokes) is presented in a verification UI for user approval before execution.</li>
-                <li>Declining any step cancels the automation chain immediately. The app never runs background commands without an active, visible audit trail in chat.</li>
-            </ul>
+        <h2>5. Computer Use Safety Guardrails</h2>
+        <ul>
+        <li>
+            Every automation step (navigation, clicks, keystrokes) is presented
+            in a verification UI for user approval before execution.
+        </li>
+        <li>
+            Declining any step cancels the automation chain immediately. The app
+            never runs background commands without an active, visible audit
+            trail in chat.
+        </li>
+        </ul>
 
-            <h2>6. Analytics & Crash Data</h2>
-            <ul>
-                <li><strong>Usage Metrics:</strong> Optional, anonymous usage metrics are turned **off** by default and can be toggled in Settings. They never include conversation content or credentials.</li>
-                <li><strong>Diagnostics:</strong> Crash reports come from Apple's opt-in developer feedback system and do not contain chat transcripts or API keys.</li>
-            </ul>
+        <h2>6. Analytics & Crash Data</h2>
+        <ul>
+        <li>
+            <strong>Usage Metrics:</strong> Optional, anonymous usage metrics
+            are turned **off** by default and can be toggled in Settings. They
+            never include conversation content or credentials.
+        </li>
+        <li>
+            <strong>Diagnostics:</strong> Crash reports come from Apple's opt-in
+            developer feedback system and do not contain chat transcripts or API
+            keys.
+        </li>
+        </ul>
 
-            <h2>7. Retention & Deletion</h2>
-            <ul>
-                <li>You can remove credentials or disconnect integrations in Settings at any time.</li>
-                <li>Delete individual messages, clear all conversation history, or reset first-send consent in Settings.</li>
-                <li>Uninstalling the app deletes all sandboxed files, database conversations, and Keychain items.</li>
-            </ul>
+        <h2>7. Retention & Deletion</h2>
+        <ul>
+        <li>
+            You can remove credentials or disconnect integrations in Settings at
+            any time.
+        </li>
+        <li>
+            Delete individual messages, clear all conversation history, or reset
+            first-send consent in Settings.
+        </li>
+        <li>
+            Uninstalling the app deletes all sandboxed files, database
+            conversations, and Keychain items.
+        </li>
+        </ul>
 
-            <h2>8. Contact</h2>
-            <p>If you have privacy questions, file an issue at the <a href="https://github.com/Gunnarguy/OpenResponses/issues" target="_blank" rel="noopener">GitHub Issues Tracker</a> or email the developer at <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a>.</p>
+        <h2>8. Contact</h2>
+        <p>
+            If you have privacy questions, file an issue at the
+            <a href="https://github.com/Gunnarguy/OpenResponses/issues" target="_blank" rel="noopener">GitHub Issues Tracker</a>
+            or email the developer at
+            <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a>.
+        </p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Gunzino. All rights reserved.</p>
-        <p><a href="/index.html">Home</a> | <a href="/openresponses/support">OpenResponses Support</a></p>
+    <p>&copy; 2025 Gunzino. All rights reserved.</p>
+    <p>
+        <a href="/index.html">Home</a> |
+        <a href="/openresponses/support">OpenResponses Support</a>
+    </p>
     </footer>
 </body>
 </html>

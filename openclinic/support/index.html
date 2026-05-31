@@ -1,142 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenClinic Support & FAQ</title>
-    <meta name="description" content="Official support center, troubleshooting guides, and FAQs for OpenClinic. Learn about clinical sandbox configurations, dictation setup, and SMART imports.">
-    <meta property="og:title" content="OpenClinic Support & FAQ">
-    <meta property="og:description" content="Need help with OpenClinic? Read clinical disclaimers, dictation troubleshooting steps, or App Review setup notes.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gunzino.me/openclinic/support">
-    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-
+    <meta name="description"
+        content="Official support center, troubleshooting guides, and FAQs for OpenClinic. Learn about clinical sandbox configurations, dictation setup, and SMART imports." />
+    <meta property="og:title" content="OpenClinic Support & FAQ" />
+    <meta property="og:description"
+        content="Need help with OpenClinic? Read clinical disclaimers, dictation troubleshooting steps, or App Review setup notes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gunzino.me/openclinic/support" />
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "name": "OpenClinic Support Center",
+                "description": "Official support center, troubleshooting guides, and FAQs for OpenClinic. Learn about clinical sandbox configurations, dictation setup, and SMART imports.",
+                "url": "https://gunzino.me/openclinic/support"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "OpenClinic",
+                "applicationCategory": "MedicalApplication",
+                "operatingSystem": "iOS Application",
+                "description": "Local-first clinical workspace with charting, dictation, clinical photography, SMART on FHIR imports, and on-device retrieval.",
+                "url": "https://gunzino.me/openclinic"
+              }
+            ]
+          }
+        </script>
 
     <!-- ====================================================================== -->
-<!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
-<!-- ====================================================================== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configured to ensure compatibility with Ads Account 450-937-9845
-  gtag('config', 'G-4Q160W3M61', {
-    'send_page_view': true,
-    'enhanced_measurement': true
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function(event) {
-      var interactiveTarget = event.target.closest('[data-track]');
-      if (interactiveTarget) {
-        var actionLabel = interactiveTarget.getAttribute('data-track');
-        var actionGroup = interactiveTarget.getAttribute('data-track-group') || 'general_interaction';
-        var actionValue = interactiveTarget.getAttribute('data-track-value') || '';
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'ui_interaction_event', {
-            'interaction_label': actionLabel,
-            'interaction_group': actionGroup,
-            'interaction_value': actionValue,
-            'page_location_path': window.location.pathname
-          });
+    <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
+    <!-- ====================================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
-      }
-    }, true);
-  });
-</script>
-<!-- ====================================================================== -->
-</head>
-<body>
-    <header style="border-bottom: 2px solid #00ffaa;">
-        <nav style="border-bottom: 1px solid rgba(0, 255, 170, 0.25);">
-            <div class="logo"><a href="/index.html" style="color: inherit; text-decoration: none;">Gunzino</a></div>
+        gtag("js", new Date());
+
+        // Configured to ensure compatibility with Ads Account 450-937-9845
+        gtag("config", "G-4Q160W3M61", {
+            send_page_view: true,
+            enhanced_measurement: true,
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.addEventListener(
+                "click",
+                function (event) {
+                    var interactiveTarget = event.target.closest("[data-track]");
+                    if (interactiveTarget) {
+                var actionLabel = interactiveTarget.getAttribute("data-track");
+                var actionGroup =
+                    interactiveTarget.getAttribute("data-track-group") ||
+                    "general_interaction";
+                var actionValue =
+                    interactiveTarget.getAttribute("data-track-value") || "";
+
+                if (typeof gtag === "function") {
+                    gtag("event", "ui_interaction_event", {
+                        interaction_label: actionLabel,
+                        interaction_group: actionGroup,
+                        interaction_value: actionValue,
+                        page_location_path: window.location.pathname,
+                    });
+                }
+            }
+            },
+            true,
+        );
+      });
+        </script>
+    <!-- ====================================================================== -->
+    </head>
+
+    <body>
+    <header style="border-bottom: 2px solid #00ffaa">
+        <nav style="border-bottom: 1px solid rgba(0, 255, 170, 0.25)">
+            <div class="logo">
+                <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+            </div>
             <ul>
                 <li><a href="/openclinic">OpenClinic</a></li>
                 <li><a href="/openclinic/support" class="active">Support</a></li>
                 <li><a href="/openclinic/privacy">Privacy</a></li>
-                <li><a href="https://github.com/Gunnarguy/OpenClinic" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a></li>
-            </ul>
+        <li>
+            <a href="https://github.com/Gunnarguy/OpenClinic" target="_blank" rel="noopener">GitHub <i
+                    class="fab fa-github"></i></a>
+        </li>
+        </ul>
         </nav>
     </header>
 
     <main>
-        <section class="support-hero" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);">
-            <h1>OpenClinic Support Center</h1>
-            <p>Support commitments, troubleshooting guides, FAQs, and developer contacts for OpenClinic. Built to assist App Store reviewers and developers.</p>
-            <div class="support-highlights" role="list">
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-stethoscope" aria-hidden="true"></i>
-                    <h3>Clinical Safety Notice</h3>
-                    <p>OpenClinic is a developer prototype and playground, not for diagnostic use.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-microphone" aria-hidden="true"></i>
-                    <h3>Dictation Guidance</h3>
-                    <p>Ensuring microphone and speech permissions are enabled in iOS.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-server" aria-hidden="true"></i>
-                    <h3>SMART Integrations</h3>
-                    <p>Discovering sandbox EHR URLs and authorizing imports.</p>
-                </div>
+    <section class="support-hero" style="
+              background: linear-gradient(
+                135deg,
+                #0f2027 0%,
+                #203a43 50%,
+                #2c5364 100%
+              );
+            ">
+        <h1>OpenClinic Support Center</h1>
+        <p>
+            Support commitments, troubleshooting guides, FAQs, and developer
+            contacts for OpenClinic. Built to assist App Store reviewers and
+            developers.
+        </p>
+        <h2 style="
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                  ">
+            Support Highlights
+        </h2>
+        <div class="support-highlights" role="list">
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                <h3>Clinical Safety Notice</h3>
+            <p>
+                OpenClinic is a developer prototype and playground, not for
+                diagnostic use.
+            </p>
             </div>
-        </section>
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-microphone" aria-hidden="true"></i>
+                <h3>Dictation Guidance</h3>
+            <p>
+                Ensuring microphone and speech permissions are enabled in iOS.
+            </p>
+            </div>
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-server" aria-hidden="true"></i>
+                <h3>SMART Integrations</h3>
+                <p>Discovering sandbox EHR URLs and authorizing imports.</p>
+            </div>
+            </div>
+            </section>
 
-        <section class="support-section">
-            <h2>Frequently Asked Questions</h2>
+    <section class="support-section">
+        <h2>Frequently Asked Questions</h2>
 
-            <h3>What is OpenClinic?</h3>
-            <p>OpenClinic is a provider-facing, local-first clinical workspace prototype built with SwiftUI and SwiftData. It integrates patient charting, encounter documentation, clinical photography, anatomical lesion tracking, SMART on FHIR imports, and local clinical RAG search.</p>
+        <h3>What is OpenClinic?</h3>
+        <p>
+            OpenClinic is a provider-facing, local-first clinical workspace
+            prototype built with SwiftUI and SwiftData. It integrates patient
+            charting, encounter documentation, clinical photography, anatomical
+            lesion tracking, SMART on FHIR imports, and local clinical RAG search.
+        </p>
 
-            <h3>Can I use OpenClinic for patient care or diagnostic decisions?</h3>
-            <p><strong>No.</strong> OpenClinic is currently an architectural playground and software design concept. It is not production-hardened, is not a substitute for clinical judgment, and is not certified for patient care. It is intended for developer exploration and testing.</p>
+        <h3>Can I use OpenClinic for patient care or diagnostic decisions?</h3>
+        <p>
+            <strong>No.</strong> OpenClinic is currently an architectural
+            playground and software design concept. It is not production-hardened,
+            is not a substitute for clinical judgment, and is not certified for
+            patient care. It is intended for developer exploration and testing.
+        </p>
 
-            <h3>How do I test the app without an EHR connection?</h3>
-            <p>On first launch, OpenClinic automatically seeds a local demo database containing mock patients, medical histories, and sample appointments. You can explore the charts, capture photos, and run local clinical searches immediately.</p>
+        <h3>How do I test the app without an EHR connection?</h3>
+        <p>
+            On first launch, OpenClinic automatically seeds a local demo database
+            containing mock patients, medical histories, and sample appointments.
+            You can explore the charts, capture photos, and run local clinical
+            searches immediately.
+        </p>
 
-            <h3>How do I import live patient data using SMART on FHIR?</h3>
-            <ol>
-                <li>Navigate to Settings → Live SMART / EHR Import.</li>
-                <li>Verify or enter a SMART-compatible FHIR base URL (the default Sandbox URL is preloaded).</li>
-                <li>Tap sign-in. An ASWebAuthenticationSession popup will open for sandbox authentication.</li>
-                <li>Select a test patient and authorize access.</li>
-                <li>Return to the app and review the imported records, which are styled with EHR provenance badges.</li>
-            </ol>
+        <h3>How do I import live patient data using SMART on FHIR?</h3>
+        <ol>
+            <li>Navigate to Settings → Live SMART / EHR Import.</li>
+        <li>
+            Verify or enter a SMART-compatible FHIR base URL (the default
+            Sandbox URL is preloaded).
+        </li>
+        <li>
+            Tap sign-in. An ASWebAuthenticationSession popup will open for
+            sandbox authentication.
+        </li>
+        <li>Select a test patient and authorize access.</li>
+        <li>
+            Return to the app and review the imported records, which are styled
+            with EHR provenance badges.
+        </li>
+        </ol>
 
-            <h3>My dictation isn't working. What should I do?</h3>
-            <p>OpenClinic uses iOS Speech recognition for encounter notes. Ensure that you have granted OpenClinic access to both the **Microphone** and **Speech Recognition** in iOS Settings → Privacy.</p>
+        <h3>My dictation isn't working. What should I do?</h3>
+        <p>
+            OpenClinic uses iOS Speech recognition for encounter notes. Ensure
+            that you have granted OpenClinic access to both the **Microphone** and
+            **Speech Recognition** in iOS Settings → Privacy.
+        </p>
 
-            <h3>What are the 7 safety verification gates?</h3>
-            <p>Every response synthesized by on-device clinical RAG is audited against seven checks: retrieval confidence, evidence coverage, numeric sanity, contradiction check, semantic grounding, quote faithfulness, and generation quality. These roll up into a confidence tier displayed in the UI.</p>
+        <h3>What are the 7 safety verification gates?</h3>
+        <p>
+            Every response synthesized by on-device clinical RAG is audited
+            against seven checks: retrieval confidence, evidence coverage, numeric
+            sanity, contradiction check, semantic grounding, quote faithfulness,
+            and generation quality. These roll up into a confidence tier displayed
+            in the UI.
+        </p>
 
-            <h2>App Reviewer Instructions</h2>
-            <ul>
-                <li><strong>No account required:</strong> Testing can be done fully with mock data loaded on startup.</li>
-                <li><strong>Permissions:</strong> Please grant camera, microphone, and speech recognition access when prompted to test clinical imaging and dictation.</li>
-                <li><strong>EHR import validation:</strong> Use the default preconfigured SMART sandbox URL to test OAuth flows securely.</li>
-            </ul>
+        <h2>App Reviewer Instructions</h2>
+        <ul>
+        <li>
+            <strong>No account required:</strong> Testing can be done fully with
+            mock data loaded on startup.
+        </li>
+        <li>
+            <strong>Permissions:</strong> Please grant camera, microphone, and
+            speech recognition access when prompted to test clinical imaging and
+            dictation.
+        </li>
+        <li>
+            <strong>EHR import validation:</strong> Use the default
+            preconfigured SMART sandbox URL to test OAuth flows securely.
+        </li>
+        </ul>
 
-            <h2>Contact Info</h2>
-            <ul>
-                <li><strong>Privacy Policy URL:</strong> <a href="/openclinic/privacy">https://gunzino.me/openclinic/privacy</a></li>
-                <li><strong>Developer Support Email:</strong> <a href="mailto:gunnarguy@me.com?subject=OpenClinic%20Support">gunnarguy@me.com</a></li>
-                <li><strong>GitHub Repository:</strong> <a href="https://github.com/Gunnarguy/OpenClinic" target="_blank" rel="noopener">OpenClinic on GitHub</a></li>
-            </ul>
+        <h2>Contact Info</h2>
+        <ul>
+        <li>
+            <strong>Privacy Policy URL:</strong>
+            <a href="/openclinic/privacy">https://gunzino.me/openclinic/privacy</a>
+        </li>
+        <li>
+            <strong>Developer Support Email:</strong>
+            <a href="mailto:gunnarguy@me.com?subject=OpenClinic%20Support">gunnarguy@me.com</a>
+        </li>
+        <li>
+            <strong>GitHub Repository:</strong>
+            <a href="https://github.com/Gunnarguy/OpenClinic" target="_blank" rel="noopener">OpenClinic on GitHub</a>
+        </li>
+        </ul>
         </section>
     </main>
 
-    <footer style="background: #121f19; border-top: 1px solid #1a3328;">
+    <footer style="background: #121f19; border-top: 1px solid #1a3328">
         <p>&copy; 2025 Gunzino. All rights reserved.</p>
-        <p><a href="/openclinic">OpenClinic Home</a> | <a href="/openclinic/privacy">Privacy Policy</a></p>
+    <p>
+        <a href="/openclinic">OpenClinic Home</a> |
+        <a href="/openclinic/privacy">Privacy Policy</a>
+    </p>
     </footer>
 </body>
 </html>

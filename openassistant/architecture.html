@@ -1,443 +1,551 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-        
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore OpenAssistant's sophisticated MVVM architecture built with SwiftUI. Deep dive into component modules, data flow, and iOS development patterns.">
-    <meta name="keywords" content="MVVM, SwiftUI, iOS architecture, component design, data flow, software engineering">
-    <meta name="author" content="OpenAssistant Team">
-    
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenAssistant Architecture | MVVM Deep Dive</title>
+    <meta name="description"
+        content="MVVM deep dive for OpenAssistant, covering SwiftUI modules, data flow, service boundaries, and iOS app architecture." />
+    <meta name="keywords" content="MVVM, SwiftUI, iOS architecture, component design, data flow, software engineering" />
+    <meta name="author" content="OpenAssistant Team" />
+    <meta property="og:title" content="OpenAssistant Architecture | MVVM Deep Dive" />
+    <meta property="og:description"
+        content="MVVM deep dive for OpenAssistant, covering SwiftUI modules, data flow, service boundaries, and iOS app architecture." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
+    <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "name": "OpenAssistant Architecture",
+                "description": "MVVM deep dive for OpenAssistant, covering SwiftUI modules, data flow, service boundaries, and iOS app architecture.",
+                "url": "https://gunzino.me/openassistant/architecture.html"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "OpenAssistant",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "iOS Application",
+                "description": "Legacy iOS client for the OpenAI Assistants API with assistant setup, vector stores, file tools, and real-time chat in SwiftUI.",
+                "url": "https://gunzino.me/openassistant/",
+                "downloadUrl": "https://apps.apple.com/us/app/openassistant/id6692613772"
+              }
+            ]
+          }
+        </script>
 
     <!-- ====================================================================== -->
-<!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
-<!-- ====================================================================== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configured to ensure compatibility with Ads Account 450-937-9845
-  gtag('config', 'G-4Q160W3M61', {
-    'send_page_view': true,
-    'enhanced_measurement': true
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function(event) {
-      var interactiveTarget = event.target.closest('[data-track]');
-      if (interactiveTarget) {
-        var actionLabel = interactiveTarget.getAttribute('data-track');
-        var actionGroup = interactiveTarget.getAttribute('data-track-group') || 'general_interaction';
-        var actionValue = interactiveTarget.getAttribute('data-track-value') || '';
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'ui_interaction_event', {
-            'interaction_label': actionLabel,
-            'interaction_group': actionGroup,
-            'interaction_value': actionValue,
-            'page_location_path': window.location.pathname
-          });
+    <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
+    <!-- ====================================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
-      }
-    }, true);
-  });
-</script>
-<!-- ====================================================================== -->
-</head>
-<body>
+        gtag("js", new Date());
+
+        // Configured to ensure compatibility with Ads Account 450-937-9845
+        gtag("config", "G-4Q160W3M61", {
+            send_page_view: true,
+            enhanced_measurement: true,
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.addEventListener(
+                "click",
+                function (event) {
+                    var interactiveTarget = event.target.closest("[data-track]");
+                    if (interactiveTarget) {
+                var actionLabel = interactiveTarget.getAttribute("data-track");
+                var actionGroup =
+                    interactiveTarget.getAttribute("data-track-group") ||
+                    "general_interaction";
+                var actionValue =
+                    interactiveTarget.getAttribute("data-track-value") || "";
+
+                if (typeof gtag === "function") {
+                    gtag("event", "ui_interaction_event", {
+                        interaction_label: actionLabel,
+                        interaction_group: actionGroup,
+                        interaction_value: actionValue,
+                        page_location_path: window.location.pathname,
+                    });
+                }
+            }
+            },
+            true,
+        );
+      });
+        </script>
+    <!-- ====================================================================== -->
+    </head>
+
+    <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" alt="OpenAssistant" width="32" height="32">
-                <span>OpenAssistant</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="architecture.html" class="active">Architecture</a></li>
-                <li><a href="support/">Support</a></li>
-                <li><a href="privacy/">Privacy</a></li>
-                <li><a href="terms/">Terms</a></li>
-                <li><a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <div class="nav-container">
+        <div class="nav-logo">
+        <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg"
+            alt="OpenAssistant" width="32" height="32" />
+        <span>OpenAssistant</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="architecture.html" class="active">Architecture</a></li>
+            <li><a href="support/">Support</a></li>
+            <li><a href="privacy/">Privacy</a></li>
+            <li><a href="terms/">Terms</a></li>
+        <li>
+            <a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="padding: 120px 0 60px;">
+    <section class="hero" style="padding: 120px 0 60px">
         <div class="container">
-            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h1 style="font-size: 3rem;">Architecture Deep Dive</h1>
-                <p class="hero-subtitle">Understanding the MVVM Architecture and Component Interactions</p>
-                <p class="hero-description">
-                    Explore the sophisticated architecture that powers OpenAssistant, built with SwiftUI following 
-                    modern iOS development patterns and best practices.
-                </p>
+        <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto">
+            <h1 style="font-size: 3rem">Architecture Deep Dive</h1>
+            <p class="hero-subtitle">
+                Understanding the MVVM Architecture and Component Interactions
+            </p>
+            <p class="hero-description">
+            Explore the sophisticated architecture that powers OpenAssistant,
+            built with SwiftUI following modern iOS development patterns and
+            best practices.
+            </p>
             </div>
-        </div>
+            </div>
     </section>
 
     <!-- MVVM Overview -->
     <section id="mvvm" class="section">
-        <div class="container">
-            <h2>MVVM Architecture Pattern</h2>
-            <p class="section-intro">
-                The Model-View-ViewModel pattern provides clear separation of concerns, making the app maintainable, 
-                testable, and scalable.
-            </p>
-            
-            <div class="data-flow">
-                <h3 style="text-align: center; margin-bottom: 30px;">MVVM Data Flow</h3>
-                <div class="flow-diagram">
-                    <div class="flow-row">
-                        <div class="flow-box" style="background: #E53E3E;">Model (Data)</div>
-                        <span class="flow-arrow">↔️</span>
-                        <div class="flow-box" style="background: #00A86B;">ViewModel (Logic)</div>
-                        <span class="flow-arrow">↔️</span>
-                        <div class="flow-box" style="background: #0066CC;">View (UI)</div>
-                    </div>
-                    <div style="margin-top: 20px; text-align: center; color: #666;">
-                        <p><strong>Model:</strong> Assistant, Message, Thread, VectorStore structs</p>
-                        <p><strong>ViewModel:</strong> Business logic, API calls, state management</p>
-                        <p><strong>View:</strong> SwiftUI views, user interface, user interactions</p>
-                    </div>
-                </div>
+    <div class="container">
+        <h2>MVVM Architecture Pattern</h2>
+        <p class="section-intro">
+        The Model-View-ViewModel pattern provides clear separation of
+        concerns, making the app maintainable, testable, and scalable.
+        </p>
+
+        <div class="data-flow">
+        <h3 style="text-align: center; margin-bottom: 30px">
+            MVVM Data Flow
+        </h3>
+        <div class="flow-diagram">
+            <div class="flow-row">
+            <div class="flow-box" style="background: #e53e3e">
+                Model (Data)
             </div>
-        </div>
+            <span class="flow-arrow">↔️</span>
+            <div class="flow-box" style="background: #00a86b">
+                ViewModel (Logic)
+            </div>
+            <span class="flow-arrow">↔️</span>
+            <div class="flow-box" style="background: #0066cc">View (UI)</div>
+            </div>
+            <div style="margin-top: 20px; text-align: center; color: #666">
+                <p>
+                    <strong>Model:</strong> Assistant, Message, Thread, VectorStore
+                    structs
+                </p>
+                <p>
+                    <strong>ViewModel:</strong> Business logic, API calls, state
+                    management
+                </p>
+                <p>
+                    <strong>View:</strong> SwiftUI views, user interface, user
+                    interactions
+                </p>
+            </div>
+            </div>
+            </div>
+            </div>
     </section>
 
     <!-- Module Breakdown -->
     <section id="modules" class="architecture-detail">
-        <div class="container">
-            <h2>Core Modules Breakdown</h2>
-            
-            <!-- API Service Layer -->
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-icon api-icon">🌐</div>
-                    <div>
-                        <h3>APIService Layer</h3>
-                        <p style="color: #666; margin: 0;">Handles all OpenAI API interactions</p>
-                    </div>
-                </div>
-                <p>The API service layer handles all external communication with the OpenAI API, built with a base service class and specialized extensions for different endpoints.</p>
-                
-                <h4>Key Responsibilities:</h4>
-                <ul>
-                    <li>HTTP request/response handling</li>
-                    <li>Authentication and API key management</li>
-                    <li>Error handling and retry logic</li>
-                    <li>Request serialization and response deserialization</li>
-                </ul>
-                
-                <div class="file-list">
-                    <div class="file-item">OpenAIService.swift</div>
-                    <div class="file-item">OpenAIService-Assistant.swift</div>
-                    <div class="file-item">OpenAIService-Threads.swift</div>
-                    <div class="file-item">OpenAIService-Vector.swift</div>
-                    <div class="file-item">OpenAIInitializer.swift</div>
-                    <div class="file-item">OpenAIServiceError.swift</div>
-                    <div class="file-item">Utils.swift</div>
-                    <div class="file-item">CommonMethods.swift</div>
-                </div>
-            </div>
+    <div class="container">
+        <h2>Core Modules Breakdown</h2>
 
-            <!-- Base ViewModels -->
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-icon base-icon">🏗️</div>
-                    <div>
-                        <h3>Base ViewModels</h3>
-                        <p style="color: #666; margin: 0;">Foundation classes for all ViewModels</p>
-                    </div>
-                </div>
-                <p>Base classes provide common functionality and establish patterns that all ViewModels follow, ensuring consistency across the application.</p>
-                
-                <h4>Key Features:</h4>
-                <ul>
-                    <li>Shared OpenAI service access</li>
-                    <li>Common error handling patterns</li>
-                    <li>API key validation</li>
-                    <li>Loading state management</li>
-                </ul>
-                
-                <div class="file-list">
-                    <div class="file-item">BaseViewModel.swift</div>
-                    <div class="file-item">BaseAssistantViewModel.swift</div>
-                    <div class="file-item">CommonMethods.swift</div>
-                </div>
+        <!-- API Service Layer -->
+        <div class="module-card">
+            <div class="module-header">
+                <div class="module-icon api-icon">🌐</div>
+                <div>
+                    <h3>APIService Layer</h3>
+            <p style="color: #666; margin: 0">
+                Handles all OpenAI API interactions
+            </p>
             </div>
+            </div>
+        <p>
+            The API service layer handles all external communication with the
+            OpenAI API, built with a base service class and specialized
+            extensions for different endpoints.
+        </p>
 
-            <!-- Assistant Management -->
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-icon viewmodel-icon">🤖</div>
-                    <div>
-                        <h3>Comprehensive Assistant Management</h3>
-                        <p style="color: #666; margin: 0;">Complete assistant lifecycle management</p>
-                    </div>
-                </div>
-                <p>Handles creation, configuration, updating, and deletion of OpenAI Assistants with support for advanced features like tool configuration and vector store association.</p>
-                
-                <h4>Capabilities:</h4>
-                <ul>
-                    <li>Assistant CRUD operations</li>
-                    <li>Model selection (GPT-4o, GPT-4.1, O-series)</li>
-                    <li>Tool configuration (Code Interpreter, File Search)</li>
-                    <li>Vector store association</li>
-                    <li>Parameter tuning (temperature, top P, reasoning effort)</li>
-                </ul>
-                
-                <div class="file-list">
-                    <div class="file-item">AssistantManagerView.swift</div>
-                    <div class="file-item">AssistantManagerViewModel.swift</div>
-                    <div class="file-item">AssistantDetailView.swift</div>
-                    <div class="file-item">AssistantDetailViewModel.swift</div>
-                    <div class="file-item">AssistantPickerView.swift</div>
-                    <div class="file-item">AssistantPickerViewModel.swift</div>
-                </div>
-            </div>
+        <h4>Key Responsibilities:</h4>
+        <ul>
+            <li>HTTP request/response handling</li>
+            <li>Authentication and API key management</li>
+            <li>Error handling and retry logic</li>
+            <li>Request serialization and response deserialization</li>
+        </ul>
 
-            <!-- Chat Functionality -->
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-icon view-icon">💬</div>
-                    <div>
-                        <h3>Chat Functionality</h3>
-                        <p style="color: #666; margin: 0;">Interactive conversation interface</p>
-                    </div>
-                </div>
-                <p>Delivers a complete chat experience with message history, thread management, and real-time assistant interactions.</p>
-                
-                <h4>Features:</h4>
-                <ul>
-                    <li>Real-time messaging with OpenAI threads</li>
-                    <li>Message history persistence</li>
-                    <li>Markdown rendering for assistant responses</li>
-                    <li>Thread lifecycle management</li>
-                    <li>Run status monitoring and polling</li>
-                </ul>
-                
-                <div class="file-list">
-                    <div class="file-item">ChatView.swift</div>
-                    <div class="file-item">ChatViewModel.swift</div>
-                    <div class="file-item">ChatContentView.swift</div>
-                    <div class="file-item">MessageListView.swift</div>
-                    <div class="file-item">InputView.swift</div>
-                    <div class="file-item">MessageStore.swift</div>
-                    <div class="file-item">MessageView.swift</div>
-                    <div class="file-item">ChatHistoryView.swift</div>
-                </div>
-            </div>
+        <div class="file-list">
+            <div class="file-item">OpenAIService.swift</div>
+            <div class="file-item">OpenAIService-Assistant.swift</div>
+            <div class="file-item">OpenAIService-Threads.swift</div>
+            <div class="file-item">OpenAIService-Vector.swift</div>
+            <div class="file-item">OpenAIInitializer.swift</div>
+            <div class="file-item">OpenAIServiceError.swift</div>
+            <div class="file-item">Utils.swift</div>
+            <div class="file-item">CommonMethods.swift</div>
+        </div>
+        </div>
 
-            <!-- Vector Store Management -->
-            <div class="module-card">
-                <div class="module-header">
-                    <div class="module-icon api-icon">🗂️</div>
-                    <div>
-                        <h3>Vector Store & File Management</h3>
-                        <p style="color: #666; margin: 0;">Knowledge base and file handling</p>
-                    </div>
-                </div>
-                <p>Manages vector stores for knowledge retrieval and handles file uploads with configurable chunking strategies for optimal performance.</p>
-                
-                <h4>Capabilities:</h4>
-                <ul>
-                    <li>Vector store CRUD operations</li>
-                    <li>File upload and management</li>
-                    <li>Configurable chunking (size and overlap)</li>
-                    <li>Multiple file format support (PDF, TXT, DOCX)</li>
-                    <li>File metadata and status tracking</li>
-                </ul>
-                
-                <div class="file-list">
-                    <div class="file-item">VectorStoreListView.swift</div>
-                    <div class="file-item">VectorStoreDetailView.swift</div>
-                    <div class="file-item">VectorStoreManagerViewModel.swift</div>
-                    <div class="file-item">VectorStoreManagementView.swift</div>
-                </div>
+        <!-- Base ViewModels -->
+        <div class="module-card">
+            <div class="module-header">
+                <div class="module-icon base-icon">🏗️</div>
+                <div>
+                    <h3>Base ViewModels</h3>
+            <p style="color: #666; margin: 0">
+                Foundation classes for all ViewModels
+            </p>
             </div>
+            </div>
+        <p>
+            Base classes provide common functionality and establish patterns
+            that all ViewModels follow, ensuring consistency across the
+            application.
+        </p>
+
+        <h4>Key Features:</h4>
+        <ul>
+            <li>Shared OpenAI service access</li>
+            <li>Common error handling patterns</li>
+            <li>API key validation</li>
+            <li>Loading state management</li>
+        </ul>
+
+        <div class="file-list">
+            <div class="file-item">BaseViewModel.swift</div>
+            <div class="file-item">BaseAssistantViewModel.swift</div>
+            <div class="file-item">CommonMethods.swift</div>
+        </div>
+        </div>
+
+        <!-- Assistant Management -->
+        <div class="module-card">
+            <div class="module-header">
+                <div class="module-icon viewmodel-icon">🤖</div>
+                <div>
+                    <h3>Comprehensive Assistant Management</h3>
+            <p style="color: #666; margin: 0">
+                Complete assistant lifecycle management
+            </p>
+            </div>
+            </div>
+        <p>
+            Handles creation, configuration, updating, and deletion of OpenAI
+            Assistants with support for advanced features like tool
+            configuration and vector store association.
+        </p>
+
+        <h4>Capabilities:</h4>
+        <ul>
+            <li>Assistant CRUD operations</li>
+            <li>Model selection (GPT-4o, GPT-4.1, O-series)</li>
+            <li>Tool configuration (Code Interpreter, File Search)</li>
+            <li>Vector store association</li>
+            <li>Parameter tuning (temperature, top P, reasoning effort)</li>
+        </ul>
+
+        <div class="file-list">
+            <div class="file-item">AssistantManagerView.swift</div>
+            <div class="file-item">AssistantManagerViewModel.swift</div>
+            <div class="file-item">AssistantDetailView.swift</div>
+            <div class="file-item">AssistantDetailViewModel.swift</div>
+            <div class="file-item">AssistantPickerView.swift</div>
+            <div class="file-item">AssistantPickerViewModel.swift</div>
+        </div>
+        </div>
+
+        <!-- Chat Functionality -->
+        <div class="module-card">
+            <div class="module-header">
+                <div class="module-icon view-icon">💬</div>
+                <div>
+                    <h3>Chat Functionality</h3>
+            <p style="color: #666; margin: 0">
+                Interactive conversation interface
+            </p>
+            </div>
+            </div>
+        <p>
+            Delivers a complete chat experience with message history, thread
+            management, and real-time assistant interactions.
+        </p>
+
+        <h4>Features:</h4>
+        <ul>
+            <li>Real-time messaging with OpenAI threads</li>
+            <li>Message history persistence</li>
+            <li>Markdown rendering for assistant responses</li>
+            <li>Thread lifecycle management</li>
+            <li>Run status monitoring and polling</li>
+        </ul>
+
+        <div class="file-list">
+            <div class="file-item">ChatView.swift</div>
+            <div class="file-item">ChatViewModel.swift</div>
+            <div class="file-item">ChatContentView.swift</div>
+            <div class="file-item">MessageListView.swift</div>
+            <div class="file-item">InputView.swift</div>
+            <div class="file-item">MessageStore.swift</div>
+            <div class="file-item">MessageView.swift</div>
+            <div class="file-item">ChatHistoryView.swift</div>
+        </div>
+        </div>
+
+        <!-- Vector Store Management -->
+        <div class="module-card">
+            <div class="module-header">
+                <div class="module-icon api-icon">🗂️</div>
+                <div>
+                    <h3>Vector Store & File Management</h3>
+            <p style="color: #666; margin: 0">
+                Knowledge base and file handling
+            </p>
+            </div>
+            </div>
+        <p>
+            Manages vector stores for knowledge retrieval and handles file
+            uploads with configurable chunking strategies for optimal
+            performance.
+        </p>
+
+        <h4>Capabilities:</h4>
+        <ul>
+            <li>Vector store CRUD operations</li>
+            <li>File upload and management</li>
+            <li>Configurable chunking (size and overlap)</li>
+            <li>Multiple file format support (PDF, TXT, DOCX)</li>
+            <li>File metadata and status tracking</li>
+        </ul>
+
+        <div class="file-list">
+            <div class="file-item">VectorStoreListView.swift</div>
+            <div class="file-item">VectorStoreDetailView.swift</div>
+            <div class="file-item">VectorStoreManagerViewModel.swift</div>
+            <div class="file-item">VectorStoreManagementView.swift</div>
+        </div>
+        </div>
         </div>
     </section>
 
     <!-- Data Flow -->
     <section id="dataflow" class="section">
-        <div class="container">
-            <h2>Application Data Flow</h2>
-            
-            <div class="data-flow">
-                <h3>Initialization Flow</h3>
-                <div class="flow-diagram">
-                    <div class="flow-row">
-                        <div class="flow-box">OpenAssistantApp</div>
-                        <span class="flow-arrow">→</span>
-                        <div class="flow-box">ContentView</div>
-                        <span class="flow-arrow">→</span>
-                        <div class="flow-box">MainTabView</div>
-                    </div>
-                    <div class="flow-row">
-                        <div class="flow-box" style="background: #00A86B;">Environment Objects</div>
-                        <span class="flow-arrow">↓</span>
-                    </div>
-                    <div class="flow-row">
-                        <div class="flow-box" style="background: #E53E3E;">AssistantManagerVM</div>
-                        <div class="flow-box" style="background: #E53E3E;">VectorStoreManagerVM</div>
-                        <div class="flow-box" style="background: #E53E3E;">MessageStore</div>
-                    </div>
+    <div class="container">
+        <h2>Application Data Flow</h2>
+
+        <div class="data-flow">
+            <h3>Initialization Flow</h3>
+            <div class="flow-diagram">
+                <div class="flow-row">
+                    <div class="flow-box">OpenAssistantApp</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">ContentView</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">MainTabView</div>
+                </div>
+                <div class="flow-row">
+            <div class="flow-box" style="background: #00a86b">
+                Environment Objects
+            </div>
+            <span class="flow-arrow">↓</span>
+            </div>
+            <div class="flow-row">
+            <div class="flow-box" style="background: #e53e3e">
+                AssistantManagerVM
+            </div>
+            <div class="flow-box" style="background: #e53e3e">
+                VectorStoreManagerVM
+            </div>
+            <div class="flow-box" style="background: #e53e3e">
+                MessageStore
+            </div>
+            </div>
+            </div>
+            </div>
+
+        <div class="data-flow">
+            <h3>API Communication Flow</h3>
+            <div class="flow-diagram">
+                <div class="flow-row">
+                    <div class="flow-box">User Action</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">View</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-box">ViewModel</div>
+                </div>
+                <div class="flow-row">
+                    <span class="flow-arrow">↓</span>
+                </div>
+                <div class="flow-row">
+            <div class="flow-box" style="background: #ff8c00">
+                OpenAIService
+            </div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-box" style="background: #666">OpenAI API</div>
+            </div>
+            <div class="flow-row">
+                <span class="flow-arrow">↓</span>
+            </div>
+            <div class="flow-row">
+                <div class="flow-box">Response Processing</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-box">UI Update</div>
+            </div>
+            </div>
+            </div>
+
+        <div class="dependency-graph">
+            <h3>Dependency Hierarchy</h3>
+
+            <div class="dep-layer">
+                <div class="dep-title">App Layer</div>
+                <div class="dep-items">
+                    <div class="dep-item">OpenAssistantApp.swift</div>
+                    <div class="dep-item">ContentView.swift</div>
+                    <div class="dep-item">MainTabView.swift</div>
                 </div>
             </div>
 
-            <div class="data-flow">
-                <h3>API Communication Flow</h3>
-                <div class="flow-diagram">
-                    <div class="flow-row">
-                        <div class="flow-box">User Action</div>
-                        <span class="flow-arrow">→</span>
-                        <div class="flow-box">View</div>
-                        <span class="flow-arrow">→</span>
-                        <div class="flow-box">ViewModel</div>
-                    </div>
-                    <div class="flow-row">
-                        <span class="flow-arrow">↓</span>
-                    </div>
-                    <div class="flow-row">
-                        <div class="flow-box" style="background: #FF8C00;">OpenAIService</div>
-                        <span class="flow-arrow">→</span>
-                        <div class="flow-box" style="background: #666;">OpenAI API</div>
-                    </div>
-                    <div class="flow-row">
-                        <span class="flow-arrow">↓</span>
-                    </div>
-                    <div class="flow-row">
-                        <div class="flow-box">Response Processing</div>
-                        <span class="flow-arrow">→</span>
-                        <div class="flow-box">UI Update</div>
-                    </div>
+            <div class="dep-layer">
+                <div class="dep-title">Feature Views</div>
+                <div class="dep-items">
+                    <div class="dep-item">AssistantManagerView</div>
+                    <div class="dep-item">ChatView</div>
+                    <div class="dep-item">VectorStoreListView</div>
+                    <div class="dep-item">SettingsView</div>
                 </div>
             </div>
 
-            <div class="dependency-graph">
-                <h3>Dependency Hierarchy</h3>
-                
-                <div class="dep-layer">
-                    <div class="dep-title">App Layer</div>
-                    <div class="dep-items">
-                        <div class="dep-item">OpenAssistantApp.swift</div>
-                        <div class="dep-item">ContentView.swift</div>
-                        <div class="dep-item">MainTabView.swift</div>
-                    </div>
-                </div>
-                
-                <div class="dep-layer">
-                    <div class="dep-title">Feature Views</div>
-                    <div class="dep-items">
-                        <div class="dep-item">AssistantManagerView</div>
-                        <div class="dep-item">ChatView</div>
-                        <div class="dep-item">VectorStoreListView</div>
-                        <div class="dep-item">SettingsView</div>
-                    </div>
-                </div>
-                
-                <div class="dep-layer">
-                    <div class="dep-title">ViewModels</div>
-                    <div class="dep-items">
-                        <div class="dep-item">AssistantManagerViewModel</div>
-                        <div class="dep-item">ChatViewModel</div>
-                        <div class="dep-item">VectorStoreManagerViewModel</div>
-                        <div class="dep-item">ContentViewModel</div>
-                    </div>
-                </div>
-                
-                <div class="dep-layer">
-                    <div class="dep-title">Base Classes</div>
-                    <div class="dep-items">
-                        <div class="dep-item">BaseViewModel</div>
-                        <div class="dep-item">BaseAssistantViewModel</div>
-                    </div>
-                </div>
-                
-                <div class="dep-layer">
-                    <div class="dep-title">Services</div>
-                    <div class="dep-items">
-                        <div class="dep-item">OpenAIService</div>
-                        <div class="dep-item">OpenAIInitializer</div>
-                        <div class="dep-item">MessageStore</div>
-                    </div>
-                </div>
-                
-                <div class="dep-layer">
-                    <div class="dep-title">Data Models</div>
-                    <div class="dep-items">
-                        <div class="dep-item">Assistant</div>
-                        <div class="dep-item">Message</div>
-                        <div class="dep-item">Thread</div>
-                        <div class="dep-item">VectorStore</div>
-                        <div class="dep-item">File</div>
-                    </div>
+            <div class="dep-layer">
+                <div class="dep-title">ViewModels</div>
+                <div class="dep-items">
+                    <div class="dep-item">AssistantManagerViewModel</div>
+                    <div class="dep-item">ChatViewModel</div>
+                    <div class="dep-item">VectorStoreManagerViewModel</div>
+                    <div class="dep-item">ContentViewModel</div>
                 </div>
             </div>
+
+            <div class="dep-layer">
+                <div class="dep-title">Base Classes</div>
+                <div class="dep-items">
+                    <div class="dep-item">BaseViewModel</div>
+                    <div class="dep-item">BaseAssistantViewModel</div>
+                </div>
+            </div>
+
+            <div class="dep-layer">
+                <div class="dep-title">Services</div>
+                <div class="dep-items">
+                    <div class="dep-item">OpenAIService</div>
+                    <div class="dep-item">OpenAIInitializer</div>
+                    <div class="dep-item">MessageStore</div>
+                </div>
+            </div>
+
+            <div class="dep-layer">
+                <div class="dep-title">Data Models</div>
+                <div class="dep-items">
+                    <div class="dep-item">Assistant</div>
+                    <div class="dep-item">Message</div>
+                    <div class="dep-item">Thread</div>
+                    <div class="dep-item">VectorStore</div>
+                    <div class="dep-item">File</div>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>OpenAssistant</h4>
-                    <p>A native iOS application for managing and interacting with OpenAI Assistants. Built with SwiftUI for a truly native experience.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Architecture</h4>
-                    <ul>
-                        <li><a href="#mvvm">MVVM Pattern</a></li>
-                        <li><a href="#modules">Module Breakdown</a></li>
-                        <li><a href="#dataflow">Data Flow</a></li>
-                        <li><a href="interactions.html">Component Interactions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-                        <li><a href="https://apps.apple.com/us/app/openassistant/id6692613772" target="_blank" rel="noopener noreferrer">Download on App Store</a></li>
-                        <li><a href="support/">Support & Help</a></li>
-                        <li><a href="index.html">Back to Home</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Technology Stack</h4>
-                    <ul>
-                        <li>Swift & SwiftUI</li>
-                        <li>Combine Framework</li>
-                        <li>OpenAI Assistants API</li>
-                        <li>MVVM Architecture</li>
-                        <li>iOS 15.0+</li>
-                    </ul>
-                </div>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OpenAssistant</h4>
+            <p>
+                A native iOS application for managing and interacting with OpenAI
+                Assistants. Built with SwiftUI for a truly native experience.
+            </p>
+            <div class="social-links">
+            <a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            </div>
+            </div>
+            <div class="footer-section">
+                <h4>Architecture</h4>
+                <ul>
+                    <li><a href="#mvvm">MVVM Pattern</a></li>
+                    <li><a href="#modules">Module Breakdown</a></li>
+                    <li><a href="#dataflow">Data Flow</a></li>
+                    <li><a href="interactions.html">Component Interactions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+            <li>
+                <a href="https://github.com/Gunnarguy/OpenAssistant" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            </li>
+            <li>
+                <a href="https://apps.apple.com/us/app/openassistant/id6692613772" target="_blank"
+                    rel="noopener noreferrer">Download on App Store</a>
+            </li>
+            <li><a href="support/">Support & Help</a></li>
+            <li><a href="index.html">Back to Home</a></li>
+            </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Technology Stack</h4>
+                <ul>
+                    <li>Swift & SwiftUI</li>
+                    <li>Combine Framework</li>
+                    <li>OpenAI Assistants API</li>
+                    <li>MVVM Architecture</li>
+                    <li>iOS 15.0+</li>
+                </ul>
+            </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 OpenAssistant. Open source and available on GitHub.</p>
-                <p class="footer-note">OpenAssistant is an independent project and is not affiliated with OpenAI.</p>
-            </div>
+        <p class="footer-note">
+            OpenAssistant is an independent project and is not affiliated with
+            OpenAI.
+        </p>
+        </div>
         </div>
     </footer>
 

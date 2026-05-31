@@ -1,136 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gunzino | iOS AI Apps and Support</title>
+    <meta name="description"
+        content="Landing pages, privacy policies, and support docs for Gunnar Hostetler's iOS AI apps and developer tools." />
+    <meta property="og:title" content="Gunzino | iOS AI Apps and Support" />
+    <meta property="og:description"
+        content="Landing pages, privacy policies, and support docs for Gunnar Hostetler's iOS AI apps and developer tools." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
+    <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "CollectionPage",
+                "name": "Gunzino | iOS AI Apps and Support",
+                "description": "Landing pages, privacy policies, and support docs for Gunnar Hostetler's iOS AI apps and developer tools.",
+                "url": "https://gunzino.me/"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "Gunzino App Suite",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "iOS Application",
+                "description": "Landing hub for Gunnar Hostetler's iOS AI apps and developer tools.",
+                "url": "https://gunzino.me/"
+              }
+            ]
+          }
+        </script>
 
-        <!-- ====================================================================== -->
-<!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
-<!-- ====================================================================== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configured to ensure compatibility with Ads Account 450-937-9845
-  gtag('config', 'G-4Q160W3M61', {
-    'send_page_view': true,
-    'enhanced_measurement': true
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function(event) {
-      var interactiveTarget = event.target.closest('[data-track]');
-      if (interactiveTarget) {
-        var actionLabel = interactiveTarget.getAttribute('data-track');
-        var actionGroup = interactiveTarget.getAttribute('data-track-group') || 'general_interaction';
-        var actionValue = interactiveTarget.getAttribute('data-track-value') || '';
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'ui_interaction_event', {
-            'interaction_label': actionLabel,
-            'interaction_group': actionGroup,
-            'interaction_value': actionValue,
-            'page_location_path': window.location.pathname
-          });
+    <!-- ====================================================================== -->
+    <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
+    <!-- ====================================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
-      }
-    }, true);
-  });
-</script>
-<!-- ====================================================================== -->
-</head>
-<body>
+        gtag("js", new Date());
+
+        // Configured to ensure compatibility with Ads Account 450-937-9845
+        gtag("config", "G-4Q160W3M61", {
+            send_page_view: true,
+            enhanced_measurement: true,
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.addEventListener(
+                "click",
+                function (event) {
+                    var interactiveTarget = event.target.closest("[data-track]");
+                    if (interactiveTarget) {
+                var actionLabel = interactiveTarget.getAttribute("data-track");
+                var actionGroup =
+                    interactiveTarget.getAttribute("data-track-group") ||
+                    "general_interaction";
+                var actionValue =
+                    interactiveTarget.getAttribute("data-track-value") || "";
+
+                if (typeof gtag === "function") {
+                    gtag("event", "ui_interaction_event", {
+                        interaction_label: actionLabel,
+                        interaction_group: actionGroup,
+                        interaction_value: actionValue,
+                        page_location_path: window.location.pathname,
+                    });
+                }
+            }
+            },
+            true,
+        );
+      });
+        </script>
+    <!-- ====================================================================== -->
+    </head>
+
+    <body>
     <header>
-        <nav>
-            <div class="logo">Gunzino</div>
-            <ul>
-                <li><a href="#apps">Apps</a></li>
-                <li><a href="openclinic">OpenClinic</a></li>
-                <li><a href="openintelligence">OpenIntelligence</a></li>
-                <li><a href="openresponses">OpenResponses</a></li>
-                <li><a href="opencone">OpenCone</a></li>
-                <li><a href="openassistant">OpenAssistant</a></li>
-                <li><a href="https://github.com/Gunnarguy" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
-                <li><a href="support.html">Support</a></li>
-            </ul>
+    <nav>
+        <div class="logo">Gunzino</div>
+        <ul>
+            <li><a href="#apps">Apps</a></li>
+            <li><a href="openclinic">OpenClinic</a></li>
+            <li><a href="openintelligence">OpenIntelligence</a></li>
+            <li><a href="openresponses">OpenResponses</a></li>
+            <li><a href="opencone">OpenCone</a></li>
+            <li><a href="openassistant">OpenAssistant</a></li>
+        <li>
+            <a href="https://github.com/Gunnarguy" target="_blank">GitHub <i class="fab fa-github"></i></a>
+        </li>
+        <li><a href="support.html">Support</a></li>
+        </ul>
         </nav>
         <div class="hero">
             <h1>Native iOS & macOS AI Tools</h1>
-            <p>Offline-first document search, vector databases, and developer playgrounds built with SwiftUI, Core ML, SwiftData, and the OpenAI API.</p>
-            <div class="hero-buttons">
-                <a href="openclinic" class="cta-button cta-button-clinical"><i class="fas fa-notes-medical"></i> OpenClinic</a>
-                <a href="openintelligence" class="cta-button cta-button-tertiary"><i class="fas fa-shield-alt"></i> OpenIntelligence</a>
-                <a href="openresponses" class="cta-button cta-button-secondary"><i class="fas fa-rocket"></i> OpenResponses</a>
-                <a href="opencone" class="cta-button"><i class="fas fa-brain"></i> OpenCone</a>
-                <a href="openassistant" class="cta-button cta-button-assistant"><i class="fas fa-robot"></i> OpenAssistant</a>
-            </div>
+        <p>
+            Offline-first document search, vector databases, and developer
+            playgrounds built with SwiftUI, Core ML, SwiftData, and the OpenAI
+            API.
+        </p>
+        <div class="hero-buttons">
+        <a href="openclinic" class="cta-button cta-button-clinical"><i class="fas fa-notes-medical"></i> OpenClinic</a>
+        <a href="openintelligence" class="cta-button cta-button-tertiary"><i class="fas fa-shield-alt"></i> OpenIntelligence</a>
+        <a href="openresponses" class="cta-button cta-button-secondary"><i class="fas fa-rocket"></i> OpenResponses</a>
+        <a href="opencone" class="cta-button"><i class="fas fa-brain"></i> OpenCone</a>
+        <a href="openassistant" class="cta-button cta-button-assistant"><i class="fas fa-robot"></i> OpenAssistant</a>
+        </div>
         </div>
     </header>
 
     <main>
-        <!-- Apps Overview Section -->
-        <section id="apps" class="apps-overview">
-            <h2>Applications</h2>
-            <p class="section-intro">
-                Developer tools and offline-first workspaces built with Swift, SwiftUI, and local-first architecture.
+    <!-- Apps Overview Section -->
+    <section id="apps" class="apps-overview">
+        <h2>Applications</h2>
+        <p class="section-intro">
+        Developer tools and offline-first workspaces built with Swift,
+        SwiftUI, and local-first architecture.
+        </p>
+        <div class="apps-grid" style="max-width: 1200px">
+            <div class="app-card" style="border-color: rgba(0, 255, 170, 0.4)">
+                <div class="app-icon" style="
+                        background: linear-gradient(135deg, #00ffaa 0%, #00aa77 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                      ">
+                    <i class="fas fa-notes-medical"></i>
+                </div>
+                <h3>OpenClinic</h3>
+            <p class="app-tagline" style="color: #00ffaa">
+                Local Clinical Charting
             </p>
-            <div class="apps-grid" style="max-width: 1200px;">
-                <div class="app-card" style="border-color: rgba(0, 255, 170, 0.4);">
-                    <div class="app-icon" style="background: linear-gradient(135deg, #00ffaa 0%, #00aa77 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        <i class="fas fa-notes-medical"></i>
-                    </div>
-                    <h3>OpenClinic</h3>
-                    <p class="app-tagline" style="color: #00ffaa;">Local Clinical Charting</p>
-                    <p>On-device provider workspace with structured dictation, anatomical photo tracking, SMART on FHIR integration, and a verified local RAG pipeline.</p>
-                    <a href="openclinic" class="app-link" style="color: #00ffaa;">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>OpenIntelligence</h3>
-                    <p class="app-tagline">Local Document Q&A</p>
-                    <p>Offline-first document search and grounding. Performs parsing, chunking, embedding generation, and hybrid retrieval entirely on-device.</p>
-                    <a href="openintelligence" class="app-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>OpenResponses</h3>
-                    <p class="app-tagline">OpenAI API Playground</p>
-                    <p>Developer playground for OpenAI's model APIs. Supports custom prompts, sandboxed Python code execution, browser automation, and MCP servers.</p>
-                    <a href="openresponses" class="app-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>OpenCone</h3>
-                    <p class="app-tagline">On-Device RAG Client</p>
-                    <p>iOS workspace for vector search. Parses local documents via OCR, generates embeddings via OpenAI, and syncs vectors with Pinecone.</p>
-                    <a href="opencone" class="app-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="app-card" style="border-color: rgba(255, 153, 0, 0.4);">
-                    <div class="app-icon" style="background: linear-gradient(135deg, #ff9900 0%, #ff5500 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>OpenAssistant</h3>
-                    <p class="app-tagline" style="color: #ff9900;">Assistants API Client (Legacy)</p>
-                    <p>Legacy dashboard for managing OpenAI Assistants, threads, and vector stores. Archived due to OpenAI API deprecations.</p>
-                    <a href="openassistant" class="app-link" style="color: #ff9900;">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+            <p>
+                On-device provider workspace with structured dictation, anatomical
+                photo tracking, SMART on FHIR integration, and a verified local
+                RAG pipeline.
+            </p>
+            <a href="openclinic" class="app-link" style="color: #00ffaa">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-        </section>
+            <div class="app-card">
+                <div class="app-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>OpenIntelligence</h3>
+                <p class="app-tagline">Local Document Q&A</p>
+            <p>
+                Offline-first document search and grounding. Performs parsing,
+                chunking, embedding generation, and hybrid retrieval entirely
+                on-device.
+            </p>
+            <a href="openintelligence" class="app-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>OpenResponses</h3>
+                <p class="app-tagline">OpenAI API Playground</p>
+            <p>
+                Developer playground for OpenAI's model APIs. Supports custom
+                prompts, sandboxed Python code execution, browser automation, and
+                MCP servers.
+            </p>
+            <a href="openresponses" class="app-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="app-card">
+                <div class="app-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>OpenCone</h3>
+                <p class="app-tagline">On-Device RAG Client</p>
+            <p>
+                iOS workspace for vector search. Parses local documents via OCR,
+                generates embeddings via OpenAI, and syncs vectors with Pinecone.
+            </p>
+            <a href="opencone" class="app-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        <div class="app-card" style="border-color: rgba(255, 153, 0, 0.4)">
+            <div class="app-icon" style="
+                        background: linear-gradient(135deg, #ff9900 0%, #ff5500 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                      ">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h3>OpenAssistant</h3>
+            <p class="app-tagline" style="color: #ff9900">
+                Assistants API Client (Legacy)
+            </p>
+            <p>
+                Legacy dashboard for managing OpenAI Assistants, threads, and
+                vector stores. Archived due to OpenAI API deprecations.
+            </p>
+            <a href="openassistant" class="app-link" style="color: #ff9900">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            </div>
+            </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Gunzino. All rights reserved.</p>
-        <p><a href="mailto:gunnarguy@me.com">Contact</a> | <a href="support.html">Support</a></p>
+    <p>&copy; 2026 Gunzino. All rights reserved.</p>
+    <p>
+        <a href="mailto:gunnarguy@me.com">Contact</a> |
+        <a href="support.html">Support</a>
+    </p>
     </footer>
 </body>
 </html>

@@ -1,127 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenCone Support & FAQ</title>
-    <meta name="description" content="Official support center and FAQs for the OpenCone iOS app. Find guides, troubleshooting, and contact information.">
-    <meta property="og:title" content="OpenCone Support & FAQ">
-    <meta property="og:description" content="Need help with OpenCone? Browse frequently asked questions or submit a support inquiry.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gunzino.me/opencone/support">
-    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-
+    <meta name="description"
+        content="Official support center and FAQs for the OpenCone iOS app. Find guides, troubleshooting, and contact information." />
+    <meta property="og:title" content="OpenCone Support & FAQ" />
+    <meta property="og:description"
+        content="Need help with OpenCone? Browse frequently asked questions or submit a support inquiry." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gunzino.me/opencone/support" />
+    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebPage",
+                "name": "OpenCone Support Center",
+                "description": "Official support center and FAQs for the OpenCone iOS app. Find guides, troubleshooting, and contact information.",
+                "url": "https://gunzino.me/opencone/support"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "OpenCone",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "iOS Application",
+                "description": "On-device RAG app for local documents, OCR, OpenAI embeddings, and Pinecone-backed search.",
+                "url": "https://gunzino.me/opencone",
+                "downloadUrl": "https://apps.apple.com/us/app/opencone/id6744467668"
+              }
+            ]
+          }
+        </script>
 
     <!-- ====================================================================== -->
-<!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
-<!-- ====================================================================== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Configured to ensure compatibility with Ads Account 450-937-9845
-  gtag('config', 'G-4Q160W3M61', {
-    'send_page_view': true,
-    'enhanced_measurement': true
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.body.addEventListener('click', function(event) {
-      var interactiveTarget = event.target.closest('[data-track]');
-      if (interactiveTarget) {
-        var actionLabel = interactiveTarget.getAttribute('data-track');
-        var actionGroup = interactiveTarget.getAttribute('data-track-group') || 'general_interaction';
-        var actionValue = interactiveTarget.getAttribute('data-track-value') || '';
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'ui_interaction_event', {
-            'interaction_label': actionLabel,
-            'interaction_group': actionGroup,
-            'interaction_value': actionValue,
-            'page_location_path': window.location.pathname
-          });
+    <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
+    <!-- ====================================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
-      }
-    }, true);
-  });
-</script>
-<!-- ====================================================================== -->
-</head>
-<body>
+        gtag("js", new Date());
+
+        // Configured to ensure compatibility with Ads Account 450-937-9845
+        gtag("config", "G-4Q160W3M61", {
+            send_page_view: true,
+            enhanced_measurement: true,
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.addEventListener(
+                "click",
+                function (event) {
+                    var interactiveTarget = event.target.closest("[data-track]");
+                    if (interactiveTarget) {
+                var actionLabel = interactiveTarget.getAttribute("data-track");
+                var actionGroup =
+                    interactiveTarget.getAttribute("data-track-group") ||
+                    "general_interaction";
+                var actionValue =
+                    interactiveTarget.getAttribute("data-track-value") || "";
+
+                if (typeof gtag === "function") {
+                    gtag("event", "ui_interaction_event", {
+                        interaction_label: actionLabel,
+                        interaction_group: actionGroup,
+                        interaction_value: actionValue,
+                        page_location_path: window.location.pathname,
+                    });
+                }
+            }
+            },
+            true,
+        );
+      });
+        </script>
+    <!-- ====================================================================== -->
+    </head>
+
+    <body>
     <header>
-        <nav>
-            <div class="logo"><a href="/index.html" style="color: inherit; text-decoration: none;">Gunzino</a></div>
-            <ul>
-                <li><a href="/index.html#apps">Apps</a></li>
-                <li><a href="/index.html#opencone">OpenCone</a></li>
-                <li><a href="/opencone/support" class="active">Support</a></li>
-                <li><a href="/opencone/privacy">Privacy</a></li>
-                <li><a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a></li>
-            </ul>
+    <nav>
+        <div class="logo">
+            <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+        </div>
+        <ul>
+            <li><a href="/index.html#apps">Apps</a></li>
+            <li><a href="/index.html#opencone">OpenCone</a></li>
+            <li><a href="/opencone/support" class="active">Support</a></li>
+            <li><a href="/opencone/privacy">Privacy</a></li>
+        <li>
+            <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">GitHub <i
+                    class="fab fa-github"></i></a>
+        </li>
+        </ul>
         </nav>
     </header>
 
     <main>
-        <section class="support-hero">
-            <h1>OpenCone Support Center</h1>
-            <p>Welcome to OpenCone support. Find quick answers below or submit a direct inquiry using the contact details.</p>
-            <div class="support-highlights" role="list">
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-key" aria-hidden="true"></i>
-                    <h3>API Key Troubleshooting</h3>
-                    <p>Ensure OpenAI and Pinecone API keys are active and funded.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-file-shield" aria-hidden="true"></i>
-                    <h3>Document Sandbox</h3>
-                    <p>Files are stored locally on your device with security-scoped bookmarks.</p>
-                </div>
-                <div class="support-highlight" role="listitem">
-                    <i class="fas fa-bug" aria-hidden="true"></i>
-                    <h3>Issue Tracking</h3>
-                    <p>Report code issues directly on our GitHub project repository.</p>
-                </div>
+    <section class="support-hero">
+        <h1>OpenCone Support Center</h1>
+        <p>
+            Welcome to OpenCone support. Find quick answers below or submit a
+            direct inquiry using the contact details.
+        </p>
+        <h2 style="
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                  ">
+            Support Highlights
+        </h2>
+        <div class="support-highlights" role="list">
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-key" aria-hidden="true"></i>
+                <h3>API Key Troubleshooting</h3>
+                <p>Ensure OpenAI and Pinecone API keys are active and funded.</p>
             </div>
-        </section>
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-file-shield" aria-hidden="true"></i>
+                <h3>Document Sandbox</h3>
+            <p>
+                Files are stored locally on your device with security-scoped
+                bookmarks.
+            </p>
+            </div>
+            <div class="support-highlight" role="listitem">
+                <i class="fas fa-bug" aria-hidden="true"></i>
+                <h3>Issue Tracking</h3>
+                <p>Report code issues directly on our GitHub project repository.</p>
+            </div>
+            </div>
+            </section>
 
-        <section class="support-section">
-            <h2>Frequently Asked Questions</h2>
+    <section class="support-section">
+        <h2>Frequently Asked Questions</h2>
 
-            <h3>What is OpenCone?</h3>
-            <p>OpenCone is a native iOS application that provides on-device Retrieval Augmented Generation (RAG). It allows you to process documents (PDF, DOCX, TXT, images), generate vector embeddings using OpenAI, store them in Pinecone, and perform semantic searches with AI-powered answers.</p>
+        <h3>What is OpenCone?</h3>
+        <p>
+            OpenCone is a native iOS application that provides on-device Retrieval
+            Augmented Generation (RAG). It allows you to process documents (PDF,
+            DOCX, TXT, images), generate vector embeddings using OpenAI, store
+            them in Pinecone, and perform semantic searches with AI-powered
+            answers.
+        </p>
 
-            <h3>What API keys do I need for OpenCone?</h3>
-            <p>You need an OpenAI API key (for embeddings and completions) and a Pinecone API key with Project ID (for vector storage and search).</p>
+        <h3>What API keys do I need for OpenCone?</h3>
+        <p>
+            You need an OpenAI API key (for embeddings and completions) and a
+            Pinecone API key with Project ID (for vector storage and search).
+        </p>
 
-            <h3>What file types does OpenCone support?</h3>
-            <p>OpenCone supports PDF, DOCX, TXT files, and images (with OCR capability using VisionKit).</p>
+        <h3>What file types does OpenCone support?</h3>
+        <p>
+            OpenCone supports PDF, DOCX, TXT files, and images (with OCR
+            capability using VisionKit).
+        </p>
 
-            <h3>Is my data secure in OpenCone?</h3>
-            <p>Yes. OpenCone uses secure connections for API integrations, security-scoped bookmarks for file access, and follows best practices for data handling. Your documents and embeddings are stored in your own Pinecone account. No information is ever sent to developer servers.</p>
+        <h3>Is my data secure in OpenCone?</h3>
+        <p>
+            Yes. OpenCone uses secure connections for API integrations,
+            security-scoped bookmarks for file access, and follows best practices
+            for data handling. Your documents and embeddings are stored in your
+            own Pinecone account. No information is ever sent to developer
+            servers.
+        </p>
 
-            <h3>How do I reset my app credentials and stored data?</h3>
-            <p>Navigate to Settings → Advanced → Reset App to clear Keychain credentials, conversation history, and document lists. Alternatively, uninstalling the app removes all local storage.</p>
+        <h3>How do I reset my app credentials and stored data?</h3>
+        <p>
+            Navigate to Settings → Advanced → Reset App to clear Keychain
+            credentials, conversation history, and document lists. Alternatively,
+            uninstalling the app removes all local storage.
+        </p>
 
-            <h2>Contact Info</h2>
-            <ul>
-                <li><strong>Privacy Policy URL:</strong> <a href="/opencone/privacy">https://gunzino.me/opencone/privacy</a></li>
-                <li><strong>Direct Email Support:</strong> <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a> or <a href="mailto:gunnarguy@me.com?subject=OpenCone%20Support">gunnarguy@me.com</a></li>
-                <li><strong>GitHub Repository:</strong> <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">OpenCone on GitHub</a></li>
-            </ul>
+        <h2>Contact Info</h2>
+        <ul>
+        <li>
+            <strong>Privacy Policy URL:</strong>
+            <a href="/opencone/privacy">https://gunzino.me/opencone/privacy</a>
+        </li>
+        <li>
+            <strong>Direct Email Support:</strong>
+            <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a> or
+            <a href="mailto:gunnarguy@me.com?subject=OpenCone%20Support">gunnarguy@me.com</a>
+        </li>
+        <li>
+            <strong>GitHub Repository:</strong>
+            <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">OpenCone on GitHub</a>
+        </li>
+        </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Gunzino. All rights reserved.</p>
-        <p><a href="/index.html">Home</a> | <a href="/opencone/privacy">Privacy Policy</a></p>
+    <p>&copy; 2025 Gunzino. All rights reserved.</p>
+    <p>
+        <a href="/index.html">Home</a> |
+        <a href="/opencone/privacy">Privacy Policy</a>
+    </p>
     </footer>
 </body>
 </html>
