@@ -51,13 +51,41 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+      const GA_MEASUREMENT_ID = "G-4Q160W3M61";
+      const GA_DEBUG_MODE = new URLSearchParams(window.location.search).has(
+        "ga_debug",
+      );
+      let gaPageViewSent = false;
+
+      function sendGaPageView() {
+        if (gaPageViewSent) {
+          return;
+        }
+
+        gaPageViewSent = true;
+        gtag("event", "page_view", {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname + window.location.search,
+          debug_mode: GA_DEBUG_MODE,
+        });
+      }
+
       gtag("js", new Date());
 
-      // Configured to ensure compatibility with Ads Account 450-937-9845
-      gtag("config", "G-4Q160W3M61", {
-        send_page_view: true,
-        enhanced_measurement: true,
+      gtag("config", GA_MEASUREMENT_ID, {
+        send_page_view: false,
+        transport_type: "beacon",
+        debug_mode: GA_DEBUG_MODE,
       });
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", sendGaPageView, {
+          once: true,
+        });
+      } else {
+        sendGaPageView();
+      }
     </script>
 
     <script>
