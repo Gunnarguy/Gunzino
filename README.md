@@ -1,8 +1,8 @@
-# Gunzino - Advanced AI Applications
+# Gunzino - Publisher Site and Support Surface
 
-This repository contains the landing page and support site for **Gunzino**, showcasing three native applications: **OpenCone**, **OpenResponses**, and **OpenIntelligence**.
+This repository contains the publisher site, product landing pages, and support/legal surface for **Gunzino**. It routes users to public product pages such as **OpenClinic**, **OpenCone**, **OpenResponses**, and **OpenIntelligence**.
 
-## Featured Applications
+## Featured Product Pages
 
 ### OpenCone
 **On-Device RAG for iOS** - [GitHub Repository](https://github.com/Gunnarguy/OpenCone)
@@ -51,15 +51,15 @@ OpenIntelligence is a privacy-first iOS application for grounded document Q&A. I
 
 ## Repository Structure
 
-- `index.html` – main landing page showcasing both OpenCone and OpenResponses
-- `support.html` – contact form and comprehensive FAQ section for both applications
+- `index.html` – main publisher landing page linking to public product pages and policy routes
+- `support.html` – contact form and comprehensive FAQ section for public product pages
 - `style.css` – modern, responsive styling with dark theme and gradient accents
 - `openintelligence/` – OpenIntelligence landing, support, and privacy policy pages
 - `CNAME` – domain mapping for GitHub Pages (gunzino.me)
 
 ## Technology Stack
 
-Both applications are built with:
+The public products highlighted here are built with:
 - **SwiftUI** – Native iOS/macOS UI framework
 - **MVVM Architecture** – Clean separation of concerns with dedicated service layers
 - **async/await & Combine** – Modern Swift concurrency and reactive programming

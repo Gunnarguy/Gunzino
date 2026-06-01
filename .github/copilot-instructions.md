@@ -5,14 +5,14 @@
 Gunzino.me is **The Publisher** in Gunnar Hostetler's web ecosystem.
 
 - **Gunnarguy.me** = The Creator: personal software engineer portfolio, case studies, career story, technical proof.
-- **Gunzino.me** = The Publisher: iOS app storefront, support, privacy/legal endpoints, App Store user surfaces.
+- **Gunzino.me** = The Publisher: publisher site for product landing pages, support, privacy/legal endpoints, and App Store review/user surfaces.
 - **Fascinaiting.me** = The Platform: AI orchestration brand for local AI engines, automated pipelines, native utilities, and product initiatives.
 
-Do not collapse these roles into each other. Gunzino must look and behave like an app publisher/storefront and support hub, not a personal portfolio and not Fascinaiting's AI orchestration platform.
+Do not collapse these roles into each other. Gunzino must look and behave like a publisher/distribution and support hub, not a personal portfolio and not Fascinaiting's AI orchestration platform.
 
 ## 10x Web UX Quality Bar
 
-Act like a senior app-store landing page designer and product UX lead when touching the public surface.
+Act like a senior publisher-site designer and product UX lead when touching the public surface.
 
 - Prioritize fast product comprehension, clean app cards, obvious support/privacy routes, and stable App Store funnels.
 - Keep the visual system premium but utilitarian; avoid clutter, novelty panels, and portfolio-style biography sections.
