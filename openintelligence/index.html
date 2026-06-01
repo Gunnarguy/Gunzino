@@ -1,31 +1,31 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenIntelligence | On-Device Document Search</title>
+    <title>OpenIntelligence | Local-First Document Intelligence</title>
     <meta name="description"
-        content="Offline document search and retrieval-augmented generation on iPhone, with local ingestion, hybrid retrieval, and cited answers." />
-    <meta property="og:title" content="OpenIntelligence | On-Device Document Search" />
+      content="OpenIntelligence is a local-first document intelligence app for iPhone and iPad with Apple Foundation Models, PDFKit, Vision OCR, SQLite FTS5, citations, and a reusable engine boundary." />
+    <meta property="og:title" content="OpenIntelligence | Local-First Document Intelligence" />
     <meta property="og:description"
-        content="Import documents, search local indexes, and get citation-backed answers entirely offline." />
+      content="Import private documents, inspect cited answers, and understand the app-to-engine split behind Gunnar Hostetler's document intelligence stack." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/openintelligence" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <link rel="stylesheet" href="/style.css?v=20260531b" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "OpenIntelligence",
-            "applicationCategory": "ProductivityApplication",
-            "operatingSystem": "iOS Application",
-            "description": "Offline document search app with local ingestion, hybrid retrieval, and cited answers.",
-            "url": "https://gunzino.me/openintelligence",
-            "downloadUrl": "https://apps.apple.com/us/app/openintelligence/id6756559175"
-          }
-        </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "OpenIntelligence",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS Application",
+        "description": "Local-first document intelligence app with Apple Foundation Models, PDFKit, Vision OCR, hybrid retrieval, and cited answers.",
+        "url": "https://gunzino.me/openintelligence",
+        "downloadUrl": "https://apps.apple.com/us/app/openintelligence/id6756559175"
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
@@ -34,200 +34,304 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
-            dataLayer.push(arguments);
+          dataLayer.push(arguments);
         }
         gtag("js", new Date());
 
         // Configured to ensure compatibility with Ads Account 450-937-9845
         gtag("config", "G-4Q160W3M61", {
-            send_page_view: true,
-            enhanced_measurement: true,
+          send_page_view: true,
+          enhanced_measurement: true,
         });
     </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.body.addEventListener(
-                "click",
-                function (event) {
-                    var interactiveTarget = event.target.closest("[data-track]");
-                    if (interactiveTarget) {
+          document.body.addEventListener(
+            "click",
+            function (event) {
+              var interactiveTarget = event.target.closest("[data-track]");
+              if (interactiveTarget) {
                 var actionLabel = interactiveTarget.getAttribute("data-track");
                 var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
+                  interactiveTarget.getAttribute("data-track-group") ||
+                  "general_interaction";
                 var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+                  interactiveTarget.getAttribute("data-track-value") || "";
 
-                if (typeof gtag === "function") {
-                    gtag("event", "ui_interaction_event", {
-                        interaction_label: actionLabel,
-                        interaction_group: actionGroup,
-                        interaction_value: actionValue,
-                        page_location_path: window.location.pathname,
-                    });
-                }
+              if (typeof gtag === "function") {
+                gtag("event", "ui_interaction_event", {
+                  interaction_label: actionLabel,
+                  interaction_group: actionGroup,
+                  interaction_value: actionValue,
+                  page_location_path: window.location.pathname,
+                });
+              }
             }
-            },
-            true,
+          },
+          true,
         );
       });
-        </script>
+</script>
     <!-- ====================================================================== -->
-    </head>
+  </head>
 
-    <body>
+  <body>
     <header>
-    <nav>
+      <nav>
         <div class="logo">
-            <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+          <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
         </div>
         <ul>
-            <li><a href="/index.html#apps">Apps</a></li>
-        <li>
+          <li><a href="/index.html#apps">Apps</a></li>
+          <li>
             <a href="/openintelligence" class="active">OpenIntelligence</a>
-        </li>
-        <li><a href="/openintelligence/support">Support</a></li>
-        <li><a href="/openintelligence/privacy">Privacy</a></li>
-        <li>
+          </li>
+          <li><a href="/openintelligence/support">Support</a></li>
+          <li><a href="/openintelligence/privacy">Privacy</a></li>
+          <li>
             <a href="https://github.com/Gunnarguy/OpenIntelligence" target="_blank" rel="noopener">GitHub <i
-                    class="fab fa-github"></i></a>
-        </li>
+                class="fab fa-github"></i></a>
+            </li>
         </ul>
-        </nav>
-        <div class="hero">
-            <h1>OpenIntelligence</h1>
+      </nav>
+      <div class="hero">
+        <h1>OpenIntelligence</h1>
         <p>
-            On-device document search and Q&A for iOS. Build local libraries,
-            index files, and run RAG pipelines completely offline.
+          Local-first document intelligence for iPhone and iPad. Import private
+          libraries, inspect cited answers, and use an Apple-native retrieval
+          stack that prefers grounded evidence over generic chat behavior.
         </p>
         <div class="hero-buttons">
-        <a href="/openintelligence/support" class="cta-button">Support <i class="fas fa-life-ring"></i></a>
-        <a href="/openintelligence/privacy" class="cta-button cta-button-secondary">Privacy Policy <i
-                class="fas fa-user-shield"></i></a>
+          <a href="https://apps.apple.com/us/app/openintelligence/id6756559175" class="cta-button" target="_blank" rel="noopener"
+            data-track="openintelligence_app_store" data-track-group="product_page">App Store <i
+              class="fas fa-arrow-up-right-from-square"></i></a>
+          <a href="/openintelligence/support" class="cta-button cta-button-secondary" data-track="openintelligence_support"
+            data-track-group="product_page">Support <i class="fas fa-life-ring"></i></a>
+          <a href="/openintelligence/privacy" class="cta-button cta-button-secondary" data-track="openintelligence_privacy"
+            data-track-group="product_page">Privacy Policy <i class="fas fa-user-shield"></i></a>
         </div>
-        </div>
+      </div>
     </header>
 
     <main>
-    <section class="app-section">
+      <section class="app-section">
         <div class="app-header">
-            <div class="app-title-group">
-                <i class="fas fa-shield-alt app-header-icon" aria-hidden="true"></i>
-                <div>
-                    <h2>On-Device Document Search</h2>
-            <p class="app-subtitle">
-                Offline index building, local vector retrieval, and
-                citation-backed Q&A.
-            </p>
+          <div class="app-title-group">
+            <i class="fas fa-shield-alt app-header-icon" aria-hidden="true"></i>
+            <div>
+              <h2>Shipping App Plus Engine Lineage</h2>
+              <p class="app-subtitle">
+                OpenIntelligence is the public app surface for a broader
+                document-intelligence stack, with the reusable engine boundary
+                living behind the product.
+                </p>
             </div>
-            </div>
-            <div class="app-links">
-            <a href="https://github.com/Gunnarguy/OpenIntelligence" class="github-link" target="_blank" rel="noopener">
-                <i class="fab fa-github"></i> View on GitHub
+          </div>
+          <div class="app-links">
+            <a href="https://github.com/Gunnarguy/OpenIntelligence" class="github-link" target="_blank" rel="noopener"
+              data-track="openintelligence_github" data-track-group="product_page">
+              <i class="fab fa-github"></i> View on GitHub
             </a>
-            </div>
-            </div>
+          </div>
+          </div>
 
         <div class="app-description">
-            <p>
-            OpenIntelligence is an offline-first iOS application that parses
-            files, builds local vector and keyword indexes, and retrieves
-            grounded answers with clickable citations. The entire RAG
-            pipeline, from PDF parsing and Vision OCR to semantic chunking,
-            local embedding generation, hybrid retrieval, and LLM generation,
-            runs
-            strictly on-device.
+          <p>
+            OpenIntelligence ingests PDFs, Office files, code, images, audio,
+            and video into private libraries, then retrieves and answers from
+            that material with citations, confidence checks, and deliberate
+            abstention when the evidence is weak. Most ingestion, indexing, and
+            retrieval stays local; when Apple-managed cloud capacity is used, it
+            is only through platform-controlled paths rather than generic
+            third-party AI hosting.
             </p>
             </div>
 
-        <h3>Key Capabilities</h3>
+        <h3>What Makes OpenIntelligence Different</h3>
         <div class="features-grid">
-            <div class="feature-item">
-                <i class="fas fa-lock feature-icon" aria-hidden="true"></i>
-                <h4>Local-first by default</h4>
+          <div class="feature-item">
+            <i class="fas fa-lock feature-icon" aria-hidden="true"></i>
+            <h4>Local-first by default</h4>
             <p>
-                Document ingestion, chunking, embeddings, and search execute
-                on-device unless you explicitly enable a cloud pathway.
+              PDF parsing, OCR, library storage, FTS indexing, and retrieval are
+              designed to stay on device unless the user explicitly crosses into
+              an Apple-managed cloud path.
             </p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-file-lines feature-icon" aria-hidden="true"></i>
-                <h4>Multi-format ingestion</h4>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-file-lines feature-icon" aria-hidden="true"></i>
+            <h4>Broad document ingestion</h4>
             <p>
-                Supports common formats including PDF, text, Markdown, CSV, and
-                more, with OCR fallback for scanned pages when needed.
+              PDFKit, Vision OCR, structured parsers, and media extraction paths
+              handle digital documents, scanned pages, code, images, audio, and
+              video.
             </p>
-            </div>
-            <div class="feature-item">
+          </div>
+          <div class="feature-item">
             <i class="fas fa-magnifying-glass feature-icon" aria-hidden="true"></i>
-            <h4>Hybrid retrieval</h4>
+            <h4>Hybrid retrieval stack</h4>
             <p>
-                Combines vector search and BM25 keyword scoring, then improves
-                results via Reciprocal Rank Fusion (RRF) and MMR diversification.
+              SQLite FTS5, local vector indexing, query analysis, reranking, and
+              context packing are used together instead of a single-vector-only
+              search path.
             </p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-quote-right feature-icon" aria-hidden="true"></i>
-                <h4>Grounded answers and citations</h4>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-quote-right feature-icon" aria-hidden="true"></i>
+            <h4>Cited answers and abstention</h4>
             <p>
-                Answers are generated from retrieved passages and include
-                citations back to source content where available.
+              The app is built to show evidence, drop unsupported claims, and
+              refuse when the documents do not support a confident answer.
             </p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-sliders feature-icon" aria-hidden="true"></i>
-                <h4>Power-user controls</h4>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-sliders feature-icon" aria-hidden="true"></i>
+            <h4>Library and container isolation</h4>
             <p>
-                Container isolation, retrieval depth controls, and execution
-                indicators support repeatable, auditable workflows.
+              Private libraries, retrieval controls, and diagnostics make it
+              possible to scope work and inspect how the answer path behaved.
             </p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-eye feature-icon" aria-hidden="true"></i>
-                <h4>Observability</h4>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-eye feature-icon" aria-hidden="true"></i>
+            <h4>App and engine split</h4>
             <p>
-                Telemetry views and diagnostics help you understand retrieval
-                quality and performance characteristics.
+              The public product ships as an app, but the underlying document
+              intelligence boundary is also treated as a reusable engine inside
+              the broader OpenIntelligence line.
             </p>
             </div>
             </div>
 
-        <h3>App Store Connect Links</h3>
+            <h3>Technical Profile</h3>
+            <div class="tech-columns">
+              <div class="tech-column">
+                <h4>
+                  <i class="fas fa-microchip" aria-hidden="true"></i> Core APIs
+                </h4>
+                <ul>
+                  <li><strong>UI:</strong> SwiftUI on iPhone and iPad</li>
+                  <li>
+                    <strong>Parsing:</strong> PDFKit, Vision OCR, structured
+                    document processing
+                  </li>
+                  <li><strong>Models:</strong> Apple Foundation Models</li>
+                  <li>
+                    <strong>Retrieval:</strong> SQLite FTS5, local vector indexing,
+                    reranking
+                  </li>
+                </ul>
+              </div>
+              <div class="tech-column">
+                <h4>
+                  <i class="fas fa-user-shield" aria-hidden="true"></i> Data
+                  boundary
+                </h4>
+                <ul>
+                  <li>
+                    <strong>Local:</strong> Libraries, normalized text, retrieval
+                    state, citations
+                  </li>
+                  <li>
+                    <strong>Optional:</strong> Apple-managed cloud capacity only
+                    through supported platform paths
+                  </li>
+                  <li>
+                    <strong>Not the product:</strong> generic chatbot behavior over
+                    arbitrary cloud context
+                  </li>
+                  <li>
+                    <strong>Status:</strong> shipping public app plus broader engine
+                    lineage
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3>How OpenIntelligence Runs</h3>
+            <div class="flow-steps">
+              <div class="flow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Import into private libraries</h4>
+                  <p>
+                    Files are assigned to local libraries and normalized through
+                    text extraction or OCR, depending on document quality.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Build lexical and vector indexes</h4>
+                  <p>
+                    The app preserves structure where possible, then stores lexical
+                    signals and vector representations for hybrid retrieval.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Retrieve and verify evidence</h4>
+                  <p>
+                    Query planning, reranking, and evidence packing are used to keep
+                    the answer path tied to source material rather than generic
+                    model guesswork.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4>Render answers with support or abstain</h4>
+                  <p>
+                Answers are shown with citations and confidence cues, or the app
+                abstains when support is not strong enough.
+                </p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Support and Privacy Routes</h3>
         <div class="tech-columns">
-            <div class="tech-column">
+          <div class="tech-column">
             <h4>
-                <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
+              <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
             </h4>
             <p>
-                <a href="/openintelligence/support">https://gunzino.me/openintelligence/support</a>
+              <a href="/openintelligence/support" data-track="openintelligence_support_route"
+                data-track-group="product_page">https://gunzino.me/openintelligence/support</a>
             </p>
-            </div>
-            <div class="tech-column">
+          </div>
+          <div class="tech-column">
             <h4>
-                <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
-                Policy URL
+              <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
+              Policy URL
             </h4>
             <p>
-                <a href="/openintelligence/privacy">https://gunzino.me/openintelligence/privacy</a>
+              <a href="/openintelligence/privacy" data-track="openintelligence_privacy_route"
+                data-track-group="product_page">https://gunzino.me/openintelligence/privacy</a>
             </p>
-            </div>
-            </div>
+          </div>
+          </div>
 
         <p class="tech-footer">
-        <a href="/support.html">General Gunzino Support
+          <a href="/support.html" data-track="openintelligence_general_support" data-track-group="product_page">General Gunzino
+            Support
             <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
         </p>
-        </section>
+      </section>
     </main>
 
     <footer>
-    <p>&copy; 2025 Gunzino. All rights reserved.</p>
-    <p>
+      <p>&copy; 2026 Gunzino. All rights reserved.</p>
+      <p>
         <a href="mailto:gunnarguy@me.com">Contact</a> |
         <a href="/openintelligence/privacy">Privacy</a> |
         <a href="/openintelligence/support">Support</a>
-    </p>
+      </p>
     </footer>
-</body>
+  </body>
 </html>

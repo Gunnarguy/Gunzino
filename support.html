@@ -182,9 +182,10 @@
         <div class="faq-item">
           <h4>What is OpenClinic?</h4>
           <p>
-            OpenClinic is a native iOS/macOS clinical workspace prototype built
-            with SwiftData. It supports clinical charting, provider workflows,
-            anatomical photo tracking, and verified on-device retrieval.
+            OpenClinic is a provider-facing clinical workspace prototype built
+            with SwiftData, SMART on FHIR import, dermatology photo workflows,
+            and a clinical retrieval stack derived from OpenIntelligence
+            internals.
           </p>
         </div>
         <div class="faq-item">
@@ -201,17 +202,19 @@
         <div class="faq-item">
           <h4>What is OpenIntelligence?</h4>
           <p>
-            OpenIntelligence is a privacy-first iOS application for grounded
-            document Q&A. Ingestion, chunking, vector embeddings, and semantic
-            searches execute on-device by default.
+            OpenIntelligence is a local-first document intelligence app for
+            iPhone and iPad. It combines PDFKit, Vision OCR, Apple Foundation
+            Models, local indexing, citations, and a reusable engine boundary
+            for grounded document work.
           </p>
         </div>
         <div class="faq-item">
           <h4>Does OpenIntelligence upload my documents to the cloud?</h4>
           <p>
-            No. Document retrieval runs locally. Cloud pathways (such as Apple
-            Private Cloud Compute or OpenAI APIs) are strictly optional and
-            require explicit user configuration and consent.
+            By default, document libraries, retrieval state, and citations stay
+            local. Any Apple-managed cloud capacity or optional external model
+            path depends on the supported platform route and explicit user
+            action.
           </p>
         </div>
 
@@ -219,37 +222,38 @@
         <div class="faq-item">
           <h4>What is OpenResponses?</h4>
           <p>
-            OpenResponses is an advanced native SwiftUI playground for iOS and
-            macOS that explores the full range of OpenAI's API capabilities,
-            including multi-model support, computer use, web search, code
-            interpreter, image generation, and MCP integration.
+            OpenResponses is a native SwiftUI developer client for the OpenAI
+            Responses API. It exposes direct request controls, SSE streaming
+            events, reasoning traces, tool runs, computer-use approvals, and MCP
+            or connector configuration in one app.
           </p>
         </div>
         <div class="faq-item">
           <h4>What models does OpenResponses support?</h4>
           <p>
-            OpenResponses supports GPT-5, GPT-4.1, O-series reasoning models,
-            GPT-4o, GPT-4, GPT-3.5-turbo, and specialized models like
-            computer-use-preview. The app automatically fetches and displays the
-            latest available models from OpenAI.
+            OpenResponses centers on the models and tool paths available to your
+            OpenAI account, including GPT-5, GPT-4.1, compatible reasoning
+            models, and the specialized computer-use paths exposed by the app.
+            It fetches the live model list from OpenAI instead of relying on a
+            hard-coded catalog.
           </p>
         </div>
         <div class="faq-item">
           <h4>What is MCP integration?</h4>
           <p>
-            Model Context Protocol (MCP) allows OpenResponses to connect to
-            external services like GitHub, Notion, Slack, Google Drive, and
-            more. It features secure authentication, approval workflows, and a
-            discovery service for popular platforms.
+            Model Context Protocol (MCP) lets OpenResponses connect to remote
+            MCP servers and certain hosted connectors, depending on your model,
+            tool compatibility, and configured authentication. The app keeps
+            approval flows visible so tool calls are not hidden behind a proxy.
           </p>
         </div>
         <div class="faq-item">
           <h4>What is the computer use feature?</h4>
           <p>
-            Computer use is a production-ready browser automation tool that
-            allows AI models to navigate websites, click buttons, type text, and
-            interact with web content. It includes safety approval workflows to
-            ensure user control.
+            Computer use is the app's browser automation harness for supported
+            tool and model paths. It lets the model navigate sites, click, type,
+            scroll, and capture screenshots, but every step stays behind visible
+            approval and audit controls.
           </p>
         </div>
 
@@ -257,18 +261,17 @@
         <div class="faq-item">
           <h4>What is OpenCone?</h4>
           <p>
-            OpenCone is a native iOS application that provides on-device
-            Retrieval Augmented Generation (RAG). It allows you to process
-            documents (PDF, DOCX, TXT, images), generate vector embeddings using
-            OpenAI, store them in Pinecone, and perform semantic searches with
-            AI-powered answers.
+            OpenCone is a cloud-hybrid RAG client. It parses and OCRs documents
+            locally, sends chunk text to OpenAI embeddings, stores vectors in
+            Pinecone, and sends retrieved context to the OpenAI Responses API
+            for grounded answers.
           </p>
         </div>
         <div class="faq-item">
           <h4>What API keys do I need for OpenCone?</h4>
           <p>
-            You need an OpenAI API key (for embeddings and completions) and a
-            Pinecone API key with Project ID (for vector storage and search).
+            You need an OpenAI API key for embeddings and responses, plus a
+            Pinecone API key and project details for vector storage and search.
           </p>
         </div>
         <div class="faq-item">
@@ -293,14 +296,16 @@
           <h4>What is OpenAssistant?</h4>
           <p>
             OpenAssistant was a native iOS dashboard for the OpenAI Assistants
-            API, supporting tool integrations and message threads.
+            API, built around assistants, threads, runs, files, and vector
+            stores.
           </p>
         </div>
         <div class="faq-item">
           <h4>Why is OpenAssistant no longer updated?</h4>
           <p>
-            OpenAssistant is a legacy project and is no longer receiving active
-            updates because the completions API has been deprecated by OpenAI.
+            OpenAssistant is an archived product line. Ongoing work moved to
+            OpenResponses, which targets the newer direct Responses API model
+            instead of the older Assistants API thread-and-run workflow.
           </p>
         </div>
 
@@ -308,9 +313,10 @@
         <div class="faq-item">
           <h4>Are these apps available on the App Store?</h4>
           <p>
-            The applications are available as open-source code repositories on
-            GitHub. You can configure and run them on simulators or local
-            devices using Xcode.
+            Availability varies by product. Some lines ship or shipped through
+            the App Store, OpenClinic remains a prototype, and OpenAssistant is
+            archived. Use each product page for the current download and support
+            status instead of assuming the whole catalog works the same way.
           </p>
         </div>
         <div class="faq-item">

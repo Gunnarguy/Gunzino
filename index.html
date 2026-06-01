@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gunzino | Product Pages, Support, and Privacy</title>
+    <title>Gunzino | Product Pages, Support, Privacy, and Legal</title>
     <meta
       name="description"
-      content="Publisher site for Gunnar Hostetler's public product pages, support routes, privacy policies, and legal docs."
+      content="Publisher hub for OpenClinic, OpenIntelligence, OpenResponses, OpenCone, and OpenAssistant, with public product pages, support routes, privacy policies, and legal docs."
     />
-    <meta property="og:title" content="Gunzino | Product Pages, Support, and Privacy" />
+    <meta property="og:title" content="Gunzino | Product Pages, Support, Privacy, and Legal" />
     <meta
       property="og:description"
-      content="Publisher site for Gunnar Hostetler's public product pages, support routes, privacy policies, and legal docs."
+      content="Publisher hub for five Apple-native apps spanning clinical workflows, local document intelligence, direct OpenAI Responses tooling, cloud-hybrid vector search, and a legacy Assistants API client."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -25,14 +25,14 @@
         "@graph": [
           {
             "@type": "CollectionPage",
-            "name": "Gunzino | Product Pages, Support, and Privacy",
-            "description": "Publisher site for Gunnar Hostetler's public product pages, support routes, privacy policies, and legal docs.",
+            "name": "Gunzino | Product Pages, Support, Privacy, and Legal",
+            "description": "Publisher hub for five Apple-native apps spanning clinical workflows, local document intelligence, direct OpenAI Responses tooling, cloud-hybrid vector search, and a legacy Assistants API client.",
             "url": "https://gunzino.me/"
           },
           {
             "@type": "Organization",
             "name": "Gunzino",
-            "description": "Publisher site for Gunnar Hostetler's public product pages, support routes, privacy policies, and legal docs.",
+            "description": "Publisher hub for Gunnar Hostetler's public product pages, support routes, privacy policies, and legal docs.",
             "url": "https://gunzino.me/"
           }
         ]
@@ -96,41 +96,59 @@
       <nav>
         <div class="logo">Gunzino</div>
         <ul>
-          <li><a href="#apps">Products</a></li>
-          <li><a href="openclinic">OpenClinic</a></li>
-          <li><a href="openintelligence">OpenIntelligence</a></li>
-          <li><a href="openresponses">OpenResponses</a></li>
-          <li><a href="opencone">OpenCone</a></li>
-          <li><a href="openassistant">OpenAssistant</a></li>
           <li>
-            <a href="https://github.com/Gunnarguy" target="_blank"
+            <a href="#apps" data-track="nav_products" data-track-group="navigation">Products</a>
+            </li>
+            <li>
+              <a href="openclinic" data-track="nav_openclinic" data-track-group="navigation">OpenClinic</a>
+            </li>
+            <li>
+              <a href="openintelligence" data-track="nav_openintelligence" data-track-group="navigation">OpenIntelligence</a>
+            </li>
+            <li>
+              <a href="openresponses" data-track="nav_openresponses" data-track-group="navigation">OpenResponses</a>
+            </li>
+            <li>
+              <a href="opencone" data-track="nav_opencone" data-track-group="navigation">OpenCone</a>
+            </li>
+            <li>
+              <a href="openassistant" data-track="nav_openassistant" data-track-group="navigation">OpenAssistant</a>
+            </li>
+            <li>
+              <a href="https://github.com/Gunnarguy" target="_blank" data-track="nav_github" data-track-group="navigation"
               >GitHub <i class="fab fa-github"></i
             ></a>
           </li>
-          <li><a href="support.html">Support</a></li>
+          <li>
+            <a href="support.html" data-track="nav_support" data-track-group="navigation">Support</a>
+          </li>
         </ul>
       </nav>
       <div class="hero">
-        <h1>Native iOS & macOS AI Tools</h1>
+        <h1>Publisher Pages for Five Distinct Apple-Native Apps</h1>
         <p>
-          Offline-first document search, vector databases, and developer
-          playgrounds built with SwiftUI, Core ML, SwiftData, and the OpenAI
-          API.
+          Gunzino is the public product and support hub for five separate apps,
+          not one generic AI bundle: OpenClinic is a provider workspace with
+          SMART on FHIR and local clinical retrieval, OpenIntelligence is the
+          local-first document intelligence stack, OpenResponses is the active
+          Responses API playground, OpenCone is a cloud-hybrid OCR and vector
+          search client, and OpenAssistant is the legacy Assistants API build.
         </p>
         <div class="hero-buttons">
-          <a href="openclinic" class="cta-button cta-button-clinical"
+          <a href="openclinic" class="cta-button cta-button-clinical" data-track="hero_openclinic" data-track-group="hero"
             ><i class="fas fa-notes-medical"></i> OpenClinic</a
           >
-          <a href="openintelligence" class="cta-button cta-button-tertiary"
+          <a href="openintelligence" class="cta-button cta-button-tertiary" data-track="hero_openintelligence"
+            data-track-group="hero"
             ><i class="fas fa-shield-alt"></i> OpenIntelligence</a
           >
-          <a href="openresponses" class="cta-button cta-button-secondary"
+          <a href="openresponses" class="cta-button cta-button-secondary" data-track="hero_openresponses" data-track-group="hero"
             ><i class="fas fa-rocket"></i> OpenResponses</a
           >
-          <a href="opencone" class="cta-button"
+          <a href="opencone" class="cta-button" data-track="hero_opencone" data-track-group="hero"
             ><i class="fas fa-brain"></i> OpenCone</a
           >
-          <a href="openassistant" class="cta-button cta-button-assistant"
+          <a href="openassistant" class="cta-button cta-button-assistant" data-track="hero_openassistant" data-track-group="hero"
             ><i class="fas fa-robot"></i> OpenAssistant</a
           >
         </div>
@@ -142,8 +160,10 @@
       <section id="apps" class="apps-overview">
         <h2>Products</h2>
         <p class="section-intro">
-          Public product pages for offline-first workspaces and developer
-          tools built with Swift, SwiftUI, and local-first architecture.
+          Each page is written as a publisher surface for App Store review, user
+          support, and technical evaluation: what the app does, which APIs it
+          depends on, what stays local, and where the support and privacy routes
+          live.
         </p>
         <div class="apps-grid" style="max-width: 1200px">
           <div class="app-card" style="border-color: rgba(0, 255, 170, 0.4)">
@@ -159,14 +179,16 @@
             </div>
             <h3>OpenClinic</h3>
             <p class="app-tagline" style="color: #00ffaa">
-              Local Clinical Charting
+              Clinical Workspace with Local Intelligence
             </p>
             <p>
-              On-device provider workspace with structured dictation, anatomical
-              photo tracking, SMART on FHIR integration, and a verified local
-              RAG pipeline.
+              Provider-facing charting workspace for iPhone, iPad, Mac Catalyst,
+              and visionOS. Uses SwiftData, Apple Foundation Models, SMART on
+              FHIR imports, and OpenIntelligence-derived retrieval components
+              for grounded local clinical workflows.
             </p>
-            <a href="openclinic" class="app-link" style="color: #00ffaa"
+            <a href="openclinic" class="app-link" style="color: #00ffaa" data-track="card_openclinic"
+              data-track-group="product_card"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -175,13 +197,13 @@
               <i class="fas fa-shield-alt"></i>
             </div>
             <h3>OpenIntelligence</h3>
-            <p class="app-tagline">Local Document Q&A</p>
+            <p class="app-tagline">Local-First Document Intelligence</p>
             <p>
-              Offline-first document search and grounding. Performs parsing,
-              chunking, embedding generation, and hybrid retrieval entirely
-              on-device.
+              Apple-native document Q&A with PDFKit extraction, Vision OCR,
+              SQLite FTS5, local vector retrieval, evidence-backed answers, and
+              a reusable engine boundary behind the public app surface.
             </p>
-            <a href="openintelligence" class="app-link"
+            <a href="openintelligence" class="app-link" data-track="card_openintelligence" data-track-group="product_card"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -190,13 +212,13 @@
               <i class="fas fa-rocket"></i>
             </div>
             <h3>OpenResponses</h3>
-            <p class="app-tagline">OpenAI API Playground</p>
+            <p class="app-tagline">Direct Responses API Playground</p>
             <p>
-              Developer playground for OpenAI's model APIs. Supports custom
-              prompts, sandboxed Python code execution, browser automation, and
-              MCP servers.
+              Native SwiftUI client for `/v1/responses` with streaming events,
+              reasoning traces, web search, code interpreter, browser
+              automation, remote MCP, and local Keychain-backed API access.
             </p>
-            <a href="openresponses" class="app-link"
+            <a href="openresponses" class="app-link" data-track="card_openresponses" data-track-group="product_card"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -205,12 +227,14 @@
               <i class="fas fa-brain"></i>
             </div>
             <h3>OpenCone</h3>
-            <p class="app-tagline">On-Device RAG Client</p>
+            <p class="app-tagline">Cloud-Hybrid OCR and Vector Search</p>
             <p>
-              iOS workspace for vector search. Parses local documents via OCR,
-              generates embeddings via OpenAI, and syncs vectors with Pinecone.
+              SwiftUI client that extracts and OCRs files locally with PDFKit
+              and Vision, then sends embeddings and search traffic to OpenAI and
+              Pinecone serverless indexes. Useful for private corpora, but not a
+              fully offline app.
             </p>
-            <a href="opencone" class="app-link"
+            <a href="opencone" class="app-link" data-track="card_opencone" data-track-group="product_card"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -227,13 +251,15 @@
             </div>
             <h3>OpenAssistant</h3>
             <p class="app-tagline" style="color: #ff9900">
-              Assistants API Client (Legacy)
+              Legacy Assistants API Client
             </p>
             <p>
-              Legacy dashboard for managing OpenAI Assistants, threads, and
-              vector stores. Archived due to OpenAI API deprecations.
+              Older native dashboard for OpenAI Assistants API threads, runs,
+              files, and vector stores. Kept online for support and reference,
+              but superseded by OpenResponses.
             </p>
-            <a href="openassistant" class="app-link" style="color: #ff9900"
+            <a href="openassistant" class="app-link" style="color: #ff9900" data-track="card_openassistant"
+              data-track-group="product_card"
               >Learn More <i class="fas fa-arrow-right"></i
             ></a>
           </div>
@@ -244,8 +270,9 @@
     <footer>
       <p>&copy; 2026 Gunzino. All rights reserved.</p>
       <p>
-        <a href="mailto:gunnarguy@me.com">Contact</a> |
-        <a href="support.html">Support</a>
+        <a href="mailto:gunnarguy@me.com" data-track="footer_contact" data-track-group="footer">Contact</a>
+        |
+        <a href="support.html" data-track="footer_support" data-track-group="footer">Support</a>
       </p>
     </footer>
   </body>

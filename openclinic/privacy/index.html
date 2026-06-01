@@ -1,260 +1,282 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenClinic Privacy Policy</title>
-    <meta name="description"
-        content="Privacy policy for OpenClinic. Understand how patient records, clinical photography, and SMART on FHIR integrations are secured locally on-device." />
+    <meta
+      name="description"
+      content="Privacy policy for OpenClinic. Understand how patient records, clinical photography, and SMART on FHIR integrations are secured locally on-device."
+    />
     <meta property="og:title" content="OpenClinic Privacy Policy" />
-    <meta property="og:description"
-        content="OpenClinic is a local-first clinical prototype. Learn about the local sandboxing model and direct SMART on FHIR OAuth flows." />
+    <meta
+      property="og:description"
+      content="OpenClinic is a local-first clinical prototype. Learn about the local sandboxing model and direct SMART on FHIR OAuth flows."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/openclinic/privacy" />
-    <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
+    <meta
+      property="og:image"
+      content="https://gunzino.me/openassistant/ios-app-screenshot.png"
+    />
     <link rel="stylesheet" href="/style.css?v=20260531b" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
           {
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "WebPage",
-                "name": "OpenClinic Privacy Policy",
-                "description": "Privacy policy for OpenClinic. Understand how patient records, clinical photography, and SMART on FHIR integrations are secured locally on-device.",
-                "url": "https://gunzino.me/openclinic/privacy"
-              },
-              {
-                "@type": "SoftwareApplication",
-                "name": "OpenClinic",
-                "applicationCategory": "MedicalApplication",
-                "operatingSystem": "iOS Application",
-                "description": "Local-first clinical workspace with charting, dictation, clinical photography, SMART on FHIR imports, and on-device retrieval.",
-                "url": "https://gunzino.me/openclinic"
-              }
-            ]
+            "@type": "WebPage",
+            "name": "OpenClinic Privacy Policy",
+            "description": "Privacy policy for OpenClinic. Understand how patient records, clinical photography, and SMART on FHIR integrations are secured locally on-device.",
+            "url": "https://gunzino.me/openclinic/privacy"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "OpenClinic",
+            "applicationCategory": "MedicalApplication",
+            "operatingSystem": "iOS Application",
+            "description": "Local-first clinical workspace with charting, dictation, clinical photography, SMART on FHIR imports, and on-device retrieval.",
+            "url": "https://gunzino.me/openclinic"
           }
-        </script>
+        ]
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
     <!-- ====================================================================== -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        // Configured to ensure compatibility with Ads Account 450-937-9845
-        gtag("config", "G-4Q160W3M61", {
-            send_page_view: true,
-            enhanced_measurement: true,
-        });
+      // Configured to ensure compatibility with Ads Account 450-937-9845
+      gtag("config", "G-4Q160W3M61", {
+        send_page_view: true,
+        enhanced_measurement: true,
+      });
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.body.addEventListener(
-                "click",
-                function (event) {
-                    var interactiveTarget = event.target.closest("[data-track]");
-                    if (interactiveTarget) {
-                var actionLabel = interactiveTarget.getAttribute("data-track");
-                var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
-                var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.addEventListener(
+          "click",
+          function (event) {
+            var interactiveTarget = event.target.closest("[data-track]");
+            if (interactiveTarget) {
+              var actionLabel = interactiveTarget.getAttribute("data-track");
+              var actionGroup =
+                interactiveTarget.getAttribute("data-track-group") ||
+                "general_interaction";
+              var actionValue =
+                interactiveTarget.getAttribute("data-track-value") || "";
 
-                if (typeof gtag === "function") {
-                    gtag("event", "ui_interaction_event", {
-                        interaction_label: actionLabel,
-                        interaction_group: actionGroup,
-                        interaction_value: actionValue,
-                        page_location_path: window.location.pathname,
-                    });
-                }
+              if (typeof gtag === "function") {
+                gtag("event", "ui_interaction_event", {
+                  interaction_label: actionLabel,
+                  interaction_group: actionGroup,
+                  interaction_value: actionValue,
+                  page_location_path: window.location.pathname,
+                });
+              }
             }
-            },
-            true,
+          },
+          true,
         );
       });
-        </script>
+    </script>
     <!-- ====================================================================== -->
-    </head>
+  </head>
 
-    <body>
+  <body>
     <header style="border-bottom: 2px solid #00ffaa">
-        <nav style="border-bottom: 1px solid rgba(0, 255, 170, 0.25)">
-            <div class="logo">
-                <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
-            </div>
-            <ul>
-                <li><a href="/openclinic">OpenClinic</a></li>
-                <li><a href="/openclinic/support">Support</a></li>
-                <li><a href="/openclinic/privacy" class="active">Privacy</a></li>
-        <li>
-            <a href="https://github.com/Gunnarguy/OpenClinic" target="_blank" rel="noopener">GitHub <i
-                    class="fab fa-github"></i></a>
-        </li>
+      <nav style="border-bottom: 1px solid rgba(0, 255, 170, 0.25)">
+        <div class="logo">
+          <a href="/index.html" style="color: inherit; text-decoration: none"
+            >Gunzino</a
+          >
+        </div>
+        <ul>
+          <li><a href="/openclinic">OpenClinic</a></li>
+          <li><a href="/openclinic/support">Support</a></li>
+          <li><a href="/openclinic/privacy" class="active">Privacy</a></li>
+          <li>
+            <a
+              href="https://github.com/Gunnarguy/OpenClinic"
+              target="_blank"
+              rel="noopener"
+              >GitHub <i class="fab fa-github"></i
+            ></a>
+          </li>
         </ul>
-        </nav>
+      </nav>
     </header>
 
     <main>
-    <section class="support-hero" style="
-              background: linear-gradient(
-                135deg,
-                #0f2027 0%,
-                #203a43 50%,
-                #2c5364 100%
-              );
-            ">
+      <section
+        class="support-hero"
+        style="
+          background: linear-gradient(
+            135deg,
+            #0f2027 0%,
+            #203a43 50%,
+            #2c5364 100%
+          );
+        "
+      >
         <h1>OpenClinic Privacy Policy</h1>
         <p>Last updated: May 2026</p>
         <p>
-            OpenClinic is a local-first clinical workspace prototype. It is
-            designed to demonstrate patient charting, encounter documentation, and
-            medical RAG search utilizing secure local storage and on-device
-            processing. No clinical data is collected, stored, sold, or proxied
-            by the developer.
+          OpenClinic is a local-first clinical workspace prototype. It is
+          designed to demonstrate patient charting, encounter documentation, and
+          medical RAG search utilizing secure local storage and on-device
+          processing. No clinical data is collected, stored, sold, or proxied by
+          the developer.
         </p>
-        </section>
+      </section>
 
-    <section class="support-section">
+      <section class="support-section">
         <h2>1. Clinical Data Storage (Local Sandbox)</h2>
         <p>
-            OpenClinic is designed under a local-first architecture. All Protected
-            Health Information (PHI), patient records, clinical documentation, and
-            anatomical imaging remain stored strictly on your device.
+          OpenClinic is designed under a local-first architecture. All Protected
+          Health Information (PHI), patient records, clinical documentation, and
+          anatomical imaging remain stored strictly on your device.
         </p>
         <ul>
-        <li>
+          <li>
             <strong>SwiftData local store:</strong> Clinical profiles,
             diagnoses, medication lists, and appointments are stored inside a
             local SQLite database managed by SwiftData. The developer has no
             access to this database.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Local Clinical Images:</strong> Photos captured for
             dermatology tracking are saved in the app's local sandbox directory.
             They are not uploaded to iCloud Photo Library or developer servers.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Secure Keychain:</strong> Authentication tokens and sandbox
             EHR endpoints are stored locally in the iOS Keychain.
-        </li>
+          </li>
         </ul>
 
         <h2>2. On-Device AI Engine & Processing</h2>
         <p>
-            All clinical intelligence and search functionalities are designed to
-            run locally, avoiding cloud-based leakage of clinical data.
+          All clinical intelligence and search functionalities are designed to
+          run locally, avoiding cloud-based leakage of clinical data.
         </p>
         <ul>
-        <li>
+          <li>
             <strong>Local Tokenization and Embeddings:</strong> Text chunking
             and vector embeddings are generated on-device using a bundled Core
             ML embedding model and tokenizer vocabulary.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Local Search Indexes:</strong> Vector search (via SQLite)
             and keyword search (via SQLite FTS5) run locally on your device.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Local Synthesis:</strong> Clinical summaries and chart Q&A
             use Apple Foundation Models APIs where supported by the device
             operating system, running entirely on-device. No medical records are
             uploaded to commercial LLM APIs.
-        </li>
+          </li>
         </ul>
 
         <h2>3. SMART on FHIR Interoperability</h2>
         <p>
-            OpenClinic includes functionality to import clinical patient records
-            from EHR systems using the SMART on FHIR profile.
+          OpenClinic includes functionality to import clinical patient records
+          from EHR systems using the SMART on FHIR profile.
         </p>
         <ul>
-        <li>
+          <li>
             <strong>Direct Connections:</strong> All network requests to
             discovery endpoints, capability statement URLs, and FHIR resource
             APIs are made directly from your device over secure HTTPS/TLS. No
             proxy servers are used.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>EHR Authentication:</strong> User sign-in and OAuth
             authorization occur directly on the EHR platform's server using
             secure system browser views
             (<code>ASWebAuthenticationSession</code>). The developer never
             intercepts, logs, or stores your access tokens or credentials.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Local Provenance:</strong> Imported FHIR resources (Patient,
             Condition, MedicationRequest, Appointment) are stored in SwiftData
             and tagged with provenance metadata showing the authoritative source
             system.
-        </li>
+          </li>
         </ul>
 
         <h2>4. Requested Device Permissions</h2>
         <ul>
-        <li>
+          <li>
             <strong>Microphone & Speech Recognition:</strong> Required for
             clinical dictation. Speech processing occurs on-device using Apple
             Speech APIs.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Camera & Photo Library:</strong> Required to capture and
             catalog clinical photos of anatomical regions.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Network Access:</strong> Required to query and import data
             from SMART on FHIR EHR sandboxes.
-        </li>
+          </li>
         </ul>
 
         <h2>5. Retention, Revocation, & Deletion</h2>
         <ul>
-        <li>
+          <li>
             <strong>Record Deletion:</strong> Removing a patient profile,
             clinical photo, or encounter note deletes it immediately from the
             local SwiftData store.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Keychain Reset:</strong> Stored EHR credentials can be
             cleared in the Settings section.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Complete Wipe:</strong> Uninstalling the application
             completely erases all local database records, clinical photography,
             diagnostic logs, and Keychain credentials.
-        </li>
+          </li>
         </ul>
 
         <h2>6. HIPAA & Regulatory Alignment</h2>
         <p>
-            As a prototype clinical playground, OpenClinic does not collect or
-            process patient records on developer-owned servers. Providers using
-            OpenClinic are responsible for ensuring that their use complies with
-            HIPAA rules, institutional policies, and patient consent constraints.
+          As a prototype clinical playground, OpenClinic does not collect or
+          process patient records on developer-owned servers. Providers using
+          OpenClinic are responsible for ensuring that their use complies with
+          HIPAA rules, institutional policies, and patient consent constraints.
         </p>
 
         <h2>7. Contact</h2>
         <p>
-            For privacy inquiries, contact the developer at:
-            <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a>.
+          For privacy inquiries, contact the developer at:
+          <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a>.
         </p>
-        </section>
+      </section>
     </main>
 
     <footer style="background: #121f19; border-top: 1px solid #1a3328">
-        <p>&copy; 2025 Gunzino. All rights reserved.</p>
-    <p>
+      <p>&copy; 2025 Gunzino. All rights reserved.</p>
+      <p>
         <a href="/openclinic">OpenClinic Home</a> |
         <a href="/openclinic/support">Support</a>
-    </p>
+      </p>
     </footer>
-</body>
+  </body>
 </html>

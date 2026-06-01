@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenClinic | Local-First Clinical Workspace</title>
+    <title>OpenClinic | SMART on FHIR Clinical Workspace</title>
     <meta name="description"
-        content="OpenClinic is a local-first clinical workspace for iOS with charting, encounter dictation, clinical photography, and on-device RAG." />
-    <meta property="og:title" content="OpenClinic | Local-First Clinical Workspace" />
+        content="OpenClinic is a provider-facing clinical workspace prototype with SMART on FHIR import, local charting, Apple Foundation Models, and clinical retrieval derived from OpenIntelligence internals." />
+    <meta property="og:title" content="OpenClinic | SMART on FHIR Clinical Workspace" />
     <meta property="og:description"
-        content="Discover OpenClinic: an Apple-native clinical software prototype with patient charts, SMART on FHIR interoperability, and verified on-device AI." />
+        content="Discover OpenClinic: an Apple-native clinical software prototype with local charts, SMART on FHIR interoperability, and on-device clinical intelligence." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/openclinic" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <link rel="stylesheet" href="/style.css?v=20260531b" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "OpenClinic",
-            "applicationCategory": "MedicalApplication",
-            "operatingSystem": "iOS Application",
-            "description": "Local-first clinical workspace with charting, dictation, clinical photography, SMART on FHIR imports, and on-device retrieval.",
-            "url": "https://gunzino.me/openclinic"
-          }
-        </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "OpenClinic",
+        "applicationCategory": "MedicalApplication",
+        "operatingSystem": "iOS Application",
+        "description": "Provider-facing clinical workspace prototype with SMART on FHIR imports, local charting, Apple Foundation Models, and clinical retrieval.",
+        "url": "https://gunzino.me/openclinic"
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
@@ -51,12 +51,12 @@
                 function (event) {
                     var interactiveTarget = event.target.closest("[data-track]");
                     if (interactiveTarget) {
-                var actionLabel = interactiveTarget.getAttribute("data-track");
-                var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
-                var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+                        var actionLabel = interactiveTarget.getAttribute("data-track");
+                        var actionGroup =
+                            interactiveTarget.getAttribute("data-track-group") ||
+                            "general_interaction";
+                        var actionValue =
+                            interactiveTarget.getAttribute("data-track-value") || "";
 
                 if (typeof gtag === "function") {
                     gtag("event", "ui_interaction_event", {
@@ -71,27 +71,27 @@
             true,
         );
       });
-        </script>
+</script>
     <!-- ====================================================================== -->
-    </head>
+</head>
 
-    <body>
+<body>
     <header style="border-bottom: 2px solid #00ffaa">
-        <nav style="border-bottom: 1px solid rgba(0, 255, 170, 0.25)">
-            <div class="logo">
-                <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
-            </div>
-            <ul>
-                <li><a href="/index.html#apps">Apps</a></li>
-                <li><a href="/openclinic" class="active">OpenClinic</a></li>
-        <li>
+    <nav style="border-bottom: 1px solid rgba(0, 255, 170, 0.25)">
+        <div class="logo">
+        <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+        </div>
+        <ul>
+            <li><a href="/index.html#apps">Apps</a></li>
+            <li><a href="/openclinic" class="active">OpenClinic</a></li>
+            <li>
             <a href="https://github.com/Gunnarguy/OpenClinic" target="_blank" rel="noopener">GitHub <i
                     class="fab fa-github"></i></a>
-        </li>
-        <li><a href="/openclinic/support">Support</a></li>
-        <li><a href="/openclinic/privacy">Privacy</a></li>
+            </li>
+            <li><a href="/openclinic/support">Support</a></li>
+            <li><a href="/openclinic/privacy">Privacy</a></li>
         </ul>
-        </nav>
+    </nav>
     <div class="hero" style="
               background: linear-gradient(
                 135deg,
@@ -99,54 +99,82 @@
                 #203a43 50%,
                 #2c5364 100%
               );
-            ">
+        "
+      >
         <h1 style="text-shadow: 0 0 10px rgba(0, 255, 170, 0.3)">OpenClinic</h1>
         <p>
-            Local clinical charting workspace. Clinician charting, structured
-            dictation, anatomical photo tracking, and on-device clinical
-            intelligence built with SwiftUI and SwiftData.
+        Provider-facing clinical workspace prototype for Apple platforms. It
+        combines SMART on FHIR import, SwiftData charting, dermatology photo
+        workflows, and on-device clinical intelligence built on Apple
+        Foundation Models.
         </p>
         <div class="hero-buttons">
         <a href="/openclinic/support" class="cta-button" style="
                       background: linear-gradient(135deg, #00ffaa 0%, #00aa77 100%);
                       color: #0a0a0a;
                       box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
-                    "><i class="fas fa-life-ring"></i> Get Support</a>
-        <a href="/openclinic/privacy" class="cta-button cta-button-secondary" style="
-                      background: linear-gradient(135deg, #2c5364 0%, #0f2027 100%);
-                      box-shadow: 0 4px 15px rgba(44, 83, 100, 0.3);
-                    "><i class="fas fa-user-shield"></i> Privacy Policy</a>
+            "
+            data-track="openclinic_support"
+            data-track-group="product_page"
+            ><i class="fas fa-life-ring"></i> Get Support</a
+          >
+          <a
+            href="https://github.com/Gunnarguy/OpenClinic"
+            class="cta-button cta-button-secondary"
+            style="
+              background: linear-gradient(135deg, #1f3d30 0%, #12271f 100%);
+              box-shadow: 0 4px 15px rgba(18, 39, 31, 0.3);
+            "
+            target="_blank"
+            rel="noopener"
+            data-track="openclinic_github"
+            data-track-group="product_page"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+          <a
+            href="/openclinic/privacy"
+            class="cta-button cta-button-secondary"
+            style="
+              background: linear-gradient(135deg, #2c5364 0%, #0f2027 100%);
+              box-shadow: 0 4px 15px rgba(44, 83, 100, 0.3);
+            "
+            data-track="openclinic_privacy"
+            data-track-group="product_page"
+            ><i class="fas fa-user-shield"></i> Privacy Policy</a
+          >
         </div>
-        </div>
+    </div>
     </header>
 
     <main>
     <section class="app-section">
         <div class="app-header" style="border-bottom: 2px solid #00ffaa">
-            <div class="app-title-group">
+        <div class="app-title-group">
             <i class="fas fa-notes-medical app-header-icon" style="color: #00ffaa" aria-hidden="true"></i>
             <div>
-                <h2>Provider Clinical Workspace</h2>
+            <h2>Provider Workspace, Not a Patient App</h2>
             <p class="app-subtitle">
-                A local clinical workspace with offline verification and SMART
-                on FHIR interoperability.
-            </p>
+                SMART on FHIR import, local charting, dermatology workflows, and
+                on-device clinical retrieval for clinicians.
+                </p>
             </div>
-            </div>
-            <div class="app-links">
-            <a href="https://github.com/Gunnarguy/OpenClinic" class="github-link" target="_blank" rel="noopener">
+        </div>
+        <div class="app-links">
+            <a href="https://github.com/Gunnarguy/OpenClinic" class="github-link" target="_blank" rel="noopener"
+                data-track="openclinic_header_github" data-track-group="product_page">
                 <i class="fab fa-github"></i> View on GitHub
             </a>
-            </div>
-            </div>
+        </div>
+        </div>
 
         <div class="app-description">
-            <p>
-            OpenClinic is an Apple-native clinical charting workspace built with
-            SwiftUI and SwiftData. It functions as a provider assistant, running
-            on-device clinical retrieval, reranking, and verification, with
-            ASWebAuthenticationSession OAuth connection to SMART on FHIR sandbox
-            platforms.
+        <p>
+            OpenClinic is a SwiftUI and SwiftData clinical workstation built for
+            provider-side workflows. It imports records through SMART on FHIR
+            OAuth, preserves provenance on imported records, stores local chart
+            state on device, and uses Apple Foundation Models plus a
+            clinic-specific retrieval stack derived from OpenIntelligence
+            internals for chart Q&amp;A and note drafting.
             </p>
         <div style="
                       background: rgba(0, 255, 170, 0.05);
@@ -155,156 +183,196 @@
                       border-radius: 4px;
                       margin: 20px 0;
                       color: #e0e0e0;
-                    ">
-            <strong>Prototype Notice:</strong> OpenClinic is currently an
-            architectural prototype and playground for clinical software. It is
-            not ready for real-world deployment or clinician diagnostic use
-            without significant compliance, validation, and operational
-            hardening.
-        </div>
+            "
+          >
+            <strong>Prototype status:</strong> OpenClinic is an architectural
+            prototype. It is not approved for live clinical deployment, does not
+            replace an EHR, and should not be represented as a production
+            medical system.
+          </div>
         </div>
 
-        <h3>Core Capabilities</h3>
+        <h3>What Makes OpenClinic Different</h3>
         <div class="features-grid">
         <div class="feature-item" style="border-top: 3px solid #00ffaa">
-            <i class="fas fa-calendar-day feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
-            <h4>Agenda & Workflow Management</h4>
+            <i class="fas fa-user-doctor feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
+            <h4>Provider-first workflow</h4>
             <p>
-                Track daily schedules, workflow status progressions (arrived,
-                charting, signed), and patient routing using fluid SwiftUI lists
-                and swipe gestures.
+            Daily schedules, patient routing, visit states, and chart review
+            live in a native multi-pane workspace designed for clinicians, not
+            consumer health tracking.
             </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #00ffaa">
-            <i class="fas fa-address-card feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
-            <h4>Patient Chart Workspace</h4>
-            <p>
-                Browse comprehensive demographic and clinical data (conditions,
-                medication logs, appointments, visit history, and clinical photos)
-                in a fast, native split-view dashboard.
-            </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #00ffaa">
-            <i class="fas fa-microphone-alt feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
-            <h4>Structured Encounter Dictation</h4>
-            <p>
-                Capture clinician speech dictation alongside anatomical context,
-                automatically generating structured SOAP encounter notes with
-                signed and signed lifecycle stages.
-            </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #00ffaa">
-            <i class="fas fa-camera feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
-            <h4>Anatomical Photography</h4>
-            <p>
-                Dermatology-forward tools including interactive 2D anatomical body
-                maps, region-tagged clinical photos, and lesion timelines to track
-                progression over time.
-            </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00ffaa">
             <i class="fas fa-network-wired feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
-            <h4>SMART on FHIR Interoperability</h4>
+            <h4>SMART on FHIR import</h4>
             <p>
-                Perform live sandbox EHR discovery, in-app OAuth signing via
-                ASWebAuthenticationSession, and import FHIR resources (Patient,
-                Condition, MedicationRequest, Appointment) with robust data
-                provenance badges.
+            Uses SMART on FHIR discovery plus `ASWebAuthenticationSession` to
+            import Patient, Condition, MedicationRequest, and Appointment
+            resources from supported R4 sandboxes.
             </p>
-            </div>
+        </div>
+        <div class="feature-item" style="border-top: 3px solid #00ffaa">
+            <i class="fas fa-database feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
+            <h4>Local charting and provenance</h4>
+            <p>
+            SwiftData persists notes, appointments, medications, and photos
+            locally while preserving source-system metadata and sync lineage
+            for imported records.
+            </p>
+        </div>
+        <div class="feature-item" style="border-top: 3px solid #00ffaa">
+            <i class="fas fa-camera feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
+            <h4>Dermatology-friendly imaging</h4>
+            <p>
+            Region-tagged clinical photos, body-map placement, and lesion
+            timelines support dermatology-style follow-up workflows.
+            </p>
+        </div>
+        <div class="feature-item" style="border-top: 3px solid #00ffaa">
+            <i class="fas fa-microphone-alt feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
+            <h4>On-device note drafting</h4>
+            <p>
+            Structured encounter dictation and local summarization use Apple
+            Foundation Models to assist with chart creation without sending
+            PHI to third-party model providers.
+            </p>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00ffaa">
             <i class="fas fa-shield-halved feature-icon" style="color: #00ffaa" aria-hidden="true"></i>
-            <h4>On-Device Clinical Intelligence</h4>
+            <h4>Clinical retrieval with verification</h4>
             <p>
-                Local document RAG executing semantic Core ML embedding
-                generation, SQLite FTS5 keyword indexing, hybrid Reciprocal Rank
-                Fusion search, MMR reranking, and 7 verification safety gates.
+            Core ML embeddings, SQLite FTS5, reciprocal-rank fusion, and a
+            9-gate verification layer are used to keep chart answers scoped,
+            grounded, and patient-isolated.
             </p>
-            </div>
-            </div>
+        </div>
+        </div>
 
-        <h3>Key Architectural Workflow</h3>
+        <h3>Technical Profile</h3>
+        <div class="tech-columns">
+            <div class="tech-column" style="border: 2px solid #00ffaa">
+                <h4 style="color: #00ffaa">
+                    <i class="fas fa-microchip"></i> Core APIs
+                </h4>
+                <ul>
+                    <li><strong>UI:</strong> SwiftUI, SwiftData</li>
+                    <li><strong>Models:</strong> Apple Foundation Models, Core ML</li>
+                    <li>
+                        <strong>Interoperability:</strong> SMART on FHIR,
+                        ASWebAuthenticationSession
+                    </li>
+                    <li>
+                        <strong>Retrieval:</strong> SQLite FTS5, local vector store
+                    </li>
+                </ul>
+            </div>
+            <div class="tech-column" style="border: 2px solid #00ffaa">
+                <h4 style="color: #00ffaa">
+                    <i class="fas fa-lock"></i> Data boundary
+                </h4>
+                <ul>
+                    <li>
+                        <strong>Local:</strong> Charts, notes, photos, vector indexes,
+                        provenance metadata
+                    </li>
+                    <li>
+                        <strong>Remote:</strong> OAuth and FHIR resource fetches from
+                        configured servers
+                    </li>
+                    <li>
+                        <strong>Not present:</strong> HealthKit sync as an active
+                        product feature
+                    </li>
+                    <li>
+                        <strong>Status:</strong> Prototype only, no writeback and no
+                        deployment certification
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>How OpenClinic Runs</h3>
         <div class="flow-steps">
         <div class="flow-step" style="border-left: 5px solid #00ffaa">
             <div class="step-number" style="color: #00ffaa">1</div>
             <div class="step-content">
-                <h4>Local SwiftData Ingestion</h4>
+            <h4>Authenticate and import</h4>
             <p>
-                The workspace seeds a local demo dataset on first launch.
-                Clinicians can capture photos, dictate encounters, or import
-                SMART on FHIR patient records into a secure local SQLite
-                database via SwiftData.
-            </p>
+                The app discovers SMART endpoints, performs OAuth through
+                `ASWebAuthenticationSession`, and imports patient-context data
+                into local models.
+                </p>
             </div>
-            </div>
+        </div>
         <div class="flow-step" style="border-left: 5px solid #00ffaa">
             <div class="step-number" style="color: #00ffaa">2</div>
             <div class="step-content">
-                <h4>On-Device RAG Chunking & Indexing</h4>
+            <h4>Persist local chart state</h4>
             <p>
-                Clinical notes and charts are parsed, chunked, and tokenized
-                using local vocabulary models. The app indexes text locally
-                using a sqlite FTS5 service and produces local vector embeddings
-                via Core ML.
-            </p>
+                SwiftData stores appointments, medications, local clinical
+                records, and image metadata while Keychain protects connection
+                tokens.
+                </p>
             </div>
-            </div>
+        </div>
         <div class="flow-step" style="border-left: 5px solid #00ffaa">
             <div class="step-number" style="color: #00ffaa">3</div>
             <div class="step-content">
-                <h4>Grounded Retrieval & Synthesis</h4>
+            <h4>Index and retrieve context</h4>
             <p>
-                When asking questions, OpenClinic performs hybrid vector-keyword
-                retrieval, applies Reciprocal Rank Fusion, MMR diversification,
-                and re-orders context chunks before calling local foundation
-                models to synthesize answers.
-            </p>
+                Clinical records are chunked, embedded locally with Core ML,
+                indexed into SQLite FTS5 plus a local vector store, and fused at
+                query time for patient-scoped retrieval.
+                </p>
             </div>
-            </div>
+        </div>
         <div class="flow-step" style="border-left: 5px solid #00ffaa">
             <div class="step-number" style="color: #00ffaa">4</div>
             <div class="step-content">
-                <h4>7 Safety Verification Gates</h4>
+            <h4>Synthesize and verify</h4>
             <p>
-                Before displaying replies to clinicians, the synthesized text
-                runs through seven safety gates: retrieval confidence, evidence
-                coverage, numeric sanity, contradiction check, semantic
-                grounding, quote faithfulness, and generation quality.
-            </p>
+                Apple Foundation Models generate chart assistance on device, and
+                a 9-gate clinical verification pass checks grounding, numeric
+                sanity, contradictions, and patient isolation before display.
+                </p>
             </div>
-            </div>
-            </div>
+        </div>
+        </div>
 
-        <h3>App Store Connect Metadata</h3>
+        <h3>Support and Privacy Routes</h3>
         <div class="tech-columns">
         <div class="tech-column" style="border: 2px solid #00ffaa">
             <h4 style="color: #00ffaa">
-                <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
+            <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
             </h4>
             <p>
-                <a href="/openclinic/support">https://gunzino.me/openclinic/support</a>
+            <a href="/openclinic/support" data-track="openclinic_support_route"
+                data-track-group="product_page">https://gunzino.me/openclinic/support</a>
             </p>
         </div>
         <div class="tech-column" style="border: 2px solid #00ffaa">
             <h4 style="color: #00ffaa">
-                <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
-                Policy URL
+            <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
+            Policy URL
             </h4>
             <p>
-                <a href="/openclinic/privacy">https://gunzino.me/openclinic/privacy</a>
+            <a href="/openclinic/privacy" data-track="openclinic_privacy_route"
+                data-track-group="product_page">https://gunzino.me/openclinic/privacy</a>
             </p>
         </div>
         </div>
 
         <p class="tech-footer">
-        <a href="/support.html">General Gunzino Support Center
+        <a href="/support.html" data-track="openclinic_general_support" data-track-group="product_page">General Gunzino Support
+            Center
             <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
         </p>
-        </section>
+    </section>
     </main>
 
     <footer style="background: #121f19; border-top: 1px solid #1a3328">
-        <p>&copy; 2025 Gunzino. All rights reserved.</p>
+    <p>&copy; 2026 Gunzino. All rights reserved.</p>
     <p>
         <a href="mailto:gunnarguy@me.com">Contact</a> |
         <a href="/openclinic/privacy">Privacy</a> |

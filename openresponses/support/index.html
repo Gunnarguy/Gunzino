@@ -1,41 +1,41 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenResponses Support & FAQ</title>
     <meta name="description"
-        content="Official support center and FAQs for the OpenResponses iOS & macOS app. Find setup instructions, troubleshooting, and contact links." />
+      content="Official support center and FAQs for the OpenResponses iOS & macOS app. Find setup instructions, troubleshooting, and contact links." />
     <meta property="og:title" content="OpenResponses Support & FAQ" />
     <meta property="og:description"
-        content="Need help with OpenResponses? Browse setup guides, a troubleshooting checklist, or contact the developer." />
+      content="Need help with OpenResponses? Browse setup guides, a troubleshooting checklist, or contact the developer." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/openresponses/support" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <link rel="stylesheet" href="/style.css?v=20260531b" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
           {
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "WebPage",
-                "name": "OpenResponses Support Center",
-                "description": "Official support center and FAQs for the OpenResponses iOS and macOS app. Find setup instructions, troubleshooting, and contact links.",
-                "url": "https://gunzino.me/openresponses/support"
-              },
-              {
-                "@type": "SoftwareApplication",
-                "name": "OpenResponses",
-                "applicationCategory": "DeveloperApplication",
-                "operatingSystem": "iOS Application",
-                "description": "SwiftUI playground for the OpenAI Responses API, MCP integrations, and developer tooling.",
-                "url": "https://gunzino.me/openresponses",
-                "downloadUrl": "https://apps.apple.com/us/app/openresponses/id6757338355"
-              }
-            ]
+            "@type": "WebPage",
+            "name": "OpenResponses Support Center",
+            "description": "Official support center and FAQs for the OpenResponses iOS and macOS app. Find setup instructions, troubleshooting, and contact links.",
+            "url": "https://gunzino.me/openresponses/support"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "OpenResponses",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "iOS Application",
+            "description": "SwiftUI playground for the OpenAI Responses API, MCP integrations, and developer tooling.",
+            "url": "https://gunzino.me/openresponses",
+            "downloadUrl": "https://apps.apple.com/us/app/openresponses/id6757338355"
           }
-        </script>
+        ]
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
@@ -44,73 +44,73 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
-            dataLayer.push(arguments);
+          dataLayer.push(arguments);
         }
         gtag("js", new Date());
 
         // Configured to ensure compatibility with Ads Account 450-937-9845
         gtag("config", "G-4Q160W3M61", {
-            send_page_view: true,
-            enhanced_measurement: true,
+          send_page_view: true,
+          enhanced_measurement: true,
         });
     </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.body.addEventListener(
-                "click",
-                function (event) {
-                    var interactiveTarget = event.target.closest("[data-track]");
-                    if (interactiveTarget) {
+          document.body.addEventListener(
+            "click",
+            function (event) {
+              var interactiveTarget = event.target.closest("[data-track]");
+              if (interactiveTarget) {
                 var actionLabel = interactiveTarget.getAttribute("data-track");
                 var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
+                  interactiveTarget.getAttribute("data-track-group") ||
+                  "general_interaction";
                 var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+                  interactiveTarget.getAttribute("data-track-value") || "";
 
-                if (typeof gtag === "function") {
-                    gtag("event", "ui_interaction_event", {
-                        interaction_label: actionLabel,
-                        interaction_group: actionGroup,
-                        interaction_value: actionValue,
-                        page_location_path: window.location.pathname,
-                    });
-                }
+              if (typeof gtag === "function") {
+                gtag("event", "ui_interaction_event", {
+                  interaction_label: actionLabel,
+                  interaction_group: actionGroup,
+                  interaction_value: actionValue,
+                  page_location_path: window.location.pathname,
+                });
+              }
             }
-            },
-            true,
+          },
+          true,
         );
       });
-        </script>
+</script>
     <!-- ====================================================================== -->
-    </head>
+  </head>
 
-    <body>
+  <body>
     <header>
-    <nav>
+      <nav>
         <div class="logo">
-            <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+          <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
         </div>
         <ul>
-            <li><a href="/index.html#apps">Apps</a></li>
-            <li><a href="/index.html#openresponses">OpenResponses</a></li>
-            <li><a href="/openresponses/support" class="active">Support</a></li>
-            <li><a href="/openresponses/privacy">Privacy</a></li>
-        <li>
+          <li><a href="/index.html#apps">Apps</a></li>
+          <li><a href="/index.html#openresponses">OpenResponses</a></li>
+          <li><a href="/openresponses/support" class="active">Support</a></li>
+          <li><a href="/openresponses/privacy">Privacy</a></li>
+          <li>
             <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i
-                    class="fab fa-github"></i></a>
-        </li>
+                class="fab fa-github"></i></a>
+            </li>
         </ul>
-        </nav>
+      </nav>
     </header>
 
     <main>
-    <section class="support-hero">
+      <section class="support-hero">
         <h1>OpenResponses Support Center</h1>
         <p>
-            Welcome to OpenResponses support. Find answers regarding OpenAI model
-            features, MCP integrations, and computer-use automation.
+          Welcome to OpenResponses support. Find answers regarding OpenAI model
+          features, MCP integrations, and computer-use automation.
         </p>
         <h2 style="
                     position: absolute;
@@ -122,115 +122,116 @@
                     clip: rect(0, 0, 0, 0);
                     white-space: nowrap;
                     border: 0;
-                  ">
-            Support Highlights
+          "
+        >
+          Support Highlights
         </h2>
         <div class="support-highlights" role="list">
-            <div class="support-highlight" role="listitem">
-                <i class="fas fa-desktop" aria-hidden="true"></i>
-                <h3>Computer Use Bridge</h3>
-                <p>Setup instructions and safety prompts for browser automation.</p>
-            </div>
-            <div class="support-highlight" role="listitem">
-                <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
-                <h3>MCP Server Integrations</h3>
+          <div class="support-highlight" role="listitem">
+            <i class="fas fa-desktop" aria-hidden="true"></i>
+            <h3>Computer Use Bridge</h3>
+            <p>Setup instructions and safety prompts for browser automation.</p>
+          </div>
+          <div class="support-highlight" role="listitem">
+            <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+            <h3>MCP Server Integrations</h3>
             <p>
-                Connecting assistants to Slack, Notion, GitHub, and custom
-                servers.
+              Connecting remote MCP servers, hosted connectors, and custom auth
+              headers.
             </p>
-            </div>
-            <div class="support-highlight" role="listitem">
-                <i class="fas fa-sliders-h" aria-hidden="true"></i>
-                <h3>Developer Console</h3>
+          </div>
+          <div class="support-highlight" role="listitem">
+            <i class="fas fa-sliders-h" aria-hidden="true"></i>
+            <h3>Developer Console</h3>
             <p>
-                Inspecting API request payloads and streaming event response logs.
+              Inspecting API request payloads and streaming event response logs.
             </p>
-            </div>
-            </div>
-            </section>
+          </div>
+          </div>
+          </section>
 
-    <section class="support-section">
+      <section class="support-section">
         <h2>Frequently Asked Questions</h2>
 
         <h3>What is OpenResponses?</h3>
         <p>
-            OpenResponses is an advanced native SwiftUI playground for iOS and
-            macOS designed to explore the full range of OpenAI's API capabilities.
-            It features multi-model support, computer-use browser automation, web
-            search, code interpreter execution, and Model Context Protocol (MCP)
-            integrations.
+          OpenResponses is a native SwiftUI developer client for the OpenAI
+          Responses API on iPhone, iPad, and macOS. It exposes direct request
+          controls, SSE event inspection, reasoning traces, tool execution,
+          browser automation approvals, and MCP configuration.
         </p>
 
         <h3>What models does OpenResponses support?</h3>
         <p>
-            OpenResponses supports GPT-5, GPT-4.1, O-series reasoning models,
-            GPT-4o, GPT-4, GPT-3.5-turbo, and specialized models like
-            computer-use-preview. The app automatically fetches the latest model
-            list from your OpenAI account.
+          OpenResponses centers on the models and tool paths available to your
+          OpenAI account, including GPT-5, GPT-4.1, compatible reasoning models,
+          and the specialized computer-use paths exposed by the app. The model
+          list is fetched live from OpenAI instead of being frozen in the
+          client.
         </p>
 
         <h3>What is MCP integration?</h3>
         <p>
-            Model Context Protocol (MCP) allows OpenResponses to connect to
-            external services like GitHub, Notion, Slack, Google Drive, and more.
-            It features secure OAuth authentication, approval workflows, and a
-            discovery service for popular platforms.
+          Model Context Protocol (MCP) lets OpenResponses connect to remote MCP
+          servers and certain hosted connectors, depending on your model, tool
+          compatibility, and configured authentication. Approval workflows stay
+          visible so tool calls are not hidden behind a wrapper service.
         </p>
 
         <h3>What is the computer use feature?</h3>
         <p>
-            Computer use is a production-ready browser automation tool that allows
-            AI models to navigate websites, click buttons, type text, and interact
-            with web content. It includes safety approval workflows to ensure user
-            control.
+          Computer use is the app's browser automation harness for supported
+          model and tool paths. It can navigate sites, click, type, scroll, and
+          capture screenshots, but every step stays behind visible approval and
+          audit controls.
         </p>
 
         <h2>Troubleshooting Checklist</h2>
 
         <h3>API Keys & Connectivity</h3>
         <p>
-            Ensure that your OpenAI API key is active, valid, and funded. If you
-            get connection errors, confirm that <code>api.openai.com</code> is not
-            blocked by your local network, firewall, or VPN configuration.
+          Ensure that your OpenAI API key is active, valid, and funded. If you
+          get connection errors, confirm that <code>api.openai.com</code> is not
+          blocked by your local network, firewall, or VPN configuration.
         </p>
 
         <h3>Computer Use Setup</h3>
         <p>
-            To run browser automation, ensure your computer-use bridge server is
-            running on the same local network. The app must be granted local
-            network permissions in iOS Settings.
+          To run browser automation, ensure your computer-use bridge server is
+          running on the same local network. The app must be granted local
+          network permissions in iOS Settings.
         </p>
 
         <h3>MCP Server Configuration</h3>
         <p>
-            Verify that your MCP configuration is correct. Use the developer debug
-            logs inside the app to inspect payload request logs and error states.
+          Verify that your MCP configuration is correct. Use the developer debug
+          logs inside the app to inspect payload request logs and error states.
         </p>
 
         <h2>Contact Info</h2>
         <ul>
-        <li>
+          <li>
             <strong>Privacy Policy URL:</strong>
             <a href="/openresponses/privacy">https://gunzino.me/openresponses/privacy</a>
-        </li>
-        <li>
+            </li>
+            <li>
             <strong>Direct Email Support:</strong>
             <a href="mailto:gunnarguy@me.com?subject=OpenResponses%20Support">gunnarguy@me.com</a>
-        </li>
-        <li>
+            </li>
+            <li>
             <strong>GitHub Repository:</strong>
             <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">OpenResponses on GitHub</a>
-        </li>
+            </li>
         </ul>
-        </section>
+      </section>
     </main>
 
     <footer>
-    <p>&copy; 2025 Gunzino. All rights reserved.</p>
-    <p>
+      <p>&copy; 2025 Gunzino. All rights reserved.</p>
+      <p>
         <a href="/index.html">Home</a> |
         <a href="/openresponses/privacy">Privacy Policy</a>
-    </p>
+      </p>
     </footer>
-</body>
+  </body>
 </html>

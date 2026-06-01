@@ -1,41 +1,41 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenCone Privacy Policy</title>
     <meta name="description"
-        content="Privacy policy for OpenCone. Understand how your documents, API keys, and embeddings are processed on-device and with external integrations." />
+      content="Privacy policy for OpenCone. Understand how local document parsing, OpenAI requests, Pinecone storage, and API keys are handled in the cloud-hybrid workflow." />
     <meta property="og:title" content="OpenCone Privacy Policy" />
     <meta property="og:description"
-        content="OpenCone is designed with user control and data privacy in mind. Review the app's data flows and security details." />
+      content="Review OpenCone's local parsing flow, OpenAI Responses API requests, Pinecone vector storage, and user-controlled credential handling." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/opencone/privacy" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <link rel="stylesheet" href="/style.css?v=20260531b" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
           {
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "WebPage",
-                "name": "OpenCone Privacy Policy",
-                "description": "Privacy policy for OpenCone. Understand how your documents, API keys, and embeddings are processed on-device and with external integrations.",
-                "url": "https://gunzino.me/opencone/privacy"
-              },
-              {
-                "@type": "SoftwareApplication",
-                "name": "OpenCone",
-                "applicationCategory": "UtilitiesApplication",
-                "operatingSystem": "iOS Application",
-                "description": "On-device RAG app for local documents, OCR, OpenAI embeddings, and Pinecone-backed search.",
-                "url": "https://gunzino.me/opencone",
-                "downloadUrl": "https://apps.apple.com/us/app/opencone/id6744467668"
-              }
-            ]
+            "@type": "WebPage",
+            "name": "OpenCone Privacy Policy",
+            "description": "Privacy policy for OpenCone. Understand how local document parsing, OpenAI requests, Pinecone storage, and API keys are handled in the cloud-hybrid workflow.",
+            "url": "https://gunzino.me/opencone/privacy"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "OpenCone",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "iOS Application",
+            "description": "Cloud-hybrid RAG client with local OCR and parsing plus OpenAI embeddings, OpenAI responses, and Pinecone-backed search.",
+            "url": "https://gunzino.me/opencone",
+            "downloadUrl": "https://apps.apple.com/us/app/opencone/id6744467668"
           }
-        </script>
+        ]
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
@@ -44,262 +44,265 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
-            dataLayer.push(arguments);
+          dataLayer.push(arguments);
         }
         gtag("js", new Date());
 
         // Configured to ensure compatibility with Ads Account 450-937-9845
         gtag("config", "G-4Q160W3M61", {
-            send_page_view: true,
-            enhanced_measurement: true,
+          send_page_view: true,
+          enhanced_measurement: true,
         });
     </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.body.addEventListener(
-                "click",
-                function (event) {
-                    var interactiveTarget = event.target.closest("[data-track]");
-                    if (interactiveTarget) {
+          document.body.addEventListener(
+            "click",
+            function (event) {
+              var interactiveTarget = event.target.closest("[data-track]");
+              if (interactiveTarget) {
                 var actionLabel = interactiveTarget.getAttribute("data-track");
                 var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
+                  interactiveTarget.getAttribute("data-track-group") ||
+                  "general_interaction";
                 var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+                  interactiveTarget.getAttribute("data-track-value") || "";
 
-                if (typeof gtag === "function") {
-                    gtag("event", "ui_interaction_event", {
-                        interaction_label: actionLabel,
-                        interaction_group: actionGroup,
-                        interaction_value: actionValue,
-                        page_location_path: window.location.pathname,
-                    });
-                }
+              if (typeof gtag === "function") {
+                gtag("event", "ui_interaction_event", {
+                  interaction_label: actionLabel,
+                  interaction_group: actionGroup,
+                  interaction_value: actionValue,
+                  page_location_path: window.location.pathname,
+                });
+              }
             }
-            },
-            true,
+          },
+          true,
         );
       });
-        </script>
+</script>
     <!-- ====================================================================== -->
-    </head>
+  </head>
 
-    <body>
+  <body>
     <header>
-    <nav>
+      <nav>
         <div class="logo">
-            <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+          <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
         </div>
         <ul>
-            <li><a href="/index.html#apps">Apps</a></li>
-            <li><a href="/index.html#opencone">OpenCone</a></li>
-            <li><a href="/opencone/support">Support</a></li>
-            <li><a href="/opencone/privacy" class="active">Privacy</a></li>
-        <li>
-            <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">GitHub <i
-                    class="fab fa-github"></i></a>
-        </li>
+          <li><a href="/index.html#apps">Apps</a></li>
+          <li><a href="/index.html#opencone">OpenCone</a></li>
+          <li><a href="/opencone/support">Support</a></li>
+          <li><a href="/opencone/privacy" class="active">Privacy</a></li>
+          <li>
+            <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a>
+            </li>
         </ul>
-        </nav>
+      </nav>
     </header>
 
     <main>
-    <section class="support-hero">
+      <section class="support-hero">
         <h1>Privacy Policy</h1>
-        <p>Last updated: November 2025</p>
+        <p>Last updated: May 2026</p>
         <p>
-            OpenCone is a retrieval-augmented generation (RAG) client that lets
-            you search your own documents using OpenAI completions and Pinecone
-            vector search. This policy describes the data flows involved so you
-            understand your privacy controls.
+          OpenCone is a cloud-hybrid retrieval client that parses documents
+          locally, sends chunk text to OpenAI and Pinecone for the retrieval
+          path, and uses the OpenAI Responses API for grounded answers. This
+          policy describes those data flows so you can understand the privacy
+          boundary clearly.
         </p>
-        </section>
+      </section>
 
-    <section class="support-section">
+      <section class="support-section">
         <h2>1. On-Device Processing</h2>
         <ul>
-        <li>
+          <li>
             <strong>Local Sandboxing:</strong> Source documents you import
             (PDFs, DOCX, TXT, images) are copied into the secure application
             sandbox for indexing.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Local OCR:</strong> Text extraction runs locally on your
             device using PDFKit, Vision OCR, and native Apple text utilities.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Background Threading:</strong> Embedding generation queues
             work on a background thread. Local diagnostic logs only record
             high-level status and anonymized identifiers.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Keychain Security:</strong> Security-scoped bookmarks
             created for your original files stay on-device and are securely
             stored in the Keychain.
-        </li>
+          </li>
         </ul>
 
         <h2>2. Data Sent Off Device</h2>
         <p>
-            To perform its core functions, OpenCone transmits data directly from
-            your device to the following services using secure HTTPS connections.
-            No data is routed through or stored on developer-owned servers.
+          To perform its core functions, OpenCone transmits data directly from
+          your device to the following services using secure HTTPS connections.
+          No data is routed through or stored on developer-owned servers.
         </p>
 
         <div style="overflow-x: auto; margin: 20px 0">
-            <table style="
-                      width: 100%;
-                      border-collapse: collapse;
-                      background: #1f1f2e;
-                      border: 1px solid #333;
-                      border-radius: 8px;
-                    ">
-                <thead>
-            <tr style="background: #2a2a3e; border-bottom: 2px solid #00aaff">
+          <table style="
+                        width: 100%;
+                        border-collapse: collapse;
+                        background: #1f1f2e;
+                        border: 1px solid #333;
+                        border-radius: 8px;
+            "
+          >
+            <thead>
+              <tr style="background: #2a2a3e; border-bottom: 2px solid #00aaff">
                 <th style="padding: 12px; text-align: left; color: #fff">
-                    Destination
+                  Destination
                 </th>
                 <th style="padding: 12px; text-align: left; color: #fff">
-                    Data Sent
+                  Data Sent
                 </th>
                 <th style="padding: 12px; text-align: left; color: #fff">
-                    Purpose
+                  Purpose
                 </th>
                 <th style="padding: 12px; text-align: left; color: #fff">
-                    Notes
+                  Notes
                 </th>
-            </tr>
+              </tr>
             </thead>
             <tbody>
-            <tr style="border-bottom: 1px solid #333">
+              <tr style="border-bottom: 1px solid #333">
                 <td style="padding: 12px; font-weight: bold; color: #e0e0e0">
-                    OpenAI Responses API
+                  OpenAI Responses API
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Conversation history (user prompt + retrieved context
-                    snippets)
+                  Conversation history (user prompt + retrieved context
+                  snippets)
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Generate natural-language answers using RAG
+                  Generate natural-language answers using RAG
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Transmitted over HTTPS; stateless on OpenAI's end. No data
-                    stored by OpenCone after completion.
+                  Transmitted over HTTPS. OpenCone may retain local answer
+                  history until you clear it, but no developer-owned server is
+                  involved in the request path.
                 </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #333">
+              </tr>
+              <tr style="border-bottom: 1px solid #333">
                 <td style="padding: 12px; font-weight: bold; color: #e0e0e0">
-                    OpenAI Embeddings API
+                  OpenAI Embeddings API
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Chunked text generated from your documents
+                  Chunked text generated from your documents
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Produce high-dimensional vector representations
+                  Produce high-dimensional vector representations
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Only the specific text chunks being embedded are transmitted.
+                  Only the specific text chunks being embedded are transmitted.
                 </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #333">
+              </tr>
+              <tr style="border-bottom: 1px solid #333">
                 <td style="padding: 12px; font-weight: bold; color: #e0e0e0">
-                    Pinecone Vector DB
+                  Pinecone Vector DB
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Embedding vectors and metadata (document ID, file name, up to
-                    200-char preview)
+                  Embedding vectors and metadata (document ID, file name, up to
+                  200-char preview)
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Similarity search and retrieval
+                  Similarity search and retrieval
                 </td>
                 <td style="padding: 12px; color: #b0b0b0">
-                    Encrypted in transit; metadata excludes raw document bodies.
+                  Encrypted in transit; metadata excludes raw document bodies.
                 </td>
-            </tr>
+              </tr>
             </tbody>
-            </table>
-            </div>
+          </table>
+          </div>
 
         <h2>3. Keys & Authentication</h2>
         <ul>
-        <li>
+          <li>
             <strong>User-Provided Credentials:</strong> You supply your own
             OpenAI and Pinecone API keys via the in-app onboarding flow.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Keychain Storage:</strong> Stored credentials are saved in
             the Secure Enclave-backed iOS Keychain and are never shared with the
             developer or third parties.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Build Guard:</strong> A release build guard blocks
             application launch if these keys are missing, ensuring your
             configuration is safe.
-        </li>
+          </li>
         </ul>
 
         <h2>4. Retention & Deletion</h2>
         <ul>
-        <li>
+          <li>
             <strong>Document Removal:</strong> Removing a document in OpenCone
             deletes the sandbox copy and requests deletion of associated vectors
             from your Pinecone index.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Clearing History:</strong> Clearing conversation history
-            removes cached completions. Requests to OpenAI are stateless.
-        </li>
-        <li>
+            removes cached responses and local answer history. Requests to
+            OpenAI remain direct API calls rather than developer-proxied state.
+            </li>
+            <li>
             <strong>Application Reset:</strong> You can completely clear all
             local data, preferences, and Keychain secrets from Settings →
             Advanced → Reset App.
-        </li>
+          </li>
         </ul>
 
         <h2>5. Analytics & Tracking</h2>
         <ul>
-        <li>
+          <li>
             OpenCone does <strong>not</strong> include or utilize third-party
             analytics, tracking SDKs, or advertising libraries.
-        </li>
-        <li>
+          </li>
+          <li>
             Only local diagnostic logs (viewable in the Logs tab) are retained
             on-device for user troubleshooting.
-        </li>
+          </li>
         </ul>
 
         <h2>6. User Consent & Transparency</h2>
         <ul>
-        <li>
+          <li>
             <strong>In-app Disclosures:</strong> The first time you import a
             file, OpenCone explicitly explains that it creates a sandbox copy
             and may upload derived text to your configured OpenAI and Pinecone
             services.
-        </li>
-        <li>
+          </li>
+          <li>
             <strong>Privacy Reset:</strong> Users can reset credentials,
             conversation history, and security-scoped bookmark consents via the
             "Reset Stored Keys & Preferences" panel at any time.
-        </li>
+          </li>
         </ul>
 
         <h2>7. Contact</h2>
         <p>
-            For privacy questions or data deletion requests, contact support at:
-            <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a> or
-            <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a>.
+          For privacy questions or data deletion requests, contact support at:
+          <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a> or
+          <a href="mailto:gunnarguy@me.com">gunnarguy@me.com</a>.
         </p>
-        </section>
+      </section>
     </main>
 
     <footer>
-    <p>&copy; 2025 Gunzino. All rights reserved.</p>
-    <p>
+      <p>&copy; 2025 Gunzino. All rights reserved.</p>
+      <p>
         <a href="/index.html">Home</a> |
         <a href="/opencone/support">OpenCone Support</a>
-    </p>
+      </p>
     </footer>
-</body>
+  </body>
 </html>

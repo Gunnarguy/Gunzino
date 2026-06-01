@@ -6,10 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>OpenAssistant | Legacy iOS OpenAI Client</title>
+    <title>OpenAssistant | Legacy Assistants API Client</title>
     <meta
       name="description"
-      content="Legacy iOS client for the OpenAI Assistants API with assistant setup, vector stores, file tools, and real-time chat in SwiftUI."
+      content="Archived SwiftUI client for the OpenAI Assistants API with assistants, threads, runs, vector stores, and local file preprocessing."
     />
     <meta
       name="keywords"
@@ -20,11 +20,11 @@
     <link rel="canonical" href="https://gunzino.me/openassistant/" />
     <meta
       property="og:title"
-      content="OpenAssistant | Legacy iOS OpenAI Client"
+      content="OpenAssistant | Legacy Assistants API Client"
     />
     <meta
       property="og:description"
-      content="Legacy iOS client for the OpenAI Assistants API with assistant setup, vector stores, file tools, and real-time chat in SwiftUI."
+      content="Archived SwiftUI client for the OpenAI Assistants API and the older stateful mobile workflow that OpenResponses replaced."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -39,7 +39,7 @@
         "name": "OpenAssistant",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "iOS Application",
-        "description": "Legacy iOS client for the OpenAI Assistants API with assistant setup, vector stores, file tools, and real-time chat in SwiftUI.",
+        "description": "Archived SwiftUI client for the OpenAI Assistants API with assistants, threads, runs, vector stores, and local preprocessing.",
         "url": "https://gunzino.me/openassistant/",
         "downloadUrl": "https://apps.apple.com/us/app/openassistant/id6692613772"
       }
@@ -112,9 +112,9 @@
         position: relative;
       "
     >
-      ⚠️ Legacy Application: OpenAssistant is no longer actively updated because
-      the completions API has been deprecated by OpenAI. This page is maintained
-      for reference and support.
+      ⚠️ Legacy Application: OpenAssistant targeted the OpenAI Assistants API.
+      The project is archived and maintained for reference and support only.
+      OpenResponses is the active successor line.
     </div>
 
     <!-- Navigation -->
@@ -151,15 +151,14 @@
         <div class="hero-content">
           <h1>OpenAssistant</h1>
           <p class="hero-subtitle">
-            A SwiftUI iOS App built for the OpenAI Assistants API
+            Archived native client for the OpenAI Assistants API
           </p>
           <p class="hero-description">
-            OpenAssistant brings the full power of OpenAI's Assistants API
-            directly to your iPhone. Built entirely with SwiftUI and the Combine
-            framework, OpenAssistant provides comprehensive assistant
-            management, vector stores, file management, and real-time
-            conversations in a native iOS experience, all using your own OpenAI
-            API Key.
+            OpenAssistant brought assistants, threads, runs, vector stores, and
+            mobile file preprocessing to iPhone and iPad in a native SwiftUI
+            client. It remains useful as a record of the older Assistants API
+            product line, but new work now happens in OpenResponses on top of
+            the newer Responses API.
           </p>
           <div class="hero-badges">
             <img
@@ -184,6 +183,8 @@
               href="https://github.com/Gunnarguy/OpenAssistant"
               target="_blank"
               rel="noopener noreferrer"
+              data-track="openassistant_github"
+              data-track-group="product_page"
             >
               <img
                 src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
@@ -191,11 +192,15 @@
                 style="border-radius: 8px; height: 44px"
               />
             </a>
-            <a href="#overview" class="btn btn-secondary"> Learn More </a>
+            <a href="#overview" class="btn btn-secondary" data-track="openassistant_learn_more" data-track-group="product_page">
+              Learn More
+            </a>
             <a
               href="https://apps.apple.com/us/app/openassistant/id6692613772"
               target="_blank"
               rel="noopener noreferrer"
+              data-track="openassistant_app_store"
+              data-track-group="product_page"
             >
               <img
                 src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1609459200"
@@ -230,47 +235,48 @@
       <div class="container">
         <h2>Project Overview</h2>
         <p class="section-intro">
-          OpenAssistant comes with a full SwiftUI interface with reactive
-          Combine data flows. It unlocks the full spectrum of the OpenAI
-          Assistants API, empowering you to orchestrate dynamic conversations,
-          manage intelligent vector stores, and perform advanced file ingestion
-          and processing inside a sleek iPhone app.
+          OpenAssistant is kept here as the legacy mobile client for the older
+          OpenAI Assistants API workflow. The interesting part is not generic AI
+          marketing. It is the combination of native SwiftUI UI, local file
+          preparation for mobile formats, vector-store management, and polling
+          around a stateful server-side thread-and-run model.
         </p>
 
         <div class="overview-grid">
           <div class="overview-card">
             <div class="card-icon">🏗️</div>
-            <h3>MVVM Architecture</h3>
+            <h3>Stateful assistant orchestration</h3>
             <p>
-              Built with a robust Model-View-ViewModel pattern that ensures
-              clean separation of concerns, exceptional testability, and
-              maintainable code.
+              OpenAssistant managed assistant objects, threads, messages, runs,
+              and vector stores from a native mobile client instead of forcing
+              everything through a web console.
             </p>
           </div>
           <div class="overview-card">
             <div class="card-icon">⚡</div>
-            <h3>Reactive Programming</h3>
+            <h3>Polling-based run lifecycle</h3>
             <p>
-              Harnesses the full power of the Combine framework to deliver
-              real-time UI updates, seamless async operations, and responsive
-              user interactions throughout the application lifecycle.
+              Because the Assistants API used queued and in-progress server-side
+              runs, the app relied on memory-safe polling and state sync to keep
+              the UI current.
             </p>
           </div>
           <div class="overview-card">
             <div class="card-icon">🔧</div>
-            <h3>Modular Architecture</h3>
+            <h3>Local preprocessing for mobile files</h3>
             <p>
-              Organized into specialized modules including API services, chat
-              functionality, assistant management, and vector store operations
-              for maximum code reusability and maintainability.
+              HEIC images, RTF documents, and other mobile-originating files
+              were normalized on device before upload so the API could accept
+              them.
             </p>
           </div>
           <div class="overview-card">
             <div class="card-icon">📱</div>
-            <h3>Native iOS</h3>
+            <h3>Superseded by OpenResponses</h3>
             <p>
-              Crafted exclusively with SwiftUI to deliver a truly native iOS
-              experience. No dependencies outside of the Apple ecosystem.
+              This line is archived. OpenResponses is the active client for the
+              modern OpenAI Responses API and the place where ongoing product
+              work now happens.
             </p>
           </div>
         </div>
@@ -280,109 +286,100 @@
     <!-- Features Section -->
     <section id="features" class="section bg-light">
       <div class="container">
-        <h2>Key Features</h2>
+        <h2>Legacy Capabilities</h2>
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">🤖</div>
-            <h3>Comprehensive Assistant Management</h3>
+            <h3>Assistant CRUD</h3>
             <p>
-              Full lifecycle management of OpenAI Assistants with advanced
-              configuration options including GPT-4o, o-series models,
-              fine-tuned temperature and reasoning effort controls, and custom
-              user-provided instruction sets.
+              The app could create, edit, inspect, and delete Assistants API
+              objects, along with their instructions, model selections, and
+              attached knowledge resources.
             </p>
             <ul>
-              <li>Full assistant creation and management</li>
-              <li>
-                Advanced model selection (GPT-4o, 4.1, 4.5 / o1, 03-mini,
-                o4-mini)
-              </li>
-              <li>
-                Dynamic parameter tuning (temperature & Top-P (workhorses),
-                reasoning effort (reasoning models))
-              </li>
-              <li>Real-time configuration updates</li>
+              <li>Assistant creation and editing</li>
+              <li>Instruction and model configuration</li>
+              <li>Attachment and vector-store linking</li>
+              <li>Native mobile management UI</li>
             </ul>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🛠️</div>
-            <h3>Dynamic Tool Integration</h3>
+            <h3>Threads, messages, and runs</h3>
             <p>
-              Enable and configure AI tools including Code Interpreter for
-              coding queries and File Search for document-based knowledge
-              retrieval with advanced vector store integration.
+              OpenAssistant wrapped the older stateful conversation model,
+              allowing users to create threads, post messages, launch runs, and
+              watch run state transition from queued to completed.
             </p>
             <ul>
-              <li>Code Interpreter with execution capabilities</li>
-              <li>Advanced File Search with vector embeddings</li>
-              <li>Runtime tool configuration</li>
-              <li>Context-aware tool selection</li>
+              <li>Thread creation and reuse</li>
+              <li>Run polling and state updates</li>
+              <li>Persistent conversation history</li>
+              <li>Message rendering in native chat UI</li>
             </ul>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🗂️</div>
-            <h3>Advanced Vector Store Management</h3>
+            <h3>Vector stores and files</h3>
             <p>
-              Enterprise-grade vector store operations with full CRUD
-              functionality. Create knowledge bases from documents and associate
-              them with assistants for intelligent, context-aware responses.
+              The app exposed vector store CRUD, document uploads, and
+              assistant-store associations so retrieval-backed assistants could
+              be configured from mobile.
             </p>
             <ul>
-              <li>Complete vector store lifecycle management</li>
-              <li>Intelligent assistant-store associations</li>
-              <li>Document-based knowledge retrieval</li>
-              <li>Configurable embedding strategies</li>
+              <li>Vector-store lifecycle management</li>
+              <li>File uploads and file status views</li>
+              <li>Knowledge-base linking</li>
+              <li>Assistant-to-store associations</li>
             </ul>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">📄</div>
-            <h3>Intelligent File Processing</h3>
+            <h3>Local mobile-file preprocessing</h3>
             <p>
-              Upload and process multiple file formats (PDF, TXT, DOCX, and
-              more) with sophisticated chunking strategies. Advanced metadata
-              management and seamless vector store integration.
+              Instead of sending raw unsupported mobile formats upstream, the
+              app converted or normalized files on device before transmission.
             </p>
             <ul>
-              <li>Multi-format file support with smart processing</li>
-              <li>Configurable chunking (size and overlap control)</li>
-              <li>Rich file metadata and status tracking</li>
-              <li>Automated vector store association</li>
+              <li>HEIC to compatible image conversion</li>
+              <li>RTF to text normalization</li>
+              <li>Temporary local preprocessing</li>
+              <li>Upload-failure avoidance for mobile file types</li>
             </ul>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">💬</div>
-            <h3>Real-Time Chat Interface</h3>
+            <h3>Markdown chat UI</h3>
             <p>
-              Engage in sophisticated conversations with rich Markdown
-              rendering, persistent message history, and intelligent thread
-              management. Features loading states and real-time conversation
-              updates.
+              The front end gave mobile users a native place to talk to their
+              assistants, browse history, and inspect results without dropping
+              into a browser workflow.
             </p>
             <ul>
-              <li>Rich Markdown rendering with syntax highlighting</li>
-              <li>Persistent conversation history across sessions</li>
-              <li>Intelligent OpenAI thread lifecycle management</li>
-              <li>Real-time message streaming and updates</li>
+              <li>Rich Markdown rendering</li>
+              <li>Persistent local history</li>
+              <li>Assistant and thread switching</li>
+              <li>Native mobile conversation management</li>
             </ul>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🔒</div>
-            <h3>Enterprise-Grade Security & Persistence</h3>
+            <h3>Legacy boundary and limits</h3>
             <p>
-              Secure API key management using iOS secure storage, with robust
-              local data persistence and privacy-focused design principles
-              throughout the application.
+              The project is useful as a historical reference, but it remains
+              tied to the Assistants API model of threads, runs, and polling,
+              which is why it no longer represents the main product direction.
             </p>
             <ul>
-              <li>Secure @AppStorage-based API key storage</li>
-              <li>Local message persistence with MessageStore</li>
-              <li>Cross-session data integrity</li>
-              <li>Privacy-first architecture design</li>
+              <li>Legacy API dependency</li>
+              <li>Polling-driven mobile lifecycle</li>
+              <li>Archived status</li>
+              <li>Replaced by OpenResponses</li>
             </ul>
           </div>
         </div>
@@ -392,17 +389,19 @@
     <!-- Architecture Section -->
     <section id="architecture" class="section">
       <div class="container">
-        <h2>Architecture Overview (MVVM)</h2>
+        <h2>Architecture Overview</h2>
         <p class="section-intro">
-          Built using the Model-View-ViewModel (MVVM) pattern, the application
-          provides a scalable and maintainable foundation for complex SwiftUI
-          development.
+          OpenAssistant used an MVVM-style SwiftUI architecture to bridge native
+          UI state with a stateful remote API built around assistants, threads,
+          messages, runs, files, and vector stores.
         </p>
 
         <div class="architecture-diagram">
           <div class="arch-layer">
             <h3>View Layer (SwiftUI)</h3>
-            <p>Declarative UI built with SwiftUI components</p>
+            <p>
+              Native screens for assistants, vector stores, chat, and settings
+            </p>
             <div class="arch-components">
               <span class="component">ChatView</span>
               <span class="component">AssistantManagerView</span>
@@ -414,8 +413,8 @@
           <div class="arch-arrow">↕️</div>
 
           <div class="arch-layer">
-            <h3>ViewModel Layer (Business Logic)</h3>
-            <p>Manages state and coordinates between View and Model</p>
+            <h3>ViewModel Layer (State Coordination)</h3>
+            <p>Coordinates polling, selection state, and message updates</p>
             <div class="arch-components">
               <span class="component">ChatViewModel</span>
               <span class="component">AssistantManagerViewModel</span>
@@ -427,8 +426,11 @@
           <div class="arch-arrow">↕️</div>
 
           <div class="arch-layer">
-            <h3>Service Layer (API & Persistence)</h3>
-            <p>Handles external API calls and data persistence</p>
+            <h3>Service Layer (API and Persistence)</h3>
+            <p>
+              Handles Assistants API requests, file preprocessing, and local
+              storage
+            </p>
             <div class="arch-components">
               <span class="component">OpenAIService</span>
               <span class="component">FileUploadService</span>
@@ -440,8 +442,11 @@
           <div class="arch-arrow">↕️</div>
 
           <div class="arch-layer">
-            <h3>Model Layer (Data Structures)</h3>
-            <p>Codable structs mirroring OpenAI API entities</p>
+            <h3>Model Layer (Remote Object Shapes)</h3>
+            <p>
+              Codable structures mirroring assistants, messages, threads, runs,
+              and stores
+            </p>
             <div class="arch-components">
               <span class="component">Assistant</span>
               <span class="component">Message</span>
@@ -456,10 +461,10 @@
     <!-- App Flow Section -->
     <section id="flow" class="section bg-light">
       <div class="container">
-        <h2>Core Application Flow</h2>
+        <h2>Legacy App Flow</h2>
         <p class="section-intro">
-          Understanding how data flows through the application and how users
-          interact with different features.
+          The old workflow centered on stateful remote objects rather than the
+          direct Responses API model used by OpenResponses.
         </p>
 
         <div class="flow-steps">
@@ -468,8 +473,9 @@
             <div class="step-content">
               <h3>App Initialization</h3>
               <p>
-                The application starts with <code>OpenAssistantApp</code>, which
-                initializes environment objects and checks for API key presence.
+                <code>OpenAssistantApp</code> initializes view models, local
+                state, and API configuration before presenting assistants and
+                threads.
               </p>
               <div class="code-snippet">
                 <code
@@ -485,8 +491,8 @@
             <div class="step-content">
               <h3>API Key Management</h3>
               <p>
-                The app securely stores the OpenAI API key using
-                <code>@AppStorage</code> and prompts for setup if missing.
+                The app stores the OpenAI API key locally and prompts the user
+                before any remote API interaction can happen.
               </p>
               <div class="code-snippet">
                 <code
@@ -502,8 +508,8 @@
             <div class="step-content">
               <h3>Main Navigation</h3>
               <p>
-                <code>MainTabView</code> provides tab-based navigation between
-                Assistants, Management, Vector Stores, and Settings.
+                <code>MainTabView</code> separates assistants, vector stores,
+                chat, and configuration into a native tab-based workflow.
               </p>
               <div class="code-snippet">
                 <code
@@ -517,10 +523,10 @@
           <div class="flow-step">
             <div class="step-number">4</div>
             <div class="step-content">
-              <h3>Data Fetching</h3>
+              <h3>Remote object operations</h3>
               <p>
-                ViewModels interact with <code>OpenAIService</code> to fetch
-                assistants, create vector stores, and manage chat threads.
+                ViewModels call <code>OpenAIService</code> to fetch assistants,
+                create stores, upload files, post messages, and launch runs.
               </p>
               <div class="code-snippet">
                 <code>assistantManagerViewModel.fetchAssistants()</code>
@@ -531,10 +537,10 @@
           <div class="flow-step">
             <div class="step-number">5</div>
             <div class="step-content">
-              <h3>Real-time Updates</h3>
+              <h3>Polling and notifications</h3>
               <p>
-                The app uses <code>NotificationCenter</code> and Combine
-                publishers for decoupled, real-time UI updates.
+                Polling plus <code>NotificationCenter</code> are used to keep
+                the UI in sync with queued and in-progress run state.
               </p>
               <div class="code-snippet">
                 <code
@@ -551,34 +557,35 @@
     <!-- Technical Details Section -->
     <section class="section">
       <div class="container">
-        <h2>Technical Implementation</h2>
+        <h2>Technical Profile</h2>
         <div class="tech-grid">
           <div class="tech-card">
-            <h3>🔄 Asynchronous Operations</h3>
+            <h3>Assistants API v2</h3>
             <p>
-              Built with Swift's modern concurrency model using async/await and
-              Combine publishers for reactive programming.
+              The app is built around assistants, threads, messages, runs,
+              files, and vector stores instead of the newer Responses API
+              request model.
             </p>
           </div>
           <div class="tech-card">
-            <h3>🗃️ Data Persistence</h3>
+            <h3>SwiftUI and Combine</h3>
             <p>
-              Local message storage with MessageStore and secure API key
-              persistence using @AppStorage.
+              SwiftUI plus Combine handle the native UI layer and view-model
+              update pipeline.
             </p>
           </div>
           <div class="tech-card">
-            <h3>🌐 API Integration</h3>
+            <h3>Local preprocessing</h3>
             <p>
-              Comprehensive OpenAI API integration with dedicated service
-              extensions for different endpoints.
+              Mobile-originating file formats are normalized locally before
+              upload so the API receives compatible inputs.
             </p>
           </div>
           <div class="tech-card">
-            <h3>🎨 Adaptive UI</h3>
+            <h3>Archive status</h3>
             <p>
-              Support for Light, Dark, and System appearance modes with
-              responsive design principles.
+              OpenAssistant remains documented here for reference, but the
+              active direct-API client is OpenResponses.
             </p>
           </div>
         </div>
@@ -588,60 +595,36 @@
     <!-- Use Cases Section -->
     <section class="section bg-light">
       <div class="container">
-        <h2>Real-World Use Cases</h2>
+        <h2>What Carried Forward</h2>
         <p class="section-intro">
-          Discover how OpenAssistant can transform your workflow with AI-powered
-          assistance
+          The main value of OpenAssistant now is what it demonstrated and what
+          the next product generation learned from it.
         </p>
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">📝</div>
-            <h3>Content Creation</h3>
+            <h3>Native management of remote AI objects</h3>
             <p>
-              Create custom writing assistants with specific styles and tones.
-              Upload brand guidelines and style sheets to ensure consistent
-              voice across all your content.
+              OpenAssistant proved that assistants, stores, and chat state could
+              be managed from a mobile-native interface instead of a web-only
+              workflow.
             </p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">🔬</div>
-            <h3>Research & Analysis</h3>
+            <h3>Mobile file handling lessons</h3>
             <p>
-              Build research assistants that can search through your document
-              library. Upload papers, reports, and articles to create a
-              personalized knowledge base.
+              The local preprocessing pipeline for HEIC, RTF, and other mobile
+              formats carried forward as a useful design lesson.
             </p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">💼</div>
-            <h3>Business Intelligence</h3>
+            <h3>Why the product moved on</h3>
             <p>
-              Analyze business data, generate reports, and visualize trends with
-              Code Interpreter. Upload CSV files and let AI crunch the numbers.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎓</div>
-            <h3>Learning & Education</h3>
-            <p>
-              Create personalized tutors for any subject. Upload textbooks and
-              course materials to build domain-specific educational assistants.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">👨‍💻</div>
-            <h3>Code Development</h3>
-            <p>
-              Build coding assistants with access to your project documentation.
-              Use Code Interpreter to write, test, and debug code on the go.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🏥</div>
-            <h3>Professional Services</h3>
-            <p>
-              Create specialized assistants for legal, medical, or financial
-              applications with domain-specific document libraries.
+              The old Assistants API lifecycle was heavier and more stateful
+              than the newer direct Responses API model, so the active line
+              moved to OpenResponses.
             </p>
           </div>
         </div>
@@ -651,38 +634,38 @@
     <!-- Why OpenAssistant Section -->
     <section class="section">
       <div class="container">
-        <h2>Why Choose OpenAssistant?</h2>
+        <h2>Why Keep This Page Live?</h2>
         <div class="overview-grid">
           <div class="overview-card">
             <div class="card-icon">🎯</div>
-            <h3>Full Control</h3>
+            <h3>Historical reference</h3>
             <p>
-              Your API key, your data, your assistants. Complete control over
-              your AI interactions without third-party intermediaries.
+              Support, privacy, and App Store history still matter for users who
+              installed the legacy app.
             </p>
           </div>
           <div class="overview-card">
             <div class="card-icon">🚀</div>
-            <h3>Native Performance</h3>
+            <h3>Architecture record</h3>
             <p>
-              Built entirely with SwiftUI for a truly native iOS experience.
-              Fast, fluid, and optimized for Apple devices.
+              The page still documents how a native SwiftUI client handled the
+              stateful Assistants API model on mobile.
             </p>
           </div>
           <div class="overview-card">
             <div class="card-icon">🔐</div>
-            <h3>Privacy First</h3>
+            <h3>Clear lineage</h3>
             <p>
-              Your data stays between you and OpenAI. No tracking, no analytics,
-              no data collection by third parties.
+              It makes the difference between OpenAssistant and OpenResponses
+              visible instead of hiding the product transition.
             </p>
           </div>
           <div class="overview-card">
             <div class="card-icon">🎨</div>
-            <h3>Beautiful Design</h3>
+            <h3>Support continuity</h3>
             <p>
-              Modern, intuitive interface that follows Apple's design
-              guidelines. Supports Dark Mode and adapts to your preferences.
+              Existing users still need working support, privacy, and terms
+              routes even after a product line is archived.
             </p>
           </div>
         </div>
@@ -692,15 +675,15 @@
     <!-- Getting Started Section -->
     <section class="section bg-light">
       <div class="container">
-        <h2>Get Started in Minutes</h2>
+        <h2>Legacy Access</h2>
         <div class="flow-steps">
           <div class="flow-step">
             <div class="step-number">1</div>
             <div class="step-content">
-              <h3>Download OpenAssistant</h3>
+              <h3>Review the archived app</h3>
               <p>
-                Get OpenAssistant from the App Store. The app is free to
-                download and available for iPhone and iPad.
+                The App Store listing remains part of the public record for the
+                older OpenAssistant line.
               </p>
               <a
                 href="https://apps.apple.com/us/app/openassistant/id6692613772"
@@ -708,8 +691,10 @@
                 rel="noopener noreferrer"
                 class="btn btn-primary"
                 style="display: inline-block; margin-top: 10px"
+                data-track="openassistant_archive_app_store"
+                data-track-group="product_page"
               >
-                Download on App Store
+                View on App Store
               </a>
             </div>
           </div>
@@ -717,19 +702,21 @@
           <div class="flow-step">
             <div class="step-number">2</div>
             <div class="step-content">
-              <h3>Get Your OpenAI API Key</h3>
+              <h3>Read the source</h3>
               <p>
-                Sign up for an OpenAI account and generate an API key from your
-                dashboard. You only pay for what you use.
+                The GitHub repository is the clearest place to inspect the old
+                assistants, threads, runs, and vector-store implementation.
               </p>
               <a
-                href="https://platform.openai.com/api-keys"
+                href="https://github.com/Gunnarguy/OpenAssistant"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-secondary"
                 style="display: inline-block; margin-top: 10px"
+                data-track="openassistant_archive_github"
+                data-track-group="product_page"
               >
-                Get API Key
+                View GitHub Repository
               </a>
             </div>
           </div>
@@ -737,11 +724,10 @@
           <div class="flow-step">
             <div class="step-number">3</div>
             <div class="step-content">
-              <h3>Create Your First Assistant</h3>
+              <h3>Use OpenResponses for current work</h3>
               <p>
-                Open the app, enter your API key in Settings, and create your
-                first AI assistant. Choose a model, set instructions, and start
-                chatting!
+                If you are evaluating current API-tooling work, start with
+                OpenResponses rather than building on this archived line.
               </p>
             </div>
           </div>
@@ -753,31 +739,32 @@
     <section class="section cta-section">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Experience AI on iOS?</h2>
+          <h2>Archived Product Line</h2>
           <p>
-            Download OpenAssistant today and unlock the full potential of
-            OpenAI's Assistants API on your iPhone.
+            OpenAssistant remains online as a support and reference surface.
+            OpenResponses is the active path for current OpenAI API tooling.
           </p>
           <div class="cta-buttons">
             <a
-              href="https://apps.apple.com/us/app/openassistant/id6692613772"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/support.html"
               class="btn btn-primary btn-large"
+              data-track="openassistant_general_support"
+              data-track-group="product_page"
             >
-              Download Now
+              General Support
             </a>
             <a
-              href="https://github.com/Gunnarguy/OpenAssistant"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/openresponses"
               class="btn btn-secondary btn-large"
+              data-track="openassistant_to_openresponses"
+              data-track-group="product_page"
             >
-              View on GitHub
+              See OpenResponses
             </a>
           </div>
           <p class="cta-note">
-            Free to download • Your API key, your control • No subscriptions
+            Archived for reference • Support routes remain live • OpenResponses
+            is the current successor
           </p>
         </div>
       </div>
@@ -790,8 +777,8 @@
           <div class="footer-section">
             <h3>OpenAssistant</h3>
             <p>
-              A native iOS application for managing and interacting with OpenAI
-              Assistants. Built with SwiftUI for a truly native experience.
+              Archived SwiftUI client for the OpenAI Assistants API. Maintained
+              here as a reference and support surface.
             </p>
             <div class="social-links">
               <a
@@ -799,6 +786,8 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
+                data-track="openassistant_footer_github"
+                data-track-group="product_page"
               >
                 <svg
                   width="24"
@@ -817,7 +806,7 @@
             <h3>Quick Links</h3>
             <ul>
               <li><a href="#overview">Overview</a></li>
-              <li><a href="#features">Features</a></li>
+              <li><a href="#features">Legacy Capabilities</a></li>
               <li><a href="architecture.html">Architecture</a></li>
               <li><a href="support/">Support & Help</a></li>
               <li><a href="privacy/">Privacy Policy</a></li>
@@ -840,31 +829,17 @@
                   href="https://apps.apple.com/us/app/openassistant/id6692613772"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Download on App Store</a
+                  >App Store Listing</a
                 >
               </li>
-              <li>
-                <a
-                  href="https://platform.openai.com/docs/assistants"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >OpenAI Assistants API</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://platform.openai.com/api-keys"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Get API Key</a
-                >
-              </li>
+              <li><a href="/openresponses">OpenResponses Successor</a></li>
+              <li><a href="support/">Support Route</a></li>
             </ul>
           </div>
           <div class="footer-section">
             <h3>Technology Stack</h3>
             <ul>
-              <li>Swift & SwiftUI</li>
+              <li>Swift and SwiftUI</li>
               <li>Combine Framework</li>
               <li>OpenAI Assistants API</li>
               <li>MVVM Architecture</li>
@@ -873,7 +848,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 OpenAssistant. Open source and available on GitHub.</p>
+          <p>&copy; 2026 OpenAssistant. Archived for reference and support.</p>
           <p class="footer-note">
             OpenAssistant is an independent project and is not affiliated with
             OpenAI.

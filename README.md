@@ -1,103 +1,56 @@
-# Gunzino - Publisher Site and Support Surface
+# Gunzino
 
-This repository contains the publisher site, product landing pages, and support/legal surface for **Gunzino**. It routes users to public product pages such as **OpenClinic**, **OpenCone**, **OpenResponses**, and **OpenIntelligence**.
+Gunzino is the publisher site and support surface for Gunnar Hostetler's public app catalog. It is not a personal portfolio and it is not a generic AI brand site. Its job is to present product pages, support routes, privacy routes, and App Store review surfaces with direct, technically grounded copy.
 
-## Featured Product Pages
+## Product Catalog
 
-### OpenCone
-**On-Device RAG for iOS** - [GitHub Repository](https://github.com/Gunnarguy/OpenCone)
+| Product          | What it is                                               | Main APIs and frameworks                                                                                     | Boundary that matters                                                                                        |
+| ---------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| OpenClinic       | Provider-facing clinical workspace prototype             | SwiftUI, SwiftData, Apple Foundation Models, SMART on FHIR, ASWebAuthenticationSession, Core ML, SQLite FTS5 | Local charting and clinical retrieval on device; prototype only, not for live deployment                     |
+| OpenIntelligence | Local-first document intelligence app and engine lineage | SwiftUI, Apple Foundation Models, PDFKit, Vision OCR, SQLite FTS5, local vector indexing                     | Shipping iPhone and iPad app with citations and abstention; broader engine boundary lives behind the product |
+| OpenResponses    | Direct OpenAI Responses API developer client             | SwiftUI, OpenAI Responses API, SSE streaming, Keychain, PDFKit, Vision, MCP, browser automation              | Uses user-owned OpenAI credentials and talks directly to OpenAI endpoints                                    |
+| OpenCone         | Cloud-hybrid RAG client                                  | SwiftUI, Vision OCR, PDFKit, OpenAI Embeddings API, OpenAI Responses API, Pinecone Serverless                | Prepares documents locally but depends on OpenAI and Pinecone for the core cloud path                        |
+| OpenAssistant    | Archived Assistants API client                           | SwiftUI, Combine, OpenAI Assistants API v2, vector stores, local file preprocessing                          | Legacy line kept for reference; superseded by OpenResponses                                                  |
 
-OpenCone is a sophisticated, native iOS application that demonstrates Retrieval Augmented Generation (RAG) with a clean SwiftUI interface.
+## Why This Repo Exists
 
-**Key Features:**
-- **Document Processing** – upload PDF, DOCX, TXT files, and images with OCR
-- **Vector embeddings via OpenAI** – generate embeddings from your documents
-- **Pinecone integration** – store and search across embeddings
-- **Semantic search** – ask questions and receive context-aware answers
-- **RAG-based responses** – combine search results for accurate answers
-- **Custom design and theming** – built entirely in SwiftUI with OCDesignSystem
-- **Real-time processing logs** – detailed, filterable logs for all operations
-- **Comprehensive statistics** – view processing metrics, timings, and token counts
+- Keep public product pages aligned with the actual app architectures.
+- Make support, privacy, and legal routes easy to scan.
+- Give App Review and users a clear, factual explanation of what each app touches and how it behaves.
 
-### OpenResponses
-**Advanced OpenAI API Playground** - [GitHub Repository](https://github.com/Gunnarguy/OpenResponses)
+## Publisher Rules
 
-OpenResponses is a powerful native SwiftUI playground for iOS and macOS, designed to explore the full range of OpenAI's API capabilities.
+- Do not flatten every product into "offline AI apps." Some are local-first, some are cloud-hybrid, and one is a deprecated archive.
+- Prefer exact technical nouns over generic marketing language.
+- Keep product relationships explicit. OpenClinic uses OpenIntelligence-derived retrieval internals. OpenResponses supersedes OpenAssistant.
+- Preserve the support and privacy routes because they are part of the public contract for the apps.
 
-**Key Features:**
-- **Multi-Model Support** – GPT-5, GPT-4.1, O-series reasoning models, and specialized models
-- **Enhanced Streaming** – real-time responses with granular status updates
-- **Computer Use** – production-ready browser automation with safety approvals
-- **Web Search** – access up-to-date information from the internet
-- **Code Interpreter** – execute Python code in secure sandboxed environments
-- **Image Generation** – create images with gpt-image-1 and real-time previews
-- **File Search** – search across vector stores with 43+ file type support
-- **MCP Integration** – connect to Model Context Protocol servers (GitHub, Notion, Slack, etc.)
-- **Advanced Controls** – fine-tune temperature, tokens, penalties, and reasoning effort
-- **Developer Tools** – API inspector, debug console, analytics dashboard, and comprehensive logging
-- **Prompt Library** – save and manage reusable prompt configurations
-- **Conversation Management** – local storage with export capabilities and multi-conversation support
+## Repository Layout
 
-### OpenIntelligence
-**Privacy-First Document AI** - [GitHub Repository](https://github.com/Gunnarguy/OpenIntelligence)
+- `index.html` - Gunzino homepage and product grid
+- `support.html` - general support surface
+- `style.css` - shared publisher styling
+- `openclinic/` - OpenClinic landing, privacy, and support routes
+- `openintelligence/` - OpenIntelligence landing, privacy, and support routes
+- `openresponses/` - OpenResponses landing, privacy, and support routes
+- `opencone/` - OpenCone landing, privacy, and support routes
+- `openassistant/` - OpenAssistant legacy landing, privacy, and support routes
+- `scripts/verify-site.sh` - publisher verification helper
 
-OpenIntelligence is a privacy-first iOS application for grounded document Q&A. It is local-first by default, with optional cloud pathways that require explicit user consent.
+## Local Preview
 
-**Key Capabilities:**
-- **Local-first retrieval** – ingestion, chunking, embeddings, and search run on-device by default
-- **Grounded answers** – responses include citations back to source content
-- **Hybrid retrieval** – blends semantic similarity with keyword relevance and reranking
-- **Transparent controls** – configurable retrieval depth and execution indicators
+Open `index.html` in a browser, or serve the repository with any static file server.
 
-## Repository Structure
+## Deployment Notes
 
-- `index.html` – main publisher landing page linking to public product pages and policy routes
-- `support.html` – contact form and comprehensive FAQ section for public product pages
-- `style.css` – modern, responsive styling with dark theme and gradient accents
-- `openintelligence/` – OpenIntelligence landing, support, and privacy policy pages
-- `CNAME` – domain mapping for GitHub Pages (gunzino.me)
+- GitHub Pages serves this site from `main` at the repository root.
+- Local CSS and JS references use query-string cache busting and should be bumped whenever those assets change.
+- Each HTML page must keep exactly one GA tag for `G-4Q160W3M61` and include a stylesheet.
 
-## Technology Stack
+## Current Gaps
 
-The public products highlighted here are built with:
-- **SwiftUI** – Native iOS/macOS UI framework
-- **MVVM Architecture** – Clean separation of concerns with dedicated service layers
-- **async/await & Combine** – Modern Swift concurrency and reactive programming
-- **OpenAI API** – Embeddings, completions, and advanced features
-- **Custom Design Systems** – Themable, reusable UI components
-
-## Running Locally
-
-Simply open `index.html` in a browser to view the landing page.
-
-### Deploying via GitHub Pages
-
-1. Push the repository to GitHub
-2. Enable GitHub Pages in repository settings
-3. The CNAME file maps the site to `gunzino.me`
-
-### Contact Form Configuration
-
-The form on `support.html` uses a placeholder action attribute. Replace `YOUR_FORMSPREE_ENDPOINT_OR_OTHER_SERVICE` with the endpoint of your preferred form service (e.g., Formspree, Netlify Forms) before deploying.
-
-## Getting Started with the Applications
-
-### OpenCone
-Visit the [OpenCone repository](https://github.com/Gunnarguy/OpenCone) for detailed installation and setup instructions. You'll need:
-- Xcode
-- OpenAI API Key
-- Pinecone API Key and Project ID
-
-### OpenResponses
-Visit the [OpenResponses repository](https://github.com/Gunnarguy/OpenResponses) for detailed installation and setup instructions. You'll need:
-- Xcode
-- OpenAI API Key
-- (Optional) Additional API keys for MCP integrations
-
-## Contributing
-
-Contributions to improve the website are welcome! For contributions to the applications themselves, please visit their respective GitHub repositories.
+- `support.html` still contains a placeholder form action and needs a real submission endpoint before the form is live.
 
 ## License
 
-The website content is released under the MIT License unless otherwise noted. Please see the individual application repositories for their respective licenses.
+Site content is MIT unless otherwise noted. Individual application repos may use different licenses.

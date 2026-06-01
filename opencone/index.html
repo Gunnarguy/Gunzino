@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenCone | On-Device RAG for iOS</title>
+    <title>OpenCone | Cloud-Hybrid RAG Client</title>
     <meta name="description"
-        content="OpenCone is an iOS RAG app for local documents, OCR, OpenAI embeddings, and Pinecone-backed search." />
-    <meta property="og:title" content="OpenCone | On-Device RAG for iOS" />
+        content="OpenCone is a cloud-hybrid RAG client that prepares documents locally with OCR and file parsing, then uses OpenAI embeddings, OpenAI responses, and Pinecone serverless search." />
+    <meta property="og:title" content="OpenCone | Cloud-Hybrid RAG Client" />
     <meta property="og:description"
-        content="Search local documents with OCR, OpenAI embeddings, and Pinecone vector retrieval." />
+        content="Search local documents with Vision OCR, OpenAI embeddings, Pinecone namespaces, and grounded answer synthesis through OpenAI responses." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/opencone" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <link rel="stylesheet" href="/style.css?v=20260531b" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "OpenCone",
-            "applicationCategory": "UtilitiesApplication",
-            "operatingSystem": "iOS Application",
-            "description": "On-device RAG app for local documents, OCR, OpenAI embeddings, and Pinecone-backed search.",
-            "url": "https://gunzino.me/opencone",
-            "downloadUrl": "https://apps.apple.com/us/app/opencone/id6744467668"
-          }
-        </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "OpenCone",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "iOS Application",
+        "description": "Cloud-hybrid RAG client with local OCR and parsing plus OpenAI embeddings, OpenAI responses, and Pinecone-backed search.",
+        "url": "https://gunzino.me/opencone",
+        "downloadUrl": "https://apps.apple.com/us/app/opencone/id6744467668"
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
@@ -52,12 +52,12 @@
                 function (event) {
                     var interactiveTarget = event.target.closest("[data-track]");
                     if (interactiveTarget) {
-                var actionLabel = interactiveTarget.getAttribute("data-track");
-                var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
-                var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+                        var actionLabel = interactiveTarget.getAttribute("data-track");
+                        var actionGroup =
+                            interactiveTarget.getAttribute("data-track-group") ||
+                            "general_interaction";
+                        var actionValue =
+                            interactiveTarget.getAttribute("data-track-value") || "";
 
                 if (typeof gtag === "function") {
                     gtag("event", "ui_interaction_event", {
@@ -72,27 +72,26 @@
             true,
         );
       });
-        </script>
+</script>
     <!-- ====================================================================== -->
-    </head>
+</head>
 
-    <body>
+<body>
     <header style="border-bottom: 2px solid #00aaff">
-        <nav style="border-bottom: 1px solid rgba(0, 170, 255, 0.25)">
-            <div class="logo">
-                <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
-            </div>
-            <ul>
-                <li><a href="/index.html#apps">Apps</a></li>
-                <li><a href="/opencone" class="active">OpenCone</a></li>
-        <li>
-            <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">GitHub <i
-                    class="fab fa-github"></i></a>
-        </li>
-        <li><a href="/opencone/support">Support</a></li>
-        <li><a href="/opencone/privacy">Privacy</a></li>
+    <nav style="border-bottom: 1px solid rgba(0, 170, 255, 0.25)">
+        <div class="logo">
+        <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+        </div>
+        <ul>
+            <li><a href="/index.html#apps">Apps</a></li>
+            <li><a href="/opencone" class="active">OpenCone</a></li>
+            <li>
+            <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a>
+            </li>
+            <li><a href="/opencone/support">Support</a></li>
+            <li><a href="/opencone/privacy">Privacy</a></li>
         </ul>
-        </nav>
+    </nav>
     <div class="hero" style="
               background: linear-gradient(
                 135deg,
@@ -100,238 +99,270 @@
                 #112d4e 50%,
                 #1f4068 100%
               );
-            ">
+        "
+      >
         <h1 style="text-shadow: 0 0 10px rgba(0, 170, 255, 0.3)">
-            <i class="fas fa-brain"></i> OpenCone
+        <i class="fas fa-brain"></i> OpenCone
         </h1>
         <p>
-            On-device Retrieval Augmented Generation for iOS. Extracts text from
-            PDFs and images via Vision OCR, generates embeddings, syncs with
-            Pinecone, and retrieves grounded answers.
+        Cloud-hybrid Retrieval Augmented Generation for Apple platforms.
+        OpenCone prepares documents locally, then uses OpenAI embeddings,
+        OpenAI responses, and Pinecone serverless indexes to search and
+        synthesize answers from your own corpus.
         </p>
         <div class="hero-buttons">
+        <a href="https://apps.apple.com/us/app/opencone/id6744467668" class="cta-button" style="
+                      background: linear-gradient(135deg, #35b7ff 0%, #00aaff 100%);
+                      color: #ffffff;
+                      box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+                    " target="_blank" rel="noopener" data-track="opencone_app_store" data-track-group="product_page"><i
+                class="fas fa-arrow-up-right-from-square"></i> App Store</a>
         <a href="/opencone/support" class="cta-button" style="
                       background: linear-gradient(135deg, #00aaff 0%, #0088cc 100%);
                       color: #ffffff;
                       box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
-                    "><i class="fas fa-life-ring"></i> Get Support</a>
-        <a href="/opencone/privacy" class="cta-button cta-button-secondary" style="
-                      background: linear-gradient(135deg, #1f4068 0%, #0b1a30 100%);
-                      box-shadow: 0 4px 15px rgba(31, 64, 104, 0.3);
-                    "><i class="fas fa-user-shield"></i> Privacy Policy</a>
+            "
+            data-track="opencone_support"
+            data-track-group="product_page"
+            ><i class="fas fa-life-ring"></i> Get Support</a
+          >
+          <a
+            href="/opencone/privacy"
+            class="cta-button cta-button-secondary"
+            style="
+              background: linear-gradient(135deg, #1f4068 0%, #0b1a30 100%);
+              box-shadow: 0 4px 15px rgba(31, 64, 104, 0.3);
+            "
+            data-track="opencone_privacy"
+            data-track-group="product_page"
+            ><i class="fas fa-user-shield"></i> Privacy Policy</a
+          >
         </div>
-        </div>
+    </div>
     </header>
 
     <main>
     <section class="app-section">
         <div class="app-header" style="border-bottom: 2px solid #00aaff">
-            <div class="app-title-group">
+        <div class="app-title-group">
             <i class="fas fa-brain app-header-icon" style="color: #00aaff" aria-hidden="true"></i>
             <div>
-                <h2>On-Device RAG Client</h2>
+            <h2>Local Ingestion, Cloud Retrieval</h2>
             <p class="app-subtitle">
-                A native SwiftUI client for document extraction and Pinecone
-                vector database integration.
-            </p>
+                OpenCone is not a blanket offline app. It processes files on
+                device, then uses OpenAI and Pinecone to power the core search
+                path.
+                </p>
             </div>
-            </div>
-            <div class="app-links">
-            <a href="https://github.com/Gunnarguy/OpenCone" class="github-link" target="_blank" rel="noopener">
+        </div>
+        <div class="app-links">
+            <a href="https://github.com/Gunnarguy/OpenCone" class="github-link" target="_blank" rel="noopener"
+                data-track="opencone_github" data-track-group="product_page">
                 <i class="fab fa-github"></i> View on GitHub
             </a>
-            </div>
-            </div>
+        </div>
+        </div>
 
         <div class="app-description">
-            <p>
-            OpenCone is a native iOS application that performs local document
-            ingestion (PDF, DOCX, TXT, and images via OCR), generates vector
-            embeddings via OpenAI, syncs with Pinecone vector search, and runs
-            Retrieval Augmented Generation (RAG).
+        <p>
+            OpenCone is a native SwiftUI client that extracts and normalizes
+            documents locally, stores credentials in the Keychain, and uses
+            OpenAI plus Pinecone as the cloud execution path for embeddings,
+            vector search, and answer synthesis. It is useful when you want a
+            native Apple front end over your own OpenAI and Pinecone accounts.
             </p>
             </div>
 
-        <h3>Key Features of OpenCone</h3>
+        <h3>What Makes OpenCone Different</h3>
         <div class="features-grid">
         <div class="feature-item" style="border-top: 3px solid #00aaff">
             <i class="fas fa-file-alt feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Multi-Format Document Management</h4>
+            <h4>Local document preparation</h4>
             <p>
-                Upload, view, and manage various document types (PDF, DOCX, TXT,
-                images with OCR). Securely handles file access using bookmarks.
+            Security-scoped bookmarks, PDFKit parsing, and Vision OCR are used
+            on device to prepare PDFs, images, and other file types before any
+            cloud call is made.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00aaff">
             <i class="fas fa-cogs feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Advanced Processing Pipeline</h4>
+            <h4>MIME-aware chunking</h4>
             <p>
-                Automated text extraction, strategic chunking (MIME-type
-                specific), and robust error handling during document ingestion.
+            Text is chunked according to document type and processing stage,
+            rather than passed through a one-size-fits-all ingestion path.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00aaff">
             <i class="fas fa-brain feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>OpenAI Embeddings</h4>
+            <h4>OpenAI embeddings and responses</h4>
             <p>
-                Generates high-dimensional vector embeddings for text chunks using
-                configurable OpenAI models (e.g., text-embedding-3-large).
+            OpenAI handles the embedding and answer-generation path, with
+            support for modern embedding and response models instead of a
+            fully local inference stack.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00aaff">
             <i class="fas fa-database feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Pinecone Integration</h4>
+            <h4>Pinecone serverless namespaces</h4>
             <p>
-                Full lifecycle management for Pinecone serverless indexes: create,
-                list, select active index, and manage namespaces.
+            Pinecone indexes and namespaces hold the remote vector search
+            layer, making it easy to separate corpora without running your own
+            vector database service.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00aaff">
             <i class="fas fa-search feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Semantic Search & RAG</h4>
+            <h4>Grounded search and answer flow</h4>
             <p>
-                Perform natural language queries. Retrieves semantically similar
-                text chunks and generates AI answers via OpenAI.
+            Queries retrieve relevant chunks from Pinecone, then package that
+            evidence back into an OpenAI response path for grounded answers.
             </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #00aaff">
-            <i class="fas fa-chart-bar feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Detailed Statistics</h4>
-            <p>
-                View comprehensive processing statistics including phase timings,
-                token counts, and chunk size distributions.
-            </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #00aaff">
-            <i class="fas fa-paint-brush feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Custom Design & Theming</h4>
-            <p>
-                Features a bespoke UI library (OCDesignSystem) with OCButton,
-                OCCard, OCBadge. Multiple themes available.
-            </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00aaff">
             <i class="fas fa-stream feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Real-time Processing Logs</h4>
+            <h4>Operational visibility</h4>
             <p>
-                Detailed, filterable logs for all major operations with timestamps
-                and context.
+            Processing logs, timings, and status views help users understand
+            which work happened locally and which work required the cloud
+            services behind the app.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #00aaff">
-            <i class="fas fa-magic feature-icon" style="color: #00aaff" aria-hidden="true"></i>
-            <h4>Guided Setup</h4>
+            <i class="fas fa-key feature-icon" style="color: #00aaff" aria-hidden="true"></i>
+            <h4>Bring-your-own-keys setup</h4>
             <p>
-                User-friendly WelcomeView for initial API key configuration and
-                app introduction.
+            OpenCone assumes the user brings their own OpenAI and Pinecone
+            credentials rather than hiding those dependencies behind a managed
+            backend.
             </p>
+        </div>
+        </div>
+
+        <h3>Technical Profile</h3>
+        <div class="tech-columns">
+            <div class="tech-column" style="border: 2px solid #00aaff">
+                <h4 style="color: #00aaff">
+                    <i class="fas fa-plug"></i> Core APIs
+                </h4>
+                <ul>
+                    <li>
+                        <strong>Local:</strong> SwiftUI, PDFKit, Vision OCR,
+                        security-scoped bookmarks
+                    </li>
+                    <li><strong>Embeddings:</strong> OpenAI Embeddings API</li>
+                    <li><strong>Generation:</strong> OpenAI Responses API</li>
+                    <li>
+                        <strong>Vector search:</strong> Pinecone Serverless indexes and
+                        namespaces
+                    </li>
+                </ul>
             </div>
-            </div>
+        <div class="tech-column" style="border: 2px solid #00aaff">
+            <h4 style="color: #00aaff">
+                <i class="fas fa-lock"></i> Data boundary
+            </h4>
+            <ul>
+                <li>
+                    <strong>Local:</strong> files, OCR output, settings, API keys in
+                    Keychain
+                </li>
+                <li>
+                    <strong>Remote:</strong> embedding requests, vector upserts,
+                    search, answer generation
+                </li>
+                <li>
+                    <strong>Truth:</strong> cloud-hybrid, not a fully offline RAG
+                    stack
+                </li>
+                <li>
+                    <strong>Audience:</strong> users who want a native front end
+                    over OpenAI and Pinecone
+                </li>
+            </ul>
+        </div>
+        </div>
 
         <h3>How OpenCone Works</h3>
         <div class="flow-steps">
         <div class="flow-step" style="border-left: 5px solid #00aaff">
             <div class="step-number" style="color: #00aaff">1</div>
             <div class="step-content">
-                <h4>Launch & Setup</h4>
+            <h4>Launch & Setup</h4>
             <p>
-                Enter your OpenAI API Key, Pinecone API Key, and Pinecone
-                Project ID through the guided WelcomeView.
-            </p>
+                The app starts with a bring-your-own-keys flow for OpenAI and
+                Pinecone, storing those credentials locally for subsequent
+                requests.
+                </p>
             </div>
-            </div>
+        </div>
 
         <div class="flow-step" style="border-left: 5px solid #00aaff">
             <div class="step-number" style="color: #00aaff">2</div>
             <div class="step-content">
-                <h4>Add & Process Documents</h4>
+            <h4>Add & Process Documents</h4>
             <p>
-                Upload files (PDF, TXT, DOCX, images), create or select a
-                Pinecone index, then process documents to extract text, generate
-                embeddings, and upload to Pinecone.
-            </p>
+                Files are imported locally, parsed with PDFKit or OCR when
+                needed, chunked on device, and prepared for remote indexing.
+                </p>
             </div>
-            </div>
+        </div>
 
         <div class="flow-step" style="border-left: 5px solid #00aaff">
             <div class="step-number" style="color: #00aaff">3</div>
             <div class="step-content">
-                <h4>Semantic Search</h4>
+            <h4>Semantic Search</h4>
             <p>
-                Ask natural language questions. The app retrieves semantically
-                similar chunks and generates AI-powered answers using RAG.
-            </p>
+                Search requests hit Pinecone for vector retrieval and return the
+                highest-value evidence chunks for answer construction.
+                </p>
             </div>
-            </div>
+        </div>
 
         <div class="flow-step" style="border-left: 5px solid #00aaff">
             <div class="step-number" style="color: #00aaff">4</div>
             <div class="step-content">
-                <h4>Monitor & Configure</h4>
+            <h4>Monitor & Configure</h4>
             <p>
-                View real-time logs, check processing statistics, and adjust
-                settings including models, chunk sizes, and themes.
-            </p>
+                OpenAI responses are used to synthesize the final answer, while
+                local logs and metrics keep the full pipeline visible.
+                </p>
             </div>
-            </div>
-            </div>
-
-        <h3>Tech Stack & Architecture</h3>
-        <div class="tech-columns">
-        <div class="tech-column" style="border: 2px solid #00aaff">
-            <h4 style="color: #00aaff">
-                <i class="fas fa-code"></i> Architecture
-            </h4>
-            <ul>
-                <li><strong>Pattern:</strong> MVVM with Service Layer</li>
-                <li><strong>UI:</strong> SwiftUI</li>
-                <li><strong>Concurrency:</strong> async/await & Combine</li>
-                <li><strong>Design System:</strong> Custom OCDesignSystem</li>
-            </ul>
-        </div>
-        <div class="tech-column" style="border: 2px solid #00aaff">
-            <h4 style="color: #00aaff">
-                <i class="fas fa-plug"></i> Integrations
-            </h4>
-            <ul>
-                <li><strong>OpenAI:</strong> Embeddings & Completions</li>
-                <li><strong>Pinecone:</strong> Vector Database</li>
-                <li><strong>PDFKit:</strong> PDF Processing</li>
-                <li><strong>VisionKit:</strong> OCR for Images</li>
-            </ul>
         </div>
         </div>
 
-        <h3>App Store Connect Metadata</h3>
+        <h3>Support and Privacy Routes</h3>
         <div class="tech-columns">
         <div class="tech-column" style="border: 2px solid #00aaff">
             <h4 style="color: #00aaff">
-                <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
+            <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
             </h4>
             <p>
-                <a href="/opencone/support">https://gunzino.me/opencone/support</a>
+            <a href="/opencone/support" data-track="opencone_support_route"
+                data-track-group="product_page">https://gunzino.me/opencone/support</a>
             </p>
         </div>
         <div class="tech-column" style="border: 2px solid #00aaff">
             <h4 style="color: #00aaff">
-                <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
-                Policy URL
+            <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
+            Policy URL
             </h4>
             <p>
-                <a href="/opencone/privacy">https://gunzino.me/opencone/privacy</a>
+            <a href="/opencone/privacy" data-track="opencone_privacy_route"
+                data-track-group="product_page">https://gunzino.me/opencone/privacy</a>
             </p>
         </div>
         </div>
 
         <p class="tech-footer">
-        <a href="/support.html">General Gunzino Support Center
+        <a href="/support.html" data-track="opencone_general_support" data-track-group="product_page">General Gunzino Support
+            Center
             <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
         </p>
-        </section>
+    </section>
     </main>
 
     <footer style="background: #0f1c2e; border-top: 1px solid #1a2f4c">
-        <p>&copy; 2026 Gunzino. All rights reserved.</p>
+    <p>&copy; 2026 Gunzino. All rights reserved.</p>
     <p>
         <a href="/index.html">Home</a> |
         <a href="/opencone/privacy">Privacy</a> |

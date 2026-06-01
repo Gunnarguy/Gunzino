@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenResponses | OpenAI API Playground</title>
+    <title>OpenResponses | Direct Responses API Client</title>
     <meta name="description"
-        content="OpenResponses is a native SwiftUI playground for the OpenAI Responses API with computer use, web search, code interpreter, and MCP tools." />
-    <meta property="og:title" content="OpenResponses | OpenAI API Playground" />
+        content="OpenResponses is a native SwiftUI developer client for the OpenAI Responses API with SSE streaming, tool execution, browser automation, web search, code interpreter, and MCP support." />
+    <meta property="og:title" content="OpenResponses | Direct Responses API Client" />
     <meta property="og:description"
-        content="Explore the full range of OpenAI's API capabilities with comprehensive tool integration, sandboxed code execution, and Model Context Protocol support." />
+        content="Inspect streaming events, tool calls, reasoning traces, and direct OpenAI Responses API requests in a native SwiftUI client." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/openresponses" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <link rel="stylesheet" href="/style.css?v=20260531b" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script type="application/ld+json">
-          {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "OpenResponses",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "iOS Application",
-            "description": "SwiftUI playground for the OpenAI Responses API, MCP integrations, and developer tooling.",
-            "url": "https://gunzino.me/openresponses",
-            "downloadUrl": "https://apps.apple.com/us/app/openresponses/id6757338355"
-          }
-        </script>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "OpenResponses",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "iOS Application",
+        "description": "Native SwiftUI client for the OpenAI Responses API with SSE streaming, tool integrations, and developer observability.",
+        "url": "https://gunzino.me/openresponses",
+        "downloadUrl": "https://apps.apple.com/us/app/openresponses/id6757338355"
+      }
+    </script>
 
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
@@ -52,12 +52,12 @@
                 function (event) {
                     var interactiveTarget = event.target.closest("[data-track]");
                     if (interactiveTarget) {
-                var actionLabel = interactiveTarget.getAttribute("data-track");
-                var actionGroup =
-                    interactiveTarget.getAttribute("data-track-group") ||
-                    "general_interaction";
-                var actionValue =
-                    interactiveTarget.getAttribute("data-track-value") || "";
+                        var actionLabel = interactiveTarget.getAttribute("data-track");
+                        var actionGroup =
+                            interactiveTarget.getAttribute("data-track-group") ||
+                            "general_interaction";
+                        var actionValue =
+                            interactiveTarget.getAttribute("data-track-value") || "";
 
                 if (typeof gtag === "function") {
                     gtag("event", "ui_interaction_event", {
@@ -72,27 +72,27 @@
             true,
         );
       });
-        </script>
+</script>
     <!-- ====================================================================== -->
-    </head>
+</head>
 
-    <body>
+<body>
     <header style="border-bottom: 2px solid #6b46c1">
-        <nav style="border-bottom: 1px solid rgba(107, 70, 193, 0.25)">
-            <div class="logo">
-                <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
-            </div>
-            <ul>
-                <li><a href="/index.html#apps">Apps</a></li>
-                <li><a href="/openresponses" class="active">OpenResponses</a></li>
-        <li>
+    <nav style="border-bottom: 1px solid rgba(107, 70, 193, 0.25)">
+        <div class="logo">
+        <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
+        </div>
+        <ul>
+            <li><a href="/index.html#apps">Apps</a></li>
+            <li><a href="/openresponses" class="active">OpenResponses</a></li>
+            <li>
             <a href="https://github.com/Gunnarguy/OpenResponses" target="_blank" rel="noopener">GitHub <i
                     class="fab fa-github"></i></a>
-        </li>
-        <li><a href="/openresponses/support">Support</a></li>
-        <li><a href="/openresponses/privacy">Privacy</a></li>
+            </li>
+            <li><a href="/openresponses/support">Support</a></li>
+            <li><a href="/openresponses/privacy">Privacy</a></li>
         </ul>
-        </nav>
+    </nav>
     <div class="hero" style="
               background: linear-gradient(
                 135deg,
@@ -100,252 +100,272 @@
                 #2b1055 50%,
                 #501b87 100%
               );
-            ">
+        "
+      >
         <h1 style="text-shadow: 0 0 10px rgba(107, 70, 193, 0.3)">
-            <i class="fas fa-rocket"></i> OpenResponses
+        <i class="fas fa-rocket"></i> OpenResponses
         </h1>
         <p>
-            OpenAI API Playground for iOS & macOS. Integrates model APIs with tool
-            execution, sandboxed Python code interpretation, browser automation,
-            and MCP servers.
+        Direct OpenAI Responses API client for iPhone, iPad, and macOS
+        Catalyst. Stream events, inspect raw payloads, run tools, and keep
+        credentials local while talking straight to OpenAI endpoints.
         </p>
         <div class="hero-buttons">
+        <a href="https://apps.apple.com/us/app/openresponses/id6757338355" class="cta-button" style="
+                      background: linear-gradient(135deg, #8c64ff 0%, #6b46c1 100%);
+                      color: #ffffff;
+                      box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+                    " target="_blank" rel="noopener" data-track="openresponses_app_store" data-track-group="product_page"><i
+                class="fas fa-arrow-up-right-from-square"></i> App Store</a>
         <a href="/openresponses/support" class="cta-button" style="
                       background: linear-gradient(135deg, #6b46c1 0%, #553c9a 100%);
                       color: #ffffff;
                       box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
-                    "><i class="fas fa-life-ring"></i> Get Support</a>
-        <a href="/openresponses/privacy" class="cta-button cta-button-secondary" style="
-                      background: linear-gradient(135deg, #2b1055 0%, #1a0f30 100%);
-                      box-shadow: 0 4px 15px rgba(43, 16, 85, 0.3);
-                    "><i class="fas fa-user-shield"></i> Privacy Policy</a>
+            "
+            data-track="openresponses_support"
+            data-track-group="product_page"
+            ><i class="fas fa-life-ring"></i> Get Support</a
+          >
+          <a
+            href="/openresponses/privacy"
+            class="cta-button cta-button-secondary"
+            style="
+              background: linear-gradient(135deg, #2b1055 0%, #1a0f30 100%);
+              box-shadow: 0 4px 15px rgba(43, 16, 85, 0.3);
+            "
+            data-track="openresponses_privacy"
+            data-track-group="product_page"
+            ><i class="fas fa-user-shield"></i> Privacy Policy</a
+          >
         </div>
-        </div>
+    </div>
     </header>
 
     <main>
     <section class="app-section">
         <div class="app-header" style="border-bottom: 2px solid #6b46c1">
-            <div class="app-title-group">
+        <div class="app-title-group">
             <i class="fas fa-rocket app-header-icon" style="color: #6b46c1" aria-hidden="true"></i>
             <div>
-                <h2>OpenAI API Playground</h2>
+            <h2>Responses API Developer Client</h2>
             <p class="app-subtitle">
-                A native SwiftUI playground for testing models, streaming
-                events, and running MCP tools.
-            </p>
+                Built for developers and prompt engineers who want direct access
+                to `/v1/responses`, tool orchestration, and streaming internals.
+                </p>
             </div>
-            </div>
-            <div class="app-links">
-            <a href="https://github.com/Gunnarguy/OpenResponses" class="github-link" target="_blank" rel="noopener">
+        </div>
+        <div class="app-links">
+            <a href="https://github.com/Gunnarguy/OpenResponses" class="github-link" target="_blank" rel="noopener"
+                data-track="openresponses_github" data-track-group="product_page">
                 <i class="fab fa-github"></i> View on GitHub
             </a>
-            </div>
-            </div>
+        </div>
+        </div>
 
         <div class="app-description">
-            <p>
-            OpenResponses is a native SwiftUI playground for testing OpenAI
-            models, streaming responses, and managing tool executions (including
-            secure sandboxed Python execution, browser automation, file
-            searches, and custom MCP server endpoints).
+        <p>
+            OpenResponses sends requests directly from the client to the OpenAI
+            Responses API. It exposes SSE event streams, raw request payloads,
+            tool approval flows, and local conversation state so technical users
+            can see what the model and tools are actually doing. This is the
+            active product line that supersedes OpenAssistant.
             </p>
             </div>
 
-        <h3>Core Features</h3>
+        <h3>What Makes OpenResponses Different</h3>
         <div class="features-grid">
         <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-robot feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Multi-Model Support</h4>
+            <i class="fas fa-link feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
+            <h4>Direct Responses API path</h4>
             <p>
-                Access GPT-5, GPT-4.1, O-series reasoning models, and specialized
-                computer-use models with dynamic selection and compatibility
-                checking.
+            Requests go straight to OpenAI's `/v1/responses` endpoint with
+            user-owned API credentials instead of a proxy or older
+            Assistants-style run orchestration layer.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #6b46c1">
             <i class="fas fa-stream feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Enhanced Streaming</h4>
+            <h4>SSE event visibility</h4>
             <p>
-                Real-time responses with granular status updates showing AI
-                thinking, web searching, code generation, and tool execution
-                progress.
+            Streaming text deltas, reasoning events, tool calls, and status
+            updates are surfaced as typed client events rather than hidden
+            behind a chat-style UI abstraction.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #6b46c1">
             <i class="fas fa-desktop feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Computer Use</h4>
+            <h4>Tool execution with approvals</h4>
             <p>
-                Production-ready browser automation allowing the AI to navigate,
-                click, type, and interact with web content with safety approvals.
+            Computer use, web search, code interpreter, file search, and MCP
+            flows are exposed with user approval points where the API or the
+            app expects them.
             </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-search feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Web Search</h4>
-            <p>
-                Access up-to-date information from the internet with both standard
-                and preview search capabilities integrated seamlessly.
-            </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #6b46c1">
             <i class="fas fa-code feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Code Interpreter</h4>
+            <h4>Developer observability</h4>
             <p>
-                Execute Python code in secure sandboxed environments (auto,
-                secure, gpu) with file preloading and rich artifact display.
+            Request inspection, token usage, event timelines, reasoning
+            surfaces, and raw JSON make it useful for debugging integrations,
+            not just chatting with a model.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-image feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Image Generation</h4>
+            <i class="fas fa-key feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
+            <h4>Local credential handling</h4>
             <p>
-                Create images from text prompts using gpt-image-1 with real-time
-                streaming previews and configurable quality settings.
+            API keys and connection details stay in local storage such as the
+            Keychain, with optional integrations added only when the user
+            enables them.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-folder-open feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>File Search</h4>
+            <i class="fas fa-file-arrow-up feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
+            <h4>Native file preparation</h4>
             <p>
-                Search across multiple vector stores simultaneously with support
-                for 43+ file types including documents, code, and archives.
+            PDFKit and Vision are used on device to prepare local files and
+            OCR content before it is packaged into Responses API payloads.
             </p>
-            </div>
+        </div>
         <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-puzzle-piece feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>MCP Integration</h4>
+            <i class="fas fa-arrow-right-arrow-left feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
+            <h4>OpenAssistant successor</h4>
             <p>
-                Connect to Model Context Protocol servers (GitHub, Notion, Slack,
-                etc.) with secure authentication and approval workflows.
+            OpenResponses is where the active API-tooling work now lives.
+            OpenAssistant remains as the older Assistants API line for
+            reference, not as the current flagship client.
             </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-sliders-h feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Advanced Controls</h4>
-            <p>
-                Fine-tune temperature, tokens, penalties, reasoning effort, and
-                other parameters with full API transparency.
-            </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-bug feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Developer Tools</h4>
-            <p>
-                API inspector, debug console, analytics dashboard, and
-                comprehensive logging for troubleshooting and monitoring.
-            </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-bookmark feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Prompt Library</h4>
-            <p>
-                Save and manage reusable prompt configurations with all settings
-                for quick switching between different tasks.
-            </p>
-            </div>
-        <div class="feature-item" style="border-top: 3px solid #6b46c1">
-            <i class="fas fa-comments feature-icon" style="color: #6b46c1" aria-hidden="true"></i>
-            <h4>Conversation Management</h4>
-            <p>
-                Local conversation storage with export capabilities,
-                multi-conversation support, and comprehensive message management.
-            </p>
-            </div>
-            </div>
+        </div>
+        </div>
+<h3>Technical Profile</h3>
+<div class="tech-columns">
+    <div class="tech-column" style="border: 2px solid #6b46c1">
+        <h4 style="color: #6b46c1">
+            <i class="fas fa-microchip"></i> Core APIs
+        </h4>
+        <ul>
+            <li>
+                <strong>Primary:</strong> OpenAI Responses API over direct HTTPS
+            </li>
+            <li>
+                <strong>Streaming:</strong> Server-Sent Events mapped into typed
+                client events
+            </li>
+            <li>
+                <strong>Tools:</strong> computer use, web search, code
+                interpreter, file search, MCP
+            </li>
+            <li>
+                <strong>Optional integrations:</strong> Notion, EventKit,
+                Contacts, local network bridges
+            </li>
+        </ul>
+    </div>
+        <div class="tech-column" style="border: 2px solid #6b46c1">
+            <h4 style="color: #6b46c1">
+                <i class="fas fa-lock"></i> Data boundary
+            </h4>
+            <ul>
+                <li>
+                    <strong>Local:</strong> API keys, conversation state, request
+                    inspection, file preparation
+                </li>
+                <li>
+                    <strong>Remote:</strong> Requests and tool payloads sent
+                    directly to OpenAI when invoked
+                </li>
+                <li>
+                    <strong>Audience:</strong> developers, prompt engineers,
+                    technical users
+                </li>
+                <li>
+                    <strong>Status:</strong> active product line and successor to
+                    OpenAssistant
+                </li>
+            </ul>
+        </div>
+        </div>
 
-        <h3>Advanced Capabilities</h3>
-        <div class="capabilities-grid">
-        <div class="capability-card" style="border-left: 4px solid #6b46c1">
-            <h4><i class="fas fa-chart-line"></i> Real-Time Monitoring</h4>
-            <p>
-                Track streaming events, tool executions, reasoning phases, and
-                token usage with expandable activity feeds and detailed status
-                indicators.
-            </p>
+        <h3>How OpenResponses Runs</h3>
+        <div class="flow-steps">
+            <div class="flow-step" style="border-left: 5px solid #6b46c1">
+                <div class="step-number" style="color: #6b46c1">1</div>
+                <div class="step-content">
+                    <h4>Compose a direct request</h4>
+                    <p>
+                The client builds a Responses API payload locally, including any
+                user-selected tools, files, reasoning options, or prior response
+                context.
+                </p>
             </div>
-        <div class="capability-card" style="border-left: 4px solid #6b46c1">
-            <h4><i class="fas fa-shield-alt"></i> Security & Safety</h4>
-            <p>
-                User approval workflows for MCP tool calls and computer actions,
-                secure keychain credential storage, and comprehensive safety
-                checks.
-            </p>
+        </div>
+        <div class="flow-step" style="border-left: 5px solid #6b46c1">
+            <div class="step-number" style="color: #6b46c1">2</div>
+            <div class="step-content">
+                <h4>Stream typed events</h4>
+                <p>
+                SSE events are parsed into client-side models so text deltas,
+                reasoning phases, and tool transitions can be rendered in real
+                time.
+                </p>
             </div>
-        <div class="capability-card" style="border-left: 4px solid #6b46c1">
-            <h4><i class="fas fa-mobile-alt"></i> Native Experience</h4>
-            <p>
-                Built with SwiftUI for iOS, iPadOS, macOS, and visionOS with full
-                accessibility support, dynamic type, and keyboard navigation.
-            </p>
+        </div>
+        <div class="flow-step" style="border-left: 5px solid #6b46c1">
+            <div class="step-number" style="color: #6b46c1">3</div>
+            <div class="step-content">
+                <h4>Approve or execute tools</h4>
+                <p>
+                Tool calls such as computer use, web search, code interpreter,
+                and MCP can be approved, observed, and reconciled inside the
+                native UI.
+                </p>
             </div>
-        <div class="capability-card" style="border-left: 4px solid #6b46c1">
-            <h4><i class="fas fa-globe"></i> Rich Content</h4>
-            <p>
-                Embedded web content, enhanced image display, Markdown rendering
-                with syntax highlighting, and support for 43+ file types.
-            </p>
+        </div>
+        <div class="flow-step" style="border-left: 5px solid #6b46c1">
+            <div class="step-number" style="color: #6b46c1">4</div>
+            <div class="step-content">
+                <h4>Inspect the outcome</h4>
+                <p>
+                The final response, raw payload details, and client-side logs
+                are preserved locally so the user can audit what happened.
+                </p>
             </div>
-            </div>
+        </div>
+        </div>
 
-        <h3>Architecture Highlights</h3>
-        <div class="architecture-highlights">
-            <div class="architecture-item">
-            <i class="fas fa-layer-group" style="color: #6b46c1"></i>
-            <h4>MVVM Pattern</h4>
-            <p>
-                Feature-oriented structure with clear separation of concerns,
-                comprehensive service layer, and dependency injection.
-            </p>
-            </div>
-            <div class="architecture-item">
-            <i class="fas fa-bolt" style="color: #6b46c1"></i>
-            <h4>Streaming Events</h4>
-            <p>
-                Handles 40+ streaming event types from OpenAI's Responses API with
-                dedicated parsing and real-time UI updates.
-            </p>
-            </div>
-            <div class="architecture-item">
-            <i class="fas fa-database" style="color: #6b46c1"></i>
-            <h4>Data Management</h4>
-            <p>
-                Local conversation persistence, secure keychain storage, vector
-                store management, and comprehensive file handling.
-            </p>
-            </div>
-            </div>
-
-        <h3>App Store Connect Metadata</h3>
+        <h3>Support and Privacy Routes</h3>
         <div class="tech-columns">
         <div class="tech-column" style="border: 2px solid #6b46c1">
             <h4 style="color: #6b46c1">
-                <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
+            <i class="fas fa-life-ring" aria-hidden="true"></i> Support URL
             </h4>
             <p>
-                <a href="/openresponses/support">https://gunzino.me/openresponses/support</a>
+            <a href="/openresponses/support" data-track="openresponses_support_route"
+                data-track-group="product_page">https://gunzino.me/openresponses/support</a>
             </p>
         </div>
         <div class="tech-column" style="border: 2px solid #6b46c1">
             <h4 style="color: #6b46c1">
-                <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
-                Policy URL
+            <i class="fas fa-user-shield" aria-hidden="true"></i> Privacy
+            Policy URL
             </h4>
             <p>
-                <a href="/openresponses/privacy">https://gunzino.me/openresponses/privacy</a>
+            <a href="/openresponses/privacy" data-track="openresponses_privacy_route"
+                data-track-group="product_page">https://gunzino.me/openresponses/privacy</a>
             </p>
         </div>
         </div>
 
         <p class="tech-footer">
-        <a href="/support.html">General Gunzino Support Center
+        <a href="/support.html" data-track="openresponses_general_support" data-track-group="product_page">General Gunzino
+            Support Center
             <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
         </p>
-        </section>
+    </section>
     </main>
 
     <footer style="background: #140b24; border-top: 1px solid #24133d">
-        <p>&copy; 2026 Gunzino. All rights reserved.</p>
+    <p>&copy; 2026 Gunzino. All rights reserved.</p>
     <p>
         <a href="/index.html">Home</a> |
         <a href="/openresponses/privacy">Privacy</a> |
