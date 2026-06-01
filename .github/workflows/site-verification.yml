@@ -1,0 +1,169 @@
+name: Site Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  source:
+    name: Source Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enforce asset version bumps
+        env:
+          VERIFY_DIFF_BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          set -euo pipefail
+
+          base="$VERIFY_DIFF_BASE"
+          if [[ -z "$base" || "$base" == "0000000000000000000000000000000000000000" ]] || ! git rev-parse --verify "$base^{commit}" >/dev/null 2>&1; then
+            echo "No valid diff base for asset version enforcement."
+            exit 0
+          fi
+
+          root_style_files=(
+            index.html
+            support.html
+            openclinic/index.html
+            openclinic/privacy/index.html
+            openclinic/support/index.html
+            openintelligence/index.html
+            openintelligence/privacy/index.html
+            openintelligence/support/index.html
+            openresponses/index.html
+            openresponses/privacy/index.html
+            openresponses/support/index.html
+            opencone/index.html
+            opencone/privacy/index.html
+            opencone/support/index.html
+          )
+
+          openassistant_style_files=(
+            openassistant/index.html
+            openassistant/privacy/index.html
+            openassistant/terms/index.html
+            openassistant/interactions.html
+            openassistant/architecture.html
+            openassistant/support/index.html
+          )
+
+          openassistant_script_files=(
+            openassistant/index.html
+            openassistant/privacy/index.html
+            openassistant/terms/index.html
+            openassistant/architecture.html
+            openassistant/support/index.html
+          )
+
+          extract_current() {
+            grep -Eo "$2" "$1" | head -n 1
+          }
+
+          extract_base() {
+            git show "$base:$1" 2>/dev/null | grep -Eo "$2" | head -n 1 || true
+          }
+
+          check_uniform() {
+            local label="$1"
+            local regex="$2"
+            shift 2
+            local expected=""
+            local current=""
+            local file
+
+            for file in "$@"; do
+              current="$(extract_current "$file" "$regex")"
+              if [[ -z "$current" ]]; then
+                echo "::error::Missing $label reference in $file"
+                exit 1
+              fi
+
+              if [[ -z "$expected" ]]; then
+                expected="$current"
+              elif [[ "$current" != "$expected" ]]; then
+                echo "::error::$label token mismatch in $file ($current vs $expected)"
+                exit 1
+              fi
+            done
+
+            echo "$label token: $expected"
+          }
+
+          enforce_group_bump() {
+            local asset="$1"
+            local regex="$2"
+            local label="$3"
+            shift 3
+            local current_ref
+            local base_ref
+            local file
+
+            if git diff --name-only "$base" HEAD -- "$asset" | grep -q .; then
+              for file in "$@"; do
+                current_ref="$(extract_current "$file" "$regex")"
+                base_ref="$(extract_base "$file" "$regex")"
+
+                if [[ -n "$base_ref" && "$current_ref" == "$base_ref" ]]; then
+                  echo "::error::$label changed without a cache-bust token bump in $file"
+                  exit 1
+                fi
+              done
+
+              echo "$label bump detected"
+            fi
+          }
+
+          check_uniform "root style.css" 'style\.css\?v=[^"]+' "${root_style_files[@]}"
+          check_uniform "OpenAssistant styles.css" 'styles\.css\?v=[^"]+' "${openassistant_style_files[@]}"
+          check_uniform "OpenAssistant scripts.js" 'scripts\.js\?v=[^"]+' "${openassistant_script_files[@]}"
+
+          enforce_group_bump "style.css" 'style\.css\?v=[^"]+' "root style.css" "${root_style_files[@]}"
+          enforce_group_bump "openassistant/styles.css" 'styles\.css\?v=[^"]+' "OpenAssistant styles.css" "${openassistant_style_files[@]}"
+          enforce_group_bump "openassistant/scripts.js" 'scripts\.js\?v=[^"]+' "OpenAssistant scripts.js" "${openassistant_script_files[@]}"
+
+      - name: Verify source
+        run: ./scripts/verify-site.sh source
+
+  live:
+    name: Live Pages Checks
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pages: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify deployed site
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_BUILD_ATTEMPTS: 60
+          PAGES_BUILD_SLEEP_SECONDS: 10
+        run: ./scripts/verify-site.sh ci-live
