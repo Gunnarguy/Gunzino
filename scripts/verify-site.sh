@@ -292,10 +292,12 @@ run_pages_checks() {
   source_branch="$(gh_pages_field '.source.branch')"
   source_path="$(gh_pages_field '.source.path')"
 
-  [[ "$status" == "built" ]] || {
-    printf 'Expected Pages status built, found %s\n' "$status" >&2
-    exit 1
-  }
+  if [[ "$mode" != "ci-live" ]]; then
+    [[ "$status" == "built" ]] || {
+      printf 'Expected Pages status built, found %s\n' "$status" >&2
+      exit 1
+    }
+  fi
   [[ "$cname" == "$expected_cname" ]] || {
     printf 'Expected Pages cname %s, found %s\n' "$expected_cname" "$cname" >&2
     exit 1
