@@ -83,9 +83,9 @@
         <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
         </div>
         <ul>
-            <li><a href="/index.html#apps">Apps</a></li>
-            <li><a href="/opencone" class="active">OpenCone</a></li>
-            <li>
+        <li><a href="/index.html#apps">Apps</a></li>
+        <li><a href="/opencone" class="active">OpenCone</a></li>
+        <li>
             <a href="https://github.com/Gunnarguy/OpenCone" target="_blank" rel="noopener">GitHub <i class="fab fa-github"></i></a>
             </li>
             <li><a href="/opencone/support">Support</a></li>
@@ -115,12 +115,20 @@
                       background: linear-gradient(135deg, #35b7ff 0%, #00aaff 100%);
                       color: #ffffff;
                       box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
-                    " target="_blank" rel="noopener" data-track="opencone_app_store" data-track-group="product_page"><i
-                class="fas fa-arrow-up-right-from-square"></i> App Store</a>
-        <a href="/opencone/support" class="cta-button" style="
-                      background: linear-gradient(135deg, #00aaff 0%, #0088cc 100%);
-                      color: #ffffff;
-                      box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+            "
+            target="_blank"
+            rel="noopener"
+            data-track="opencone_app_store"
+            data-track-group="product_page"
+            ><i class="fas fa-arrow-up-right-from-square"></i> App Store</a
+          >
+          <a
+            href="/opencone/support"
+            class="cta-button"
+            style="
+              background: linear-gradient(135deg, #00aaff 0%, #0088cc 100%);
+              color: #ffffff;
+              box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
             "
             data-track="opencone_support"
             data-track-group="product_page"
@@ -152,7 +160,7 @@
                 OpenCone is not a blanket offline app. It processes files on
                 device, then uses OpenAI and Pinecone to power the core search
                 path.
-                </p>
+            </p>
             </div>
         </div>
         <div class="app-links">
@@ -170,8 +178,8 @@
             OpenAI plus Pinecone as the cloud execution path for embeddings,
             vector search, and answer synthesis. It is useful when you want a
             native Apple front end over your own OpenAI and Pinecone accounts.
-            </p>
-            </div>
+        </p>
+        </div>
 
         <h3>What Makes OpenCone Different</h3>
         <div class="features-grid">
@@ -240,44 +248,44 @@
 
         <h3>Technical Profile</h3>
         <div class="tech-columns">
-            <div class="tech-column" style="border: 2px solid #00aaff">
-                <h4 style="color: #00aaff">
-                    <i class="fas fa-plug"></i> Core APIs
-                </h4>
-                <ul>
-                    <li>
-                        <strong>Local:</strong> SwiftUI, PDFKit, Vision OCR,
-                        security-scoped bookmarks
-                    </li>
-                    <li><strong>Embeddings:</strong> OpenAI Embeddings API</li>
-                    <li><strong>Generation:</strong> OpenAI Responses API</li>
-                    <li>
-                        <strong>Vector search:</strong> Pinecone Serverless indexes and
-                        namespaces
-                    </li>
-                </ul>
-            </div>
         <div class="tech-column" style="border: 2px solid #00aaff">
             <h4 style="color: #00aaff">
-                <i class="fas fa-lock"></i> Data boundary
+                <i class="fas fa-plug"></i> Core APIs
             </h4>
             <ul>
                 <li>
-                    <strong>Local:</strong> files, OCR output, settings, API keys in
-                    Keychain
+                    <strong>Local:</strong> SwiftUI, PDFKit, Vision OCR,
+                    security-scoped bookmarks
                 </li>
+                <li><strong>Embeddings:</strong> OpenAI Embeddings API</li>
+                <li><strong>Generation:</strong> OpenAI Responses API</li>
                 <li>
-                    <strong>Remote:</strong> embedding requests, vector upserts,
-                    search, answer generation
+                    <strong>Vector search:</strong> Pinecone Serverless indexes and
+                    namespaces
                 </li>
-                <li>
-                    <strong>Truth:</strong> cloud-hybrid, not a fully offline RAG
-                    stack
-                </li>
-                <li>
-                    <strong>Audience:</strong> users who want a native front end
-                    over OpenAI and Pinecone
-                </li>
+            </ul>
+        </div>
+        <div class="tech-column" style="border: 2px solid #00aaff">
+            <h4 style="color: #00aaff">
+            <i class="fas fa-lock"></i> Data boundary
+            </h4>
+            <ul>
+            <li>
+                <strong>Local:</strong> files, OCR output, settings, API keys in
+                Keychain
+            </li>
+            <li>
+                <strong>Remote:</strong> embedding requests, vector upserts,
+                search, answer generation
+            </li>
+            <li>
+                <strong>Truth:</strong> cloud-hybrid, not a fully offline RAG
+                stack
+            </li>
+            <li>
+                <strong>Audience:</strong> users who want a native front end
+                over OpenAI and Pinecone
+            </li>
             </ul>
         </div>
         </div>
@@ -292,7 +300,7 @@
                 The app starts with a bring-your-own-keys flow for OpenAI and
                 Pinecone, storing those credentials locally for subsequent
                 requests.
-                </p>
+            </p>
             </div>
         </div>
 
@@ -303,7 +311,7 @@
             <p>
                 Files are imported locally, parsed with PDFKit or OCR when
                 needed, chunked on device, and prepared for remote indexing.
-                </p>
+            </p>
             </div>
         </div>
 
@@ -314,7 +322,7 @@
             <p>
                 Search requests hit Pinecone for vector retrieval and return the
                 highest-value evidence chunks for answer construction.
-                </p>
+            </p>
             </div>
         </div>
 
@@ -325,7 +333,7 @@
             <p>
                 OpenAI responses are used to synthesize the final answer, while
                 local logs and metrics keep the full pipeline visible.
-                </p>
+            </p>
             </div>
         </div>
         </div>

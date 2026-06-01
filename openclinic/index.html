@@ -82,9 +82,9 @@
         <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
         </div>
         <ul>
-            <li><a href="/index.html#apps">Apps</a></li>
-            <li><a href="/openclinic" class="active">OpenClinic</a></li>
-            <li>
+        <li><a href="/index.html#apps">Apps</a></li>
+        <li><a href="/openclinic" class="active">OpenClinic</a></li>
+        <li>
             <a href="https://github.com/Gunnarguy/OpenClinic" target="_blank" rel="noopener">GitHub <i
                     class="fab fa-github"></i></a>
             </li>
@@ -156,7 +156,7 @@
             <p class="app-subtitle">
                 SMART on FHIR import, local charting, dermatology workflows, and
                 on-device clinical retrieval for clinicians.
-                </p>
+            </p>
             </div>
         </div>
         <div class="app-links">
@@ -175,7 +175,7 @@
             state on device, and uses Apple Foundation Models plus a
             clinic-specific retrieval stack derived from OpenIntelligence
             internals for chart Q&amp;A and note drafting.
-            </p>
+        </p>
         <div style="
                       background: rgba(0, 255, 170, 0.05);
                       border-left: 4px solid #00ffaa;
@@ -251,45 +251,45 @@
 
         <h3>Technical Profile</h3>
         <div class="tech-columns">
-            <div class="tech-column" style="border: 2px solid #00ffaa">
-                <h4 style="color: #00ffaa">
-                    <i class="fas fa-microchip"></i> Core APIs
-                </h4>
-                <ul>
-                    <li><strong>UI:</strong> SwiftUI, SwiftData</li>
-                    <li><strong>Models:</strong> Apple Foundation Models, Core ML</li>
-                    <li>
-                        <strong>Interoperability:</strong> SMART on FHIR,
-                        ASWebAuthenticationSession
-                    </li>
-                    <li>
-                        <strong>Retrieval:</strong> SQLite FTS5, local vector store
-                    </li>
-                </ul>
-            </div>
-            <div class="tech-column" style="border: 2px solid #00ffaa">
-                <h4 style="color: #00ffaa">
-                    <i class="fas fa-lock"></i> Data boundary
-                </h4>
-                <ul>
-                    <li>
-                        <strong>Local:</strong> Charts, notes, photos, vector indexes,
-                        provenance metadata
-                    </li>
-                    <li>
-                        <strong>Remote:</strong> OAuth and FHIR resource fetches from
-                        configured servers
-                    </li>
-                    <li>
-                        <strong>Not present:</strong> HealthKit sync as an active
-                        product feature
-                    </li>
-                    <li>
-                        <strong>Status:</strong> Prototype only, no writeback and no
-                        deployment certification
-                    </li>
-                </ul>
-            </div>
+        <div class="tech-column" style="border: 2px solid #00ffaa">
+            <h4 style="color: #00ffaa">
+                <i class="fas fa-microchip"></i> Core APIs
+            </h4>
+            <ul>
+                <li><strong>UI:</strong> SwiftUI, SwiftData</li>
+                <li><strong>Models:</strong> Apple Foundation Models, Core ML</li>
+                <li>
+                    <strong>Interoperability:</strong> SMART on FHIR,
+                    ASWebAuthenticationSession
+                </li>
+                <li>
+                    <strong>Retrieval:</strong> SQLite FTS5, local vector store
+                </li>
+            </ul>
+        </div>
+        <div class="tech-column" style="border: 2px solid #00ffaa">
+            <h4 style="color: #00ffaa">
+                <i class="fas fa-lock"></i> Data boundary
+            </h4>
+            <ul>
+                <li>
+                    <strong>Local:</strong> Charts, notes, photos, vector indexes,
+                    provenance metadata
+                </li>
+                <li>
+                    <strong>Remote:</strong> OAuth and FHIR resource fetches from
+                    configured servers
+                </li>
+                <li>
+                    <strong>Not present:</strong> HealthKit sync as an active
+                    product feature
+                </li>
+                <li>
+                    <strong>Status:</strong> Prototype only, no writeback and no
+                    deployment certification
+                </li>
+            </ul>
+        </div>
         </div>
 
         <h3>How OpenClinic Runs</h3>
@@ -302,7 +302,7 @@
                 The app discovers SMART endpoints, performs OAuth through
                 `ASWebAuthenticationSession`, and imports patient-context data
                 into local models.
-                </p>
+            </p>
             </div>
         </div>
         <div class="flow-step" style="border-left: 5px solid #00ffaa">
@@ -313,7 +313,7 @@
                 SwiftData stores appointments, medications, local clinical
                 records, and image metadata while Keychain protects connection
                 tokens.
-                </p>
+            </p>
             </div>
         </div>
         <div class="flow-step" style="border-left: 5px solid #00ffaa">
@@ -324,7 +324,7 @@
                 Clinical records are chunked, embedded locally with Core ML,
                 indexed into SQLite FTS5 plus a local vector store, and fused at
                 query time for patient-scoped retrieval.
-                </p>
+            </p>
             </div>
         </div>
         <div class="flow-step" style="border-left: 5px solid #00ffaa">
@@ -335,7 +335,7 @@
                 Apple Foundation Models generate chart assistance on device, and
                 a 9-gate clinical verification pass checks grounding, numeric
                 sanity, contradictions, and patient isolation before display.
-                </p>
+            </p>
             </div>
         </div>
         </div>

@@ -125,7 +125,7 @@
                 OpenIntelligence is the public app surface for a broader
                 document-intelligence stack, with the reusable engine boundary
                 living behind the product.
-                </p>
+              </p>
             </div>
           </div>
           <div class="app-links">
@@ -134,7 +134,7 @@
               <i class="fab fa-github"></i> View on GitHub
             </a>
           </div>
-          </div>
+        </div>
 
         <div class="app-description">
           <p>
@@ -145,8 +145,8 @@
             retrieval stays local; when Apple-managed cloud capacity is used, it
             is only through platform-controlled paths rather than generic
             third-party AI hosting.
-            </p>
-            </div>
+          </p>
+          </div>
 
         <h3>What Makes OpenIntelligence Different</h3>
         <div class="features-grid">
@@ -201,95 +201,95 @@
               intelligence boundary is also treated as a reusable engine inside
               the broader OpenIntelligence line.
             </p>
-            </div>
-            </div>
+          </div>
+          </div>
 
-            <h3>Technical Profile</h3>
-            <div class="tech-columns">
-              <div class="tech-column">
-                <h4>
-                  <i class="fas fa-microchip" aria-hidden="true"></i> Core APIs
-                </h4>
-                <ul>
-                  <li><strong>UI:</strong> SwiftUI on iPhone and iPad</li>
-                  <li>
-                    <strong>Parsing:</strong> PDFKit, Vision OCR, structured
-                    document processing
-                  </li>
-                  <li><strong>Models:</strong> Apple Foundation Models</li>
-                  <li>
-                    <strong>Retrieval:</strong> SQLite FTS5, local vector indexing,
-                    reranking
-                  </li>
-                </ul>
-              </div>
-              <div class="tech-column">
-                <h4>
-                  <i class="fas fa-user-shield" aria-hidden="true"></i> Data
-                  boundary
-                </h4>
-                <ul>
-                  <li>
-                    <strong>Local:</strong> Libraries, normalized text, retrieval
-                    state, citations
-                  </li>
-                  <li>
-                    <strong>Optional:</strong> Apple-managed cloud capacity only
-                    through supported platform paths
-                  </li>
-                  <li>
-                    <strong>Not the product:</strong> generic chatbot behavior over
-                    arbitrary cloud context
-                  </li>
-                  <li>
-                    <strong>Status:</strong> shipping public app plus broader engine
-                    lineage
-                  </li>
-                </ul>
-              </div>
-            </div>
+        <h3>Technical Profile</h3>
+        <div class="tech-columns">
+          <div class="tech-column">
+            <h4>
+              <i class="fas fa-microchip" aria-hidden="true"></i> Core APIs
+            </h4>
+            <ul>
+              <li><strong>UI:</strong> SwiftUI on iPhone and iPad</li>
+              <li>
+                <strong>Parsing:</strong> PDFKit, Vision OCR, structured
+                document processing
+              </li>
+              <li><strong>Models:</strong> Apple Foundation Models</li>
+              <li>
+                <strong>Retrieval:</strong> SQLite FTS5, local vector indexing,
+                reranking
+              </li>
+            </ul>
+          </div>
+          <div class="tech-column">
+            <h4>
+              <i class="fas fa-user-shield" aria-hidden="true"></i> Data
+              boundary
+            </h4>
+            <ul>
+              <li>
+                <strong>Local:</strong> Libraries, normalized text, retrieval
+                state, citations
+              </li>
+              <li>
+                <strong>Optional:</strong> Apple-managed cloud capacity only
+                through supported platform paths
+              </li>
+              <li>
+                <strong>Not the product:</strong> generic chatbot behavior over
+                arbitrary cloud context
+              </li>
+              <li>
+                <strong>Status:</strong> shipping public app plus broader engine
+                lineage
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            <h3>How OpenIntelligence Runs</h3>
-            <div class="flow-steps">
-              <div class="flow-step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                  <h4>Import into private libraries</h4>
-                  <p>
-                    Files are assigned to local libraries and normalized through
-                    text extraction or OCR, depending on document quality.
-                  </p>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                  <h4>Build lexical and vector indexes</h4>
-                  <p>
-                    The app preserves structure where possible, then stores lexical
-                    signals and vector representations for hybrid retrieval.
-                  </p>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                  <h4>Retrieve and verify evidence</h4>
-                  <p>
-                    Query planning, reranking, and evidence packing are used to keep
-                    the answer path tied to source material rather than generic
-                    model guesswork.
-                  </p>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                  <h4>Render answers with support or abstain</h4>
-                  <p>
+        <h3>How OpenIntelligence Runs</h3>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Import into private libraries</h4>
+              <p>
+                Files are assigned to local libraries and normalized through
+                text extraction or OCR, depending on document quality.
+              </p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Build lexical and vector indexes</h4>
+              <p>
+                The app preserves structure where possible, then stores lexical
+                signals and vector representations for hybrid retrieval.
+              </p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Retrieve and verify evidence</h4>
+              <p>
+                Query planning, reranking, and evidence packing are used to keep
+                the answer path tied to source material rather than generic
+                model guesswork.
+              </p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Render answers with support or abstain</h4>
+              <p>
                 Answers are shown with citations and confidence cues, or the app
                 abstains when support is not strong enough.
-                </p>
+              </p>
             </div>
           </div>
         </div>
@@ -315,7 +315,7 @@
                 data-track-group="product_page">https://gunzino.me/openintelligence/privacy</a>
             </p>
           </div>
-          </div>
+        </div>
 
         <p class="tech-footer">
           <a href="/support.html" data-track="openintelligence_general_support" data-track-group="product_page">General Gunzino
