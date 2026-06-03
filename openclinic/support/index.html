@@ -12,7 +12,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/openclinic/support" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
-    <link rel="stylesheet" href="/style.css?v=20260531b" />
+    <link rel="stylesheet" href="/style.css?v=20260603a" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script type="application/ld+json">
           {
@@ -116,6 +116,11 @@
     <body>
     <header style="border-bottom: 2px solid #00ffaa">
         <nav style="border-bottom: 1px solid rgba(0, 255, 170, 0.25)">
+        <button class="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" data-track="menu_toggle" data-track-group="navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
             <div class="logo">
                 <a href="/index.html" style="color: inherit; text-decoration: none">Gunzino</a>
             </div>
@@ -286,5 +291,38 @@
         <a href="/openclinic/privacy">Privacy Policy</a>
     </p>
     </footer>
-</body>
+
+    <!-- Universal Hamburger Menu Toggle Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector("nav ul");
+        if (toggleBtn && navMenu) {
+          toggleBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const isOpen = toggleBtn.classList.contains("open");
+            toggleBtn.classList.toggle("open", !isOpen);
+            navMenu.classList.toggle("active", !isOpen);
+            toggleBtn.setAttribute("aria-expanded", !isOpen);
+          });
+          // Close drawer on click outside
+          document.addEventListener("click", function (e) {
+            if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+              toggleBtn.classList.remove("open");
+              navMenu.classList.remove("active");
+              toggleBtn.setAttribute("aria-expanded", "false");
+            }
+          });
+          // Close drawer on link click
+          navMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+              toggleBtn.classList.remove("open");
+              navMenu.classList.remove("active");
+              toggleBtn.setAttribute("aria-expanded", "false");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
