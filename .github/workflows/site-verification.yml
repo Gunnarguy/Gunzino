@@ -167,3 +167,8 @@ jobs:
           PAGES_BUILD_ATTEMPTS: 60
           PAGES_BUILD_SLEEP_SECONDS: 10
         run: ./scripts/verify-site.sh ci-live
+
+      - name: Ping IndexNow
+        run: |
+          echo "Pinging IndexNow..."
+          curl -fsSL "https://api.indexnow.org/indexnow?url=https://gunzino.me/&key=6eef46c2de984bb3906a59918731737e"
