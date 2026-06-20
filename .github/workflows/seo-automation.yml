@@ -16,9 +16,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Validate Title and Description Tags
+      - name: Validate SEO and Social Tags
         run: |
-          echo "Checking HTML files for critical SEO tags..."
+          echo "Checking HTML files for critical SEO, Social, and Mobile tags..."
           MISSING_TAGS=0
 
           # Find all HTML files
@@ -34,20 +34,78 @@ jobs:
               echo "❌ Missing <meta name=\"description\"> in $file"
               MISSING_TAGS=1
             fi
+            
+            # Check for viewport (Mobile)
+            if ! grep -qi "name=\"viewport\"" "$file"; then
+              echo "❌ Missing <meta name=\"viewport\"> in $file"
+              MISSING_TAGS=1
+            fi
+
+            # Check for Canonical Link
+            if ! grep -qi "rel=\"canonical\"" "$file"; then
+              echo "❌ Missing <link rel=\"canonical\"> in $file"
+              MISSING_TAGS=1
+            fi
+
+            # Check for OpenGraph Title
+            if ! grep -qi "property=\"og:title\"" "$file"; then
+              echo "❌ Missing <meta property=\"og:title\"> in $file"
+              MISSING_TAGS=1
+            fi
+            
+            # Check for OpenGraph Description
+            if ! grep -qi "property=\"og:description\"" "$file"; then
+              echo "❌ Missing <meta property=\"og:description\"> in $file"
+              MISSING_TAGS=1
+            fi
+            
+            # Check for OpenGraph Image
+            if ! grep -qi "property=\"og:image\"" "$file"; then
+              echo "❌ Missing <meta property=\"og:image\"> in $file"
+              MISSING_TAGS=1
+            fi
           done
 
           if [ $MISSING_TAGS -ne 0 ]; then
             echo "❌ SEO Linter failed. Critical tags are missing."
             exit 1
           else
-            echo "✅ All HTML files have <title> and <meta name=\"description\">."
+            echo "✅ All HTML files pass the comprehensive SEO linter."
           fi
 
-  ping-search-engines:
-    name: Ping Search Engines
+  update-sitemap-and-ping:
+    name: Generate Sitemap & Ping
     runs-on: ubuntu-latest
     needs: seo-checks
+    permissions:
+      contents: write # Needed to push changes back to the repository
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to accurately determine last modified dates for files via git
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Generate Sitemap
+        run: python3 scripts/generate-sitemap.py
+
+      - name: Commit and Push Sitemap if Changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          if git diff --staged --quiet; then
+            echo "No changes to sitemap.xml. Everything is up to date."
+          else
+            git commit -m "chore: auto-update sitemap.xml [skip ci]"
+            git push
+            echo "✅ Automatically committed and pushed updated sitemap.xml."
+          fi
+
       - name: Notify IndexNow
         run: |
           echo "Extracting URLs from sitemap and pinging IndexNow..."
