@@ -50,32 +50,31 @@ jobs:
     steps:
       - name: Notify IndexNow
         run: |
-          echo "Pinging IndexNow with updated URLs..."
-          PAYLOAD=$(cat <<EOF
-          {
-            "host": "gunzino.me",
-            "key": "6eef46c2de984bb3906a59918731737e",
-            "keyLocation": "https://gunzino.me/6eef46c2de984bb3906a59918731737e.txt",
-            "urlList": [
-              "https://gunzino.me/",
-              "https://gunzino.me/openclinic/",
-              "https://gunzino.me/openintelligence/",
-              "https://gunzino.me/openresponses/",
-              "https://gunzino.me/opencone/"
-            ]
+          echo "Extracting URLs from sitemap and pinging IndexNow..."
+          python3 -c '
+          import xml.etree.ElementTree as ET
+          import json, urllib.request
+
+          tree = ET.parse("sitemap.xml")
+          root = tree.getroot()
+          ns = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+          urls = [loc.text for loc in root.findall(".//ns:loc", ns)]
+          
+          payload = {
+              "host": "gunzino.me",
+              "key": "6eef46c2de984bb3906a59918731737e",
+              "keyLocation": "https://gunzino.me/6eef46c2de984bb3906a59918731737e.txt",
+              "urlList": urls
           }
-          EOF
-          )
-
-          STATUS_CODE=$(curl -X POST "https://api.indexnow.org/indexnow" \
-            -H "Content-Type: application/json; charset=utf-8" \
-            -d "$PAYLOAD" \
-            -o /dev/null -s -w "%{http_code}\n")
-
-          if [[ "$STATUS_CODE" -eq 200 || "$STATUS_CODE" -eq 202 ]]; then
-            echo "✅ Successfully pinged IndexNow (Status $STATUS_CODE)"
-          else
-            echo "⚠️ IndexNow ping returned status $STATUS_CODE"
-          fi
+          
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", 
+                                       data=json.dumps(payload).encode("utf-8"),
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              with urllib.request.urlopen(req) as response:
+                  print(f"✅ Successfully pinged IndexNow (Status {response.status})")
+          except Exception as e:
+              print(f"⚠️ IndexNow ping failed: {e}")
+          '
 
           echo "Note: Google relies on Search Console + standard crawling."
