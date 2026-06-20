@@ -142,6 +142,15 @@ jobs:
           enforce_group_bump "openassistant/styles.css" 'styles\.css\?v=[^"]+' "OpenAssistant styles.css" "${openassistant_style_files[@]}"
           enforce_group_bump "openassistant/scripts.js" 'scripts\.js\?v=[^"]+' "OpenAssistant scripts.js" "${openassistant_script_files[@]}"
 
+      - name: Verify sitemap is up-to-date
+        run: |
+          python3 ./scripts/generate-sitemap.py
+          if [[ -n "$(git status --porcelain sitemap.xml)" ]]; then
+            echo "::error::sitemap.xml is out of date. Please run scripts/generate-sitemap.py and commit the changes."
+            git diff sitemap.xml
+            exit 1
+          fi
+
       - name: Verify source
         run: ./scripts/verify-site.sh source
 

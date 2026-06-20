@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenCone | Cloud-Hybrid RAG Client</title>
-    <meta name="description"
-        content="OpenCone is a cloud-hybrid RAG client that prepares documents locally with OCR and file parsing, then uses OpenAI embeddings, OpenAI responses, and Pinecone serverless search." />
-    <meta property="og:title" content="OpenCone | Cloud-Hybrid RAG Client" />
-    <meta property="og:description"
-        content="Search local documents with Vision OCR, OpenAI embeddings, Pinecone namespaces, and grounded answer synthesis through OpenAI responses." />
+    <title>OpenCone | Next-Level Cloud-Hybrid OCR & Vector Search Client</title>
+    <meta name="description" content="Transform your private corpora with OpenCone. Extract and OCR files locally with Vision, and seamlessly power search with Pinecone and OpenAI." />
+    <meta property="og:title" content="OpenCone | Next-Level Cloud-Hybrid OCR & Vector Search Client" />
+    <meta property="og:description" content="Transform your private corpora with OpenCone. Extract and OCR files locally with Vision, and seamlessly power search with Pinecone and OpenAI." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OpenCone | Next-Level Cloud-Hybrid OCR & Vector Search Client" />
+    <meta name="twitter:description" content="Transform your private corpora with OpenCone. Extract and OCR files locally with Vision, and seamlessly power search with Pinecone and OpenAI." />
+    <meta name="twitter:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/opencone" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
@@ -18,10 +20,10 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "OpenCone",
+        "name": "OpenCone | Next-Level Cloud-Hybrid OCR & Vector Search Client",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "iOS Application",
-        "description": "Cloud-hybrid RAG client with local OCR and parsing plus OpenAI embeddings, OpenAI responses, and Pinecone-backed search.",
+        "description": "Transform your private corpora with OpenCone. Extract and OCR files locally with Vision, and seamlessly power search with Pinecone and OpenAI.",
         "url": "https://gunzino.me/opencone",
         "downloadUrl": "https://apps.apple.com/us/app/opencone/id6744467668"
       }
@@ -32,7 +34,7 @@
     <!-- ====================================================================== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
@@ -40,67 +42,35 @@
       const GA_DEBUG_MODE = new URLSearchParams(window.location.search).has(
         "ga_debug",
       );
-      let gaPageViewSent = false;
-
-      function sendGaPageView() {
-        if (gaPageViewSent) {
-          return;
-        }
-
-        gaPageViewSent = true;
-        gtag("event", "page_view", {
-          page_title: document.title,
-          page_location: window.location.href,
-          page_path: window.location.pathname + window.location.search,
-          debug_mode: GA_DEBUG_MODE,
-        });
-      }
 
       gtag("js", new Date());
 
       gtag("config", GA_MEASUREMENT_ID, {
-        send_page_view: false,
-        transport_type: "beacon",
         debug_mode: GA_DEBUG_MODE,
       });
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", sendGaPageView, {
-          once: true,
-        });
-      } else {
-        sendGaPageView();
-      }
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.body.addEventListener(
-                "click",
-                function (event) {
-                    var interactiveTarget = event.target.closest("[data-track]");
-                    if (interactiveTarget) {
-                        var actionLabel = interactiveTarget.getAttribute("data-track");
-                        var actionGroup =
-                            interactiveTarget.getAttribute("data-track-group") ||
-                            "general_interaction";
-                        var actionValue =
-                            interactiveTarget.getAttribute("data-track-value") || "";
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.addEventListener("click", function (event) {
+          var interactiveTarget = event.target.closest("[data-track]");
+          if (interactiveTarget) {
+            var actionLabel = interactiveTarget.getAttribute("data-track");
+            var actionGroup = interactiveTarget.getAttribute("data-track-group") || "general_interaction";
+            var actionValue = interactiveTarget.getAttribute("data-track-value") || "";
 
-                if (typeof gtag === "function") {
-                    gtag("event", "ui_interaction_event", {
-                        interaction_label: actionLabel,
-                        interaction_group: actionGroup,
-                        interaction_value: actionValue,
-                        page_location_path: window.location.pathname,
-                    });
-                }
+            if (typeof gtag === "function") {
+              gtag("event", "ui_interaction_event", {
+                interaction_label: actionLabel,
+                interaction_group: actionGroup,
+                interaction_value: actionValue,
+                page_location_path: window.location.pathname,
+              });
             }
-            },
-            true,
-        );
+          }
+        }, true);
       });
-</script>
+    </script>
     <!-- ====================================================================== -->
 </head>
 

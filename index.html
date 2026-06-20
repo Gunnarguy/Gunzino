@@ -3,16 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gunzino | Product Pages, Support, Privacy, and Legal</title>
-    <meta
-      name="description"
-      content="Publisher hub for OpenClinic, OpenIntelligence, OpenResponses, OpenCone, and OpenAssistant, with public product pages, support routes, privacy policies, and legal docs."
-    />
-    <meta property="og:title" content="Gunzino | Product Pages, Support, Privacy, and Legal" />
-    <meta
-      property="og:description"
-      content="Publisher hub for five Apple-native apps spanning clinical workflows, local document intelligence, direct OpenAI Responses tooling, cloud-hybrid vector search, and a legacy Assistants API client."
-    />
+    <title>Gunzino | Discover the Next-Gen Apple AI Apps Transforming Workflows</title>
+    <meta name="description" content="Explore Gunzino's suite of powerful, privacy-first iOS & macOS apps. From local AI document intelligence to clinical workspaces, discover the tools transforming professional workflows today." />
+    <meta property="og:title" content="Gunzino | Discover the Next-Gen Apple AI Apps Transforming Workflows" />
+    <meta property="og:description" content="Explore Gunzino's suite of powerful, privacy-first iOS & macOS apps. From local AI document intelligence to clinical workspaces, discover the tools transforming professional workflows today." />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
@@ -20,11 +14,8 @@
     />
     <link rel="canonical" href="https://gunzino.me/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gunzino | Product Pages, Support, Privacy, and Legal" />
-    <meta
-      name="twitter:description"
-      content="Publisher hub for OpenClinic, OpenIntelligence, OpenResponses, OpenCone, and OpenAssistant, with public product pages, support routes, privacy policies, and legal docs."
-    />
+    <meta name="twitter:title" content="Gunzino | Discover the Next-Gen Apple AI Apps Transforming Workflows" />
+    <meta name="twitter:description" content="Explore Gunzino's suite of powerful, privacy-first iOS & macOS apps. From local AI document intelligence to clinical workspaces, discover the tools transforming professional workflows today." />
     <meta
       name="twitter:image"
       content="https://gunzino.me/openassistant/ios-app-screenshot.png"
@@ -36,14 +27,14 @@
         "@graph": [
           {
             "@type": "CollectionPage",
-            "name": "Gunzino | Product Pages, Support, Privacy, and Legal",
-            "description": "Publisher hub for five Apple-native apps spanning clinical workflows, local document intelligence, direct OpenAI Responses tooling, cloud-hybrid vector search, and a legacy Assistants API client.",
+            "name": "Gunzino | The Next-Gen Apple AI & Clinical Workspace Apps You Need",
+            "description": "Discover Gunzino's revolutionary suite of Apple-native apps. From local AI document intelligence to smart clinical workflows, explore the tools redefining the Apple ecosystem.",
             "url": "https://gunzino.me/"
           },
           {
             "@type": "Organization",
             "name": "Gunzino",
-            "description": "Publisher hub for Gunnar Hostetler's public product pages, support routes, privacy policies, and legal docs.",
+            "description": "Discover Gunzino's revolutionary suite of Apple-native apps. From local AI document intelligence to smart clinical workflows, explore the tools redefining the Apple ecosystem.",
             "url": "https://gunzino.me/"
           }
         ]
@@ -53,78 +44,36 @@
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
     <!-- ====================================================================== -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       const GA_MEASUREMENT_ID = "G-4Q160W3M61";
-      const GA_DEBUG_MODE = new URLSearchParams(window.location.search).has(
-        "ga_debug",
-      );
-      let gaPageViewSent = false;
-
-      function sendGaPageView() {
-        if (gaPageViewSent) {
-          return;
-        }
-
-        gaPageViewSent = true;
-        gtag("event", "page_view", {
-          page_title: document.title,
-          page_location: window.location.href,
-          page_path: window.location.pathname + window.location.search,
-          debug_mode: GA_DEBUG_MODE,
-        });
-      }
-
-      gtag("js", new Date());
-
-      gtag("config", GA_MEASUREMENT_ID, {
-        send_page_view: false,
-        transport_type: "beacon",
-        debug_mode: GA_DEBUG_MODE,
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, {
+        transport_type: "beacon"
       });
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", sendGaPageView, {
-          once: true,
-        });
-      } else {
-        sendGaPageView();
-      }
     </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        document.body.addEventListener(
-          "click",
-          function (event) {
-            var interactiveTarget = event.target.closest("[data-track]");
-            if (interactiveTarget) {
-              var actionLabel = interactiveTarget.getAttribute("data-track");
-              var actionGroup =
-                interactiveTarget.getAttribute("data-track-group") ||
-                "general_interaction";
-              var actionValue =
-                interactiveTarget.getAttribute("data-track-value") || "";
+        document.body.addEventListener("click", function (event) {
+          var interactiveTarget = event.target.closest("[data-track]");
+          if (interactiveTarget) {
+            var actionLabel = interactiveTarget.getAttribute("data-track");
+            var actionGroup = interactiveTarget.getAttribute("data-track-group") || "general_interaction";
+            var actionValue = interactiveTarget.getAttribute("data-track-value") || "";
 
-              if (typeof gtag === "function") {
-                gtag("event", "ui_interaction_event", {
-                  interaction_label: actionLabel,
-                  interaction_group: actionGroup,
-                  interaction_value: actionValue,
-                  page_location_path: window.location.pathname,
-                });
-              }
+            if (typeof gtag === "function") {
+              gtag("event", "ui_interaction_event", {
+                interaction_label: actionLabel,
+                interaction_group: actionGroup,
+                interaction_value: actionValue,
+                page_location_path: window.location.pathname,
+              });
             }
-          },
-          true,
-        );
+          }
+        }, true);
       });
     </script>
     <!-- ====================================================================== -->

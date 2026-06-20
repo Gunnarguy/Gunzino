@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenResponses | Direct Responses API Client</title>
-    <meta name="description"
-        content="OpenResponses is a native SwiftUI developer client for the OpenAI Responses API with SSE streaming, tool execution, browser automation, web search, code interpreter, and MCP support." />
-    <meta property="og:title" content="OpenResponses | Direct Responses API Client" />
-    <meta property="og:description"
-        content="Inspect streaming events, tool calls, reasoning traces, and direct OpenAI Responses API requests in a native SwiftUI client." />
+    <title>OpenResponses | The Ultimate Direct Responses API Playground for iOS</title>
+    <meta name="description" content="Supercharge your workflows with the native SwiftUI client for the Responses API. Features streaming events, reasoning traces, web search, and local API access." />
+    <meta property="og:title" content="OpenResponses | The Ultimate Direct Responses API Playground for iOS" />
+    <meta property="og:description" content="Supercharge your workflows with the native SwiftUI client for the Responses API. Features streaming events, reasoning traces, web search, and local API access." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OpenResponses | The Ultimate Direct Responses API Playground for iOS" />
+    <meta name="twitter:description" content="Supercharge your workflows with the native SwiftUI client for the Responses API. Features streaming events, reasoning traces, web search, and local API access." />
+    <meta name="twitter:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gunzino.me/openresponses" />
     <meta property="og:image" content="https://gunzino.me/openassistant/ios-app-screenshot.png" />
@@ -18,10 +20,10 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "OpenResponses",
+        "name": "OpenResponses | The Ultimate Direct Responses API Playground for iOS",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "iOS Application",
-        "description": "Native SwiftUI client for the OpenAI Responses API with SSE streaming, tool integrations, and developer observability.",
+        "description": "Supercharge your workflows with the native SwiftUI client for the Responses API. Features streaming events, reasoning traces, web search, and local API access.",
         "url": "https://gunzino.me/openresponses",
         "downloadUrl": "https://apps.apple.com/us/app/openresponses/id6757338355"
       }
@@ -32,7 +34,7 @@
     <!-- ====================================================================== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
@@ -40,67 +42,35 @@
       const GA_DEBUG_MODE = new URLSearchParams(window.location.search).has(
         "ga_debug",
       );
-      let gaPageViewSent = false;
-
-      function sendGaPageView() {
-        if (gaPageViewSent) {
-          return;
-        }
-
-        gaPageViewSent = true;
-        gtag("event", "page_view", {
-          page_title: document.title,
-          page_location: window.location.href,
-          page_path: window.location.pathname + window.location.search,
-          debug_mode: GA_DEBUG_MODE,
-        });
-      }
 
       gtag("js", new Date());
 
       gtag("config", GA_MEASUREMENT_ID, {
-        send_page_view: false,
-        transport_type: "beacon",
         debug_mode: GA_DEBUG_MODE,
       });
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", sendGaPageView, {
-          once: true,
-        });
-      } else {
-        sendGaPageView();
-      }
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.body.addEventListener(
-                "click",
-                function (event) {
-                    var interactiveTarget = event.target.closest("[data-track]");
-                    if (interactiveTarget) {
-                        var actionLabel = interactiveTarget.getAttribute("data-track");
-                        var actionGroup =
-                            interactiveTarget.getAttribute("data-track-group") ||
-                            "general_interaction";
-                        var actionValue =
-                            interactiveTarget.getAttribute("data-track-value") || "";
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.addEventListener("click", function (event) {
+          var interactiveTarget = event.target.closest("[data-track]");
+          if (interactiveTarget) {
+            var actionLabel = interactiveTarget.getAttribute("data-track");
+            var actionGroup = interactiveTarget.getAttribute("data-track-group") || "general_interaction";
+            var actionValue = interactiveTarget.getAttribute("data-track-value") || "";
 
-                if (typeof gtag === "function") {
-                    gtag("event", "ui_interaction_event", {
-                        interaction_label: actionLabel,
-                        interaction_group: actionGroup,
-                        interaction_value: actionValue,
-                        page_location_path: window.location.pathname,
-                    });
-                }
+            if (typeof gtag === "function") {
+              gtag("event", "ui_interaction_event", {
+                interaction_label: actionLabel,
+                interaction_group: actionGroup,
+                interaction_value: actionValue,
+                page_location_path: window.location.pathname,
+              });
             }
-            },
-            true,
-        );
+          }
+        }, true);
       });
-</script>
+    </script>
     <!-- ====================================================================== -->
 </head>
 

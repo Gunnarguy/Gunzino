@@ -6,11 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>OpenAssistant | Legacy Assistants API Client</title>
-    <meta
-      name="description"
-      content="Archived SwiftUI client for the OpenAI Assistants API with assistants, threads, runs, vector stores, and local file preprocessing."
-    />
+    <title>OpenAssistant | Master the Legacy OpenAI Assistants API</title>
+    <meta name="description" content="Explore the original native iOS dashboard for OpenAI Assistants API threads, runs, and vector stores. Reliable, fast, and maintained for your reference." />
     <meta
       name="keywords"
       content="iOS, SwiftUI, OpenAI, Assistants API, AI, mobile app, vector stores, chat, MVVM, artificial intelligence"
@@ -18,14 +15,8 @@
     <meta name="author" content="Gunnar Hostetler" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://gunzino.me/openassistant/" />
-    <meta
-      property="og:title"
-      content="OpenAssistant | Legacy Assistants API Client"
-    />
-    <meta
-      property="og:description"
-      content="Archived SwiftUI client for the OpenAI Assistants API and the older stateful mobile workflow that OpenResponses replaced."
-    />
+    <meta property="og:title" content="OpenAssistant | Master the Legacy OpenAI Assistants API" />
+    <meta property="og:description" content="Explore the original native iOS dashboard for OpenAI Assistants API threads, runs, and vector stores. Reliable, fast, and maintained for your reference." />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
@@ -48,78 +39,36 @@
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
     <!-- ====================================================================== -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q160W3M61"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       const GA_MEASUREMENT_ID = "G-4Q160W3M61";
-      const GA_DEBUG_MODE = new URLSearchParams(window.location.search).has(
-        "ga_debug",
-      );
-      let gaPageViewSent = false;
-
-      function sendGaPageView() {
-        if (gaPageViewSent) {
-          return;
-        }
-
-        gaPageViewSent = true;
-        gtag("event", "page_view", {
-          page_title: document.title,
-          page_location: window.location.href,
-          page_path: window.location.pathname + window.location.search,
-          debug_mode: GA_DEBUG_MODE,
-        });
-      }
-
-      gtag("js", new Date());
-
-      gtag("config", GA_MEASUREMENT_ID, {
-        send_page_view: false,
-        transport_type: "beacon",
-        debug_mode: GA_DEBUG_MODE,
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, {
+        transport_type: "beacon"
       });
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", sendGaPageView, {
-          once: true,
-        });
-      } else {
-        sendGaPageView();
-      }
     </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        document.body.addEventListener(
-          "click",
-          function (event) {
-            var interactiveTarget = event.target.closest("[data-track]");
-            if (interactiveTarget) {
-              var actionLabel = interactiveTarget.getAttribute("data-track");
-              var actionGroup =
-                interactiveTarget.getAttribute("data-track-group") ||
-                "general_interaction";
-              var actionValue =
-                interactiveTarget.getAttribute("data-track-value") || "";
+        document.body.addEventListener("click", function (event) {
+          var interactiveTarget = event.target.closest("[data-track]");
+          if (interactiveTarget) {
+            var actionLabel = interactiveTarget.getAttribute("data-track");
+            var actionGroup = interactiveTarget.getAttribute("data-track-group") || "general_interaction";
+            var actionValue = interactiveTarget.getAttribute("data-track-value") || "";
 
-              if (typeof gtag === "function") {
-                gtag("event", "ui_interaction_event", {
-                  interaction_label: actionLabel,
-                  interaction_group: actionGroup,
-                  interaction_value: actionValue,
-                  page_location_path: window.location.pathname,
-                });
-              }
+            if (typeof gtag === "function") {
+              gtag("event", "ui_interaction_event", {
+                interaction_label: actionLabel,
+                interaction_group: actionGroup,
+                interaction_value: actionValue,
+                page_location_path: window.location.pathname,
+              });
             }
-          },
-          true,
-        );
+          }
+        }, true);
       });
     </script>
     <!-- ====================================================================== -->

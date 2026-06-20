@@ -1,0 +1,81 @@
+name: SEO Automation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+
+jobs:
+  seo-checks:
+    name: SEO Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Title and Description Tags
+        run: |
+          echo "Checking HTML files for critical SEO tags..."
+          MISSING_TAGS=0
+          
+          # Find all HTML files
+          find . -name "*.html" -not -path "*/\.git/*" | while read file; do
+            # Check for <title>
+            if ! grep -qi "<title>" "$file"; then
+              echo "❌ Missing <title> in $file"
+              MISSING_TAGS=1
+            fi
+            
+            # Check for meta description
+            if ! grep -qi "name=\"description\"" "$file"; then
+              echo "❌ Missing <meta name=\"description\"> in $file"
+              MISSING_TAGS=1
+            fi
+          done
+          
+          if [ $MISSING_TAGS -ne 0 ]; then
+            echo "❌ SEO Linter failed. Critical tags are missing."
+            exit 1
+          else
+            echo "✅ All HTML files have <title> and <meta name=\"description\">."
+          fi
+
+  ping-search-engines:
+    name: Ping Search Engines
+    runs-on: ubuntu-latest
+    needs: seo-checks
+    steps:
+      - name: Notify IndexNow
+        run: |
+          echo "Pinging IndexNow with updated URLs..."
+          PAYLOAD=$(cat <<EOF
+          {
+            "host": "gunzino.me",
+            "key": "6eef46c2de984bb3906a59918731737e",
+            "keyLocation": "https://gunzino.me/6eef46c2de984bb3906a59918731737e.txt",
+            "urlList": [
+              "https://gunzino.me/",
+              "https://gunzino.me/openclinic/",
+              "https://gunzino.me/openintelligence/",
+              "https://gunzino.me/openresponses/",
+              "https://gunzino.me/opencone/"
+            ]
+          }
+          EOF
+          )
+          
+          STATUS_CODE=$(curl -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$PAYLOAD" \
+            -o /dev/null -s -w "%{http_code}\n")
+            
+          if [[ "$STATUS_CODE" -eq 200 || "$STATUS_CODE" -eq 202 ]]; then
+            echo "✅ Successfully pinged IndexNow (Status $STATUS_CODE)"
+          else
+            echo "⚠️ IndexNow ping returned status $STATUS_CODE"
+          fi
+          
+          echo "Note: Google relies on Search Console + standard crawling."
