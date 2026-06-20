@@ -83,13 +83,13 @@ def update_file(filepath):
         r'<!-- ====================================================================== -->',
         re.DOTALL
     )
-    
+
     # We maintain the indentation of the first comment if possible, but GA_SNIPPET is hardcoded so we'll just drop it in.
     content = ga_pattern.sub(GA_SNIPPET, content)
 
     # 2. Update SEO metadata if we have specific data for this file
     rel_path = os.path.relpath(filepath, start=os.getcwd())
-    
+
     if rel_path in SEO_DATA:
         data = SEO_DATA[rel_path]
         title = data['title']
@@ -97,25 +97,25 @@ def update_file(filepath):
 
         # Update <title>
         content = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', content, flags=re.IGNORECASE)
-        
+
         # Update meta description
-        content = re.sub(r'<meta[^>]*name=["\']description["\'][^>]*content=["\'](.*?)["\'][^>]*>', 
+        content = re.sub(r'<meta[^>]*name=["\']description["\'][^>]*content=["\'](.*?)["\'][^>]*>',
                          f'<meta name="description" content="{desc}" />', content, flags=re.IGNORECASE|re.DOTALL)
-        
+
         # Update og:title
-        content = re.sub(r'<meta[^>]*property=["\']og:title["\'][^>]*content=["\'](.*?)["\'][^>]*>', 
+        content = re.sub(r'<meta[^>]*property=["\']og:title["\'][^>]*content=["\'](.*?)["\'][^>]*>',
                          f'<meta property="og:title" content="{title}" />', content, flags=re.IGNORECASE|re.DOTALL)
-        
+
         # Update og:description
-        content = re.sub(r'<meta[^>]*property=["\']og:description["\'][^>]*content=["\'](.*?)["\'][^>]*>', 
+        content = re.sub(r'<meta[^>]*property=["\']og:description["\'][^>]*content=["\'](.*?)["\'][^>]*>',
                          f'<meta property="og:description" content="{desc}" />', content, flags=re.IGNORECASE|re.DOTALL)
-        
+
         # Update twitter:title
-        content = re.sub(r'<meta[^>]*name=["\']twitter:title["\'][^>]*content=["\'](.*?)["\'][^>]*>', 
+        content = re.sub(r'<meta[^>]*name=["\']twitter:title["\'][^>]*content=["\'](.*?)["\'][^>]*>',
                          f'<meta name="twitter:title" content="{title}" />', content, flags=re.IGNORECASE|re.DOTALL)
-        
+
         # Update twitter:description
-        content = re.sub(r'<meta[^>]*name=["\']twitter:description["\'][^>]*content=["\'](.*?)["\'][^>]*>', 
+        content = re.sub(r'<meta[^>]*name=["\']twitter:description["\'][^>]*content=["\'](.*?)["\'][^>]*>',
                          f'<meta name="twitter:description" content="{desc}" />', content, flags=re.IGNORECASE|re.DOTALL)
 
     with open(filepath, 'w', encoding='utf-8') as f:

@@ -42,25 +42,25 @@ def generate_sitemap():
             url_path = url_path.replace("index.html", "")
 
         url_str = f"{BASE_URL}/{url_path}"
-        
+
         url = ET.SubElement(urlset, "url")
         loc = ET.SubElement(url, "loc")
         loc.text = url_str
-        
+
         lastmod = ET.SubElement(url, "lastmod")
         lastmod.text = today
-        
+
         priority = ET.SubElement(url, "priority")
         priority.text = get_priority(rel_path)
 
     # Convert to string and write
     ET.indent(urlset, space="  ", level=0)
     xml_str = '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(urlset, encoding="unicode")
-    
+
     with open(os.path.join(ROOT_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(xml_str)
         f.write("\n")
-    
+
     print(f"Generated sitemap.xml with {len(html_files)} URLs.")
 
 if __name__ == "__main__":
