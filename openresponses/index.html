@@ -46,6 +46,11 @@
       gtag("js", new Date());
 
       gtag("config", GA_MEASUREMENT_ID, {
+        'linker': {
+          'domains': ['gunnarguy.me', 'gunzino.me', 'fascinaiting.me'],
+          'accept_incoming': true
+        },
+        'cookie_flags': 'SameSite=None;Secure',
         debug_mode: GA_DEBUG_MODE,
       });
     </script>

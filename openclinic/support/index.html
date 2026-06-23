@@ -47,7 +47,12 @@
       function gtag() { dataLayer.push(arguments); }
       const GA_MEASUREMENT_ID = "G-4Q160W3M61";
       gtag('js', new Date());
-      gtag('config', GA_MEASUREMENT_ID, {
+      gtag("config", GA_MEASUREMENT_ID, {
+        'linker': {
+          'domains': ['gunnarguy.me', 'gunzino.me', 'fascinaiting.me'],
+          'accept_incoming': true
+        },
+        'cookie_flags': 'SameSite=None;Secure',
         transport_type: "beacon"
       });
     </script>
