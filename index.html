@@ -76,6 +76,15 @@
                 interaction_value: actionValue,
                 page_location_path: window.location.pathname,
               });
+
+              if (interactiveTarget.tagName === 'A') {
+                var href = interactiveTarget.getAttribute('href') || '';
+                if (href.includes('apps.apple.com')) {
+                  gtag('event', 'click_app_store', { link_url: href });
+                } else if (href.includes('github.com')) {
+                  gtag('event', 'click_github', { link_url: href });
+                }
+              }
             }
           }
         }, true);
