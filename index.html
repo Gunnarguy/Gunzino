@@ -50,15 +50,9 @@
       function gtag() { dataLayer.push(arguments); }
       const GA_MEASUREMENT_ID = "G-8CQD5KZ06Y";
       gtag('js', new Date());
-      gtag("config", GA_MEASUREMENT_ID, {
-        'linker': {
-          'domains': ['gunnarguy.me', 'gunzino.me', 'fascinaiting.me'],
-          'accept_incoming': true
-        },
-        'cookie_flags': 'SameSite=None;Secure',
+      gtag('config', GA_MEASUREMENT_ID, {
         transport_type: "beacon"
       });
-      gtag("config", "AW-17079810778");
     </script>
 
     <script>
@@ -77,20 +71,6 @@
                 interaction_value: actionValue,
                 page_location_path: window.location.pathname,
               });
-
-              if (interactiveTarget.tagName === 'A') {
-                var href = interactiveTarget.getAttribute('href') || '';
-                if (href.includes('apps.apple.com')) {
-                  gtag('event', 'click_app_store', { link_url: href });
-                  gtag('event', 'conversion', {
-                      'send_to': 'AW-17079810778/41mpCL_A-sMcENr1pNA_',
-                      'value': 1.0,
-                      'currency': 'USD'
-                  });
-                } else if (href.includes('github.com')) {
-                  gtag('event', 'click_github', { link_url: href });
-                }
-              }
             }
           }
         }, true);

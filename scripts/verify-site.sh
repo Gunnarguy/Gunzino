@@ -201,7 +201,7 @@ run_source_checks() {
   missing=0
   while IFS= read -r -d '' file; do
     css="$(grep -Ec '<link[^>]+rel="stylesheet"|<style>' "$file" || true)"
-    ga="$(grep -c 'googletagmanager.com/gtag/js?id=G-4Q160W3M61' "$file" || true)"
+    ga="$(grep -c 'googletagmanager.com/gtag/js?id=G-8CQD5KZ06Y' "$file" || true)"
     if [[ "$css" -lt 1 || "$ga" -ne 1 ]]; then
       printf 'bad %s css=%s ga=%s\n' "$file" "$css" "$ga" >&2
       missing=1
@@ -396,16 +396,16 @@ run_live_checks() {
   section "HTTPS root content"
   assert_contains "$root_html" "$root_title"
   assert_contains "$root_html" "$root_style_ref"
-  assert_contains "$root_html" 'G-4Q160W3M61'
-  printf '%s\n' "$root_html" | grep -E -m 20 '<title>|Gunzino|style\.css|G-4Q160W3M61'
+  assert_contains "$root_html" 'G-8CQD5KZ06Y'
+  printf '%s\n' "$root_html" | grep -E -m 20 '<title>|Gunzino|style\.css|G-8CQD5KZ06Y'
   printf '\n'
 
   section "HTTPS OpenAssistant content"
   assert_contains "$openassistant_html" "$openassistant_title"
   assert_contains "$openassistant_html" "$openassistant_style_ref"
   assert_contains "$openassistant_html" "$openassistant_script_ref"
-  assert_contains "$openassistant_html" 'G-4Q160W3M61'
-  printf '%s\n' "$openassistant_html" | grep -E -m 20 '<title>|OpenAssistant|styles\.css|scripts\.js|G-4Q160W3M61'
+  assert_contains "$openassistant_html" 'G-8CQD5KZ06Y'
+  printf '%s\n' "$openassistant_html" | grep -E -m 20 '<title>|OpenAssistant|styles\.css|scripts\.js|G-8CQD5KZ06Y'
   printf '\n'
 }
 
