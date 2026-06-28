@@ -60,7 +60,10 @@
       const GA_MEASUREMENT_ID = "G-8CQD5KZ06Y";
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID, {
-        transport_type: "beacon"
+        transport_type: "beacon",
+        linker: {
+          'domains': ['gunnarguy.me', 'gunzino.me', 'fascinaiting.me']
+        }
       });
     </script>
 
