@@ -182,27 +182,53 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Hero Section Styling */
 .hero {
-    padding: 80px 20px;
+    padding: 100px 20px 80px;
     text-align: center;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border-bottom: 1px solid #333;
+    background: radial-gradient(circle at top, rgba(26, 26, 46, 0.8) 0%, rgba(5, 5, 8, 1) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 170, 255, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .hero h1 {
-    font-size: 3.2em;
-    margin-bottom: 0.5em;
+    font-family: var(--font-heading);
+    font-size: 3.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.3em;
     color: #fff;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #ffffff 0%, #a0a0c0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
 }
 
 .hero p {
-    font-size: 1.3em;
-    margin-bottom: 2em;
-    max-width: 800px;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 2.5em;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
-    color: #b0b0b0;
+    color: #a0a0b8;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-buttons {
@@ -510,23 +536,26 @@ ul {
 
 .apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    max-width: 900px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .app-card {
     background: var(--bg-card);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--border-card);
-    padding: 40px;
-    border-radius: 20px;
+    padding: 40px 30px;
+    border-radius: 24px;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .app-card::before {
@@ -540,7 +569,7 @@ ul {
 }
 
 .app-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     border-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -573,6 +602,7 @@ ul {
     width: 80px;
     height: 80px;
     border-radius: 18px;
+    margin-top: 0;
     margin-bottom: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -585,16 +615,27 @@ ul {
 
 .app-card h3 {
     font-family: var(--font-heading);
-    font-size: 2em;
-    color: #fff;
-    margin-bottom: 8px;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 0 0 6px;
+    font-weight: 700;
 }
 
-.app-tagline {
-    font-size: 1.1em;
+.app-card .app-tagline {
+    font-size: 1.05rem;
     color: #a0a0ff;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin: 0 0 16px;
+    letter-spacing: 0.02em;
+}
+
+.app-card p:not(.app-tagline) {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #b0b0c5;
+    margin: 0 0 24px;
+    font-weight: 400;
+    flex-grow: 1;
 }
 
 .app-link {
@@ -604,7 +645,7 @@ ul {
     color: var(--accent-blue);
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: auto;
     transition: all 0.3s ease;
 }
 
