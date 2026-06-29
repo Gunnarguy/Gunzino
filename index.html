@@ -42,13 +42,39 @@
       }
     </script>
 
+    <!-- DNS Preconnect and Prefetch for Page Load Speed (Core Web Vitals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
     <!-- ====================================================================== -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CQD5KZ06Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
+
+      // Defer GTM script injection until load event to keep main thread clear during paint
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8CQD5KZ06Y';
+          document.head.appendChild(script);
+        }, 800);
+      });
+
       const GA_MEASUREMENT_ID = "G-8CQD5KZ06Y";
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID, {
@@ -101,27 +127,27 @@
           </li>
           <li>
             <a href="openclinic" data-track="nav_openclinic" data-track-group="navigation">
-              <img src="assets/openclinic_icon.png" class="nav-icon-mini" alt=""> OpenClinic
+              <img src="assets/openclinic_icon.webp" class="nav-icon-mini" alt="" width="24" height="24"> OpenClinic
             </a>
           </li>
           <li>
             <a href="openintelligence" data-track="nav_openintelligence" data-track-group="navigation">
-              <img src="assets/openintelligence_icon.png" class="nav-icon-mini" alt=""> OpenIntelligence
+              <img src="assets/openintelligence_icon.webp" class="nav-icon-mini" alt="" width="24" height="24"> OpenIntelligence
             </a>
           </li>
           <li>
             <a href="openresponses" data-track="nav_openresponses" data-track-group="navigation">
-              <img src="assets/openresponses_icon.png" class="nav-icon-mini" alt=""> OpenResponses
+              <img src="assets/openresponses_icon.webp" class="nav-icon-mini" alt="" width="24" height="24"> OpenResponses
             </a>
           </li>
           <li>
             <a href="opencone" data-track="nav_opencone" data-track-group="navigation">
-              <img src="assets/opencone_icon.png" class="nav-icon-mini" alt=""> OpenCone
+              <img src="assets/opencone_icon.webp" class="nav-icon-mini" alt="" width="24" height="24"> OpenCone
             </a>
           </li>
           <li>
             <a href="openassistant" data-track="nav_openassistant" data-track-group="navigation">
-              <img src="assets/openassistant_icon.png" class="nav-icon-mini" alt=""> OpenAssistant
+              <img src="assets/openassistant_icon.webp" class="nav-icon-mini" alt="" width="24" height="24"> OpenAssistant
             </a>
           </li>
           <li>
@@ -151,23 +177,23 @@
         <div class="app-dock-wrapper">
           <div class="app-dock">
             <a href="openclinic" class="app-dock-item" data-app="openclinic" data-track="hero_dock_openclinic" data-track-group="hero">
-              <img src="assets/openclinic_icon.png" class="app-dock-icon" alt="OpenClinic">
+              <img src="assets/openclinic_icon.webp" class="app-dock-icon" alt="OpenClinic" width="64" height="64">
               <span class="app-dock-label">OpenClinic</span>
             </a>
             <a href="openintelligence" class="app-dock-item" data-app="openintelligence" data-track="hero_dock_openintelligence" data-track-group="hero">
-              <img src="assets/openintelligence_icon.png" class="app-dock-icon" alt="OpenIntelligence">
+              <img src="assets/openintelligence_icon.webp" class="app-dock-icon" alt="OpenIntelligence" width="64" height="64">
               <span class="app-dock-label">OpenIntelligence</span>
             </a>
             <a href="openresponses" class="app-dock-item" data-app="openresponses" data-track="hero_dock_openresponses" data-track-group="hero">
-              <img src="assets/openresponses_icon.png" class="app-dock-icon" alt="OpenResponses">
+              <img src="assets/openresponses_icon.webp" class="app-dock-icon" alt="OpenResponses" width="64" height="64">
               <span class="app-dock-label">OpenResponses</span>
             </a>
             <a href="opencone" class="app-dock-item" data-app="opencone" data-track="hero_dock_opencone" data-track-group="hero">
-              <img src="assets/opencone_icon.png" class="app-dock-icon" alt="OpenCone">
+              <img src="assets/opencone_icon.webp" class="app-dock-icon" alt="OpenCone" width="64" height="64">
               <span class="app-dock-label">OpenCone</span>
             </a>
             <a href="openassistant" class="app-dock-item" data-app="openassistant" data-track="hero_dock_openassistant" data-track-group="hero">
-              <img src="assets/openassistant_icon.png" class="app-dock-icon" alt="OpenAssistant">
+              <img src="assets/openassistant_icon.webp" class="app-dock-icon" alt="OpenAssistant" width="64" height="64">
               <span class="app-dock-label">OpenAssistant</span>
             </a>
           </div>
@@ -187,7 +213,7 @@
         </p>
         <div class="apps-grid" style="max-width: 1200px">
           <div class="app-card" data-app="openclinic">
-            <img src="assets/openclinic_icon.png" class="app-icon-img" alt="OpenClinic">
+            <img src="assets/openclinic_icon.webp" class="app-icon-img" alt="OpenClinic" width="80" height="80">
             <h3>OpenClinic</h3>
             <p class="app-tagline">
               Clinical Workspace with Local Intelligence
@@ -200,11 +226,11 @@
             </p>
             <a href="openclinic" class="app-link" data-track="card_openclinic"
               data-track-group="product_card"
-              >Learn More <i class="fas fa-arrow-right"></i
+              >Learn more about OpenClinic <i class="fas fa-arrow-right"></i
             ></a>
           </div>
           <div class="app-card" data-app="openintelligence">
-            <img src="assets/openintelligence_icon.png" class="app-icon-img" alt="OpenIntelligence">
+            <img src="assets/openintelligence_icon.webp" class="app-icon-img" alt="OpenIntelligence" width="80" height="80">
             <h3>OpenIntelligence</h3>
             <p class="app-tagline">Apple Intelligence Agentic RAG</p>
             <p>
@@ -214,11 +240,11 @@
               evidence-backed answers.
             </p>
             <a href="openintelligence" class="app-link" data-track="card_openintelligence" data-track-group="product_card"
-              >Learn More <i class="fas fa-arrow-right"></i
+              >Learn more about OpenIntelligence <i class="fas fa-arrow-right"></i
             ></a>
           </div>
           <div class="app-card" data-app="openresponses">
-            <img src="assets/openresponses_icon.png" class="app-icon-img" alt="OpenResponses">
+            <img src="assets/openresponses_icon.webp" class="app-icon-img" alt="OpenResponses" width="80" height="80">
             <h3>OpenResponses</h3>
             <p class="app-tagline">Direct Responses API Playground</p>
             <p>
@@ -227,11 +253,11 @@
               automation, remote MCP, and local Keychain-backed API access.
             </p>
             <a href="openresponses" class="app-link" data-track="card_openresponses" data-track-group="product_card"
-              >Learn More <i class="fas fa-arrow-right"></i
+              >Learn more about OpenResponses <i class="fas fa-arrow-right"></i
             ></a>
           </div>
           <div class="app-card" data-app="opencone">
-            <img src="assets/opencone_icon.png" class="app-icon-img" alt="OpenCone">
+            <img src="assets/opencone_icon.webp" class="app-icon-img" alt="OpenCone" width="80" height="80">
             <h3>OpenCone</h3>
             <p class="app-tagline">Cloud-Hybrid OCR and Vector Search</p>
             <p>
@@ -241,11 +267,11 @@
               fully offline app.
             </p>
             <a href="opencone" class="app-link" data-track="card_opencone" data-track-group="product_card"
-              >Learn More <i class="fas fa-arrow-right"></i
+              >Learn more about OpenCone <i class="fas fa-arrow-right"></i
             ></a>
           </div>
           <div class="app-card" data-app="openassistant">
-            <img src="assets/openassistant_icon.png" class="app-icon-img" alt="OpenAssistant">
+            <img src="assets/openassistant_icon.webp" class="app-icon-img" alt="OpenAssistant" width="80" height="80">
             <h3>OpenAssistant</h3>
             <p class="app-tagline">
               Legacy Assistants API Client
@@ -257,7 +283,7 @@
             </p>
             <a href="openassistant" class="app-link" data-track="card_openassistant"
               data-track-group="product_card"
-              >Learn More <i class="fas fa-arrow-right"></i
+              >Learn more about OpenAssistant <i class="fas fa-arrow-right"></i
             ></a>
           </div>
         </div>
