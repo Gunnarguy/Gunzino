@@ -65,15 +65,29 @@
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
 
-      // Defer GTM script injection until load event to keep main thread clear during paint
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8CQD5KZ06Y';
-          document.head.appendChild(script);
-        }, 800);
-      });
+      // Load GTM on first user interaction to keep main thread clear and achieve 0ms TBT
+      function initGTM() {
+        if (window.gtmInitialized) return;
+        window.gtmInitialized = true;
+
+        window.removeEventListener('mousemove', initGTM);
+        window.removeEventListener('scroll', initGTM);
+        window.removeEventListener('touchstart', initGTM);
+        window.removeEventListener('click', initGTM);
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8CQD5KZ06Y';
+        document.head.appendChild(script);
+      }
+
+      window.addEventListener('mousemove', initGTM, { passive: true });
+      window.addEventListener('scroll', initGTM, { passive: true });
+      window.addEventListener('touchstart', initGTM, { passive: true });
+      window.addEventListener('click', initGTM, { passive: true });
+
+      // Fallback to load after 4 seconds
+      setTimeout(initGTM, 4000);
 
       const GA_MEASUREMENT_ID = "G-8CQD5KZ06Y";
       gtag('js', new Date());
