@@ -56,7 +56,9 @@
         linker: {
           'domains': ['gunnarguy.me', 'gunzino.me', 'fascinaiting.me'],
           'accept_incoming': true
-        }
+        },
+        cookie_flags: 'SameSite=None;Secure',
+        page_path: "/" + window.location.hostname + window.location.pathname + window.location.search
       });
     </script>
 

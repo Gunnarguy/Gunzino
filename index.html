@@ -61,34 +61,10 @@
     <!-- ====================================================================== -->
     <!-- UNIFIED GLOBAL TELEMETRY ENGINE & CUSTOM DATA INTERCEPTOR            -->
     <!-- ====================================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CQD5KZ06Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
-
-      // Load GTM on first user interaction to keep main thread clear and achieve 0ms TBT
-      function initGTM() {
-        if (window.gtmInitialized) return;
-        window.gtmInitialized = true;
-
-        window.removeEventListener('mousemove', initGTM);
-        window.removeEventListener('scroll', initGTM);
-        window.removeEventListener('touchstart', initGTM);
-        window.removeEventListener('click', initGTM);
-
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8CQD5KZ06Y';
-        document.head.appendChild(script);
-      }
-
-      window.addEventListener('mousemove', initGTM, { passive: true });
-      window.addEventListener('scroll', initGTM, { passive: true });
-      window.addEventListener('touchstart', initGTM, { passive: true });
-      window.addEventListener('click', initGTM, { passive: true });
-
-      // Fallback to load after 4 seconds
-      setTimeout(initGTM, 4000);
-
       const GA_MEASUREMENT_ID = "G-8CQD5KZ06Y";
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID, {
@@ -96,7 +72,9 @@
         linker: {
           'domains': ['gunnarguy.me', 'gunzino.me', 'fascinaiting.me'],
           'accept_incoming': true
-        }
+        },
+        cookie_flags: 'SameSite=None;Secure',
+        page_path: "/" + window.location.hostname + window.location.pathname + window.location.search
       });
     </script>
 

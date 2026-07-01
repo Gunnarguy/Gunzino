@@ -11,7 +11,13 @@ GA_SNIPPET = """    <!-- =======================================================
       const GA_MEASUREMENT_ID = "G-8CQD5KZ06Y";
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID, {
-        transport_type: "beacon"
+        transport_type: "beacon",
+        linker: {
+          'domains': ['gunnarguy.me', 'gunzino.me', 'fascinaiting.me'],
+          'accept_incoming': true
+        },
+        cookie_flags: 'SameSite=None;Secure',
+        page_path: "/" + window.location.hostname + window.location.pathname + window.location.search
       });
     </script>
 
